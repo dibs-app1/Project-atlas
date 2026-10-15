@@ -79,7 +79,12 @@ def render_scene(args):
             if i == frames // 2:
                 key["img"] = img.convert("RGB").resize((160, 90))
             if i == int(min(frames - 1, 22 * FPS)):
-                key["thumb"] = img.convert("RGB")
+                if spec.get("song"):   # the thumbnail is a clean picture, without the sing-along overlay
+                    sc.spec = dict(spec, song=None)
+                    key["thumb"] = sc.frame(i / FPS).convert("RGB")
+                    sc.spec = spec
+                else:
+                    key["thumb"] = img.convert("RGB")
             yield img
     _encode(out, gen())
     key["img"].save(Path(work) / f"key_{spec['index']:02d}.png")

@@ -112,7 +112,7 @@ def _note_icon(d, x, y, col, a, s=1.0):
 @functools.lru_cache(maxsize=32)
 def burst(word, col):
     """A comic-book starburst with the noise word in it."""
-    f = _font(84)
+    f = _font(76)
     l, t, r, b = f.getbbox(word)
     tw, th = r - l, b - t
     w, h = tw + 280, th + 210
@@ -218,8 +218,9 @@ class SingAlong:
                     im = img.resize((w, h), Image.BILINEAR).rotate(-6 + 3 * math.sin(a * 5), Image.BILINEAR, expand=True)
                     tx, ty = hero["top"]
                     cx = min(W - im.width / 2 - 20, max(im.width / 2 + 20, tx))
-                    cy = ty - 120
-                    if cy - im.height / 2 < BANNER_Y + BANNER_H + 10:   # no room above: put it below
+                    lo = BANNER_Y + BANNER_H + im.height / 2 + 10
+                    cy = max(lo, ty - 120)
+                    if cy + im.height / 2 - ty > im.height * 0.45:   # would cover the vehicle: go below it
                         cy = hero["front"][1] + 160 + im.height / 2
                     cy = min(H - im.height / 2 - 20, max(BANNER_Y + BANNER_H + im.height / 2 + 10, cy))
                     layer.alpha_composite(im, (int(cx - im.width / 2), int(cy - im.height / 2)))
