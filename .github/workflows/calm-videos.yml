@@ -67,8 +67,9 @@ jobs:
       - name: Singer's voice (sing-along batches)
         run: |
           if python -c "import json,sys; m=json.load(open(sys.argv[1])); sys.exit(0 if any(v.get('song') for v in m['videos']) else 1)" "${{ needs.plan.outputs.manifest }}"; then
-            pip install piper-tts==1.8.0 pyworld==0.3.5
-            python -c "import sys; sys.path.insert(0, 'studio'); import singer; print(singer.ensure_voice())"
+            pip install "setuptools<81" piper-tts==1.8.0 pyworld==0.3.5
+            # fail fast (before any rendering) if the singer can't sing
+            python -c "import sys; sys.path.insert(0, 'studio'); import singer, pyworld; print(singer.ensure_voice()); print(len(singer.sing_word('hello', ((67, 0.5),))))"
           fi
       - name: Render
         run: |
