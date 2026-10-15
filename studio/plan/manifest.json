@@ -1,0 +1,206 @@
+{
+  "channel": "TheCalmLittleWorld",
+  "target_seconds": 600,
+  "videos": [
+    {
+      "id": "01-sailboats-mountain-lake",
+      "vehicle": "boats",
+      "word": "Boats",
+      "title": "Sailboats and Rowboats for Toddlers | Calm Mountain Lake from Sunrise to Sunset | No Loud Sounds",
+      "hook": "Sailboats and little rowboats drift across a quiet mountain lake, from the first light of sunrise to the soft colors of evening.",
+      "learn": "Name the colors of the boats, count the ducks, and watch how the sky changes through the day.",
+      "music": {"instrument": "guitar", "ambience": "water", "bpm": 62, "root": 55},
+      "tags": ["boats for toddlers", "sailboat", "rowboat", "calm videos for kids", "low stimulation", "lake"],
+      "scenes": [
+        {"setting": "lake", "time": "dawn", "extras": ["far_sails"], "vehicle": {"type": "boat", "kind": "sailboat", "color": "red"}, "motion": "track", "speed": 30, "caption": "A red sailboat"},
+        {"setting": "lake", "time": "morning", "extras": ["ducks"], "vehicle": {"type": "boat", "kind": "rowboat", "color": "blue"}, "motion": "track", "speed": 24, "caption": "A little blue rowboat"},
+        {"setting": "lake", "time": "day", "extras": ["far_sails", "ducks"], "vehicle": {"type": "boat", "kind": "sailboat", "color": "yellow"}, "motion": "track", "speed": 34, "caption": "A yellow sailboat"},
+        {"setting": "lake", "time": "day", "extras": [], "vehicle": {"type": "boat", "kind": "rowboat", "color": "green"}, "motion": "pass", "speed": 36, "direction": "left", "caption": "A green rowboat"},
+        {"setting": "lake", "time": "golden", "extras": ["far_sails"], "vehicle": {"type": "boat", "kind": "sailboat", "color": "purple"}, "motion": "track", "speed": 30, "caption": "A purple sailboat"},
+        {"setting": "lake", "time": "golden", "extras": ["ducks"], "vehicle": {"type": "boat", "kind": "sailboat", "color": "teal"}, "motion": "pass", "speed": 40, "caption": "Can you count the ducks?"},
+        {"setting": "lake", "time": "dusk", "extras": [], "vehicle": {"type": "boat", "kind": "rowboat", "color": "orange"}, "motion": "track", "speed": 22, "direction": "left", "caption": "An orange rowboat"},
+        {"setting": "lake", "time": "dusk", "extras": ["far_sails"], "vehicle": {"type": "boat", "kind": "sailboat", "color": "pink"}, "motion": "track", "speed": 26, "caption": "Goodnight, little boats"}
+      ]
+    },
+    {
+      "id": "02-tugboats-ferries-harbor",
+      "vehicle": "boats",
+      "word": "Harbor Boats",
+      "title": "Tugboats and Ferries for Toddlers | A Slow Day in the Harbor | Calm, No Loud Sounds",
+      "hook": "Tugboats, ferries and a little sailboat move slowly through a friendly harbor, past the cranes and the red-and-white lighthouse.",
+      "learn": "Look for the lighthouse, name the boat colors, and spot the ferry's windows lighting up in the evening.",
+      "music": {"instrument": "marimba", "ambience": "water", "bpm": 66, "root": 57},
+      "tags": ["tugboat for kids", "ferry boat", "harbor", "boats for toddlers", "calm videos for kids", "low stimulation"],
+      "scenes": [
+        {"setting": "harbor", "time": "morning", "extras": ["lighthouse"], "vehicle": {"type": "boat", "kind": "tugboat", "color": "red"}, "motion": "track", "speed": 34, "caption": "A red tugboat"},
+        {"setting": "harbor", "time": "morning", "extras": [], "vehicle": {"type": "boat", "kind": "ferry", "color": "red"}, "motion": "pass", "speed": 40, "caption": "A big ferry boat"},
+        {"setting": "harbor", "time": "day", "extras": ["lighthouse"], "vehicle": {"type": "boat", "kind": "tugboat", "color": "blue"}, "motion": "track", "speed": 34, "direction": "left", "caption": "A blue tugboat"},
+        {"setting": "harbor", "time": "day", "extras": [], "vehicle": {"type": "boat", "kind": "sailboat", "color": "white"}, "motion": "track", "speed": 30, "caption": "A white sailboat"},
+        {"setting": "harbor", "time": "golden", "extras": ["lighthouse"], "vehicle": {"type": "boat", "kind": "ferry", "color": "yellow"}, "motion": "track", "speed": 32, "caption": "A yellow ferry"},
+        {"setting": "harbor", "time": "golden", "extras": [], "vehicle": {"type": "boat", "kind": "tugboat", "color": "green"}, "motion": "pass", "speed": 38, "direction": "left", "caption": "A green tugboat"},
+        {"setting": "harbor", "time": "dusk", "extras": ["lighthouse"], "vehicle": {"type": "boat", "kind": "ferry", "color": "teal"}, "motion": "track", "speed": 30, "caption": "The ferry lights are on"},
+        {"setting": "harbor", "time": "night", "extras": ["lighthouse"], "vehicle": {"type": "boat", "kind": "tugboat", "color": "orange"}, "motion": "track", "speed": 26, "caption": "Goodnight, harbor"}
+      ]
+    },
+    {
+      "id": "03-little-planes-airfield",
+      "vehicle": "airplanes",
+      "word": "Airplanes",
+      "title": "Little Airplanes for Toddlers | Gentle Take Offs and Landings at the Airfield | No Loud Sounds",
+      "hook": "Small propeller planes and a big passenger plane taxi, take off and land gently at a quiet countryside airfield.",
+      "learn": "Watch the windsock, learn the words take off and land, and name each airplane's color.",
+      "music": {"instrument": "music_box", "ambience": "wind", "bpm": 70, "root": 60},
+      "tags": ["airplanes for toddlers", "airplane take off", "airplane landing", "calm videos for kids", "low stimulation"],
+      "scenes": [
+        {"setting": "airfield", "time": "morning", "extras": ["windsock"], "vehicle": {"type": "airplane", "kind": "prop", "color": "blue"}, "motion": "takeoff", "speed": 80, "caption": "A little blue airplane"},
+        {"setting": "airfield", "time": "morning", "extras": [], "vehicle": {"type": "airplane", "kind": "prop", "color": "red"}, "motion": "landing", "speed": 90, "caption": "Coming in to land"},
+        {"setting": "airfield", "time": "day", "extras": ["windsock"], "vehicle": {"type": "airplane", "kind": "prop", "color": "yellow"}, "motion": "pass", "speed": 50, "caption": "Taxiing slowly"},
+        {"setting": "airfield", "time": "day", "extras": [], "vehicle": {"type": "airplane", "kind": "airliner", "color": "teal", "gear": true}, "motion": "takeoff", "speed": 100, "caption": "A big airplane takes off"},
+        {"setting": "airfield", "time": "golden", "extras": ["windsock"], "vehicle": {"type": "airplane", "kind": "prop", "color": "green"}, "motion": "takeoff", "speed": 80, "caption": "Up into the sky"},
+        {"setting": "airfield", "time": "golden", "extras": [], "vehicle": {"type": "airplane", "kind": "airliner", "color": "orange", "gear": true}, "motion": "landing", "speed": 100, "caption": "Wheels down, gently"},
+        {"setting": "airfield", "time": "dusk", "extras": ["windsock"], "vehicle": {"type": "airplane", "kind": "prop", "color": "purple"}, "motion": "landing", "speed": 84, "caption": "Home before dark"},
+        {"setting": "airfield", "time": "dusk", "extras": [], "vehicle": {"type": "airplane", "kind": "prop", "color": "pink"}, "motion": "pass", "speed": 46, "direction": "left", "caption": "Back to the hangar"}
+      ]
+    },
+    {
+      "id": "04-airplanes-clouds-ocean",
+      "vehicle": "airplanes",
+      "word": "Up in the Sky",
+      "title": "Airplanes Above the Clouds for Toddlers | Calm Flight Over the Ocean and Islands | No Loud Sounds",
+      "hook": "Airplanes fly smoothly above soft clouds and over a calm blue sea dotted with little islands, from morning until the stars come out.",
+      "learn": "Spot the islands, name the colors, and say good night to the sun as it sets behind the clouds.",
+      "music": {"instrument": "bells", "ambience": "wind", "bpm": 58, "root": 53},
+      "tags": ["airplanes for kids", "airplane above clouds", "calm videos for toddlers", "sleepy video", "low stimulation"],
+      "scenes": [
+        {"setting": "above_clouds", "time": "morning", "extras": [], "vehicle": {"type": "airplane", "kind": "airliner", "color": "blue"}, "motion": "track", "speed": 80, "caption": "An airplane above the clouds"},
+        {"setting": "ocean_islands", "time": "day", "extras": [], "vehicle": {"type": "airplane", "kind": "airliner", "color": "red"}, "motion": "track", "speed": 70, "caption": "Flying over the sea"},
+        {"setting": "above_clouds", "time": "day", "extras": [], "vehicle": {"type": "airplane", "kind": "prop", "color": "yellow"}, "motion": "track", "speed": 60, "caption": "A little propeller plane"},
+        {"setting": "ocean_islands", "time": "morning", "extras": [], "vehicle": {"type": "airplane", "kind": "prop", "color": "teal"}, "motion": "track", "speed": 60, "direction": "left", "caption": "Can you see the islands?"},
+        {"setting": "above_clouds", "time": "golden", "extras": [], "vehicle": {"type": "airplane", "kind": "airliner", "color": "purple"}, "motion": "track", "speed": 76, "caption": "A purple airplane"},
+        {"setting": "ocean_islands", "time": "golden", "extras": [], "vehicle": {"type": "airplane", "kind": "airliner", "color": "green"}, "motion": "track", "speed": 72, "direction": "left", "caption": "A green airplane"},
+        {"setting": "above_clouds", "time": "dusk", "extras": [], "vehicle": {"type": "airplane", "kind": "airliner", "color": "orange"}, "motion": "track", "speed": 68, "caption": "The sun is going down"},
+        {"setting": "above_clouds", "time": "night", "extras": [], "vehicle": {"type": "airplane", "kind": "airliner", "color": "navy"}, "motion": "track", "speed": 62, "caption": "A quiet night flight"}
+      ]
+    },
+    {
+      "id": "05-cars-snowy-village",
+      "vehicle": "cars",
+      "word": "Cars in the Snow",
+      "title": "Cars for Toddlers in the Snow | Slow, Cozy Drive Through a Winter Village | No Loud Sounds",
+      "hook": "Little cars, a van and a friendly snowplow drive slowly and carefully through a cozy snowy village, from morning to a quiet winter night.",
+      "learn": "Name the car colors, watch the snowflakes fall, and see the warm lights come on in the windows.",
+      "music": {"instrument": "music_box", "ambience": "wind", "bpm": 60, "root": 58},
+      "tags": ["cars for toddlers", "snowplow", "winter", "calm videos for kids", "low stimulation", "bedtime"],
+      "scenes": [
+        {"setting": "snowy_village", "time": "morning", "extras": [], "vehicle": {"type": "car", "kind": "sedan", "color": "red", "snow": true}, "motion": "track", "speed": 48, "caption": "A red car in the snow"},
+        {"setting": "snowy_village", "time": "morning", "extras": [], "vehicle": {"type": "car", "kind": "plow", "color": "orange"}, "motion": "track", "speed": 36, "caption": "A snowplow clears the road"},
+        {"setting": "snowy_village", "time": "day", "extras": [], "vehicle": {"type": "car", "kind": "hatch", "color": "blue", "snow": true}, "motion": "track", "speed": 46, "direction": "left", "caption": "A blue car"},
+        {"setting": "snowy_village", "time": "day", "extras": [], "vehicle": {"type": "car", "kind": "van", "color": "green"}, "motion": "pass", "speed": 50, "caption": "A green van"},
+        {"setting": "snowy_village", "time": "golden", "extras": [], "vehicle": {"type": "car", "kind": "sedan", "color": "purple", "snow": true}, "motion": "track", "speed": 44, "caption": "Slow and careful in the snow"},
+        {"setting": "snowy_village", "time": "dusk", "extras": [], "vehicle": {"type": "car", "kind": "hatch", "color": "yellow"}, "motion": "track", "speed": 42, "caption": "The lights come on"},
+        {"setting": "snowy_village", "time": "dusk", "extras": [], "vehicle": {"type": "car", "kind": "van", "color": "white"}, "motion": "pass", "speed": 46, "direction": "left", "caption": "A white van"},
+        {"setting": "snowy_village", "time": "night", "extras": [], "vehicle": {"type": "car", "kind": "sedan", "color": "teal", "snow": true}, "motion": "track", "speed": 38, "caption": "Goodnight, little village"}
+      ]
+    },
+    {
+      "id": "06-cars-town-traffic-lights",
+      "vehicle": "cars",
+      "word": "Cars in Town",
+      "title": "Cars for Toddlers at the Traffic Light | Red Means Stop, Green Means Go | Calm Autumn Town",
+      "hook": "Cars and vans drive gently through a little autumn town, stopping at the red light so people can cross safely, then going on green.",
+      "learn": "Learn that red means stop and green means go, watch people use the crosswalk, and name the colors of the cars.",
+      "music": {"instrument": "piano", "ambience": null, "bpm": 68, "root": 62},
+      "tags": ["cars for toddlers", "traffic light for kids", "red light green light", "road safety for kids", "calm videos for kids"],
+      "scenes": [
+        {"setting": "town_crossroads", "time": "morning", "extras": [], "vehicle": {"type": "car", "kind": "sedan", "color": "red"}, "motion": "stop_and_go", "speed": 70, "wait": 24, "caption": "Red light means stop"},
+        {"setting": "town_crossroads", "time": "morning", "extras": [], "vehicle": {"type": "car", "kind": "van", "color": "blue"}, "motion": "stop_and_go", "speed": 66, "wait": 24, "caption": "Green light means go"},
+        {"setting": "town_crossroads", "time": "day", "extras": [], "vehicle": {"type": "car", "kind": "hatch", "color": "yellow"}, "motion": "track", "speed": 52, "caption": "A yellow car in town"},
+        {"setting": "town_crossroads", "time": "day", "extras": [], "vehicle": {"type": "car", "kind": "sedan", "color": "green"}, "motion": "stop_and_go", "speed": 70, "wait": 22, "caption": "Waiting for the crosswalk"},
+        {"setting": "town_crossroads", "time": "golden", "extras": [], "vehicle": {"type": "car", "kind": "van", "color": "orange"}, "motion": "stop_and_go", "speed": 64, "wait": 24, "caption": "An orange van stops"},
+        {"setting": "town_crossroads", "time": "golden", "extras": [], "vehicle": {"type": "car", "kind": "hatch", "color": "purple"}, "motion": "track", "speed": 48, "direction": "left", "caption": "A purple car"},
+        {"setting": "town_crossroads", "time": "dusk", "extras": [], "vehicle": {"type": "car", "kind": "sedan", "color": "teal"}, "motion": "stop_and_go", "speed": 64, "wait": 24, "caption": "Stop, look, and wait"},
+        {"setting": "town_crossroads", "time": "dusk", "extras": [], "vehicle": {"type": "car", "kind": "hatch", "color": "pink"}, "motion": "track", "speed": 44, "caption": "Driving home"}
+      ]
+    },
+    {
+      "id": "07-trains-desert-canyon",
+      "vehicle": "trains",
+      "word": "Trains",
+      "title": "Trains for Toddlers in the Desert | Steam Trains Over the Canyon Bridge | Calm, No Loud Sounds",
+      "hook": "Steam trains, passenger trains and long freight trains roll steadily through a red-rock desert and across a tall wooden canyon bridge.",
+      "learn": "Count the train cars, spot the cactus, and name the colors of the engines.",
+      "music": {"instrument": "guitar", "ambience": "wind", "bpm": 64, "root": 52},
+      "tags": ["trains for toddlers", "steam train", "freight train", "desert", "calm videos for kids", "low stimulation"],
+      "scenes": [
+        {"setting": "desert_canyon", "time": "day", "extras": ["bridge"], "vehicle": {"type": "train", "kind": "steam", "color": "red", "cars": 4}, "motion": "track", "speed": 80, "caption": "A red steam train"},
+        {"setting": "desert_canyon", "time": "morning", "extras": [], "vehicle": {"type": "train", "kind": "modern", "color": "blue", "cars": 4}, "motion": "track", "speed": 90, "caption": "A long blue train"},
+        {"setting": "desert_canyon", "time": "day", "extras": [], "vehicle": {"type": "train", "kind": "steam", "color": "green", "cars": 5, "cargo": "boxes"}, "motion": "pass", "speed": 70, "caption": "Count the train cars"},
+        {"setting": "desert_canyon", "time": "golden", "extras": ["bridge"], "vehicle": {"type": "train", "kind": "steam", "color": "yellow", "cars": 3}, "motion": "track", "speed": 72, "caption": "Over the bridge"},
+        {"setting": "desert_canyon", "time": "golden", "extras": [], "vehicle": {"type": "train", "kind": "modern", "color": "teal", "cars": 3}, "motion": "pass", "speed": 80, "direction": "left", "caption": "A teal train"},
+        {"setting": "desert_canyon", "time": "dusk", "extras": ["bridge"], "vehicle": {"type": "train", "kind": "steam", "color": "purple", "cars": 4}, "motion": "track", "speed": 68, "caption": "The desert at sunset"},
+        {"setting": "desert_canyon", "time": "dusk", "extras": [], "vehicle": {"type": "train", "kind": "steam", "color": "orange", "cars": 5, "cargo": "logs"}, "motion": "pass", "speed": 70, "caption": "A train carrying logs"},
+        {"setting": "desert_canyon", "time": "night", "extras": ["bridge"], "vehicle": {"type": "train", "kind": "steam", "color": "blue", "cars": 4}, "motion": "track", "speed": 60, "caption": "Goodnight, little train"}
+      ]
+    },
+    {
+      "id": "08-trains-spring-fields",
+      "vehicle": "trains",
+      "word": "Spring Trains",
+      "title": "Trains for Toddlers in Spring | Windmills, Tulip Fields and a Safe Level Crossing | No Loud Sounds",
+      "hook": "Trains glide past windmills and stripes of tulips in spring, while people wait safely behind the lowered crossing barrier.",
+      "learn": "Learn to wait behind the barrier, count the windmills, and name the tulip colors.",
+      "music": {"instrument": "harp", "ambience": null, "bpm": 72, "root": 59},
+      "tags": ["trains for toddlers", "train crossing", "railroad safety for kids", "windmills", "tulips", "calm videos for kids"],
+      "scenes": [
+        {"setting": "spring_fields", "time": "morning", "extras": ["crossing"], "vehicle": {"type": "train", "kind": "modern", "color": "red", "cars": 4}, "motion": "pass", "speed": 90, "caption": "Wait behind the barrier"},
+        {"setting": "spring_fields", "time": "morning", "extras": [], "vehicle": {"type": "train", "kind": "steam", "color": "blue", "cars": 3}, "motion": "track", "speed": 74, "caption": "A blue steam train"},
+        {"setting": "spring_fields", "time": "day", "extras": [], "vehicle": {"type": "train", "kind": "modern", "color": "yellow", "cars": 4}, "motion": "track", "speed": 88, "direction": "left", "caption": "A yellow train"},
+        {"setting": "spring_fields", "time": "day", "extras": ["crossing"], "vehicle": {"type": "train", "kind": "steam", "color": "green", "cars": 4}, "motion": "pass", "speed": 72, "caption": "The barrier is down"},
+        {"setting": "spring_fields", "time": "golden", "extras": ["crossing"], "vehicle": {"type": "train", "kind": "modern", "color": "orange", "cars": 5, "cargo": "boxes"}, "motion": "pass", "speed": 72, "caption": "Count the colors"},
+        {"setting": "spring_fields", "time": "golden", "extras": [], "vehicle": {"type": "train", "kind": "modern", "color": "teal", "cars": 3}, "motion": "track", "speed": 84, "caption": "Past the windmills"},
+        {"setting": "spring_fields", "time": "dusk", "extras": [], "vehicle": {"type": "train", "kind": "steam", "color": "red", "cars": 4}, "motion": "track", "speed": 64, "direction": "left", "caption": "Evening in the fields"},
+        {"setting": "spring_fields", "time": "dusk", "extras": ["crossing"], "vehicle": {"type": "train", "kind": "modern", "color": "purple", "cars": 4}, "motion": "pass", "speed": 80, "caption": "The last train home"}
+      ]
+    },
+    {
+      "id": "09-hot-air-balloons-lavender",
+      "vehicle": "hot air balloons",
+      "word": "Hot Air Balloons",
+      "title": "Hot Air Balloons for Toddlers | Floating Over the Lavender Fields | Calm, No Loud Sounds",
+      "hook": "Colorful hot air balloons float slowly over purple lavender fields and a little farmhouse, from sunrise to the golden evening.",
+      "learn": "Count the balloons, find the rainbow balloon, and notice the big balloons close by and the small ones far away.",
+      "music": {"instrument": "flute", "ambience": "wind", "bpm": 56, "root": 57},
+      "tags": ["hot air balloons for kids", "balloons", "calm videos for toddlers", "lavender", "low stimulation", "relaxing"],
+      "scenes": [
+        {"setting": "lavender_valley", "time": "dawn", "extras": [], "vehicle": {"type": "balloon", "scheme": "sunset", "schemes": ["sunset", "stripes", "meadow"]}, "motion": "float", "speed": 10, "count": 3, "caption": "Hot air balloons"},
+        {"setting": "lavender_valley", "time": "dawn", "extras": [], "vehicle": {"type": "balloon", "scheme": "rainbow", "schemes": ["rainbow", "ocean", "sunset", "stripes"]}, "motion": "float", "speed": 10, "count": 4, "caption": "Can you find the rainbow balloon?"},
+        {"setting": "lavender_valley", "time": "morning", "extras": [], "vehicle": {"type": "balloon", "scheme": "stripes", "schemes": ["stripes", "meadow", "rainbow", "ocean", "sunset"]}, "motion": "float", "speed": 10, "count": 5, "caption": "Let's count: one, two, three, four, five"},
+        {"setting": "lavender_valley", "time": "morning", "extras": [], "vehicle": {"type": "balloon", "scheme": "ocean", "schemes": ["ocean", "ocean", "meadow"]}, "motion": "float", "speed": 10, "count": 3, "caption": "Blue and white balloons"},
+        {"setting": "lavender_valley", "time": "day", "extras": [], "vehicle": {"type": "balloon", "scheme": "meadow", "schemes": ["meadow", "rainbow", "stripes", "sunset", "ocean", "rainbow"]}, "motion": "float", "speed": 10, "count": 6, "caption": "Big balloons and little balloons"},
+        {"setting": "lavender_valley", "time": "day", "extras": [], "vehicle": {"type": "balloon", "scheme": "sunset", "schemes": ["sunset", "sunset"]}, "motion": "float", "speed": 10, "count": 2, "caption": "Floating slowly"},
+        {"setting": "lavender_valley", "time": "golden", "extras": [], "vehicle": {"type": "balloon", "scheme": "rainbow", "schemes": ["rainbow", "stripes", "ocean", "meadow"]}, "motion": "float", "speed": 10, "count": 4, "caption": "Golden evening light"},
+        {"setting": "lavender_valley", "time": "dusk", "extras": [], "vehicle": {"type": "balloon", "scheme": "stripes", "schemes": ["stripes", "sunset", "rainbow"]}, "motion": "float", "speed": 10, "count": 3, "caption": "Time to come down"}
+      ]
+    },
+    {
+      "id": "10-helicopters-green-coast",
+      "vehicle": "helicopters",
+      "word": "Helicopters",
+      "title": "Helicopters for Toddlers | Calm Flights Along the Green Coast and Gentle Landings | No Loud Sounds",
+      "hook": "Friendly helicopters fly slowly along green hills by the sea, past the sheep and the lighthouse, and land softly on the big H.",
+      "learn": "Find the letter H on the helipad, count the sheep, and name each helicopter's color.",
+      "music": {"instrument": "marimba", "ambience": "wind", "bpm": 64, "root": 55},
+      "tags": ["helicopters for toddlers", "helicopter landing", "calm videos for kids", "low stimulation", "coast"],
+      "scenes": [
+        {"setting": "coastal_hills", "time": "morning", "extras": [], "vehicle": {"type": "helicopter", "color": "red"}, "motion": "track", "speed": 60, "caption": "A red helicopter"},
+        {"setting": "coastal_hills", "time": "morning", "extras": ["helipad"], "vehicle": {"type": "helicopter", "color": "blue"}, "motion": "heli_land", "speed": 66, "caption": "Landing on the H"},
+        {"setting": "coastal_hills", "time": "day", "extras": [], "vehicle": {"type": "helicopter", "color": "yellow"}, "motion": "track", "speed": 58, "direction": "left", "caption": "A yellow helicopter"},
+        {"setting": "coastal_hills", "time": "day", "extras": ["helipad"], "vehicle": {"type": "helicopter", "color": "green"}, "motion": "heli_land", "speed": 66, "caption": "Slowly down, down, down"},
+        {"setting": "coastal_hills", "time": "golden", "extras": [], "vehicle": {"type": "helicopter", "color": "orange"}, "motion": "track", "speed": 54, "caption": "Can you count the sheep?"},
+        {"setting": "coastal_hills", "time": "golden", "extras": ["helipad"], "vehicle": {"type": "helicopter", "color": "teal"}, "motion": "heli_land", "speed": 62, "caption": "A soft landing"},
+        {"setting": "coastal_hills", "time": "dusk", "extras": [], "vehicle": {"type": "helicopter", "color": "purple"}, "motion": "track", "speed": 50, "direction": "left", "caption": "Past the lighthouse"},
+        {"setting": "coastal_hills", "time": "dusk", "extras": ["helipad"], "vehicle": {"type": "helicopter", "color": "white"}, "motion": "heli_land", "speed": 58, "caption": "Time to rest"}
+      ]
+    }
+  ]
+}
