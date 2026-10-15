@@ -37,6 +37,11 @@ class Scene2:
         self.ground_y = 900
         self._cam = None
         self.cam_static = 0.0
+        self._hero_mover = None      # the vehicle the song's noises come from
+        self.hero_fn = None          # or a script can say where it is: fn(t) -> {"front", "top", "dir"}
+        self.hero_pt = None
+        self._sing = None
+        self._actor_movers = []
         title = spec.get("caption")
         if title:
             self.say(0.6, 7.0, title, size=54)
@@ -70,6 +75,7 @@ class Scene2:
             x, _ = mover.at(i / FPS)
             cams.append(x - W * anchor + offset)
         self._cam = cams
+        self._hero_mover = mover
         self.focus_x = W * anchor - offset  # where the hero sits on screen (used to frame vertical Shorts)
 
     def cam(self, t):
@@ -78,6 +84,27 @@ class Scene2:
         return self._cam[min(int(t * FPS), len(self._cam) - 1)]
 
     # -------------------------------------------------------------- actors
+    def _claim(self, mover):
+        self._actor_movers.append(mover)
+        if self._hero_mover is None:
+            self._hero_mover = mover
+
+    def hero(self, t):
+        h = self._hero_raw(t)
+        if -W * 0.5 < h["front"][0] < W * 1.5:   # partly visible: keep the waves and the burst on screen
+            cl = lambda p: (min(W - 120, max(120, p[0])), p[1])
+            h = dict(h, front=cl(h["front"]), top=cl(h["top"]))
+        return h
+
+    def _hero_raw(self, t):
+        if self.hero_fn is not None:
+            return self.hero_fn(t)
+        pt = self.hero_pt
+        if pt is None or not (-W * 0.5 < pt["front"][0] < W * 1.5):
+            fx = getattr(self, "focus_x", W * 0.5)
+            return dict(front=(min(W - 300, fx + 420), H * 0.55), top=(fx + 200, H * 0.42), dir=1)
+        return pt
+
     def road_vehicle(self, veh, mover, ground, z, depth=1.0, direction=1, x0=0.0, bumps=(), state=None,
                      wheelbase=None, bump_h=16.0):
         """A wheeled vehicle on a road. direction -1 drives right-to-left (sprite mirrored)."""
@@ -106,7 +133,13 @@ class Scene2:
             tilt = math.degrees(math.atan2(bump_h * (lf - lr), wb)) * direction
             gy = ground(xw) if callable(ground) else ground
             st = state(t, d, v) if state else {}
-            veh.draw(frame, sx, gy, d * direction, t, tilt=tilt, lift=lift, state=st, flip=direction < 0)
+            ox, oy = veh.draw(frame, sx, gy, d * direction, t, tilt=tilt, lift=lift, state=st, flip=direction < 0)
+            if mover is self._hero_mover:
+                body = veh.w - (260 * veh.k if getattr(veh, "kind", "") in ("car", "bus", "truck") else 0)
+                bx = sx if direction > 0 else sx + veh.w - body
+                self.hero_pt = dict(front=(bx + body if direction > 0 else bx, oy + veh.h * 0.45),
+                                    top=(bx + body / 2, oy), dir=direction)
+        self._claim(mover)
         self.add(z, draw)
 
     def boat_actor(self, veh, mover, water, z, x0=0.0, direction=1, heel=0.0, wake=True, spray=0.0, state=None,
@@ -124,10 +157,14 @@ class Scene2:
             st["dist"] = d
             if wake and v > 5:
                 _wake(frame, sx, wy, veh.w, v, t, direction)
-            veh.draw(frame, sx, wy + sink, d, t, tilt=tilt, state=st, flip=direction < 0, shadow=False)
+            ox, oy = veh.draw(frame, sx, wy + sink, d, t, tilt=tilt, state=st, flip=direction < 0, shadow=False)
+            if mover is self._hero_mover:
+                self.hero_pt = dict(front=(sx + veh.w if direction > 0 else sx, wy - veh.h * 0.35),
+                                    top=(sx + veh.w / 2, oy), dir=direction)
             water.render_front(frame, t, cam, [(sx, sx + veh.w)])
             if spray > 0 and v > 60:
                 _spray(frame, sx + (veh.w if direction > 0 else 0), wy, v * spray, t, direction)
+        self._claim(mover)
         self.add(z, draw)
 
     def train_actor(self, train, mover, ground, z, x0=0.0, depth=1.0, state=None):
@@ -138,6 +175,11 @@ class Scene2:
                 return
             st = state(t, d, v) if state else {}
             train.draw(frame, sx, ground, d, t, state=st)
+            if mover is self._hero_mover:
+                eh = train.engine.h
+                self.hero_pt = dict(front=(sx + train.length, ground - eh * 0.55),
+                                    top=(sx + train.offsets[-1] + train.engine.w / 2, ground - eh), dir=1)
+        self._claim(mover)
         self.add(z, draw)
 
     def smoke(self, mover, src, z, every=0.45, life=4.0, col=(244, 244, 244), drift=(-20, -46), size=16, x0=0.0,
@@ -163,6 +205,7 @@ class Scene2:
     # -------------------------------------------------------------- frame
     def frame(self, t):
         cam = self.cam(t)
+        self.hero_pt = None
         f = self.world.sky_img.copy()
         self.world.weather.sky(f, t, cam)
         for z, fn in sorted(self.items, key=lambda it: it[0]):
@@ -176,11 +219,25 @@ class Scene2:
                 f.alpha_composite(fade(img, al), (int(x - img.width / 2), int(y - img.height - 30 * a)))
         if self.spec.get("no_captions"):    # Shorts draw their own big text instead
             return self._grade(f)
+        song = self.spec.get("song")
+        cap_y = 180 if song else 34
+        y = cap_y
         for t0, t1, img in self.captions:   # captions sit at the top, clear of the vehicles
             a = smooth((t - t0) / 0.8) * (1 - smooth((t - t1) / 0.8))
             if a > 0.01:
-                f.alpha_composite(fade(img, a), ((W - img.width) // 2, 34))
-        return self._grade(f)
+                f.alpha_composite(fade(img, a), ((W - img.width) // 2, int(y)))
+                if song:   # two captions at once: stack them instead of overlapping
+                    y += (img.height + 10) * a
+        f = self._grade(f)
+        if song:
+            from .singalong import SingAlong, push_in
+            if self._sing is None:
+                self._sing = SingAlong(song)
+            h = self.hero(t)
+            f, mp = push_in(f, self._sing.zoom(t), *h["front"])
+            h = dict(front=mp(*h["front"]), top=mp(*h["top"]), dir=h.get("dir", 1))
+            f = self._sing.draw(f, t, h, self.seed)
+        return f
 
     def _grade(self, f):
         if self.spec.get("look", "rich") != "rich":
@@ -214,7 +271,7 @@ def _spray(frame, bow, wy, power, t, direction):
 
 
 def make(spec, D):
-    from . import scripts_boats, scripts_cars, scripts_planes, scripts_trains  # noqa: F401  (register)
+    from . import scripts_boats, scripts_cars, scripts_planes, scripts_song, scripts_trains  # noqa: F401  (register)
     from . import vehicles
     vehicles.SCALE = spec.get("scale", 1.6)
     return Scene2(spec, D)

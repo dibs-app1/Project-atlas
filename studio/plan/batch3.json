@@ -1,0 +1,792 @@
+{
+ "channel": "TheCalmLittleWorld",
+ "batch": "batch3",
+ "batch_index": 3,
+ "engine": 2,
+ "count": 4,
+ "require": [
+  "cars and trucks",
+  "boats",
+  "airplanes",
+  "trains"
+ ],
+ "target_seconds": 600,
+ "videos": [
+  {
+   "id": "15-cars-and-trucks-song",
+   "vehicle": "cars and trucks",
+   "word": "Beep Beep!",
+   "title": "Beep Beep, Here We Go! | Cars and Trucks Song for Kids with Real Vehicle Sounds",
+   "hook": "A brand-new sing-along song about cars and trucks: the ice cream truck, a tow truck, a delivery truck, diggers, the car wash, the garbage truck and the school bus, with the real noises they make.",
+   "learn": "Sing the chorus, copy the noises (beep beep, honk honk, vroom vroom), and learn road safety: red means stop, green means go, wait for the school bus stop arm, slow down for speed bumps.",
+   "song": {
+    "title": "Beep Beep, Here We Go!",
+    "root": 60,
+    "instrument": "marimba",
+    "chorus": [
+     "Beep beep, here we go,",
+     "driv-ing fast and driv-ing slow,",
+     "red means stop and green means go,",
+     "beep beep, here we go!"
+    ]
+   },
+   "tags": [
+    "cars song for kids",
+    "trucks song for kids",
+    "kids songs",
+    "vehicle sounds for kids",
+    "ice cream truck",
+    "tow truck",
+    "nursery rhymes"
+   ],
+   "scenes": [
+    {
+     "script": "ice_cream_truck",
+     "time": "day",
+     "vehicle": {
+      "color": "pink"
+     },
+     "caption": "The ice cream truck",
+     "noise": "ice_cream",
+     "ask": "What does the ice cream truck say?",
+     "verse": [
+      "The ice cream truck comes down the street,",
+      "it plays a lit-tle tune so sweet,",
+      "we stand in line and wait our turn,",
+      "so ma-ny fla-vors we can learn!"
+     ]
+    },
+    {
+     "script": "tow_truck",
+     "time": "morning",
+     "vehicle": {
+      "color": "orange"
+     },
+     "caption": "The tow truck helps",
+     "noise": "reverse",
+     "ask": "What does the tow truck say when it backs up?",
+     "verse": [
+      "Oh no, the lit-tle car won't go,",
+      "call the tow truck, nice and slow,",
+      "it backs up close and lifts it high,",
+      "off to the gar-age, wave good-bye!"
+     ]
+    },
+    {
+     "script": "delivery_truck",
+     "time": "golden",
+     "vehicle": {
+      "color": "white"
+     },
+     "caption": "The delivery truck",
+     "noise": "car_horn",
+     "ask": "What does the de-liv-ery truck say?",
+     "verse": [
+      "The de-liv-ery truck has box-es to bring,",
+      "a big brown box, a ti-ny thing,",
+      "it stops at ev-ery house in town,",
+      "and puts each par-cel gent-ly down."
+     ]
+    },
+    {
+     "script": "highway",
+     "time": "night",
+     "vehicle": {
+      "kind": "sedan",
+      "color": "blue"
+     },
+     "caption": "A night drive on the highway",
+     "noise": "vroom",
+     "ask": "What does the en-gine say?",
+     "verse": [
+      "The moon is up, the stars are bright,",
+      "our head-lights shine to light the night,",
+      "we keep a gap be-hind the truck,",
+      "our seat belts on, all safe and snug!"
+     ],
+     "speed": 280
+    },
+    {
+     "script": "speed_bumps",
+     "time": "golden",
+     "vehicle": {
+      "kind": "suv",
+      "color": "orange"
+     },
+     "caption": "Slow down for speed bumps",
+     "noise": "car_horn",
+     "ask": "What does the lit-tle car say?",
+     "verse": [
+      "Here comes a bump up on the street,",
+      "slow down, slow down, so nice and neat,",
+      "bump-e-ty bump, we roll a-long,",
+      "count the bumps and sing our song!"
+     ]
+    },
+    {
+     "script": "construction",
+     "time": "morning",
+     "vehicle": {
+      "color": "red"
+     },
+     "caption": "Diggers and dump trucks",
+     "noise": "truck_horn",
+     "ask": "What does the big dump truck say?",
+     "verse": [
+      "The dig-ger digs a ve-ry big hole,",
+      "the dump truck tips its load of soil,",
+      "the flag-ger holds the sign up high,",
+      "we wait, then slow-ly we go by."
+     ]
+    },
+    {
+     "script": "car_wash",
+     "time": "morning",
+     "vehicle": {
+      "kind": "hatch",
+      "color": "green"
+     },
+     "caption": "Time for a car wash",
+     "noise": "splash",
+     "ask": "What does the wa-ter say?",
+     "verse": [
+      "Our car is mud-dy, what a mess,",
+      "in-to the car wash, yes yes yes!",
+      "the brush-es spin, the bub-bles flow,",
+      "now it's shi-ny, see it glow!"
+     ]
+    },
+    {
+     "script": "garbage_day",
+     "time": "day",
+     "vehicle": {
+      "color": "blue"
+     },
+     "caption": "Garbage day in the rain",
+     "noise": "reverse",
+     "ask": "What does the gar-bage truck say?",
+     "verse": [
+      "The gar-bage truck comes rain or shine,",
+      "it picks the bins up one at a time,",
+      "the big arm lifts and tips them in,",
+      "then puts back ev-ery emp-ty bin."
+     ],
+     "weather": "rain_then_sun"
+    },
+    {
+     "script": "car_carrier",
+     "time": "day",
+     "vehicle": {
+      "color": "blue"
+     },
+     "caption": "The car carrier truck",
+     "noise": "truck_horn",
+     "ask": "What does the big truck say?",
+     "verse": [
+      "A long truck car-ries cars to town,",
+      "some go up and some go down,",
+      "let's count the cars, one two three four,",
+      "five and six, and then no more!"
+     ]
+    },
+    {
+     "script": "school_bus",
+     "time": "golden",
+     "vehicle": {
+      "color": "yellow"
+     },
+     "caption": "The school bus takes us home",
+     "noise": "bus_horn",
+     "ask": "What does the school bus say?",
+     "verse": [
+      "The yel-low school bus takes us home,",
+      "through the town and o-ver the hill,",
+      "when the red stop arm swings out,",
+      "all the cars wait, then stay so still!"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "16-boats-song",
+   "vehicle": "boats",
+   "word": "Toot Toot!",
+   "title": "Toot Toot, Off We Float! | Boats Song for Kids with Real Boat Sounds",
+   "hook": "A brand-new sing-along song about boats: a little tugboat, a fireboat water show, a lighthouse in the fog, dolphins, a busy port, kayaks, a speedboat, a ferry and a paddle steamer, with the real sounds they make.",
+   "learn": "Sing the chorus, copy the noises (toot toot, splish splash, vroom vroom), count the containers, learn red and green buoys, and see that everyone on a boat wears a life jacket.",
+   "song": {
+    "title": "Toot Toot, Off We Float!",
+    "root": 57,
+    "instrument": "guitar",
+    "chorus": [
+     "Toot toot, off we float,",
+     "on the wa-ter in a boat,",
+     "life jack-ets on, we're safe and sound,",
+     "waves go up and waves go down!"
+    ]
+   },
+   "tags": [
+    "boats song for kids",
+    "boat sounds for kids",
+    "kids songs",
+    "tugboat",
+    "fireboat",
+    "ships for kids",
+    "nursery rhymes"
+   ],
+   "scenes": [
+    {
+     "script": "tugboat_push",
+     "time": "day",
+     "vehicle": {
+      "color": "red"
+     },
+     "caption": "The little tugboat",
+     "noise": "tug_toot",
+     "ask": "What does the tug-boat say?",
+     "verse": [
+      "The lit-tle tug is small but strong,",
+      "it push-es big ships right a-long,",
+      "it nudg-es gent-ly side to side,",
+      "un-til the ship is safe and tied!"
+     ]
+    },
+    {
+     "script": "fireboat_show",
+     "time": "day",
+     "vehicle": {
+      "color": "red"
+     },
+     "caption": "The fireboat's water show",
+     "noise": "tug_toot",
+     "ask": "What does the fire-boat say?",
+     "verse": [
+      "The fire-boat sprays a wa-ter show,",
+      "big white foun-tains, high and low,",
+      "a rain-bow shines in-side the spray,",
+      "hoo-ray, hoo-ray, a hap-py day!"
+     ]
+    },
+    {
+     "script": "lighthouse_fog",
+     "time": "morning",
+     "vehicle": {
+      "color": "blue"
+     },
+     "caption": "The lighthouse in the fog",
+     "noise": "ship_horn",
+     "ask": "What does the big ship say?",
+     "verse": [
+      "The fog is thick, it's hard to see,",
+      "the light-house shines for you and me,",
+      "the big ship blows its fog-horn loud,",
+      "to find its way right through the cloud."
+     ],
+     "echo": "toot toot",
+     "fog": true
+    },
+    {
+     "script": "ocean_dolphins",
+     "time": "golden",
+     "vehicle": {
+      "color": "blue"
+     },
+     "caption": "Dolphins at sunset",
+     "noise": "splash",
+     "ask": "What do the dol-phins say?",
+     "verse": [
+      "The sail-boat glides a-cross the sea,",
+      "the dol-phins jump, one, two, three!",
+      "they leap and dive and swim a-round,",
+      "and splash back in with a hap-py sound!"
+     ],
+     "echo": "splash splash"
+    },
+    {
+     "script": "busy_port",
+     "time": "morning",
+     "vehicle": {
+      "color": "blue"
+     },
+     "caption": "The busy port",
+     "noise": "ship_horn",
+     "ask": "What does the big ship say?",
+     "verse": [
+      "The ship is full of box-es bright,",
+      "red and blue and green and white,",
+      "the crane lifts each one up and down,",
+      "to send them off to ev-ery town."
+     ],
+     "echo": "toot toot"
+    },
+    {
+     "script": "river_kayaks",
+     "time": "day",
+     "vehicle": {
+      "color": "orange"
+     },
+     "caption": "Paddling down the river",
+     "noise": "splash",
+     "ask": "What do the pad-dles say?",
+     "verse": [
+      "We pad-dle, pad-dle down the stream,",
+      "the ri-ver spar-kles, what a dream,",
+      "left side, right side, nice and slow,",
+      "down the ri-ver, here we go!"
+     ]
+    },
+    {
+     "script": "speedboat_buoys",
+     "time": "golden",
+     "vehicle": {
+      "color": "red"
+     },
+     "caption": "Speedboat and buoys",
+     "noise": "outboard",
+     "ask": "What does the speed-boat say?",
+     "verse": [
+      "The speed-boat zips a-cross the bay,",
+      "the buoys show the safe-est way,",
+      "red on one side, green on the oth-er,",
+      "stay be-tween them, sis-ter, bro-ther!"
+     ]
+    },
+    {
+     "script": "car_ferry",
+     "time": "morning",
+     "vehicle": {
+      "color": "blue"
+     },
+     "caption": "All aboard the car ferry",
+     "noise": "ship_horn",
+     "ask": "What does the fer-ry say?",
+     "verse": [
+      "The fer-ry o-pens up its door,",
+      "the cars drive on, then one car more,",
+      "it car-ries them a-cross the bay,",
+      "then off they drive, a-way, a-way!"
+     ],
+     "echo": "toot toot"
+    },
+    {
+     "script": "paddle_steamer",
+     "time": "day",
+     "vehicle": {
+      "color": "blue"
+     },
+     "caption": "The paddle steamer",
+     "noise": "steam_whistle",
+     "ask": "What does the steam-boat say?",
+     "verse": [
+      "The pad-dle wheel goes round and round,",
+      "it churns the wa-ter, what a sound,",
+      "the steam puffs up in-to the sky,",
+      "we wave to boats as they go by."
+     ],
+     "echo": "toot toot"
+    },
+    {
+     "script": "sail_race",
+     "time": "golden",
+     "vehicle": {
+      "color": "blue"
+     },
+     "caption": "A sailing race at sunset",
+     "noise": "tug_toot",
+     "ask": "What does the start horn say?",
+     "verse": [
+      "The sail-boats race out in the breeze,",
+      "their sails puff up, they move with ease,",
+      "blue and red and yel-low too,",
+      "which one wins? It's up to you!"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "17-airplanes-song",
+   "vehicle": "airplanes",
+   "word": "Zoom Zoom!",
+   "title": "Zoom Zoom, Up So High! | Airplanes Song for Kids with Real Airplane Sounds",
+   "hook": "A brand-new sing-along song about airplanes: an air show with coloured smoke, small and big jets taking off, a glider, the airport helpers, a seaplane and flying above the clouds, with the real sounds they make.",
+   "learn": "Sing the chorus, copy the noises (zoom zoom, buzz buzz, splish splash), compare small, big and biggest planes, and learn about landing gear, gliders and contrails.",
+   "song": {
+    "title": "Zoom Zoom, Up So High!",
+    "root": 62,
+    "instrument": "bells",
+    "chorus": [
+     "Zoom zoom, up so high,",
+     "air-planes fly-ing in the sky,",
+     "wheels go up and wings spread wide,",
+     "zoom zoom, what a ride!"
+    ]
+   },
+   "tags": [
+    "airplane song for kids",
+    "airplane sounds for kids",
+    "kids songs",
+    "air show",
+    "jet plane",
+    "glider",
+    "nursery rhymes"
+   ],
+   "scenes": [
+    {
+     "script": "air_show",
+     "time": "day",
+     "vehicle": {
+      "color": "red"
+     },
+     "caption": "The air show",
+     "noise": "prop_buzz",
+     "ask": "What do the lit-tle planes say?",
+     "verse": [
+      "Three lit-tle planes fly in a row,",
+      "they draw with smoke, a rain-bow show,",
+      "they loop and loop and turn a-round,",
+      "and wave their wings to the crowd on the ground!"
+     ]
+    },
+    {
+     "script": "runway_parade",
+     "time": "morning",
+     "vehicle": {
+      "color": "blue"
+     },
+     "caption": "Small, big and biggest",
+     "noise": "jet_zoom",
+     "ask": "What does the big jet say?",
+     "verse": [
+      "A lit-tle plane goes first to fly,",
+      "a big jet next goes up so high,",
+      "the big-gest jet takes off the last,",
+      "small, big, big-gest, zoom-ing past!"
+     ]
+    },
+    {
+     "script": "glider_tow",
+     "time": "golden",
+     "vehicle": {
+      "color": "white"
+     },
+     "caption": "The glider has no engine",
+     "noise": "prop_buzz",
+     "ask": "What does the tow plane say?",
+     "verse": [
+      "A glid-er has no en-gine, see,",
+      "a tow plane pulls it high and free,",
+      "the rope lets go, it floats a-long,",
+      "it rides the wind and hums a song."
+     ]
+    },
+    {
+     "script": "airport_gate",
+     "time": "golden",
+     "vehicle": {
+      "color": "teal"
+     },
+     "caption": "Airport helpers",
+     "noise": "reverse",
+     "ask": "What does the lit-tle tug say?",
+     "verse": [
+      "The bag-gage train brings bags in line,",
+      "the fuel truck fills the plane up fine,",
+      "the mar-shal waves the sticks just so,",
+      "to tell the pi-lot where to go."
+     ]
+    },
+    {
+     "script": "pushback_taxi",
+     "time": "golden",
+     "vehicle": {
+      "color": "red"
+     },
+     "caption": "Pushback and taxi",
+     "noise": "jet_zoom",
+     "ask": "What do the jet en-gines say?",
+     "verse": [
+      "A lit-tle tug can push a plane,",
+      "it backs it out a-long the lane,",
+      "then on the ta-xi-way we roll,",
+      "to-ward the run-way, that's our goal!"
+     ]
+    },
+    {
+     "script": "takeoff",
+     "time": "golden",
+     "vehicle": {
+      "color": "blue"
+     },
+     "caption": "Take off at sunset",
+     "noise": "jet_zoom",
+     "ask": "What does the air-plane say?",
+     "verse": [
+      "Fas-ter, fas-ter, down the strip,",
+      "the nose goes up, it's time to lift,",
+      "the land-ing gear folds up in-side,",
+      "up, up, up, we take a ride!"
+     ]
+    },
+    {
+     "script": "cloud_climb",
+     "time": "golden",
+     "vehicle": {
+      "color": "red"
+     },
+     "caption": "Up through the clouds",
+     "noise": "jet_zoom",
+     "ask": "What does the jet say up high?",
+     "verse": [
+      "In-to the clouds so soft and white,",
+      "it's fog-gy now, then sun-shine bright,",
+      "we climb a-bove them, way up high,",
+      "a sea of clouds be-neath the sky!"
+     ]
+    },
+    {
+     "script": "seaplane",
+     "time": "golden",
+     "vehicle": {
+      "color": "red"
+     },
+     "caption": "The seaplane lands on the lake",
+     "noise": "splash",
+     "ask": "What does the wa-ter say?",
+     "verse": [
+      "A plane with floats in-stead of wheels,",
+      "it lands on wa-ter, what fun it feels!",
+      "it skims and splash-es on the lake,",
+      "and leaves a big white foam-y wake."
+     ]
+    },
+    {
+     "script": "farm_flight",
+     "time": "morning",
+     "vehicle": {
+      "color": "yellow"
+     },
+     "caption": "Flying over the farm",
+     "noise": "prop_buzz",
+     "ask": "What does the lit-tle plane say?",
+     "verse": [
+      "We fly a-bove the farm so green,",
+      "the cows and sheep and barn are seen,",
+      "the fields are gold be-neath the sun,",
+      "what a love-ly flight, what fun!"
+     ]
+    },
+    {
+     "script": "above_clouds",
+     "time": "golden",
+     "vehicle": {
+      "color": "blue"
+     },
+     "caption": "Above the clouds at sunset",
+     "noise": "jet_zoom",
+     "ask": "What does the jum-bo jet say?",
+     "verse": [
+      "Way up high a-bove the clouds,",
+      "far a-way from all the crowds,",
+      "jet planes draw long lines of white,",
+      "they're called con-trails, what a sight!"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "18-trains-song",
+   "vehicle": "trains",
+   "word": "Choo Choo!",
+   "title": "Choo Choo, Clickety-Clack! | Trains Song for Kids with Real Train Sounds",
+   "hook": "A brand-new sing-along song about trains: a city tram, two trains passing, a steam train drinking at the water tower, a bullet train, a freight train to count, a level crossing and a mountain tunnel, with the real sounds they make.",
+   "learn": "Sing the chorus, copy the noises (choo choo, ding ding, honk honk), count the freight cars to ten, and learn train safety: stand behind the yellow line and wait at the crossing gates.",
+   "song": {
+    "title": "Choo Choo, Clickety-Clack!",
+    "root": 65,
+    "instrument": "piano",
+    "chorus": [
+     "Choo choo, click-e-ty clack,",
+     "trains are roll-ing down the track,",
+     "wave hel-lo and wave good-bye,",
+     "choo choo, trains go by!"
+    ]
+   },
+   "tags": [
+    "train song for kids",
+    "train sounds for kids",
+    "kids songs",
+    "steam train",
+    "tram",
+    "choo choo train",
+    "nursery rhymes"
+   ],
+   "scenes": [
+    {
+     "script": "city_tram",
+     "time": "day",
+     "vehicle": {
+      "color": "red"
+     },
+     "caption": "The city tram",
+     "noise": "tram_bell",
+     "ask": "What does the tram bell say?",
+     "verse": [
+      "The tram rolls through the ci-ty street,",
+      "on shi-ny rails so clean and neat,",
+      "it stops to let the peo-ple on,",
+      "ding ding, and then the tram is gone!"
+     ]
+    },
+    {
+     "script": "double_track",
+     "time": "golden",
+     "vehicle": {
+      "color": "blue"
+     },
+     "caption": "Two trains passing",
+     "noise": "diesel_horn",
+     "ask": "What does the train horn say?",
+     "verse": [
+      "Two trains are com-ing, can you see?",
+      "one for you and one for me,",
+      "they pass each oth-er side by side,",
+      "on their own tracks, safe and wide!"
+     ],
+     "echo": "honk honk"
+    },
+    {
+     "script": "water_tower",
+     "time": "morning",
+     "vehicle": {
+      "color": "green"
+     },
+     "caption": "The steam train gets a drink",
+     "noise": "steam_whistle",
+     "ask": "What does the steam train say?",
+     "verse": [
+      "The steam train's thirs-ty, time to stop,",
+      "the wa-ter tow-er fills it to the top,",
+      "the wa-ter makes the steam, you know,",
+      "and steam makes all the wheels go!"
+     ]
+    },
+    {
+     "script": "steam_country",
+     "time": "golden",
+     "vehicle": {
+      "color": "green"
+     },
+     "caption": "Steam train at sunset",
+     "noise": "chugga",
+     "ask": "What do the steam puffs say?",
+     "verse": [
+      "The old steam train puffs up the hill,",
+      "the rods go round, they're nev-er still,",
+      "puff puff puff, the smoke goes high,",
+      "a big grey cloud up in the sky!"
+     ]
+    },
+    {
+     "script": "bullet_train",
+     "time": "golden",
+     "vehicle": {
+      "color": "white"
+     },
+     "caption": "The super fast train",
+     "noise": "jet_zoom",
+     "ask": "What does the fast train say?",
+     "verse": [
+      "The bul-let train is long and sleek,",
+      "it zooms a-long, so fast, so neat,",
+      "the wires a-bove give it pow-er,",
+      "lots of miles in just one hour!"
+     ],
+     "echo": "whoosh whoosh"
+    },
+    {
+     "script": "freight_count",
+     "time": "morning",
+     "vehicle": {
+      "color": "orange"
+     },
+     "caption": "Count the freight cars",
+     "noise": "diesel_horn",
+     "ask": "What does the freight train say?",
+     "verse": [
+      "The freight train is so ve-ry long,",
+      "let's count the cars and sing a song,",
+      "one two three four five six se-ven,",
+      "eight nine ten, they roll a-long!"
+     ],
+     "echo": "honk honk"
+    },
+    {
+     "script": "station_stop",
+     "time": "golden",
+     "vehicle": {
+      "color": "teal"
+     },
+     "caption": "At the station",
+     "noise": "tram_bell",
+     "ask": "What does the sta-tion bell say?",
+     "verse": [
+      "The train slows down, the sta-tion's near,",
+      "the doors slide o-pen, we all cheer,",
+      "stand back be-hind the yel-low line,",
+      "all a-board, we're right on time!"
+     ]
+    },
+    {
+     "script": "level_crossing",
+     "time": "morning",
+     "vehicle": {
+      "color": "red"
+     },
+     "caption": "The level crossing",
+     "noise": "diesel_horn",
+     "ask": "What does the train horn say?",
+     "verse": [
+      "Ding ding, the cross-ing gates come down,",
+      "the cars all stop in our small town,",
+      "the train rolls by, we wait and see,",
+      "then up go the gates for you and me!"
+     ],
+     "echo": "honk honk"
+    },
+    {
+     "script": "tunnel",
+     "time": "golden",
+     "vehicle": {
+      "color": "blue"
+     },
+     "caption": "Through the mountain tunnel",
+     "noise": "diesel_horn",
+     "ask": "What does the train say in the tun-nel?",
+     "verse": [
+      "The train goes in-to the moun-tain tall,",
+      "through a tun-nel, dark and small,",
+      "the lamps are on so we can see,",
+      "and out we come, as bright as can be!"
+     ],
+     "echo": "honk honk"
+    },
+    {
+     "script": "river_bridge",
+     "time": "morning",
+     "vehicle": {
+      "color": "red"
+     },
+     "caption": "Over the river bridge",
+     "noise": "steam_whistle",
+     "ask": "What does the train say on the bridge?",
+     "verse": [
+      "A big red bridge a-cross the stream,",
+      "the train rolls o-ver like a dream,",
+      "the boats be-low all toot hel-lo,",
+      "the train says choo choo, off we go!"
+     ]
+    }
+   ]
+  }
+ ]
+}

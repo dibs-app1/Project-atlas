@@ -64,6 +64,30 @@ python studio/produce2.py 14-trains-on-the-tracks --seconds 90 --out /tmp/previe
 
 `studio/plan/ACTIVE` names the manifest the GitHub workflow renders on each push.
 
+## Batch 3: sing-along songs with real vehicle noises
+
+Batch 3 (`plan/batch3.json`) gives each video its own **original, catchy kids' song** that is sung, plus the
+**noises the vehicles make**, on top of the engine-2 animation:
+
+| # | Video | Song | Scenes |
+|---|---|---|---|
+| 15 | Cars and Trucks | *Beep Beep, Here We Go!* | **ice cream truck**, **tow truck** (overtakes, reverses, lifts the car), **delivery truck**, night highway, speed bumps at sunset, diggers, car wash, garbage day in the rain, car carrier, school bus home |
+| 16 | Boats | *Toot Toot, Off We Float!* | **tugboat pushes a container ship to the dock**, **fireboat water show with a rainbow**, **lighthouse in the fog**, dolphins at sunset, busy port, kayaks, speedboat and buoys, car ferry, paddle steamer, sailing race |
+| 17 | Airplanes | *Zoom Zoom, Up So High!* | **air show with coloured smoke and loops**, **small, big and biggest take off**, **glider on tow**, airport helpers, pushback, take-off at sunset, cloud climb, seaplane, farm flight, above the clouds |
+| 18 | Trains | *Choo Choo, Clickety-Clack!* | **city tram**, **two trains passing on two tracks**, **steam train at the water tower**, steam train at sunset, bullet train, count the freight cars, station, level crossing, mountain tunnel, river bridge |
+
+(**Bold** scenes are brand new; the others are new takes of engine-2 scenes in a different light, weather or vehicle.)
+
+Each scene is one round of the song: a verse about that scene, the chorus, then the **noise game**:
+"What does the tow truck say?" → the real noise (the band stops for it) with a big BEEP BEEP! burst and
+sound waves from the vehicle → the choir copies it. Lyrics are on screen with a bouncing ball, and the full
+lyrics are in each video's description. See `team/songwriter.md`.
+
+```bash
+pip install piper-tts pyworld          # the singing voice (downloads ~60 MB the first time)
+python studio/produce2.py 15-cars-and-trucks-song --manifest studio/plan/batch3.json --out output
+```
+
 ## The richer look (engine 2)
 
 `engine2/look.py` gives every engine-2 frame a richer, more 3D, more colourful finish:

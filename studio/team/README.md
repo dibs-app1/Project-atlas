@@ -11,6 +11,7 @@ named in each brief, so a human freelancer or an AI sub-agent can take any role 
 | 3 | Continuity Clerk | `studio/manager.py: continuity_gate` + `plan/scene_ledger.json` | no repeated scene, ever |
 | 4 | Animator | `studio/art.py`, `settings.py`, `scenes.py` | renders cleanly |
 | 4 | Sound Designer | `studio/music.py` | calm, peaks under -1 dBFS |
+| 4 | Songwriter + Singer (batch 3) | `studio/song.py`, `singer.py`, `engine2/noises.py`, `engine2/singalong.py` | lyrics sing-able, noises known |
 | 4 | Editor | `studio/produce.py` | exact 10:00, 3 s crossfades |
 | 5 | QA Inspector | `studio/qa.py` | every check PASS |
 | 6 | Publisher | `.github/workflows/calm-videos.yml`, `studio/upload.py` | private upload, human spot-check |

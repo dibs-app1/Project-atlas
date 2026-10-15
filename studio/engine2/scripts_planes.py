@@ -91,7 +91,11 @@ def plane_actor(s, plane, path, z=6, shadow_ground=None):
                 q = Pen(int(plane.w * 0.8), 30)
                 q.ellipse(0, 0, plane.w * 0.8, 26, (20, 24, 30, int(80 * (1 - alt / 500))))
                 f.alpha_composite(q.done(), (int(sx + plane.w * 0.1), int(shadow_ground - 14)))
-        plane.draw(f, sx, y, x, t, tilt=pitch, state=st, shadow=False)
+        ox, oy = plane.draw(f, sx, y, x, t, tilt=pitch, state=st, shadow=False)
+        if not any(m is s._hero_mover for m in s._actor_movers) and getattr(s, "_hero_plane", plane) is plane:
+            s.hero_pt = dict(front=(sx + plane.w * 0.97, oy + plane.h * 0.5), top=(sx + plane.w * 0.55, oy), dir=1)
+    if getattr(s, "_hero_plane", None) is None:
+        s._hero_plane = plane
     s.add(z, draw)
 
 

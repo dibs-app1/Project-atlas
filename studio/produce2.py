@@ -104,6 +104,21 @@ def render(vid, manifest, out_dir, total=600, workers=None, log=print, reuse=Fal
         s["seed"] = scene_seed(bi, vi, k)
         s["index"] = k
         specs.append(s)
+    lens = [INTRO] + [L] * n + [outro]
+    starts = [0]
+    for ln in lens[:-1]:
+        starts.append(starts[-1] + ln - XF)
+    sng = None
+    if video.get("song"):   # a sing-along song: every scene is one 28-bar round, locked to the picture
+        import song as songmod
+        from engine2 import noises
+        sng = songmod.Song(video, scene_seed(bi, vi, 77))
+        bar = (L - XF) / FPS / songmod.BARS
+        for s in specs:
+            plan = sng.scene_plan(s, bar)
+            for nz in plan["noises"]:
+                nz["col"] = list(noises.colour(nz["name"]))
+            s["song"] = plan
     workers = workers or os.cpu_count() or 2
     t0 = time.time()
     log(f"[{vid}] rendering {n} scenes of {L / FPS:.1f}s with {workers} workers")
@@ -123,15 +138,21 @@ def render(vid, manifest, out_dir, total=600, workers=None, log=print, reuse=Fal
     _encode(work / "outro.mp4", (outro_img for _ in range(outro)))
 
     # ---- audio: music under the whole video, each scene's sound effects crossfaded like the picture
-    lens = [INTRO] + [L] * n + [outro]
-    starts = [0]
-    for ln in lens[:-1]:
-        starts.append(starts[-1] + ln - XF)
     N = int(total * SR)
     mu = video.get("music", {})
-    mono, info = music.compose_upbeat(scene_seed(bi, vi, 99), total + 1, root=mu.get("root"), bpm=mu.get("bpm"),
-                                      inst=mu.get("instrument"))
-    mono = mono[:N]
+    if sng is None:
+        mono, info = music.compose_upbeat(scene_seed(bi, vi, 99), total + 1, root=mu.get("root"), bpm=mu.get("bpm"),
+                                          inst=mu.get("instrument"))
+        mono = mono[:N]
+    else:
+        g0 = [starts[k + 1] / FPS for k in range(n)]
+        plans = [s["song"] for s in specs]
+        log(f"[{vid}] singing the song ...")
+        backing = sng.backing(g0, bar, total, plans)
+        vocal = sng.vocal(plans, g0, total)
+        nz_track = sng.noise_track(plans, g0, total)
+        info = dict(style="sing-along", root=sng.root, bpm=round(60 / (bar / 4), 2), instrument=sng.inst,
+                    voice=__import__("singer").VOICE)
     fx = np.zeros(N)
     xf = XF / FPS
     for k in range(n):
@@ -144,7 +165,10 @@ def render(vid, manifest, out_dir, total=600, workers=None, log=print, reuse=Fal
         fx[st:end] += (a * g)[: end - st]
     fx /= max(1e-9, np.percentile(np.abs(fx), 99.5)) * 1.6
     fx = np.clip(fx, -0.9, 0.9)
-    mix = 0.62 * mono + 0.5 * fx
+    if sng is None:
+        mix = 0.62 * mono + 0.5 * fx
+    else:
+        mix = 0.4 * backing + 0.62 * vocal + 0.6 * nz_track + 0.2 * fx
     mix /= np.max(np.abs(mix)) + 1e-9
     music.write_wav(work / "audio.wav", mix * 0.7)
 
@@ -182,9 +206,9 @@ def render(vid, manifest, out_dir, total=600, workers=None, log=print, reuse=Fal
     chapter_starts = [starts[k + 1] / FPS + XF / FPS for k in range(n)] + [starts[-1] / FPS + XF / FPS]
     meta = {
         "id": vid, "engine": 2, "file": mp4.name, "thumbnail": thumb.name, "title": video["title"],
-        "description": description(video, chapter_starts, int(total)),
+        "description": description(video, chapter_starts, int(total), [s.get("song") for s in specs]),
         "tags": video["tags"], "categoryId": "27", "madeForKids": True, "privacyStatus": "private",
-        "scenes": specs, "music": info,
+        "scenes": [{k: v for k, v in s.items() if k != "song"} for s in specs], "music": info,
     }
     (out_dir / f"{vid}.json").write_text(json.dumps(meta, indent=2))
     (out_dir / f"{vid}.txt").write_text(
@@ -193,7 +217,7 @@ def render(vid, manifest, out_dir, total=600, workers=None, log=print, reuse=Fal
     return meta
 
 
-def description(video, chapter_starts, total):
+def description(video, chapter_starts, total, plans=None):
     def stamp(s):
         s = int(s)
         return f"{s // 60}:{s % 60:02d}"
@@ -202,6 +226,8 @@ def description(video, chapter_starts, total):
         lines.append(f"{stamp(st)} {sc['caption']}")
     lines.append(f"{stamp(chapter_starts[-1])} Bye-bye!")
     tags = " ".join("#" + t.replace(" ", "") for t in video["tags"][:3])
+    if video.get("song") and plans and plans[0]:
+        return song_description(video, lines, tags, total)
     return "\n".join([
         video["hook"],
         "",
@@ -214,6 +240,31 @@ def description(video, chapter_starts, total):
         "Chapters:",
         *lines,
         "",
+        tags,
+    ])
+
+
+def song_description(video, chapters, tags, total):
+    sp = video["song"]
+    lyr = [f"\u266a {sp['title']} \u266a", ""]
+    lyr += ["Chorus:", *sp["chorus"], ""]
+    for sc in video["scenes"]:
+        lyr += [*sc["verse"], ""]
+    return "\n".join([
+        video["hook"],
+        "",
+        video["learn"],
+        "",
+        f"About {total // 60} minutes of colourful original animation with a brand-new sing-along song. "
+        "Follow the bouncing ball, sing the chorus, and copy the real vehicle noises: beep beep, choo choo, "
+        "toot toot, zoom! Every driver, pilot and captain follows the safety rules. No flashing and nothing "
+        "scary. Original song, music, singing voice and sound effects, made for TheCalmLittleWorld.",
+        "",
+        "Chapters:",
+        *chapters,
+        "",
+        "Lyrics:",
+        *lyr,
         tags,
     ])
 
