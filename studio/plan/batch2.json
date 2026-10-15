@@ -1,0 +1,99 @@
+{
+  "channel": "TheCalmLittleWorld",
+  "batch": "batch2",
+  "batch_index": 2,
+  "engine": 2,
+  "count": 4,
+  "require": ["cars and trucks", "boats", "airplanes", "trains"],
+  "target_seconds": 600,
+  "videos": [
+    {
+      "id": "11-cars-and-trucks",
+      "vehicle": "cars and trucks",
+      "word": "Cars and Trucks",
+      "title": "Cars and Trucks for Kids | Speed Bumps, Diggers, Garbage Truck, School Bus & Car Wash",
+      "hook": "Ten busy road adventures: cars slow down for speed bumps, an excavator digs, a garbage truck lifts the bins, the school bus stops, and a car goes through the car wash.",
+      "learn": "Learn road safety (red means stop, wait for the school bus, slow down for speed bumps), count the cars on the car carrier, and name the big trucks.",
+      "music": {"instrument": "marimba", "bpm": 108, "root": 60},
+      "tags": ["cars for kids", "trucks for kids", "garbage truck", "school bus", "car wash", "excavator", "educational video for toddlers"],
+      "scenes": [
+        {"script": "highway", "time": "day", "vehicle": {"kind": "sedan", "color": "red"}, "caption": "A red car on the highway", "speed": 300},
+        {"script": "speed_bumps", "time": "morning", "vehicle": {"kind": "hatch", "color": "blue"}, "caption": "Speed bumps on our street"},
+        {"script": "construction", "time": "day", "vehicle": {"color": "orange"}, "caption": "Busy trucks at work"},
+        {"script": "city_bus", "time": "day", "weather": "rain_then_sun", "vehicle": {"color": "red"}, "caption": "A city bus in the rain"},
+        {"script": "garbage_day", "time": "morning", "vehicle": {"color": "green"}, "caption": "The garbage truck"},
+        {"script": "car_carrier", "time": "golden", "vehicle": {"color": "red"}, "caption": "A car carrier truck"},
+        {"script": "school_bus", "time": "morning", "vehicle": {"color": "yellow"}, "caption": "The yellow school bus"},
+        {"script": "car_wash", "time": "day", "vehicle": {"kind": "suv", "color": "purple"}, "caption": "Time for a car wash!"},
+        {"script": "snowplow", "time": "day", "weather": "snow", "vehicle": {"color": "teal"}, "caption": "A snowplow on a snowy day"},
+        {"script": "night_city", "time": "night", "vehicle": {"color": "yellow"}, "caption": "A taxi in the city at night"}
+      ]
+    },
+    {
+      "id": "12-boats-on-the-water",
+      "vehicle": "boats",
+      "word": "Boats",
+      "title": "Boats for Kids | Dolphins, Container Ships, Speedboats, Ferries & a Sailing Race",
+      "hook": "Ten splashy boat adventures: a sailboat with jumping dolphins, a crane unloading a container ship, kayaks, a speedboat, a car ferry, a paddle steamer and a sailing race.",
+      "learn": "Count the containers and the cars on the ferry, learn red and green buoys, and see that everyone on a boat wears a life jacket.",
+      "music": {"instrument": "guitar", "bpm": 104, "root": 57},
+      "tags": ["boats for kids", "ships for kids", "sailboat", "container ship", "ferry", "speedboat", "educational video for toddlers"],
+      "scenes": [
+        {"script": "ocean_dolphins", "time": "day", "vehicle": {"color": "red"}, "caption": "A sailboat on the ocean"},
+        {"script": "busy_port", "time": "day", "vehicle": {"color": "red"}, "caption": "A busy port"},
+        {"script": "river_kayaks", "time": "morning", "vehicle": {"color": "yellow"}, "caption": "Kayaks on the river"},
+        {"script": "speedboat_buoys", "time": "day", "vehicle": {"color": "blue"}, "caption": "A fast speedboat"},
+        {"script": "rain_lake", "time": "day", "weather": "rain_then_sun", "vehicle": {"color": "green"}, "caption": "Fishing in the rain"},
+        {"script": "car_ferry", "time": "day", "vehicle": {"color": "red"}, "caption": "The car ferry"},
+        {"script": "trawler_sunset", "time": "golden", "vehicle": {"color": "orange"}, "caption": "A fishing boat at sunset"},
+        {"script": "paddle_steamer", "time": "morning", "fog": true, "vehicle": {"color": "red"}, "caption": "A paddle steamer"},
+        {"script": "sail_race", "time": "day", "vehicle": {"color": "red"}, "caption": "A sailing race"},
+        {"script": "night_harbor", "time": "night", "vehicle": {"color": "red"}, "caption": "The harbour at night"}
+      ]
+    },
+    {
+      "id": "13-airplanes-at-the-airport",
+      "vehicle": "airplanes",
+      "word": "Airplanes",
+      "title": "Airplanes for Kids | Take Off, Landing, Seaplane, Ground Crew & Flying Above the Clouds",
+      "hook": "Ten airplane adventures: the ground crew loads bags and fuel, a pushback tug, take off with the wheels folding up, flying through clouds, a rainy landing, a seaplane and de-icing in the snow.",
+      "learn": "Learn the jobs at the airport, see the landing gear go up and down, count suitcases and cargo boxes, and find out what a contrail is.",
+      "music": {"instrument": "bells", "bpm": 112, "root": 62},
+      "tags": ["airplanes for kids", "airplane take off", "airplane landing", "airport", "seaplane", "educational video for toddlers"],
+      "scenes": [
+        {"script": "airport_gate", "time": "day", "vehicle": {"color": "blue"}, "caption": "At the airport gate"},
+        {"script": "pushback_taxi", "time": "morning", "vehicle": {"color": "red"}, "caption": "Push back and taxi"},
+        {"script": "takeoff", "time": "day", "vehicle": {"color": "teal"}, "caption": "Ready for take off"},
+        {"script": "cloud_climb", "time": "day", "vehicle": {"color": "orange"}, "caption": "Into the clouds"},
+        {"script": "above_clouds", "time": "golden", "vehicle": {"color": "purple", "jumbo": true}, "caption": "A jumbo jet above the clouds"},
+        {"script": "rain_landing", "time": "day", "weather": "rain", "vehicle": {"color": "green"}, "caption": "Landing in the rain"},
+        {"script": "seaplane", "time": "day", "vehicle": {"color": "yellow"}, "caption": "A seaplane on the lake"},
+        {"script": "deicing", "time": "day", "weather": "snow", "vehicle": {"color": "blue"}, "caption": "Snow at the airport"},
+        {"script": "farm_flight", "time": "morning", "vehicle": {"color": "red"}, "caption": "A little plane over the farm"},
+        {"script": "night_cargo", "time": "night", "vehicle": {"color": "orange"}, "caption": "A cargo plane at night"}
+      ]
+    },
+    {
+      "id": "14-trains-on-the-tracks",
+      "vehicle": "trains",
+      "word": "Trains",
+      "title": "Trains for Kids | Steam Train, Bullet Train, Freight Counting, Tunnels, Bridges & Crossings",
+      "hook": "Ten train adventures: a puffing steam train, a super fast bullet train, a long freight train to count, a station stop, a level crossing, a mountain tunnel, a red bridge and a snow train.",
+      "learn": "Count the freight cars from 1 to 10, learn to stand behind the yellow line and wait at the crossing gate, and see how steam train wheels turn.",
+      "music": {"instrument": "piano", "bpm": 104, "root": 55},
+      "tags": ["trains for kids", "steam train", "bullet train", "freight train", "railroad crossing", "educational video for toddlers"],
+      "scenes": [
+        {"script": "steam_country", "time": "day", "vehicle": {"color": "green"}, "caption": "A steam train in the country"},
+        {"script": "bullet_train", "time": "morning", "vehicle": {"color": "red"}, "caption": "A super fast bullet train"},
+        {"script": "freight_count", "time": "day", "vehicle": {"color": "orange"}, "caption": "A long freight train"},
+        {"script": "station_stop", "time": "day", "vehicle": {"color": "blue"}, "caption": "At the train station"},
+        {"script": "level_crossing", "time": "day", "vehicle": {"color": "red"}, "caption": "At the level crossing"},
+        {"script": "tunnel", "time": "day", "vehicle": {"color": "teal"}, "caption": "Through the mountain"},
+        {"script": "river_bridge", "time": "golden", "vehicle": {"color": "red"}, "caption": "Over the river bridge"},
+        {"script": "snow_train", "time": "day", "weather": "snow", "vehicle": {"color": "red"}, "caption": "A train in the snow"},
+        {"script": "city_metro", "time": "dusk", "vehicle": {"color": "teal"}, "caption": "The city metro"},
+        {"script": "night_sleeper", "time": "night", "vehicle": {"color": "navy"}, "caption": "The night train"}
+      ]
+    }
+  ]
+}

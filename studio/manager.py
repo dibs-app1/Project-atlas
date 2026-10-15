@@ -39,6 +39,8 @@ def say(role, msg):
 def fingerprint(scene):
     """What makes a scene a scene: place, light, vehicle, action. Captions and seeds don't count."""
     core = {k: scene.get(k) for k in ("setting", "time", "vehicle", "motion", "direction", "extras", "count")}
+    if scene.get("script"):  # engine-2 scenes are defined by their script and weather
+        core.update(script=scene["script"], weather=scene.get("weather", "clear"))
     core["extras"] = sorted(core["extras"] or [])
     core["direction"] = core["direction"] or "right"
     return hashlib.sha1(json.dumps(core, sort_keys=True).encode()).hexdigest()[:16]
@@ -47,9 +49,10 @@ def fingerprint(scene):
 def producer_gate(m):
     vids = m["videos"]
     problems = []
-    if len(vids) != 10:
-        problems.append(f"need 10 videos, have {len(vids)}")
-    missing = VEHICLES - {v["vehicle"] for v in vids}
+    want = m.get("count", 10)
+    if len(vids) != want:
+        problems.append(f"need {want} videos, have {len(vids)}")
+    missing = set(m.get("require", VEHICLES)) - {v["vehicle"] for v in vids}
     if missing:
         problems.append(f"vehicle types missing: {sorted(missing)}")
     for key in ("id", "title"):
@@ -62,16 +65,21 @@ def producer_gate(m):
     owner = {}
     for v in vids:
         for s in v["scenes"]:
-            if owner.setdefault(s["setting"], v["vehicle"]) != v["vehicle"]:
-                problems.append(f"setting '{s['setting']}' used by both {owner[s['setting']]} and {v['vehicle']}")
+            place = s.get("setting") or s.get("script")
+            if owner.setdefault(place, v["vehicle"]) != v["vehicle"]:
+                problems.append(f"setting '{place}' used by both {owner[place]} and {v['vehicle']}")
     return problems
 
 
 def safety_gate(m):
     problems = []
+    if m.get("engine") == 2:
+        from engine2.safety import review
+    else:
+        review = safety_review
     for vi, v in enumerate(m["videos"]):
         for k, s in enumerate(v["scenes"]):
-            for p in safety_review(s):
+            for p in review(s):
                 problems.append(f"{v['id']} scene {k + 1}: {p}")
     return problems
 
@@ -91,9 +99,13 @@ def continuity_gate(m, ledger):
     return problems
 
 
-def crew(vid, out_dir, threads):
+def crew(vid, out_dir, threads, manifest=None, engine=1):
     t0 = time.time()
-    render(vid, out_dir, threads=threads, log=lambda msg: say("Crew", msg))
+    if engine == 2:
+        from produce2 import render as render2
+        render2(vid, manifest, out_dir, log=lambda msg: say("Crew", msg))
+    else:
+        render(vid, out_dir, threads=threads, log=lambda msg: say("Crew", msg))
     return vid, time.time() - t0
 
 
@@ -104,11 +116,13 @@ def main():
     ap.add_argument("--crews", type=int, default=2, help="videos rendered at the same time")
     ap.add_argument("--threads", type=int, default=2, help="encoder threads per crew")
     ap.add_argument("--plan-only", action="store_true")
+    ap.add_argument("--manifest", default=str(ROOT / "plan" / "manifest.json"))
     a = ap.parse_args()
 
-    m = json.loads((ROOT / "plan" / "manifest.json").read_text())
+    m = json.loads(Path(a.manifest).read_text())
+    engine = m.get("engine", 1)
     ledger = json.loads(LEDGER.read_text()) if LEDGER.exists() else {}
-    say("Manager", f"Good evening. Today's order: {len(m['videos'])} calm videos for {m['channel']}.")
+    say("Manager", f"Good evening. Today's order: {len(m['videos'])} videos for {m['channel']}.")
 
     for role, gate in (("Producer", lambda: producer_gate(m)), ("Safety Reviewer", lambda: safety_gate(m)),
                        ("Continuity Clerk", lambda: continuity_gate(m, ledger))):
@@ -125,19 +139,25 @@ def main():
     ids = a.only or [v["id"] for v in m["videos"]]
     out_dir = Path(a.out)
     out_dir.mkdir(parents=True, exist_ok=True)
-    say("Manager", f"Assigning {len(ids)} videos to {a.crews} crews.")
     t0 = time.time()
-    with ProcessPoolExecutor(max_workers=a.crews) as pool:
-        jobs = {}
-        for n, vid in enumerate(ids):
-            say("Manager", f"Crew {n % a.crews + 1}: please make {vid}")
-            jobs[pool.submit(crew, vid, str(out_dir), a.threads)] = vid
-        for f in as_completed(jobs):
-            vid, secs = f.result()
+    if engine == 2:  # each engine-2 video already spreads its scenes over every core
+        for vid in ids:
+            say("Manager", f"Scene crews: please make {vid}")
+            _, secs = crew(vid, str(out_dir), a.threads, a.manifest, 2)
             say("Manager", f"received {vid} ({secs / 60:.1f} min). Sending to QA.")
+    else:
+        say("Manager", f"Assigning {len(ids)} videos to {a.crews} crews.")
+        with ProcessPoolExecutor(max_workers=a.crews) as pool:
+            jobs = {}
+            for n, vid in enumerate(ids):
+                say("Manager", f"Crew {n % a.crews + 1}: please make {vid}")
+                jobs[pool.submit(crew, vid, str(out_dir), a.threads)] = vid
+            for f in as_completed(jobs):
+                vid, secs = f.result()
+                say("Manager", f"received {vid} ({secs / 60:.1f} min). Sending to QA.")
 
     say("QA Inspector", "checking every finished video")
-    report = qa.main(out_dir)
+    report = qa.main(out_dir, a.manifest)
     passed = [r["id"] for r in report["videos"] if r["pass"]]
 
     today = dt.date.today().isoformat()

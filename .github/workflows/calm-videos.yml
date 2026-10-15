@@ -1,9 +1,15 @@
-# TheCalmLittleWorld studio: renders all 10 videos in parallel and publishes them as a
-# downloadable GitHub Release (mp4 + thumbnail + title/description file for each video).
+# TheCalmLittleWorld studio: renders every video in the active batch in parallel and publishes them
+# as a downloadable GitHub Release (mp4 + thumbnail + title/description file for each video).
+# The active batch is the manifest named in studio/plan/ACTIVE (or chosen when running it by hand).
 name: Calm videos studio
 
 on:
   workflow_dispatch:
+    inputs:
+      manifest:
+        description: "Manifest to render (leave empty to use studio/plan/ACTIVE)"
+        required: false
+        default: ""
   push:
     branches: ["claude/**", "main"]
     paths: ["studio/**", ".github/workflows/calm-videos.yml"]
@@ -21,20 +27,33 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       ids: ${{ steps.ids.outputs.ids }}
+      manifest: ${{ steps.ids.outputs.manifest }}
+      engine: ${{ steps.ids.outputs.engine }}
+      batch: ${{ steps.ids.outputs.batch }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: { python-version: "3.12" }
       - run: pip install numpy==2.1.3 pillow==11.0.0
-      - run: python studio/manager.py --plan-only
       - id: ids
-        run: echo "ids=$(python -c "import json;print(json.dumps([v['id'] for v in json.load(open('studio/plan/manifest.json'))['videos']]))")" >> "$GITHUB_OUTPUT"
+        run: |
+          manifest="${{ github.event.inputs.manifest }}"
+          [ -z "$manifest" ] && manifest="$(cat studio/plan/ACTIVE)"
+          echo "manifest=$manifest" >> "$GITHUB_OUTPUT"
+          python - "$manifest" >> "$GITHUB_OUTPUT" <<'PY'
+          import json, sys
+          m = json.load(open(sys.argv[1]))
+          print("ids=" + json.dumps([v["id"] for v in m["videos"]]))
+          print("engine=" + str(m.get("engine", 1)))
+          print("batch=" + m.get("batch", "batch1"))
+          PY
+      - run: python studio/manager.py --plan-only --manifest "${{ steps.ids.outputs.manifest }}"
 
   render:
     name: Crew - ${{ matrix.id }}
     needs: plan
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    timeout-minutes: 150
     strategy:
       fail-fast: false
       matrix:
@@ -45,16 +64,27 @@ jobs:
         with: { python-version: "3.12" }
       - run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg fonts-dejavu-core
       - run: pip install numpy==2.1.3 pillow==11.0.0
-      - run: python studio/produce.py "${{ matrix.id }}" --out output --threads 4
+      - name: Render
+        run: |
+          if [ "${{ needs.plan.outputs.engine }}" = "2" ]; then
+            python studio/produce2.py "${{ matrix.id }}" --manifest "${{ needs.plan.outputs.manifest }}" --out output
+          else
+            python studio/produce.py "${{ matrix.id }}" --out output --threads 4
+          fi
       - uses: actions/upload-artifact@v4
         with:
           name: video-${{ matrix.id }}
-          path: output/
+          path: |
+            output/*.mp4
+            output/*.jpg
+            output/*.json
+            output/*.txt
+            output/work/*/key_*.png
           retention-days: 30
 
   publish:
     name: QA Inspector and Publisher
-    needs: render
+    needs: [plan, render]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -65,17 +95,18 @@ jobs:
       - uses: actions/download-artifact@v4
         with: { path: output, pattern: "video-*", merge-multiple: true }
       - name: QA gate
-        run: python studio/qa.py output
+        run: python studio/qa.py output "${{ needs.plan.outputs.manifest }}"
       - name: Publish release
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          tag="calm-videos-${{ github.run_number }}"
+          tag="${{ needs.plan.outputs.batch }}-${{ github.run_number }}"
+          n=$(ls output/*.mp4 | wc -l)
           {
-            echo "Ten calm, original videos for TheCalmLittleWorld. Every one passed QA."
+            echo "$n original videos for TheCalmLittleWorld. Every one passed QA (length, loudness, flash check, safety review, no repeated scenes)."
             echo
             echo "For each video, download the .mp4, its .jpg thumbnail and its .txt (title, description with chapters, tags)."
             echo "In YouTube Studio set Audience to: Yes, it's made for kids."
           } > notes.md
-          gh release create "$tag" --target "${{ github.sha }}" --title "TheCalmLittleWorld - 10 calm videos (#${{ github.run_number }})" \
+          gh release create "$tag" --target "${{ github.sha }}" --title "TheCalmLittleWorld - ${{ needs.plan.outputs.batch }} (#${{ github.run_number }})" \
             --notes-file notes.md output/*.mp4 output/*.jpg output/*.txt output/qa_report.json

@@ -95,6 +95,89 @@ def ambience(kind, n, rng):
     return sig / (np.max(np.abs(sig)) + 1e-9)
 
 
+def _kick(rng):
+    t = np.arange(int(0.25 * SR)) / SR
+    return np.sin(2 * np.pi * (90 * np.exp(-t * 18) + 45) * t) * np.exp(-t / 0.09)
+
+
+def _shaker(rng):
+    n = int(0.07 * SR)
+    x = rng.standard_normal(n)
+    x = x - np.convolve(x, np.ones(8) / 8, mode="same")
+    return x * np.exp(-np.arange(n) / (0.018 * SR))
+
+
+def _clap(rng):
+    n = int(0.18 * SR)
+    x = rng.standard_normal(n)
+    x = np.convolve(x, np.ones(3) / 3, mode="same")
+    return x * np.exp(-np.arange(n) / (0.05 * SR))
+
+
+def compose_upbeat(seed, seconds, root=None, bpm=None, inst=None):
+    """Bright, bouncy and still gentle: light percussion, a walking bass, a busy friendly melody."""
+    rng = random.Random(seed)
+    nrng = np.random.default_rng(seed)
+    root = root if root is not None else rng.choice([55, 57, 59, 60, 62])
+    bpm = bpm or rng.choice([100, 104, 108, 112])
+    inst = inst or rng.choice(["marimba", "piano", "guitar", "bells", "music_box"])
+    prog = rng.choice(PROGRESSIONS)
+    beat = 60.0 / bpm
+    bar = beat * 4
+    n = int(seconds * SR)
+    mix_ = np.zeros(n + SR * 4)
+
+    def add(sig, at, g=1.0):
+        i = int(at * SR)
+        if i >= len(mix_):
+            return
+        sig = sig[:len(mix_) - i]
+        mix_[i:i + len(sig)] += sig * g
+
+    kick, shaker, clap = _kick(nrng), _shaker(nrng), _clap(nrng)
+    motif = [rng.choice(range(10)) for _ in range(8)]
+    t, k = 0.0, 0
+    while t < seconds:
+        degree = prog[k % len(prog)]
+        cr = root + MAJOR[degree]
+        third = root + MAJOR[(degree + 2) % 7] + (12 if (degree + 2) >= 7 else 0)
+        fifth = root + MAJOR[(degree + 4) % 7] + (12 if (degree + 4) >= 7 else 0)
+        add(pad([midi_hz(m) for m in (cr, third, fifth)], bar + 0.6) * 0.12, t)
+        intro = t < bar * 2
+        for b4 in range(4):
+            bt = t + b4 * beat
+            if not intro:
+                if b4 in (0, 2):
+                    add(kick, bt, 0.35)
+                if b4 in (1, 3):
+                    add(clap, bt, 0.06)
+                add(shaker, bt + beat / 2, 0.05)
+                add(shaker, bt, 0.03)
+            bass = [cr - 24, fifth - 24, cr - 12, fifth - 24][b4]
+            add(note(midi_hz(bass), beat * 0.9, "harp", 0.22, rng), bt)
+            if b4 in (1, 3):  # off-beat chord stab
+                for m in (cr, third, fifth):
+                    add(note(midi_hz(m), beat * 0.5, "piano", 0.05, rng), bt + beat / 2)
+        if k % 4 == 0:
+            motif = [m if rng.random() < 0.75 else rng.choice(range(10)) for m in motif]
+        if k % 8 not in (7,):
+            for j in range(8):
+                if rng.random() < 0.22:
+                    continue
+                step = motif[j]
+                midi = root + 12 + PENTA[step % 5] + 12 * (step // 5)
+                add(note(midi_hz(midi), beat * 0.5 + 0.6, inst, rng.uniform(0.13, 0.19), rng), t + j * beat / 2)
+        t += bar
+        k += 1
+    out = mix_[:n]
+    out = reverb(out, seconds=1.8, mix=0.18, seed=seed)
+    tt = np.arange(n) / SR
+    out *= np.minimum(1.0, tt / 2.0) * np.minimum(1.0, (seconds - tt) / 5.0).clip(0, 1)
+    out /= np.max(np.abs(out)) + 1e-9
+    out *= 0.5
+    return out, dict(root=root, bpm=bpm, instrument=inst, progression=prog, style="upbeat")
+
+
 def compose(seed, seconds, root=None, bpm=None, inst=None, amb=None):
     rng = random.Random(seed)
     nrng = np.random.default_rng(seed)

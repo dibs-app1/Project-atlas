@@ -34,6 +34,36 @@ In YouTube Studio set **Audience â†’ Yes, it's made for kids** and **Category â†
 
 Each vehicle type has its own settings: no landscape is shared between two vehicle types.
 
+## Batch 2: livelier, more detailed, more educational (engine 2)
+
+Batch 1 is calm and lullaby-paced. Batch 2 (`plan/batch2.json`, rendered by `produce2.py` with
+`engine2/`) is busier and more realistic:
+
+| # | Video | Scenes |
+|---|---|---|
+| 11 | Cars and Trucks | highway with traffic both ways, speed bumps (slow down, bounce, count), construction (excavator, dump truck tipping, cement mixer, flagger STOP/SLOW), city bus in the rain then a rainbow, garbage truck lifting bins, car carrier (count 6 cars), school bus stop arm (every car waits), car wash, snowplow spreading salt, taxi at red and green lights at night |
+| 12 | Boats | sailboat with jumping dolphins, container port with a working crane (count containers), river kayaks, speedboat with wake and spray past red and green buoys, rain rings on the lake and a rainbow, car ferry (count cars), trawler with gulls at sunset, paddle steamer, sailing race, night harbour |
+| 13 | Airplanes | ground crew at the gate (baggage train, fuel, catering lift, marshaller), pushback and taxi, take-off with landing gear folding up, climbing through clouds, jumbo jet above the clouds with contrails, rainy landing with tyre smoke, seaplane splashdown, de-icing in snow, farm flight, night cargo loading (count boxes) |
+| 14 | Trains | steam train with moving driving rods and smoke, bullet train under catenary wires, freight train counting 1 to 10, station stop (doors open, stand behind the yellow line), level crossing gates, mountain tunnel cutaway, red river bridge with boats below, snow plough train, elevated city metro, night sleeper |
+
+What engine 2 adds:
+- **Motion**: a camera that rides along with the vehicle; endless, never-repeating scenery generated in chunks;
+  parallax at five depths; traffic in both directions; birds and gulls; smooth physics for braking and accelerating.
+- **Detail**: spinning wheels, suspension bounce over speed bumps, dump beds, mixer drums, garbage arms, excavator
+  buckets, landing gear and flaps, propellers, paddle wheels, steam-engine rods, doors, stop arms, crossing gates.
+- **Weather**: rain (streaks, splashes, rings on water, darker sky) that can clear into a rainbow, snow, fog, drifting clouds.
+- **Water**: real moving waves that boats ride and tilt on, wakes, bow spray, dolphins, splashes.
+- **Sound**: upbeat original music plus sound effects timed to the picture: engine hum, clickety-clack, steam chuffs,
+  waves, rain, wind, bumps, splashes, whistles, station chimes, crossing bells, bus doors.
+- **Learning**: captions for safety rules and facts, and counting pop-ups (bumps, cars, containers, freight cars, bins, boxes).
+
+```bash
+python studio/manager.py --manifest studio/plan/batch2.json --out output/batch2     # all 4 videos
+python studio/produce2.py 14-trains-on-the-tracks --seconds 90 --out /tmp/preview   # quick preview
+```
+
+`studio/plan/ACTIVE` names the manifest the GitHub workflow renders on each push.
+
 ## The team (how the work is delegated)
 
 `studio/manager.py` is the Studio Manager. It never draws anything; it hands work to specialists and only
