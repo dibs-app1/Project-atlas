@@ -72,10 +72,14 @@ def wheel(r, style, angle, time):
             p.line([(c, c), (c + r * 0.84 * math.cos(a), c + r * 0.84 * math.sin(a))], (96, 30, 28), max(2, r * 0.1))
         p.circle(c, c, r * 0.22, (60, 60, 66))
     else:
-        p.circle(c, c, r, (44, 46, 54))
-        p.circle(c, c, r * 0.9, (58, 60, 68))
-        p.circle(c, c, r * 0.6, (196, 200, 208))
-        p.circle(c, c, r * 0.5, (168, 172, 182))
+        p.circle(c, c, r, (38, 40, 48))
+        for i in range(18):   # tyre tread blocks turn with the wheel
+            a = a0 + i * 2 * math.pi / 18
+            p.circle(c + r * 0.93 * math.cos(a), c + r * 0.93 * math.sin(a), r * 0.07, (28, 30, 36))
+        p.circle(c, c, r * 0.86, (58, 60, 68))
+        p.circle(c, c, r * 0.6, (214, 218, 226))
+        p.circle(c - r * 0.06, c - r * 0.06, r * 0.5, (176, 180, 190))
+        p.circle(c - r * 0.18, c - r * 0.2, r * 0.18, (236, 238, 244))   # shine on the rim
         for i in range(spokes):
             a = a0 + i * period
             x, y = c + r * 0.36 * math.cos(a), c + r * 0.36 * math.sin(a)
@@ -93,6 +97,8 @@ class Vehicle:
         self.k = k = SCALE
         wheels = [(cx * k, cy * k, r * k, st) for cx, cy, r, st in wheels]
         ground = ground * k
+        from .look import shade3d
+        body = shade3d(body)
         self.body, self.wheels, self.ground, self.time = body, wheels, ground, time
         self.glow = glow if time in GLOWING else None
         self.parts = parts
@@ -119,7 +125,7 @@ class Vehicle:
         ox, oy = x, ground_y - self.ground - lift
         if shadow:
             sh = _shadow(self.w)
-            frame.alpha_composite(sh, (int(x), int(ground_y - sh.height // 2)))
+            frame.alpha_composite(sh, (int(x - 20), int(ground_y - sh.height // 2)))
         if abs(tilt) > 0.05:
             w0, h0 = img.size
             img = img.rotate(tilt, resample=Image.BICUBIC, expand=True)
@@ -134,9 +140,10 @@ _SH = {}
 
 def _shadow(w):
     if w not in _SH:
-        p = BasePen(w, 24)
-        p.ellipse(4, 4, w - 4, 20, (20, 24, 30, 70))
-        _SH[w] = p.done()
+        from PIL import ImageFilter
+        p = BasePen(w + 40, 44)
+        p.ellipse(24, 12, w + 16, 34, (16, 20, 28, 110))
+        _SH[w] = p.done().filter(ImageFilter.GaussianBlur(6))
     return _SH[w]
 
 
@@ -194,7 +201,7 @@ def _lights(p, g, x, y, w, h, front=True):
         p.rect(x, y, x + w, y + h, (255, 244, 200), r=4)
         p.rect(x + 2, y + 2, x + w * 0.5, y + h * 0.5, (255, 255, 255), r=2)
         g.poly([(x + w, y - 6), (x + w + 220, y - 30), (x + w + 220, y + h + 60), (x + w, y + h + 6)],
-               (255, 232, 160, 70))
+               (255, 214, 120, 38))
     else:
         p.rect(x, y, x + w, y + h, (226, 72, 64), r=3)
         g.rect(x - 2, y - 2, x + w + 2, y + h + 2, (255, 90, 80, 110), r=4)

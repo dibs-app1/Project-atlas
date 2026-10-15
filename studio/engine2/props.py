@@ -95,7 +95,7 @@ def lamp(p, g, x, base, h=200):
     p.rect(x + 30, base - h - 14, x + 56, base - h - 4, (240, 230, 190), r=3)
     g.rect(x + 30, base - h - 14, x + 56, base - h - 4, (255, 236, 170, 255), r=3)
     g.poly([(x + 32, base - h - 4), (x + 54, base - h - 4), (x + 74, base - h + 40), (x + 12, base - h + 40)],
-           (255, 230, 160, 40))
+           (255, 214, 120, 26))
 
 
 def pole(p, x, base, h=240):

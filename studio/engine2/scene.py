@@ -70,6 +70,7 @@ class Scene2:
             x, _ = mover.at(i / FPS)
             cams.append(x - W * anchor + offset)
         self._cam = cams
+        self.focus_x = W * anchor - offset  # where the hero sits on screen (used to frame vertical Shorts)
 
     def cam(self, t):
         if self._cam is None:
@@ -173,11 +174,19 @@ class Scene2:
                 x, y = where(t)
                 al = smooth(a / 0.3) * (1 - smooth((a - 1.6) / 0.6))
                 f.alpha_composite(fade(img, al), (int(x - img.width / 2), int(y - img.height - 30 * a)))
+        if self.spec.get("no_captions"):    # Shorts draw their own big text instead
+            return self._grade(f)
         for t0, t1, img in self.captions:   # captions sit at the top, clear of the vehicles
             a = smooth((t - t0) / 0.8) * (1 - smooth((t - t1) / 0.8))
             if a > 0.01:
                 f.alpha_composite(fade(img, a), ((W - img.width) // 2, 34))
-        return f
+        return self._grade(f)
+
+    def _grade(self, f):
+        if self.spec.get("look", "rich") != "rich":
+            return f
+        from .look import grade
+        return grade(f, time=self.time).convert("RGBA")
 
 
 def _wake(frame, sx, wy, w, v, t, direction):

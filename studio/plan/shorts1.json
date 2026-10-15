@@ -1,0 +1,70 @@
+{
+  "channel": "TheCalmLittleWorld",
+  "batch": "shorts1",
+  "shorts": [
+    {
+      "id": "short-01-big-trucks",
+      "seed": 910001, "bpm": 120, "instrument": "marimba", "root": 60,
+      "hook": "WHICH TRUCK DO YOU LIKE BEST?",
+      "end": "Beep beep! Bye-bye!",
+      "title": "Big Trucks at Work! 🚛 Dump Truck, Garbage Truck & Snowplow for Kids #shorts",
+      "description": "Which truck do you like best? A dump truck tips its load, the garbage truck lifts the bin, a car bumps over a speed bump, bubbles at the car wash and a snowplow clears the road!\n\nWatch the full 10-minute Cars and Trucks video on TheCalmLittleWorld.\n\n#shorts #trucksforkids #garbagetruck #dumptruck #kidsvideos",
+      "tags": ["trucks for kids", "garbage truck", "dump truck", "snowplow", "shorts", "kids videos"],
+      "shots": [
+        {"scene": {"script": "construction", "time": "day", "vehicle": {"color": "red"}, "seed": 910101}, "t0": 22, "dur": 8, "cx": 760, "top": "UP GOES THE BED!", "text": "DUMP TRUCK!"},
+        {"scene": {"script": "garbage_day", "time": "day", "vehicle": {"color": "blue"}, "seed": 910102}, "t0": 6, "dur": 8, "cx": 760, "top": "UP GOES THE BIN!", "text": "GARBAGE TRUCK!"},
+        {"scene": {"script": "speed_bumps", "time": "golden", "vehicle": {"kind": "sedan", "color": "orange"}, "seed": 910103}, "t0": 5, "dur": 8, "cx": 860, "top": "SLOW DOWN...", "text": "BUMP! BUMP!"},
+        {"scene": {"script": "car_wash", "time": "morning", "vehicle": {"kind": "hatch", "color": "red"}, "seed": 910104}, "t0": 17, "dur": 8, "cx": 760, "top": "BUBBLES EVERYWHERE!", "text": "SCRUB-A-DUB!"},
+        {"scene": {"script": "snowplow", "time": "morning", "weather": "snow", "vehicle": {"color": "blue"}, "seed": 910105}, "t0": 8, "dur": 8, "cx": 1240, "top": "PUSH THE SNOW AWAY!", "text": "SNOWPLOW!"}
+      ]
+    },
+    {
+      "id": "short-02-dolphins-and-boats",
+      "seed": 910002, "bpm": 116, "instrument": "guitar", "root": 57,
+      "hook": "CAN YOU SPOT THE DOLPHIN?",
+      "end": "Splash! Bye-bye!",
+      "title": "Dolphins, Speedboats & Big Ships! ⛵ Boats for Kids #shorts",
+      "description": "Can you spot the dolphin? A sailboat with jumping dolphins, a zooming speedboat, a giant crane lifting containers, a sailing race and a ferry full of cars!\n\nWatch the full 10-minute Boats video on TheCalmLittleWorld.\n\n#shorts #boatsforkids #dolphins #ships #kidsvideos",
+      "tags": ["boats for kids", "dolphins", "speedboat", "container ship", "shorts", "kids videos"],
+      "shots": [
+        {"scene": {"script": "ocean_dolphins", "time": "golden", "vehicle": {"color": "blue"}, "seed": 910201}, "t0": 2, "dur": 8, "cx": 1240, "top": "JUMP, DOLPHIN, JUMP!", "text": "SPLASH!"},
+        {"scene": {"script": "speedboat_buoys", "time": "day", "vehicle": {"color": "red"}, "seed": 910202}, "t0": 8, "dur": 8, "cx": 900, "top": "SO FAST!", "text": "ZOOM ZOOM!"},
+        {"scene": {"script": "busy_port", "time": "morning", "vehicle": {"color": "red"}, "seed": 910203}, "t0": 3.5, "dur": 8, "cx": 1300, "top": "THE CRANE LIFTS IT UP!", "text": "BIG SHIP!"},
+        {"scene": {"script": "sail_race", "time": "golden", "vehicle": {"color": "red"}, "seed": 910204}, "t0": 20, "dur": 8, "cx": 760, "top": "WHO WILL WIN?", "text": "SAILING RACE!"},
+        {"scene": {"script": "car_ferry", "time": "morning", "vehicle": {"color": "teal"}, "seed": 910205}, "t0": 8, "dur": 8, "cx": 960, "top": "COUNT THE CARS!", "text": "CAR FERRY!"}
+      ]
+    },
+    {
+      "id": "short-03-take-off",
+      "seed": 910003, "bpm": 124, "instrument": "bells", "root": 62,
+      "hook": "READY FOR TAKE OFF?",
+      "end": "Zoom! Bye-bye!",
+      "title": "Ready for Take Off? ✈️ Airplanes for Kids #shorts",
+      "description": "Ready for take off? Faster and faster down the runway, wheels up, whoosh through the clouds, a splash landing on the lake and touchdown in the rain!\n\nWatch the full 10-minute Airplanes video on TheCalmLittleWorld.\n\n#shorts #airplanesforkids #airplane #takeoff #kidsvideos",
+      "tags": ["airplanes for kids", "airplane take off", "seaplane", "airport", "shorts", "kids videos"],
+      "shots": [
+        {"scene": {"script": "takeoff", "time": "golden", "vehicle": {"color": "red"}, "seed": 910301}, "t0": 13, "dur": 8.5, "cx": 980, "top": "WHEELS UP!", "text": "TAKE OFF!"},
+        {"scene": {"script": "cloud_climb", "time": "day", "vehicle": {"color": "blue"}, "seed": 910302}, "t0": 6, "dur": 8, "cx": 1000, "top": "UP, UP, UP!", "text": "WHOOSH!"},
+        {"scene": {"script": "airport_gate", "time": "morning", "vehicle": {"color": "teal"}, "seed": 910303}, "t0": 16, "dur": 8, "cx": 1000, "top": "LOAD THE BAGS!", "text": "AIRPORT!"},
+        {"scene": {"script": "seaplane", "time": "golden", "vehicle": {"color": "orange"}, "seed": 910304}, "t0": 10.5, "dur": 8, "cx": 900, "top": "LANDING ON WATER!", "text": "SPLASH!"},
+        {"scene": {"script": "rain_landing", "time": "day", "weather": "rain", "vehicle": {"color": "purple"}, "seed": 910305}, "t0": 12, "dur": 8, "cx": 1000, "top": "WHEELS DOWN!", "text": "TOUCHDOWN!"}
+      ]
+    },
+    {
+      "id": "short-04-count-the-trains",
+      "seed": 910004, "bpm": 118, "instrument": "piano", "root": 55,
+      "hook": "HOW MANY TRAIN CARS?",
+      "end": "Choo choo! Bye-bye!",
+      "title": "Count the Train Cars! 🚂 Trains for Kids #shorts",
+      "description": "How many train cars can you count? Then a puffing steam train, a super fast bullet train, waiting at the crossing gate and zooming into a tunnel!\n\nWatch the full 10-minute Trains video on TheCalmLittleWorld.\n\n#shorts #trainsforkids #steamtrain #counting #kidsvideos",
+      "tags": ["trains for kids", "steam train", "bullet train", "counting for kids", "shorts", "kids videos"],
+      "shots": [
+        {"scene": {"script": "freight_count", "time": "golden", "vehicle": {"color": "blue"}, "seed": 910401}, "t0": 18, "dur": 9, "cx": 960, "top": "COUNT WITH ME!", "text": "1, 2, 3..."},
+        {"scene": {"script": "steam_country", "time": "morning", "vehicle": {"color": "red"}, "seed": 910402}, "t0": 10, "dur": 8, "cx": 900, "top": "PUFF, PUFF!", "text": "CHOO CHOO!"},
+        {"scene": {"script": "bullet_train", "time": "day", "vehicle": {"color": "blue"}, "seed": 910403}, "t0": 12, "dur": 7, "cx": 820, "top": "SO SO FAST!", "text": "BULLET TRAIN!"},
+        {"scene": {"script": "level_crossing", "time": "day", "vehicle": {"color": "green"}, "seed": 910404}, "t0": 13, "dur": 8, "cx": 1240, "top": "WAIT AT THE GATE!", "text": "DING DING!"},
+        {"scene": {"script": "tunnel", "time": "golden", "vehicle": {"color": "orange"}, "seed": 910405}, "t0": 19, "dur": 8, "cx": 1000, "top": "INTO THE MOUNTAIN!", "text": "TUNNEL!"}
+      ]
+    }
+  ]
+}

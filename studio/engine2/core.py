@@ -16,6 +16,12 @@ M = 360            # overhang drawn on each side of a chunk so props never get c
 FPS = 24
 
 
+def _stable(*parts):
+    """Deterministic seed (Python's hash() of strings changes between runs)."""
+    import zlib
+    return zlib.crc32(repr(parts).encode())
+
+
 def smooth(u):
     u = max(0.0, min(1.0, u))
     return u * u * (3 - 2 * u)
@@ -47,9 +53,13 @@ class Layer:
         X0 = k * CW
         from .vehicles import Pen as KPen
         p, g = KPen(CW + 2 * M, self.h, self.zoom), KPen(CW + 2 * M, self.h, self.zoom)
-        rng = random.Random(hash((self.world.seed, self.name, k)) & 0xFFFFFFFF)
+        rng = random.Random(_stable(self.world.seed, self.name, k))
         self.draw(p, g, X0, X0 + CW, rng)
         img = light(p.done(), self.world.time)
+        from . import look
+        img = look.texture(img, _stable(self.world.seed, self.name, k, 1), amount=0.035)
+        if self.depth <= 0.1:   # distant hills are a touch soft, like real depth of field
+            img = img.filter(ImageFilter.GaussianBlur(1.4))
         if self.atmos:
             haze = Image.new("RGBA", img.size, TIMES[self.world.time][1] + (0,))
             haze.putalpha(img.getchannel("A").point(lambda a: int(a * self.atmos)))
@@ -89,7 +99,7 @@ class Weather:
                                      "rain_then_sun": 11}.get(self.kind, 5))
         grey = self.kind in ("rain", "snow", "rain_then_sun")
         self.clouds = []
-        from art import cloud
+        from .look import cloud
         for i in range(clouds):
             layer = i % 3
             scale = (0.7, 1.0, 1.4)[layer]
@@ -97,7 +107,7 @@ class Weather:
             col = (226, 230, 238) if grey else (255, 255, 255)
             if world.time in ("dusk", "night"):
                 col = (120, 126, 160) if world.time == "night" else (232, 196, 200)
-            img = light(cloud(rng, w, int(w * 0.45), col, 235), world.time)
+            img = light(cloud(rng, w, int(w * 0.5), col, 240), world.time)
             self.clouds.append((img, rng.uniform(-w, W + 400), rng.uniform(30, 330 - 60 * layer),
                                 (0.04, 0.08, 0.14)[layer], rng.uniform(0.6, 1.4)))
         self.drops = [(rng.uniform(0, W), rng.uniform(0, H), rng.uniform(0.75, 1.25)) for _ in range(360)]
@@ -226,6 +236,12 @@ class Water:
             yy = y + 5 * math.sin(t * 1.3 + ph)
             d.line([(x, yy), (x + ln * par * 1.5, yy)], fill=self.crest + (int(60 + 90 * v),), width=max(2, int(4 * v)))
         d.line(pts, fill=self.crest + (230,), width=4)
+        r = random.Random(int(t * 6))
+        for _ in range(60):   # sparkles where the light catches the waves
+            sx = r.uniform(0, W)
+            sy = self.height(sx + cam, t) + r.uniform(4, (H - self.top) * 0.8) * r.random() ** 2
+            ln = r.uniform(4, 14)
+            d.line([(sx - ln, sy), (sx + ln, sy)], fill=(255, 255, 255, r.randint(90, 200)), width=2)
         if self.rain is not None and self.rain(t) > 0.01:
             rl = self.rain(t)
             for i in range(int(45 * rl)):
@@ -299,7 +315,8 @@ class World:
         self.time = spec.get("time", "day")
         self.layers = []
         self.water = None
-        self.sky_img = sky_image(self.time, random.Random(self.seed), spec.get("weather", "clear"))
+        from . import look
+        self.sky_img = look.sky(self.time, spec.get("weather", "clear"), TIMES[self.time][3])
         self.weather = Weather(self, spec)
         self.ground_y = 900
 

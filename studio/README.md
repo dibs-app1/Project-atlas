@@ -64,6 +64,27 @@ python studio/produce2.py 14-trains-on-the-tracks --seconds 90 --out /tmp/previe
 
 `studio/plan/ACTIVE` names the manifest the GitHub workflow renders on each push.
 
+## The richer look (engine 2)
+
+`engine2/look.py` gives every engine-2 frame a richer, more 3D, more colourful finish:
+deep-blue gradient skies with a soft sun glow, shaded fluffy clouds, vehicles with lit tops, shaded
+undersides and a glossy highlight, tyres with tread and shiny rims, soft blurred shadows, fine texture
+on grass, roads and hills, slightly soft distant hills (depth), sparkles on the water, and a final
+colour grade (vibrance, gentle contrast, warm bloom, soft vignette).
+
+## YouTube Shorts
+
+`shorts.py` makes vertical 1080x1920 Shorts (about 40 seconds) from fresh engine-2 scenes:
+a hook question in the first second, five quick action shots framed vertically, big bold pop-in text,
+counting pop-ups, faster upbeat music with the scene sound effects, and a goodbye card.
+Plans live in `plan/shorts*.json`; `qa_shorts.py` checks size, length (< 60 s), loudness, peaks,
+flashing and safety. The **Shorts studio** workflow renders them and publishes a Release.
+
+```bash
+python studio/shorts.py --out output/shorts         # all Shorts in plan/shorts1.json
+python studio/qa_shorts.py output/shorts
+```
+
 ## The team (how the work is delegated)
 
 `studio/manager.py` is the Studio Manager. It never draws anything; it hands work to specialists and only
