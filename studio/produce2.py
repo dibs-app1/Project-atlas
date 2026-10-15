@@ -88,7 +88,7 @@ def render_scene(args):
     return spec["index"], time.time() - t0
 
 
-def render(vid, manifest, out_dir, total=600, workers=None, log=print):
+def render(vid, manifest, out_dir, total=600, workers=None, log=print, reuse=False):
     m, vi, video = load(manifest, vid)
     bi = m.get("batch_index", 1)
     out_dir = Path(out_dir)
@@ -107,8 +107,13 @@ def render(vid, manifest, out_dir, total=600, workers=None, log=print):
     workers = workers or os.cpu_count() or 2
     t0 = time.time()
     log(f"[{vid}] rendering {n} scenes of {L / FPS:.1f}s with {workers} workers")
+    def done(k):
+        return all((work / f).exists() for f in (f"scene_{k:02d}.mp4", f"sfx_{k:02d}.npy", f"key_{k:02d}.png"))
+    todo = [s for s in specs if not (reuse and done(s["index"]))]
+    if len(todo) < len(specs):
+        log(f"[{vid}] reusing {len(specs) - len(todo)} scenes already rendered")
     with ProcessPoolExecutor(max_workers=workers) as pool:
-        for k, secs in pool.map(render_scene, [(s, L, str(work)) for s in specs]):
+        for k, secs in pool.map(render_scene, [(s, L, str(work)) for s in todo]):
             log(f"[{vid}] scene {k + 1}/{n} done ({secs / 60:.1f} min)")
     # title and goodbye cards
     word = video["word"]
@@ -158,7 +163,7 @@ def render(vid, manifest, out_dir, total=600, workers=None, log=print):
     mp4 = out_dir / f"{vid}.mp4"
     cmd += ["-filter_complex", ";".join(chain), "-map", prev, "-map", f"{len(inputs)}:a",
             "-c:v", "libx264", "-preset", "medium", "-crf", "20", "-tune", "animation", "-pix_fmt", "yuv420p",
-            "-af", "loudnorm=I=-16:TP=-2:LRA=11", "-c:a", "aac", "-b:a", "192k", "-ar", "48000",
+            "-af", "loudnorm=I=-16:TP=-2:LRA=11,alimiter=limit=0.7:attack=2:release=60:level=false", "-c:a", "aac", "-b:a", "192k", "-ar", "48000",
             "-t", str(total), "-movflags", "+faststart", str(mp4)]
     subprocess.run(cmd, check=True)
     log(f"[{vid}] assembled in {(time.time() - t0) / 60:.1f} min total")
@@ -220,5 +225,6 @@ if __name__ == "__main__":
     ap.add_argument("--out", default=str(ROOT.parent / "output"))
     ap.add_argument("--seconds", type=float, default=600)
     ap.add_argument("--workers", type=int, default=None)
+    ap.add_argument("--reuse", action="store_true", help="keep scenes already rendered in the work folder")
     a = ap.parse_args()
-    render(a.video_id, a.manifest, a.out, a.seconds, a.workers)
+    render(a.video_id, a.manifest, a.out, a.seconds, a.workers, reuse=a.reuse)
