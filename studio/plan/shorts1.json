@@ -14,7 +14,7 @@
         {"scene": {"script": "construction", "time": "day", "vehicle": {"color": "red"}, "seed": 910101}, "t0": 22, "dur": 8, "cx": 760, "top": "UP GOES THE BED!", "text": "DUMP TRUCK!"},
         {"scene": {"script": "garbage_day", "time": "day", "vehicle": {"color": "blue"}, "seed": 910102}, "t0": 6, "dur": 8, "cx": 760, "top": "UP GOES THE BIN!", "text": "GARBAGE TRUCK!"},
         {"scene": {"script": "speed_bumps", "time": "golden", "vehicle": {"kind": "sedan", "color": "orange"}, "seed": 910103}, "t0": 5, "dur": 8, "cx": 860, "top": "SLOW DOWN...", "text": "BUMP! BUMP!"},
-        {"scene": {"script": "car_wash", "time": "morning", "vehicle": {"kind": "hatch", "color": "red"}, "seed": 910104}, "t0": 17, "dur": 8, "cx": 760, "top": "BUBBLES EVERYWHERE!", "text": "SCRUB-A-DUB!"},
+        {"scene": {"script": "car_wash", "time": "morning", "vehicle": {"kind": "hatch", "color": "red"}, "seed": 910104}, "t0": 26, "dur": 8, "cx": 600, "top": "BUBBLES EVERYWHERE!", "text": "SCRUB-A-DUB!"},
         {"scene": {"script": "snowplow", "time": "morning", "weather": "snow", "vehicle": {"color": "blue"}, "seed": 910105}, "t0": 8, "dur": 8, "cx": 1240, "top": "PUSH THE SNOW AWAY!", "text": "SNOWPLOW!"}
       ]
     },
