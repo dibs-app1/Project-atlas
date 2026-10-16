@@ -18,8 +18,9 @@ permissions:
   contents: write
 
 concurrency:
-  group: calm-videos-${{ github.ref }}
-  cancel-in-progress: true
+  # each batch runs to the end: a new push starts its own run and never cancels one that is rendering
+  group: calm-videos-${{ github.ref }}-${{ github.run_id }}
+  cancel-in-progress: false
 
 jobs:
   plan:
