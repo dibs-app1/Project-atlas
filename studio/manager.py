@@ -73,7 +73,9 @@ def producer_gate(m):
 
 def safety_gate(m):
     problems = []
-    if m.get("engine") == 3:
+    if m.get("engine") == 4:
+        from engine4.safety import review
+    elif m.get("engine") == 3:
         from engine3.safety import review
     elif m.get("engine") == 2:
         from engine2.safety import review
@@ -103,7 +105,7 @@ def continuity_gate(m, ledger):
 
 def crew(vid, out_dir, threads, manifest=None, engine=1):
     t0 = time.time()
-    if engine == 3:
+    if engine in (3, 4):          # engine 4: the scenes were rendered by Blender jobs; this assembles them
         from produce3 import render as render3
         render3(vid, manifest, out_dir, log=lambda msg: say("Crew", msg))
     elif engine == 2:

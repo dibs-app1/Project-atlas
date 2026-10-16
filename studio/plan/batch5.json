@@ -1,0 +1,396 @@
+{
+ "channel": "TheCalmLittleWorld",
+ "batch": "batch5",
+ "batch_index": 5,
+ "engine": 4,
+ "subject": "animals",
+ "count": 4,
+ "require": [
+  "animals"
+ ],
+ "target_seconds": 600,
+ "videos": [
+  {
+   "id": "23-birds",
+   "theme": "park",
+   "vehicle": "animals",
+   "word": "Birds",
+   "title": "Birds for Kids | Ducks, Ducklings, Parrots, Seagulls, Eagle & Penguins in 3D with Real Bird Sounds",
+   "hook": "Meet the birds! A mother duck and her ducklings, little songbirds in the park, seagulls over the beach, bright parrots in the jungle, an eagle over the lake, pigeons in the square, a robin in the snow and penguins on the ice.",
+   "learn": "Watch how birds fly, flap, glide, waddle and swim, see each one from three sides, and copy their sounds: quack, peep, tweet, coo and more.",
+   "song": {
+    "lead": "flute",
+    "root": 64,
+    "instrument": "harp"
+   },
+   "tags": [
+    "birds for kids",
+    "bird sounds",
+    "ducks for kids",
+    "penguins for kids",
+    "animal sounds for toddlers",
+    "3D animation for toddlers",
+    "educational video for kids"
+   ],
+   "scenes": [
+    {
+     "script": "ducks_pond",
+     "time": "morning",
+     "caption": "Ducks on the pond",
+     "noise": "quack",
+     "theme": "park"
+    },
+    {
+     "script": "ducklings_parade",
+     "time": "day",
+     "caption": "A mother duck and her ducklings",
+     "noise": "peep",
+     "theme": "park"
+    },
+    {
+     "script": "songbirds_park",
+     "time": "day",
+     "caption": "Little birds fly in the park",
+     "noise": "tweet",
+     "theme": "park"
+    },
+    {
+     "script": "seagulls_beach",
+     "time": "day",
+     "caption": "Seagulls over the beach",
+     "noise": "gull",
+     "theme": "beach"
+    },
+    {
+     "script": "parrots_jungle",
+     "time": "day",
+     "caption": "Colourful parrots",
+     "noise": "squawk",
+     "theme": "lagoon"
+    },
+    {
+     "script": "eagle_lake",
+     "time": "morning",
+     "caption": "An eagle flies over the lake",
+     "noise": "screech",
+     "theme": "forest"
+    },
+    {
+     "script": "pigeons_plaza",
+     "time": "day",
+     "caption": "Pigeons in the square",
+     "noise": "coo",
+     "theme": "park"
+    },
+    {
+     "script": "robin_snow",
+     "time": "snow",
+     "caption": "A robin in the snow",
+     "noise": "tweet",
+     "theme": "garden",
+     "weather": "snow"
+    },
+    {
+     "script": "penguins_ice",
+     "time": "overcast",
+     "caption": "Penguins on the ice",
+     "noise": "penguin",
+     "theme": "snowfield"
+    },
+    {
+     "script": "birds_sunset",
+     "time": "golden",
+     "caption": "Birds fly home at sunset",
+     "noise": "tweet",
+     "theme": "farmyard"
+    }
+   ]
+  },
+  {
+   "id": "24-dogs-and-cats",
+   "theme": "garden",
+   "vehicle": "animals",
+   "word": "Dogs and Cats",
+   "title": "Dogs and Cats for Kids | Puppies, Kittens & Friendly Pets in 3D with Real Woof and Meow Sounds",
+   "hook": "Meet the dogs and cats! A dog on a walk in the park, a puppy and a butterfly, a ginger cat in the garden, two kittens playing, a dog at the beach, a pug and a puppy, a cat on the garden wall, a dog in the snow, and two friends at sunset.",
+   "learn": "Watch how dogs and cats walk, trot, sniff and play, see each one from three sides, and copy their sounds: woof, yip, meow and mew.",
+   "song": {
+    "lead": "marimba",
+    "root": 62,
+    "instrument": "piano"
+   },
+   "tags": [
+    "dogs for kids",
+    "cats for kids",
+    "puppies",
+    "kittens",
+    "animal sounds for toddlers",
+    "3D animation for toddlers",
+    "educational video for kids"
+   ],
+   "scenes": [
+    {
+     "script": "dog_park_walk",
+     "time": "morning",
+     "caption": "A dog goes for a walk",
+     "noise": "woof",
+     "theme": "park"
+    },
+    {
+     "script": "puppy_butterfly",
+     "time": "day",
+     "caption": "A puppy and a butterfly",
+     "noise": "yip",
+     "theme": "garden"
+    },
+    {
+     "script": "ginger_cat_garden",
+     "time": "day",
+     "caption": "A ginger cat in the garden",
+     "noise": "meow",
+     "theme": "garden"
+    },
+    {
+     "script": "kittens_play",
+     "time": "day",
+     "caption": "Two little kittens",
+     "noise": "mew",
+     "theme": "garden"
+    },
+    {
+     "script": "black_dog_beach",
+     "time": "day",
+     "caption": "A dog at the beach",
+     "noise": "woof",
+     "theme": "beach"
+    },
+    {
+     "script": "pug_and_puppy",
+     "time": "day",
+     "caption": "A pug and a puppy",
+     "noise": "yip",
+     "theme": "park"
+    },
+    {
+     "script": "cat_on_wall",
+     "time": "golden",
+     "caption": "A cat on the garden wall",
+     "noise": "meow",
+     "theme": "garden"
+    },
+    {
+     "script": "dog_snow",
+     "time": "snow",
+     "caption": "A dog in the snow",
+     "noise": "woof",
+     "theme": "garden",
+     "weather": "snow"
+    },
+    {
+     "script": "cat_meadow_butterfly",
+     "time": "morning",
+     "caption": "A cat in the meadow",
+     "noise": "purr",
+     "theme": "farmyard"
+    },
+    {
+     "script": "friends_sunset",
+     "time": "golden",
+     "caption": "A dog and a cat are friends",
+     "noise": "meow",
+     "theme": "park"
+    }
+   ]
+  },
+  {
+   "id": "25-fish",
+   "theme": "reef",
+   "vehicle": "animals",
+   "word": "Under the Sea",
+   "title": "Fish for Kids | Clownfish, Dolphins, Whale, Sea Turtle & Crab Under the Sea in 3D with Real Sounds",
+   "hook": "Dive under the sea! Clownfish by the coral, blue tangs, a big school of fish, playful dolphins, a giant whale, a manta ray, a sea turtle, crabs on the sand, goldfish in a pond, and a parade on the reef.",
+   "learn": "Watch how fish swim with their tails and fins, how dolphins and whales swim up and down, see each sea animal from three sides, and hear the sounds of the sea.",
+   "song": {
+    "lead": "bells",
+    "root": 60,
+    "instrument": "marimba"
+   },
+   "tags": [
+    "fish for kids",
+    "under the sea",
+    "dolphins for kids",
+    "whale",
+    "sea animals for toddlers",
+    "3D animation for toddlers",
+    "educational video for kids"
+   ],
+   "scenes": [
+    {
+     "script": "reef_clownfish",
+     "time": "day",
+     "caption": "Clownfish by the coral",
+     "noise": "blub",
+     "theme": "reef"
+    },
+    {
+     "script": "reef_tangs",
+     "time": "day",
+     "caption": "Blue tang fish",
+     "noise": "blub",
+     "theme": "reef"
+    },
+    {
+     "script": "fish_school",
+     "time": "day",
+     "caption": "A big school of fish",
+     "noise": "blub",
+     "theme": "reef"
+    },
+    {
+     "script": "dolphins_play",
+     "time": "day",
+     "caption": "Dolphins swim and play",
+     "noise": "dolphin",
+     "theme": "reef"
+    },
+    {
+     "script": "whale_song",
+     "time": "day",
+     "caption": "A giant whale",
+     "noise": "whale",
+     "theme": "reef"
+    },
+    {
+     "script": "manta_glide",
+     "time": "day",
+     "caption": "A manta ray glides",
+     "noise": "blub",
+     "theme": "reef"
+    },
+    {
+     "script": "turtle_swim",
+     "time": "day",
+     "caption": "A sea turtle",
+     "noise": "splash_small",
+     "theme": "reef"
+    },
+    {
+     "script": "crab_sand",
+     "time": "day",
+     "caption": "Crabs on the sand",
+     "noise": "click_clack",
+     "theme": "reef"
+    },
+    {
+     "script": "goldfish_pond",
+     "time": "day",
+     "caption": "Goldfish in the pond",
+     "noise": "blub",
+     "theme": "pond"
+    },
+    {
+     "script": "reef_parade",
+     "time": "day",
+     "caption": "A parade on the reef",
+     "noise": "blub",
+     "theme": "reef"
+    }
+   ]
+  },
+  {
+   "id": "26-farm-animals",
+   "theme": "farmyard",
+   "vehicle": "animals",
+   "word": "Farm Animals",
+   "title": "Farm Animals for Kids | Cows, Horses, Pigs, Sheep, Goats & Chickens in 3D with Real Animal Sounds",
+   "hook": "A day on the farm! Cows in the meadow, a horse and a pony, pigs and piglets in the mud, sheep and lambs, goats, hens in the yard, a rooster in the morning, chicks following their mother, ducks on the farm pond, and everyone walking home at sunset.",
+   "learn": "Watch how farm animals walk, graze, peck and play, see each one from three sides, and copy their sounds: moo, neigh, oink, baa, maa, cluck and quack.",
+   "song": {
+    "lead": "whistle",
+    "root": 65,
+    "instrument": "guitar"
+   },
+   "tags": [
+    "farm animals for kids",
+    "animal sounds",
+    "cows for kids",
+    "horses for kids",
+    "animal sounds for toddlers",
+    "3D animation for toddlers",
+    "educational video for kids"
+   ],
+   "scenes": [
+    {
+     "script": "cows_meadow",
+     "time": "morning",
+     "caption": "Cows in the meadow",
+     "noise": "moo",
+     "theme": "farmyard"
+    },
+    {
+     "script": "horse_pony",
+     "time": "day",
+     "caption": "A horse and a pony",
+     "noise": "neigh",
+     "theme": "farmyard"
+    },
+    {
+     "script": "pigs_mud",
+     "time": "day",
+     "caption": "Pigs and piglets",
+     "noise": "oink",
+     "theme": "farmyard"
+    },
+    {
+     "script": "sheep_lambs",
+     "time": "day",
+     "caption": "Sheep and little lambs",
+     "noise": "baa",
+     "theme": "farmyard"
+    },
+    {
+     "script": "goats_hill",
+     "time": "day",
+     "caption": "Goats on the hill",
+     "noise": "maa",
+     "theme": "farmyard"
+    },
+    {
+     "script": "hens_yard",
+     "time": "day",
+     "caption": "Hens in the farmyard",
+     "noise": "cluck",
+     "theme": "farmyard"
+    },
+    {
+     "script": "rooster_morning",
+     "time": "morning",
+     "caption": "The rooster says good morning",
+     "noise": "rooster",
+     "theme": "farmyard"
+    },
+    {
+     "script": "chicks_follow",
+     "time": "day",
+     "caption": "Little chicks follow the hen",
+     "noise": "peep",
+     "theme": "farmyard"
+    },
+    {
+     "script": "ducks_farm_pond",
+     "time": "golden",
+     "caption": "Ducks on the farm pond",
+     "noise": "quack",
+     "theme": "farmyard"
+    },
+    {
+     "script": "barn_sunset",
+     "time": "golden",
+     "caption": "Everyone walks home",
+     "noise": "moo",
+     "theme": "farmyard"
+    }
+   ]
+  }
+ ]
+}

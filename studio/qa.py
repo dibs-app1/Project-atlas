@@ -68,7 +68,10 @@ def check_video(out_dir, meta, target):
     check("no_loud_peaks", peak <= -1.0, f"peak {peak} dBFS")
     jump, frames = flash_scan(mp4)
     check("no_flashing", jump <= 12.0, f"max brightness change between frames {jump:.1f}/255 over {frames} frames")
-    if meta.get("engine") == 3:
+    if meta.get("engine") == 4:
+        from engine4.safety import review as review4
+        issues = [f"scene {i + 1}: {p}" for i, s in enumerate(meta["scenes"]) for p in review4(s)]
+    elif meta.get("engine") == 3:
         from engine3.safety import review as review3
         issues = [f"scene {i + 1}: {p}" for i, s in enumerate(meta["scenes"]) for p in review3(s)]
     elif meta.get("engine") == 2:

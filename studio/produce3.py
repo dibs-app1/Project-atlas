@@ -95,6 +95,8 @@ def render(vid, manifest, out_dir, total=600, workers=None, log=print, reuse=Fal
     def done(k):
         return all((work / f).exists() for f in (f"scene_{k:02d}.mp4", f"sfx_{k:02d}.npy", f"key_{k:02d}.png"))
     todo = [s for s in specs if not (reuse and done(s["index"]))]
+    if m.get("engine") == 4 and todo:      # engine-4 scenes come from the Blender jobs; nothing to render here
+        raise SystemExit(f"[{vid}] missing Blender scenes: {[s['index'] for s in todo]}")
     with ProcessPoolExecutor(max_workers=workers) as pool:
         for k, secs in pool.map(render_scene, [(s, L, str(work)) for s in todo]):
             log(f"[{vid}] scene {k + 1}/{n} done ({secs / 60:.1f} min)")
@@ -171,8 +173,8 @@ def render(vid, manifest, out_dir, total=600, workers=None, log=print, reuse=Fal
     th.save(thumb, quality=92)
     chapter_starts = [starts[k + 1] / FPS + XF / FPS for k in range(n)] + [starts[-1] / FPS + XF / FPS]
     meta = {
-        "id": vid, "engine": 3, "file": mp4.name, "thumbnail": thumb.name, "title": video["title"],
-        "description": description(video, chapter_starts, int(total)),
+        "id": vid, "engine": m.get("engine", 3), "file": mp4.name, "thumbnail": thumb.name, "title": video["title"],
+        "description": description(video, chapter_starts, int(total), m.get("subject", "vehicles")),
         "tags": video["tags"], "categoryId": "27", "madeForKids": True, "privacyStatus": "private",
         "scenes": specs, "music": {"style": "song without words", "lead": video["song"].get("lead", "whistle"),
                                    "root": sng.root, "bpm": round(60 / (bar / 4), 2)},
@@ -184,7 +186,7 @@ def render(vid, manifest, out_dir, total=600, workers=None, log=print, reuse=Fal
     return meta
 
 
-def description(video, chapter_starts, total):
+def description(video, chapter_starts, total, subject="vehicles"):
     def stamp(s):
         s = int(s)
         return f"{s // 60}:{s % 60:02d}"
@@ -193,16 +195,24 @@ def description(video, chapter_starts, total):
         lines.append(f"{stamp(st)} {sc['caption']}")
     lines.append(f"{stamp(chapter_starts[-1])} Bye-bye!")
     tags = " ".join("#" + t.replace(" ", "") for t in video["tags"][:3])
+    about = None
+    if subject == "animals":
+        about = (f"About {total // 60} minutes of gentle 3D animation with real animated animals. Every animal is shown from "
+                 "three different angles (from the side, from the front, from close to the ground and from above), so "
+                 "children can see what it really looks like and how it moves. Real animal sounds, a happy song without "
+                 "words, and an animal sound to copy in every song. Calm, friendly animals only. No flashing and nothing "
+                 "scary. Original animation, music and sound effects made for TheCalmLittleWorld; animal and nature models "
+                 "by Quaternius and other OpenGameArt artists (CC0), skies by Poly Haven (CC0).")
     return "\n".join([
         video["hook"],
         "",
         video["learn"],
         "",
-        f"About {total // 60} minutes of colourful 3D animation. Every vehicle is shown from three different angles "
-        "(from the side, from the front, from above, from behind, and from the driver's seat), so children can see "
-        "what it really looks like. Real engine sounds, a happy song without words, and a fun vehicle noise in every "
-        "song. Every driver, pilot and captain follows the safety rules. No flashing and nothing scary. Original "
-        "animation, music and sound effects, made for TheCalmLittleWorld.",
+        about or (f"About {total // 60} minutes of colourful 3D animation. Every vehicle is shown from three different "
+                  "angles (from the side, from the front, from above, from behind, and from the driver's seat), so children "
+                  "can see what it really looks like. Real engine sounds, a happy song without words, and a fun vehicle noise "
+                  "in every song. Every driver, pilot and captain follows the safety rules. No flashing and nothing scary. "
+                  "Original animation, music and sound effects, made for TheCalmLittleWorld."),
         "",
         "Chapters:",
         *lines,

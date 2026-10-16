@@ -30,6 +30,7 @@ jobs:
       manifest: ${{ steps.ids.outputs.manifest }}
       engine: ${{ steps.ids.outputs.engine }}
       batch: ${{ steps.ids.outputs.batch }}
+      scenes: ${{ steps.ids.outputs.scenes }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -46,12 +47,47 @@ jobs:
           print("ids=" + json.dumps([v["id"] for v in m["videos"]]))
           print("engine=" + str(m.get("engine", 1)))
           print("batch=" + m.get("batch", "batch1"))
+          sc = [{"id": v["id"], "k": k} for v in m["videos"] for k in range(len(v["scenes"]))]
+          print("scenes=" + json.dumps(sc if m.get("engine", 1) == 4 else [{"id": "none", "k": 0}]))
           PY
       - run: python studio/manager.py --plan-only --manifest "${{ steps.ids.outputs.manifest }}"
 
+  scenes:
+    # engine 4: every scene is rendered by Blender (EEVEE, CPU) on its own runner, about 1.5 hours each
+    name: Scene ${{ matrix.s.k }} - ${{ matrix.s.id }}
+    needs: plan
+    if: needs.plan.outputs.engine == '4'
+    runs-on: ubuntu-latest
+    timeout-minutes: 340
+    strategy:
+      fail-fast: false
+      max-parallel: 20
+      matrix:
+        s: ${{ fromJson(needs.plan.outputs.scenes) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.13" }
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg libegl1 libegl-mesa0 libgl1-mesa-dri libgles2 fonts-dejavu-core
+      - run: pip install bpy==5.2.2 numpy pillow
+      - name: Render the scene in Blender
+        run: |
+          python studio/engine4/render4.py --manifest "${{ needs.plan.outputs.manifest }}" --video "${{ matrix.s.id }}" \
+            --scene ${{ matrix.s.k }} --out "output/work/${{ matrix.s.id }}" --res 1280 --samples 2
+      - uses: actions/upload-artifact@v4
+        with:
+          name: scene-${{ matrix.s.id }}-${{ matrix.s.k }}
+          path: |
+            output/work/${{ matrix.s.id }}/scene_*.mp4
+            output/work/${{ matrix.s.id }}/sfx_*.npy
+            output/work/${{ matrix.s.id }}/key_*.png
+            output/work/${{ matrix.s.id }}/thumb_*.png
+          retention-days: 7
+
   render:
     name: Crew - ${{ matrix.id }}
-    needs: plan
+    needs: [plan, scenes]
+    if: ${{ !cancelled() && needs.plan.result == 'success' }}
     runs-on: ubuntu-latest
     timeout-minutes: 150
     strategy:
@@ -71,9 +107,16 @@ jobs:
             # fail fast (before any rendering) if the singer can't sing
             python -c "import sys; sys.path.insert(0, 'studio'); import singer, pyworld; print(singer.ensure_voice()); print(len(singer.sing_word('hello', ((67, 0.5),))))"
           fi
+      - name: Collect the Blender scenes (engine 4)
+        if: needs.plan.outputs.engine == '4'
+        uses: actions/download-artifact@v4
+        with: { path: "output/work/${{ matrix.id }}", pattern: "scene-${{ matrix.id }}-*", merge-multiple: true }
       - name: Render
         run: |
-          if [ "${{ needs.plan.outputs.engine }}" = "3" ]; then
+          if [ "${{ needs.plan.outputs.engine }}" = "4" ]; then
+            ls output/work/${{ matrix.id }}
+            python studio/produce3.py "${{ matrix.id }}" --manifest "${{ needs.plan.outputs.manifest }}" --out output --reuse
+          elif [ "${{ needs.plan.outputs.engine }}" = "3" ]; then
             python studio/produce3.py "${{ matrix.id }}" --manifest "${{ needs.plan.outputs.manifest }}" --out output
           elif [ "${{ needs.plan.outputs.engine }}" = "2" ]; then
             python studio/produce2.py "${{ matrix.id }}" --manifest "${{ needs.plan.outputs.manifest }}" --out output
@@ -94,6 +137,7 @@ jobs:
   publish:
     name: QA Inspector and Publisher
     needs: [plan, render]
+    if: ${{ !cancelled() && needs.render.result == 'success' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
