@@ -90,6 +90,38 @@ pip install piper-tts pyworld          # only for "voice": "sung" (an experiment
 python studio/produce2.py 15-cars-and-trucks-song --manifest studio/plan/batch3.json --out output
 ```
 
+## Batch 4: mixed vehicles in 3D, seen from every side (engine 3)
+
+Batch 4 (`plan/batch4.json`, rendered by `produce3.py` with `engine3/`) has four themed videos. Each one mixes
+many kinds of vehicles in a single setting:
+
+| # | Video | Setting | Vehicles |
+|---|---|---|---|
+| 19 | By the Sea | seaside town, coast road, beach, harbour, lighthouse | car, coastal train, sailboat, speedboat, bus, fishing boat, seaplane, ferry, helicopter, pickup |
+| 20 | Busy City | avenue with a tram line, tall buildings, river; lights at night | bus, taxi, tram, garbage truck, fire truck, cement mixer, river boat, airliner, helicopter, car at night |
+| 21 | On the Farm | fields, dirt road, barns and silos, railway, river, grass airstrip | two tractors, steam train, pickup, small plane, milk tanker, canal boat, freight train, family car, landing plane |
+| 22 | Snowy Mountains | snowy road with snowbanks, mountain railway, lake, cable car, helipad | snowplow, electric train, log truck, helicopter, lake ferry, cable car, SUV in the snow, ski plane, bus, evening train |
+
+Engine 3 is a small software 3D renderer (`engine3/r3d.py`). Every vehicle is a 3D model built to scale
+(`engine3/models.py`), so its anatomy is right from every side: airliners have swept wings with the engines
+underneath and a tail fin and tailplane; small planes have a high wing on struts; trains always run engine-first
+with the locomotive facing where it is going, and the steam engine has its coal tender behind the cab.
+
+Each vehicle is filmed from **three camera angles** that dissolve into each other (`engine3/stage.py`): from the
+side, coming towards us and passing, following behind, from straight above, circling around it, from the
+driver's or pilot's seat (with a dashboard, cab window or instrument panel), from low down, or from a drone.
+The pictures have sunlight and soft shadows, haze in the distance, clouds, waves on the water, puffs of steam,
+dust and spray.
+
+Sound (`engine3/sfx3.py`): every vehicle is a sound source in 3D, louder when it comes close and dropping in
+pitch as it passes (Doppler); each has its own engine character, plus ambience (waves and gulls, city hum, farm
+birds, mountain wind). Music: an original song **without words** in every video (whistle, marimba, bells or
+flute), and the band pauses for a vehicle noise in each song round.
+
+```bash
+python studio/produce3.py 19-seaside-town --manifest studio/plan/batch4.json --out output
+```
+
 ## The richer look (engine 2)
 
 `engine2/look.py` gives every engine-2 frame a richer, more 3D, more colourful finish:

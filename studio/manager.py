@@ -73,7 +73,9 @@ def producer_gate(m):
 
 def safety_gate(m):
     problems = []
-    if m.get("engine") == 2:
+    if m.get("engine") == 3:
+        from engine3.safety import review
+    elif m.get("engine") == 2:
         from engine2.safety import review
     else:
         review = safety_review
@@ -101,7 +103,10 @@ def continuity_gate(m, ledger):
 
 def crew(vid, out_dir, threads, manifest=None, engine=1):
     t0 = time.time()
-    if engine == 2:
+    if engine == 3:
+        from produce3 import render as render3
+        render3(vid, manifest, out_dir, log=lambda msg: say("Crew", msg))
+    elif engine == 2:
         from produce2 import render as render2
         render2(vid, manifest, out_dir, log=lambda msg: say("Crew", msg))
     else:
@@ -140,10 +145,10 @@ def main():
     out_dir = Path(a.out)
     out_dir.mkdir(parents=True, exist_ok=True)
     t0 = time.time()
-    if engine == 2:  # each engine-2 video already spreads its scenes over every core
+    if engine >= 2:  # each engine-2/3 video already spreads its scenes over every core
         for vid in ids:
             say("Manager", f"Scene crews: please make {vid}")
-            _, secs = crew(vid, str(out_dir), a.threads, a.manifest, 2)
+            _, secs = crew(vid, str(out_dir), a.threads, a.manifest, engine)
             say("Manager", f"received {vid} ({secs / 60:.1f} min). Sending to QA.")
     else:
         say("Manager", f"Assigning {len(ids)} videos to {a.crews} crews.")

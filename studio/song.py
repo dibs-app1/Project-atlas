@@ -183,8 +183,9 @@ class Song:
         choir = singer.sing(events_choir, seconds, voices=3, seed=self.seed + 1)
         return 0.85 * solo + 0.7 * choir
 
-    def lead(self, plans, scene_starts, seconds):
-        """The tune of every sung line, played by a warm, rounded whistle with a soft glockenspiel sparkle."""
+    def lead(self, plans, scene_starts, seconds, inst="whistle"):
+        """The tune of every line, played by an instrument (default: a warm whistle) with a glockenspiel sparkle
+        on the chorus. inst: whistle, marimba, bells, flute, piano, guitar."""
         n = int(seconds * SR)
         out = np.zeros(n + SR * 2)
         rng = np.random.default_rng(self.seed + 5)
@@ -194,7 +195,11 @@ class Song:
                 for w in ln["words"]:
                     at = st + w["t"]
                     for m, d in w["notes"]:
-                        sig = _whistle(midi_hz(m), d * 0.94, rng)
+                        if inst == "whistle":
+                            sig = _whistle(midi_hz(m), d * 0.94, rng)
+                        else:
+                            sig = note(midi_hz(m), max(0.18, d * 0.94) + (0.25 if inst != "flute" else 0.1), inst, 0.9,
+                                       random.Random(int(at * 1000)))
                         if chorus:   # chorus and echoes: a glockenspiel an octave up joins in
                             g = _glock(midi_hz(m + 12), d)[: len(sig)]
                             sig = sig.copy()

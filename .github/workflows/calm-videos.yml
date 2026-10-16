@@ -73,7 +73,9 @@ jobs:
           fi
       - name: Render
         run: |
-          if [ "${{ needs.plan.outputs.engine }}" = "2" ]; then
+          if [ "${{ needs.plan.outputs.engine }}" = "3" ]; then
+            python studio/produce3.py "${{ matrix.id }}" --manifest "${{ needs.plan.outputs.manifest }}" --out output
+          elif [ "${{ needs.plan.outputs.engine }}" = "2" ]; then
             python studio/produce2.py "${{ matrix.id }}" --manifest "${{ needs.plan.outputs.manifest }}" --out output
           else
             python studio/produce.py "${{ matrix.id }}" --out output --threads 4

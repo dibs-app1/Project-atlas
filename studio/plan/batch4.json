@@ -1,0 +1,516 @@
+{
+ "channel": "TheCalmLittleWorld",
+ "batch": "batch4",
+ "batch_index": 4,
+ "engine": 3,
+ "count": 4,
+ "require": [
+  "mixed"
+ ],
+ "target_seconds": 600,
+ "videos": [
+  {
+   "id": "19-seaside-town",
+   "theme": "seaside",
+   "vehicle": "mixed",
+   "word": "By the Sea",
+   "title": "Vehicles by the Sea for Kids | Boats, Train, Seaplane, Helicopter & Bus in 3D with Real Sounds",
+   "hook": "A sunny day in a seaside town: a sailboat, a speedboat, a fishing boat and a big ferry on the sea, a coastal train, a seaplane landing on the water, a helicopter, a bus and cars on the coast road.",
+   "learn": "See every vehicle from three sides (from the side, from the front, from above, from behind and from the driver's seat) and hear the sounds they really make.",
+   "song": {
+    "lead": "whistle",
+    "root": 60,
+    "instrument": "marimba"
+   },
+   "tags": [
+    "vehicles for kids",
+    "boats for kids",
+    "trains for kids",
+    "seaplane",
+    "3D animation for toddlers",
+    "real vehicle sounds",
+    "educational video for kids"
+   ],
+   "scenes": [
+    {
+     "script": "sea_car_coast",
+     "time": "morning",
+     "caption": "A red car on the coast road",
+     "noise": "car_horn",
+     "vehicle": {
+      "type": "car",
+      "color": "red"
+     }
+    },
+    {
+     "script": "sea_coastal_train",
+     "time": "day",
+     "caption": "The train by the sea",
+     "noise": "diesel_horn",
+     "vehicle": {
+      "type": "train",
+      "color": "blue"
+     }
+    },
+    {
+     "script": "sea_sailboat",
+     "time": "day",
+     "caption": "A sailboat in the wind",
+     "noise": "splash",
+     "vehicle": {
+      "type": "boat",
+      "color": "navy"
+     }
+    },
+    {
+     "script": "sea_speedboat",
+     "time": "day",
+     "caption": "A fast speedboat",
+     "noise": "outboard",
+     "vehicle": {
+      "type": "boat",
+      "color": "red"
+     }
+    },
+    {
+     "script": "sea_bus",
+     "time": "day",
+     "caption": "The seaside bus",
+     "noise": "bus_horn",
+     "vehicle": {
+      "type": "bus",
+      "color": "yellow"
+     }
+    },
+    {
+     "script": "sea_fishing_boat",
+     "time": "golden",
+     "caption": "A fishing boat comes home",
+     "noise": "tug_toot",
+     "vehicle": {
+      "type": "boat",
+      "color": "red"
+     }
+    },
+    {
+     "script": "sea_seaplane",
+     "time": "day",
+     "caption": "A seaplane lands on the water",
+     "noise": "prop_buzz",
+     "vehicle": {
+      "type": "plane",
+      "color": "yellow"
+     }
+    },
+    {
+     "script": "sea_ferry",
+     "time": "morning",
+     "caption": "The big ferry",
+     "noise": "ship_horn",
+     "vehicle": {
+      "type": "boat",
+      "color": "blue"
+     }
+    },
+    {
+     "script": "sea_helicopter",
+     "time": "day",
+     "caption": "A helicopter along the coast",
+     "noise": "heli_whop",
+     "vehicle": {
+      "type": "helicopter",
+      "color": "red"
+     }
+    },
+    {
+     "script": "sea_pickup",
+     "time": "golden",
+     "caption": "A pickup truck at sunset",
+     "noise": "car_horn",
+     "vehicle": {
+      "type": "car",
+      "color": "teal"
+     }
+    }
+   ]
+  },
+  {
+   "id": "20-busy-city",
+   "theme": "city",
+   "vehicle": "mixed",
+   "word": "Busy City",
+   "title": "Vehicles in the Busy City for Kids | Bus, Tram, Fire Truck, Airplane & Helicopter in 3D",
+   "hook": "A busy day in the city: a red bus, a yellow taxi, a tram down the middle of the street, a garbage truck, a fire truck, a cement mixer, a river boat, an airplane, a helicopter, and the city lights at night.",
+   "learn": "See each vehicle from three sides, from the driver's seat and from above, and learn that trams run on rails and every car keeps to its own lane.",
+   "song": {
+    "lead": "marimba",
+    "root": 62,
+    "instrument": "piano"
+   },
+   "tags": [
+    "city vehicles for kids",
+    "bus for kids",
+    "tram",
+    "fire truck",
+    "garbage truck",
+    "3D animation for toddlers",
+    "real vehicle sounds"
+   ],
+   "scenes": [
+    {
+     "script": "city_bus",
+     "time": "morning",
+     "caption": "The red city bus",
+     "noise": "bus_horn",
+     "vehicle": {
+      "type": "bus",
+      "color": "red"
+     }
+    },
+    {
+     "script": "city_taxi",
+     "time": "day",
+     "caption": "A yellow taxi",
+     "noise": "car_horn",
+     "vehicle": {
+      "type": "car",
+      "color": "yellow"
+     }
+    },
+    {
+     "script": "city_tram",
+     "time": "day",
+     "caption": "The tram on its rails",
+     "noise": "tram_bell",
+     "vehicle": {
+      "type": "train",
+      "color": "red"
+     }
+    },
+    {
+     "script": "city_garbage",
+     "time": "morning",
+     "caption": "The garbage truck",
+     "noise": "reverse",
+     "vehicle": {
+      "type": "truck",
+      "color": "green"
+     }
+    },
+    {
+     "script": "city_fire_truck",
+     "time": "day",
+     "caption": "A big fire truck",
+     "noise": "truck_horn",
+     "vehicle": {
+      "type": "truck",
+      "color": "red"
+     }
+    },
+    {
+     "script": "city_mixer",
+     "time": "day",
+     "caption": "A cement mixer truck",
+     "noise": "truck_horn",
+     "vehicle": {
+      "type": "truck",
+      "color": "orange"
+     }
+    },
+    {
+     "script": "city_river_boat",
+     "time": "golden",
+     "caption": "A river boat in the city",
+     "noise": "ship_horn",
+     "vehicle": {
+      "type": "boat",
+      "color": "blue"
+     }
+    },
+    {
+     "script": "city_airliner",
+     "time": "day",
+     "caption": "An airplane over the city",
+     "noise": "jet_zoom",
+     "vehicle": {
+      "type": "plane",
+      "color": "blue"
+     }
+    },
+    {
+     "script": "city_helicopter",
+     "time": "day",
+     "caption": "A helicopter over the street",
+     "noise": "heli_whop",
+     "vehicle": {
+      "type": "helicopter",
+      "color": "blue"
+     }
+    },
+    {
+     "script": "city_night_car",
+     "time": "night",
+     "caption": "City lights at night",
+     "noise": "car_horn",
+     "vehicle": {
+      "type": "car",
+      "color": "white"
+     }
+    }
+   ]
+  },
+  {
+   "id": "21-countryside-farm",
+   "theme": "farm",
+   "vehicle": "mixed",
+   "word": "On the Farm",
+   "title": "Vehicles on the Farm for Kids | Tractor, Steam Train, Small Plane & Trucks in 3D with Real Sounds",
+   "hook": "A day in the countryside: a green tractor, a steam train with puffs of smoke, a pickup on the dirt road, a little plane over the fields, a milk tanker, a canal boat, a long freight train, and a small plane landing on the grass strip.",
+   "learn": "See each vehicle from three sides, count the freight cars, and watch the steam train's chimney puff.",
+   "song": {
+    "lead": "bells",
+    "root": 65,
+    "instrument": "guitar"
+   },
+   "tags": [
+    "tractor for kids",
+    "farm vehicles for kids",
+    "steam train",
+    "small airplane",
+    "trucks for kids",
+    "3D animation for toddlers",
+    "real vehicle sounds"
+   ],
+   "scenes": [
+    {
+     "script": "farm_tractor",
+     "time": "morning",
+     "caption": "A green tractor",
+     "noise": "tractor_putt",
+     "vehicle": {
+      "type": "tractor",
+      "color": "green"
+     }
+    },
+    {
+     "script": "farm_steam_train",
+     "time": "day",
+     "caption": "A steam train",
+     "noise": "steam_whistle",
+     "vehicle": {
+      "type": "train",
+      "color": "green"
+     }
+    },
+    {
+     "script": "farm_pickup",
+     "time": "day",
+     "caption": "A pickup on the dirt road",
+     "noise": "car_horn",
+     "vehicle": {
+      "type": "car",
+      "color": "red"
+     }
+    },
+    {
+     "script": "farm_small_plane",
+     "time": "day",
+     "caption": "A little plane over the fields",
+     "noise": "prop_buzz",
+     "vehicle": {
+      "type": "plane",
+      "color": "red"
+     }
+    },
+    {
+     "script": "farm_milk_tanker",
+     "time": "morning",
+     "caption": "The milk tanker",
+     "noise": "truck_horn",
+     "vehicle": {
+      "type": "truck",
+      "color": "white"
+     }
+    },
+    {
+     "script": "farm_canal_boat",
+     "time": "day",
+     "caption": "A canal boat on the river",
+     "noise": "tug_toot",
+     "vehicle": {
+      "type": "boat",
+      "color": "green"
+     }
+    },
+    {
+     "script": "farm_freight_train",
+     "time": "golden",
+     "caption": "A long freight train",
+     "noise": "diesel_horn",
+     "vehicle": {
+      "type": "train",
+      "color": "orange"
+     }
+    },
+    {
+     "script": "farm_tractor_hay",
+     "time": "golden",
+     "caption": "A red tractor at sunset",
+     "noise": "tractor_putt",
+     "vehicle": {
+      "type": "tractor",
+      "color": "red"
+     }
+    },
+    {
+     "script": "farm_family_car",
+     "time": "day",
+     "caption": "A drive in the country",
+     "noise": "car_horn",
+     "vehicle": {
+      "type": "car",
+      "color": "blue"
+     }
+    },
+    {
+     "script": "farm_plane_landing",
+     "time": "golden",
+     "caption": "A plane lands on the grass strip",
+     "noise": "prop_buzz",
+     "vehicle": {
+      "type": "plane",
+      "color": "blue"
+     }
+    }
+   ]
+  },
+  {
+   "id": "22-snowy-mountains",
+   "theme": "mountains",
+   "vehicle": "mixed",
+   "word": "Snowy Mountains",
+   "title": "Vehicles in the Snowy Mountains for Kids | Snowplow, Train, Helicopter, Cable Car & Ski Plane in 3D",
+   "hook": "A snowy day in the mountains: a snowplow clearing the road, an electric train, a log truck, a helicopter landing on its helipad, a lake ferry, a cable car, an SUV in the snowfall, a plane on skis, a bus and an evening train.",
+   "learn": "See each vehicle from three sides and from the driver's seat, and find out how a snowplow, a cable car and a plane with skis work.",
+   "song": {
+    "lead": "flute",
+    "root": 57,
+    "instrument": "harp"
+   },
+   "tags": [
+    "snowplow for kids",
+    "trains for kids",
+    "helicopter for kids",
+    "cable car",
+    "winter vehicles",
+    "3D animation for toddlers",
+    "real vehicle sounds"
+   ],
+   "scenes": [
+    {
+     "script": "snow_plow",
+     "time": "day",
+     "caption": "A snowplow clears the road",
+     "noise": "truck_horn",
+     "vehicle": {
+      "type": "truck",
+      "color": "orange"
+     },
+     "weather": "snow"
+    },
+    {
+     "script": "snow_electric_train",
+     "time": "day",
+     "caption": "An electric train in the snow",
+     "noise": "diesel_horn",
+     "vehicle": {
+      "type": "train",
+      "color": "red"
+     },
+     "weather": "snow"
+    },
+    {
+     "script": "snow_log_truck",
+     "time": "day",
+     "caption": "A log truck",
+     "noise": "truck_horn",
+     "vehicle": {
+      "type": "truck",
+      "color": "green"
+     }
+    },
+    {
+     "script": "snow_helicopter",
+     "time": "day",
+     "caption": "A helicopter lands on the helipad",
+     "noise": "heli_whop",
+     "vehicle": {
+      "type": "helicopter",
+      "color": "red"
+     }
+    },
+    {
+     "script": "snow_lake_ferry",
+     "time": "day",
+     "caption": "A ferry on the mountain lake",
+     "noise": "ship_horn",
+     "vehicle": {
+      "type": "boat",
+      "color": "red"
+     }
+    },
+    {
+     "script": "snow_cable_car",
+     "time": "day",
+     "caption": "The cable car",
+     "noise": "cable_bell",
+     "vehicle": {
+      "type": "cable car",
+      "color": "red"
+     }
+    },
+    {
+     "script": "snow_suv_snowfall",
+     "time": "day",
+     "caption": "Driving in the snow",
+     "noise": "car_horn",
+     "vehicle": {
+      "type": "car",
+      "color": "blue"
+     },
+     "weather": "snow"
+    },
+    {
+     "script": "snow_ski_plane",
+     "time": "morning",
+     "caption": "A plane with skis lands on the snow",
+     "noise": "prop_buzz",
+     "vehicle": {
+      "type": "plane",
+      "color": "orange"
+     }
+    },
+    {
+     "script": "snow_bus_pass",
+     "time": "morning",
+     "caption": "The mountain bus",
+     "noise": "bus_horn",
+     "vehicle": {
+      "type": "bus",
+      "color": "blue"
+     }
+    },
+    {
+     "script": "snow_night_train",
+     "time": "dusk",
+     "caption": "The evening train",
+     "noise": "diesel_horn",
+     "vehicle": {
+      "type": "train",
+      "color": "blue"
+     }
+    }
+   ]
+  }
+ ]
+}

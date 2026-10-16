@@ -62,12 +62,16 @@ def check_video(out_dir, meta, target):
     check("codec", v["codec_name"] == "h264" and v.get("pix_fmt") == "yuv420p" and a and a[0]["codec_name"] == "aac",
           f"{v['codec_name']}/{v.get('pix_fmt')} + {a[0]['codec_name'] if a else 'no audio'}")
     lufs, peak = loudness(mp4)
-    lo, hi = (-19, -13) if meta.get("engine") == 2 else (-21, -15)
-    check("loudness", lo <= lufs <= hi, f"{lufs} LUFS (target {'-16' if meta.get('engine') == 2 else '-18'})")
+    new = meta.get("engine", 1) >= 2
+    lo, hi = (-19, -13) if new else (-21, -15)
+    check("loudness", lo <= lufs <= hi, f"{lufs} LUFS (target {'-16' if new else '-18'})")
     check("no_loud_peaks", peak <= -1.0, f"peak {peak} dBFS")
     jump, frames = flash_scan(mp4)
     check("no_flashing", jump <= 12.0, f"max brightness change between frames {jump:.1f}/255 over {frames} frames")
-    if meta.get("engine") == 2:
+    if meta.get("engine") == 3:
+        from engine3.safety import review as review3
+        issues = [f"scene {i + 1}: {p}" for i, s in enumerate(meta["scenes"]) for p in review3(s)]
+    elif meta.get("engine") == 2:
         from engine2.safety import review as review2
         issues = [f"scene {i + 1}: {p}" for i, s in enumerate(meta["scenes"]) for p in review2(s)]
     else:

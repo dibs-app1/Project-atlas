@@ -288,6 +288,32 @@ def prop_buzz(seed=0):
     return _norm(x * env)
 
 
+def heli_whop(seed=0):
+    """WHOP WHOP: a helicopter's rotor thumping overhead."""
+    rng = _rng(seed)
+    t = _t(2.4)
+    env = np.exp(-((t - 1.1) / 0.8) ** 2)
+    ph = (t * 7.0) % 1.0
+    thump = np.clip(1 - ph / 0.22, 0, 1) ** 2
+    x = _bandpass(rng.standard_normal(len(t)), 60, 900) * thump * 3 + 0.2 * np.sin(2 * np.pi * 1800 * t)
+    return _norm(x * env)
+
+
+def tractor_putt(seed=0):
+    """PUTT-PUTT: a tractor's diesel engine chugging."""
+    rng = _rng(seed)
+    t = _t(2.0)
+    ph = (t * 9.0) % 1.0
+    x = _bandpass(rng.standard_normal(len(t)), 80, 900) * np.clip(1 - ph / 0.3, 0, 1) ** 2 * 3
+    x += 0.4 * _saw(np.full(len(t), 54.0))
+    return _norm(x * _env(len(t), 0.1, 0.3))
+
+
+def cable_bell(seed=0):
+    """DING: the cable car station bell."""
+    return tram_bell(seed, n=1)
+
+
 NOISES = {
     # name: (function, word on screen, bubble colour)
     "car_horn": (car_horn, "BEEP BEEP!", (255, 214, 64)),
@@ -306,6 +332,9 @@ NOISES = {
     "splash": (splash, "SPLASH!", (120, 200, 255)),
     "jet_zoom": (jet_zoom, "ZOOOOM!", (170, 210, 255)),
     "prop_buzz": (prop_buzz, "BRRRRR!", (190, 240, 160)),
+    "heli_whop": (heli_whop, "WHOP WHOP!", (255, 180, 120)),
+    "tractor_putt": (tractor_putt, "PUTT PUTT!", (170, 230, 120)),
+    "cable_bell": (cable_bell, "DING!", (255, 228, 120)),
 }
 
 
