@@ -276,7 +276,7 @@ _PUFF = {}
 
 def _puff(r, col, a):
     """A soft round puff (alpha fades out towards the edge)."""
-    rq = max(2, int(r // 2 * 2))
+    rq = max(2, min(360, int(r // 4 * 4)))
     key = (rq, col, int(a * 20))
     if key not in _PUFF:
         size = rq * 2 + 4
@@ -288,7 +288,7 @@ def _puff(r, col, a):
         arr[..., 3] = al.astype(np.uint8)
         im = Image.fromarray(arr, "RGBA")
         _PUFF[key] = im
-        if len(_PUFF) > 3000:
+        if len(_PUFF) > 400:
             _PUFF.clear()
     return _PUFF[key]
 
@@ -309,7 +309,7 @@ def smoke(source_fn, every=0.25, life=4.0, rise=1.6, drift=(-1.0, 0.0), size=0.8
                 continue
             x, y, z = s
             rad = (size + grow * a) * cam.f / z
-            if rad < 1 or rad > W * SS:
+            if rad < 1 or rad > 360:      # too close to the camera: skip rather than fill the screen
                 continue
             im = _puff(rad, col, alpha * (1 - a / life) ** 1.3)
             img.paste(im, (int(x * SS - im.width / 2), int(y * SS - im.height / 2)), im)

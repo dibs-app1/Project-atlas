@@ -376,7 +376,7 @@ class Renderer:
             col = np.where(below, self.fog_color[None, :], col)
             img = np.repeat(col[:, None, :], W * SS, axis=1).astype(np.uint8)
             self._sky_cache[key] = Image.fromarray(img, "RGB")
-            if len(self._sky_cache) > 64:
+            if len(self._sky_cache) > 4:
                 self._sky_cache.pop(next(iter(self._sky_cache)))
         return self._sky_cache[key].copy()
 
