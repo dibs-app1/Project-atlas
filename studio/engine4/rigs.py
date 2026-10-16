@@ -253,19 +253,24 @@ class Instance:
                     m.type == "ARMATURE" and m.object in arms for m in o.modifiers)))
             for o in [o for o in new if not driven(o) and o.type != "EMPTY"]:
                 bpy.data.objects.remove(o)
+            new = [o for o in bpy.data.objects if o not in before]
+            skinned = [o for o in new if o.type == "MESH" and any(m.type == "ARMATURE" for m in o.modifiers)]
+            if skinned:      # an unrigged copy riding along (e.g. a sculpt kept by the artist) would hide the animal
+                for o in [o for o in bpy.data.objects if o not in before and o.type == "MESH" and o not in skinned
+                          and o.parent_type != "BONE"]:
+                    bpy.data.objects.remove(o)
         else:         # a single mesh: keep the biggest one
             ms = sorted([o for o in new if o.type == "MESH"], key=lambda o: -len(o.data.polygons))
             for o in ms[1:]:
                 if len(o.data.polygons) < len(ms[0].data.polygons) * 0.3 or o.name.lower().startswith(("plane", "ground")):
                     bpy.data.objects.remove(o)
         new = [o for o in bpy.data.objects if o not in before]
-        for o in new:
+        for o in list(new):
             if o.type == "MESH":
                 for ps in list(o.modifiers):
                     if ps.type == "PARTICLE_SYSTEM":      # fur etc.: too heavy for a CPU renderer
                         o.modifiers.remove(ps)
-            o.hide_render = False
-            o.hide_viewport = False
+        new = [o for o in bpy.data.objects if o not in before]
         bpy.context.view_layer.update()
         relink_images(path)
         self.arm = next((o for o in new if o.type == "ARMATURE"), None)
