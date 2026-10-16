@@ -41,9 +41,12 @@ def render_scene(args):
     out = Path(work) / f"scene_{spec['index']:02d}.mp4"
     key = {}
 
+    from flashguard import FlashGuard
+    guard = FlashGuard()
+
     def gen():
         for i in range(frames):
-            img = st.frame(i / FPS)
+            img = guard(st.frame(i / FPS))
             if i == frames // 2:
                 key["img"] = img.resize((160, 90))
             if i == int(min(frames - 1, 8 * FPS)):

@@ -155,9 +155,11 @@ def render_scene(spec, frames, out_dir, res=1280, samples=4, log=print):
                            "-r", str(FPS), "-i", "-", "-c:v", "libx264", "-preset", "medium", "-crf", "18", "-pix_fmt", "yuv420p",
                            str(mp4)], stdin=subprocess.PIPE)
     tmp = out_dir / f"_frame_{k:02d}.png"
+    from flashguard import FlashGuard
+    guard = FlashGuard()
     for i in range(frames):
         t = i / FPS
-        img = R.frame(t, tmp)
+        img = guard(R.frame(t, tmp))
         ff.stdin.write(np.asarray(img.convert("RGB"), np.uint8).tobytes())
         if i == frames // 2:
             img.resize((160, 90)).save(out_dir / f"key_{k:02d}.png")

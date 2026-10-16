@@ -128,7 +128,7 @@ def sea_coastal_train(st):
     ln = theme(st, "seaside")
     cars = [Mo.railcar("coach", c, st.seed + i) for i, c in enumerate(["blue", "blue", "blue"])]
     a = train_actor(st, ln, Mo.diesel_loco("blue", st.seed), cars, 22)
-    hero(st, a, ["drone", ("front", {"off": 26, "h": 3.0}), ("side", {"side": 1, "dist": 26})])
+    hero(st, a, ["drone", ("front", {"off": 26, "h": 3.0}), ("side", {"side": -1, "dist": 13})])
 
 
 @scene("sea_sailboat")
@@ -335,7 +335,7 @@ def farm_steam_train(st):
     cars = [Mo.railcar("coach", c, st.seed + i) for i, c in enumerate(["red", "cream", "red", "cream"])]
     a = train_actor(st, ln, Mo.steam_loco("green", st.seed), cars, 16)
     steam_smoke(st, a)
-    hero(st, a, [("side", {"dist": 26, "side": -1}), ("drone", {"h": 30}), ("front", {"off": 26, "h": 3.0})])
+    hero(st, a, [("side", {"dist": 14, "side": -1}), ("drone", {"h": 30}), ("front", {"off": 26, "h": 3.0})])
 
 
 @scene("farm_pickup")
@@ -376,7 +376,7 @@ def farm_freight_train(st):
            ("container", "yellow")]
     cars = [Mo.railcar(k, c, st.seed + i) for i, (k, c) in enumerate(cyc)]
     a = train_actor(st, ln, Mo.diesel_loco("orange", st.seed), cars, 18)
-    hero(st, a, [("front", {"off": 28, "h": 3.0}), ("side", {"dist": 30}), ("top", {"alt": 60})])
+    hero(st, a, [("front", {"off": 28, "h": 3.0}), ("side", {"dist": 14, "side": -1}), ("top", {"alt": 60})])
 
 
 @scene("farm_tractor_hay")
@@ -384,7 +384,7 @@ def farm_tractor_hay(st):
     ln = theme(st, "farm")
     a = lane_actor(st, Mo.tractor("red", st.seed), "road", ln, 5.5, bob=0.02)
     dust(st, a, -1.8)
-    hero(st, a, [("chase", {"back": 9, "h": 3.5}), ("side", {"dist": 10, "side": 1}), ("low", {"off": 10})])
+    hero(st, a, [("chase", {"back": 9, "h": 3.5}), ("side", {"dist": 10, "side": -1}), ("low", {"off": 10})])
 
 
 @scene("farm_family_car")
