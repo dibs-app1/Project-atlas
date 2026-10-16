@@ -66,8 +66,10 @@ python studio/produce2.py 14-trains-on-the-tracks --seconds 90 --out /tmp/previe
 
 ## Batch 3: sing-along songs with real vehicle noises
 
-Batch 3 (`plan/batch3.json`) gives each video its own **original, catchy kids' song** that is sung, plus the
-**noises the vehicles make**, on top of the engine-2 animation:
+Batch 3 (`plan/batch3.json`) gives each video its own **original, catchy kids' song**, plus the **noises the
+vehicles make**, on top of the engine-2 animation. The tune is played by a soft, warm whistle (no computer
+voice: a synthetic singer sounded robotic, and we never want to scare little ones), with the words on screen
+so children and grown-ups sing along:
 
 | # | Video | Song | Scenes |
 |---|---|---|---|
@@ -84,7 +86,7 @@ sound waves from the vehicle → the choir copies it. Lyrics are on screen with 
 lyrics are in each video's description. See `team/songwriter.md`.
 
 ```bash
-pip install piper-tts pyworld          # the singing voice (downloads ~60 MB the first time)
+pip install piper-tts pyworld          # only for "voice": "sung" (an experimental synthetic singer)
 python studio/produce2.py 15-cars-and-trucks-song --manifest studio/plan/batch3.json --out output
 ```
 

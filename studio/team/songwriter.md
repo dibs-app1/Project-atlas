@@ -8,7 +8,11 @@ Lyrics live in the plan (`plan/batch3.json`): the chorus per video, and `verse`,
 scene. Mark extra syllables with hyphens (`yel-low`, `ev-ery`) so each one gets its own note. The
 Safety Reviewer rejects lines that are too long to sing (more than 13 syllables) and unknown noises.
 
-The Singer (`studio/singer.py`) sings the words: a neural text-to-speech voice (Piper, "lessac") says
+The tune is played by a soft, warm whistle with a glockenspiel sparkle on the chorus, and the words are
+on screen with a bouncing ball, so children and grown-ups sing along. No synthetic singing voice is used
+by default: it sounded robotic and could unsettle small children.
+
+The experimental Singer (`studio/singer.py`, only with `"voice": "sung"` in the plan) sings the words: a neural text-to-speech voice (Piper, "lessac") says
 each word, then the WORLD vocoder holds the vowel for the note's length and sets the pitch to the
 melody with a gentle vibrato. The chorus and the copy-the-noise lines are sung by a small choir (three
 slightly different voices). No existing songs or recordings are used.
