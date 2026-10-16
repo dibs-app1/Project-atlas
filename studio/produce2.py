@@ -154,10 +154,11 @@ def render(vid, manifest, out_dir, total=600, workers=None, log=print, reuse=Fal
         plans = [s["song"] for s in specs]
         log(f"[{vid}] singing the song ...")
         backing = sng.backing(g0, bar, total, plans)
-        vocal = sng.vocal(plans, g0, total)
+        sung = video["song"].get("voice") == "sung"
+        vocal = sng.vocal(plans, g0, total) if sung else sng.lead(plans, g0, total)
         nz_track = sng.noise_track(plans, g0, total)
         info = dict(style="sing-along", root=sng.root, bpm=round(60 / (bar / 4), 2), instrument=sng.inst,
-                    voice=__import__("singer").VOICE)
+                    voice=__import__("singer").VOICE if sung else "instrumental lead (no voice)")
     fx = np.zeros(N)
     xf = XF / FPS
     for k in range(n):
@@ -173,7 +174,7 @@ def render(vid, manifest, out_dir, total=600, workers=None, log=print, reuse=Fal
     if sng is None:
         mix = 0.62 * mono + 0.5 * fx
     else:
-        mix = 0.4 * backing + 0.62 * vocal + 0.6 * nz_track + 0.2 * fx
+        mix = 0.4 * backing + (0.62 if sung else 0.5) * vocal + 0.6 * nz_track + 0.2 * fx
     mix /= np.max(np.abs(mix)) + 1e-9
     music.write_wav(work / "audio.wav", mix * 0.7)
 
@@ -261,9 +262,9 @@ def song_description(video, chapters, tags, total):
         video["learn"],
         "",
         f"About {total // 60} minutes of colourful original animation with a brand-new sing-along song. "
-        "Follow the bouncing ball, sing the chorus, and copy the real vehicle noises: beep beep, choo choo, "
+        "Follow the bouncing ball and sing along with the words on screen, and copy the real vehicle noises: beep beep, choo choo, "
         "toot toot, zoom! Every driver, pilot and captain follows the safety rules. No flashing and nothing "
-        "scary. Original song, music, singing voice and sound effects, made for TheCalmLittleWorld.",
+        "scary. Original song, music and sound effects, made for TheCalmLittleWorld.",
         "",
         "Chapters:",
         *chapters,

@@ -13,6 +13,10 @@ Melodies are generated per video from a seed, but each line position always uses
 so lines with different words still sound like the same song. Lyrics (and when each word is sung)
 are handed to the scene so the picture can show sing-along words with a bouncing ball.
 Everything is original: no existing songs, no samples.
+
+By default the tune is played by a soft, warm whistle-like lead (no synthetic voice: a computer voice
+can sound robotic and unsettling to small children). The words are on screen with a bouncing ball, so
+kids and grown-ups sing along. `"voice": "sung"` in the plan switches the Singer back on.
 """
 import random
 
@@ -179,6 +183,30 @@ class Song:
         choir = singer.sing(events_choir, seconds, voices=3, seed=self.seed + 1)
         return 0.85 * solo + 0.7 * choir
 
+    def lead(self, plans, scene_starts, seconds):
+        """The tune of every sung line, played by a warm, rounded whistle with a soft glockenspiel sparkle."""
+        n = int(seconds * SR)
+        out = np.zeros(n + SR * 2)
+        rng = np.random.default_rng(self.seed + 5)
+        for plan, st in zip(plans, scene_starts):
+            for ln in plan["lines"]:
+                chorus = ln["part"] in ("chorus", "echo")
+                for w in ln["words"]:
+                    at = st + w["t"]
+                    for m, d in w["notes"]:
+                        sig = _whistle(midi_hz(m), d * 0.94, rng)
+                        if chorus:   # chorus and echoes: a glockenspiel an octave up joins in
+                            g = _glock(midi_hz(m + 12), d)[: len(sig)]
+                            sig = sig.copy()
+                            sig[: len(g)] += 0.22 * g
+                        i = int(at * SR)
+                        if i < len(out):
+                            seg = sig[: len(out) - i]
+                            out[i:i + len(seg)] += seg
+                        at += d
+        out = music.reverb(out[:n], seconds=1.4, mix=0.14, seed=self.seed + 5)
+        return out / (np.max(np.abs(out)) + 1e-9)
+
     def backing(self, scene_starts, bar, seconds, plans):
         """Drums, bass, chords and an instrument doubling the tune. The band stops for each vehicle noise."""
         rng = np.random.default_rng(self.seed)
@@ -248,11 +276,12 @@ class Song:
                     for s_ in range(0, 8, 2):
                         add(note(midi_hz(deg_midi(self.tonic, tune[(s_ + half) % 16])), beat * 0.9, tune_inst, 0.14, nr),
                             t + s_ * beat / 2)
-            for ln in plan["lines"]:
-                for w in ln["words"]:
-                    for j, (m, d) in enumerate(w["notes"]):
-                        at = st + w["t"] + sum(dd for _, dd in w["notes"][:j])
-                        add(note(midi_hz(m), min(d, beat * 1.5), tune_inst, 0.07, nr), at)
+            if self.sp.get("voice") == "sung":   # the instrument softly doubles the singer
+                for ln in plan["lines"]:
+                    for w in ln["words"]:
+                        for j, (m, d) in enumerate(w["notes"]):
+                            at = st + w["t"] + sum(dd for _, dd in w["notes"][:j])
+                            add(note(midi_hz(m), min(d, beat * 1.5), tune_inst, 0.07, nr), at)
         # a pick-up bar before the first round and a final chord after the last
         if scene_starts:
             first = scene_starts[0]
@@ -279,3 +308,22 @@ class Song:
                 if 0 <= i < len(out):
                     out[i:i + len(x)] += x[: len(out) - i]
         return out[:n]
+
+
+def _whistle(freq, dur, rng):
+    """A soft, round whistle/ocarina note: gentle attack, a little breath, vibrato that blooms late."""
+    dur = max(0.12, dur)
+    t = np.arange(int(dur * SR)) / SR
+    vib = 1 + 0.004 * np.clip((t - 0.18) / 0.25, 0, 1) * np.sin(2 * np.pi * 5.2 * t)
+    ph = 2 * np.pi * np.cumsum(freq * vib) / SR
+    x = np.sin(ph) + 0.18 * np.sin(2 * ph) + 0.05 * np.sin(3 * ph)
+    breath = rng.standard_normal(len(t))
+    breath = np.convolve(breath, np.ones(24) / 24, mode="same") * 0.05
+    env = np.minimum(1, t / 0.03) * np.clip((dur - t) / 0.07, 0, 1) * (1 - 0.15 * t / dur)
+    return (x + breath) * env
+
+
+def _glock(freq, dur):
+    t = np.arange(int(max(0.3, dur) * SR)) / SR
+    x = np.sin(2 * np.pi * freq * t) + 0.25 * np.sin(2 * np.pi * freq * 2.76 * t)
+    return x * np.minimum(1, t / 0.003) * np.exp(-t / 0.35)
