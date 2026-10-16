@@ -26,7 +26,8 @@ jobs:
       - run: pip install requests gdown
       - name: Run the librarian's job
         run: |
-          mkdir -p assets-requests/out
+          mkdir -p assets-requests/out studio/assets
+          touch studio/assets/.keep
           python assets-requests/job.py 2>&1 | tee assets-requests/out/log.txt
       - name: Commit results
         run: |

@@ -1,17 +1,23 @@
-"""Explore the free CC0 model libraries: what animal / nature models exist and how to download them."""
+"""Fetch Quaternius CC0 animal packs (glTF), list Poly Haven nature models and skies."""
+import glob
 import json
+import os
 import re
+import shutil
+import subprocess
+import zipfile
 
 import requests
 
 S = requests.Session()
 S.headers["User-Agent"] = "Mozilla/5.0 (studio asset librarian)"
 out = {}
+os.makedirs("assets-requests/out", exist_ok=True)
 
 
 def get(url, **kw):
     try:
-        r = S.get(url, timeout=40, **kw)
+        r = S.get(url, timeout=60, **kw)
         print("GET", url, r.status_code, len(r.content))
         return r
     except Exception as e:
@@ -19,50 +25,70 @@ def get(url, **kw):
         return None
 
 
-# 1. Poly Haven (CC0): models and skies
+home = get("https://quaternius.com/")
+packs = sorted(set(re.findall(r'href="(/?packs/[^"]+\.html)"', home.text)))
+print("PACKS", packs)
+out["packs"] = packs
+want = [p for p in packs if any(k in p.lower() for k in ("animal", "fish", "bird", "farm", "nature", "pet", "dog", "cat"))]
+print("WANT", want)
+for p in want:
+    u = "https://quaternius.com/" + p.lstrip("/")
+    r = get(u)
+    if r is None:
+        continue
+    links = sorted(set(re.findall(r'href="([^"]+)"', r.text)))
+    lic = re.findall(r'(CC0[^<]{0,80}|[Pp]ublic [Dd]omain[^<]{0,60})', r.text)[:3]
+    title = re.findall(r'<title>([^<]+)</title>', r.text)
+    print("PAGE", u, title, lic)
+    for l in links:
+        print("   LINK", l)
+    out.setdefault("pages", {})[u] = dict(links=links, license=lic, title=title)
+    name = os.path.basename(p).replace(".html", "")
+    drive = [l for l in links if "drive.google" in l or "dropbox" in l or l.endswith(".zip")]
+    for k, l in enumerate(drive[:2]):
+        dest = f"/tmp/dl/{name}_{k}"
+        os.makedirs(dest, exist_ok=True)
+        try:
+            if "drive.google" in l:
+                subprocess.run(["gdown", "--fuzzy", l, "-O", dest + "/"], check=False, timeout=900)
+            else:
+                rr = get(l)
+                open(dest + "/pack.zip", "wb").write(rr.content)
+        except Exception as e:
+            print("DL ERR", e)
+        for z in glob.glob(dest + "/*.zip"):
+            try:
+                with zipfile.ZipFile(z) as zf:
+                    names = zf.namelist()
+                    print("ZIP", z, len(names), os.path.getsize(z))
+                    for n in names[:400]:
+                        print("    ", n)
+                    zf.extractall(dest + "/x")
+            except Exception as e:
+                print("ZIP ERR", z, e)
+        # keep only glTF / glb files (and their textures/bins) in the repo
+        for f in glob.glob(dest + "/x/**/*", recursive=True):
+            low = f.lower()
+            if os.path.isfile(f) and ("gltf" in low or low.endswith(".glb")) and os.path.getsize(f) < 30e6:
+                rel = os.path.relpath(f, dest + "/x")
+                to = os.path.join("studio/assets/quaternius", name, rel)
+                os.makedirs(os.path.dirname(to), exist_ok=True)
+                shutil.copy(f, to)
+
+# Poly Haven: nature models (trees, rocks, plants, grass) and skies
 r = get("https://api.polyhaven.com/assets?t=models")
 if r is not None and r.ok:
     d = r.json()
     out["polyhaven_models"] = {k: v.get("categories") for k, v in d.items()}
-    print("polyhaven models:", len(d))
+    for k, v in sorted(d.items()):
+        print("PH", k, v.get("categories"))
 r = get("https://api.polyhaven.com/assets?t=hdris&c=skies")
 if r is not None and r.ok:
     out["polyhaven_skies"] = sorted(r.json().keys())
+    print("SKIES", out["polyhaven_skies"])
 r = get("https://api.polyhaven.com/files/tree_small_02")
 if r is not None and r.ok:
-    out["polyhaven_files_example"] = r.json()
-
-# 2. Poly Pizza search pages (many Quaternius CC0 animated animals)
-pp = {}
-for q in ["cow", "pig", "sheep", "horse", "chicken", "duck", "dog", "cat", "fish", "bird", "parrot", "penguin", "owl", "goat",
-          "donkey", "dolphin", "whale", "turtle", "crab", "jellyfish", "seagull", "eagle", "swan", "flamingo", "pigeon", "shark",
-          "octopus", "rooster", "quaternius animal", "animated animal"]:
-    r = get("https://poly.pizza/search/" + q.replace(" ", "%20"))
-    if r is not None and r.ok:
-        html = r.text
-        pp[q] = {"models": sorted(set(re.findall(r'/m/([A-Za-z0-9_-]{6,})', html)))[:40],
-                 "glb": sorted(set(re.findall(r'https://static\.poly\.pizza/[^"\' ]+', html)))[:40],
-                 "snippet": html[:1500] if q == "cow" else ""}
-out["polypizza"] = pp
-r = get("https://poly.pizza/m/" + (pp.get("cow", {}).get("models") or ["x"])[0])
-if r is not None:
-    out["polypizza_model_page"] = r.text[:20000]
-
-# 3. Quaternius packs
-r = get("https://quaternius.com/")
-if r is not None and r.ok:
-    out["quaternius_links"] = sorted(set(re.findall(r'href="([^"]+)"', r.text)))
-    for link in out["quaternius_links"]:
-        if "pack" in link and ("animal" in link.lower() or "farm" in link.lower() or "fish" in link.lower() or "bird" in link.lower()):
-            u = link if link.startswith("http") else "https://quaternius.com/" + link.lstrip("/")
-            rr = get(u)
-            if rr is not None:
-                out.setdefault("quaternius_pages", {})[u] = sorted(set(re.findall(r'href="([^"]+)"', rr.text)))
-
-# 4. Kenney
-r = get("https://kenney.nl/assets/category:3D")
-if r is not None:
-    out["kenney"] = sorted(set(re.findall(r'href="(https://kenney\.nl/assets/[^"]+)"', r.text)))
-
+    print("FILES", json.dumps(r.json())[:3000])
 json.dump(out, open("assets-requests/out/explore.json", "w"), indent=1)
+print("TOTAL", subprocess.run(["du", "-sh", "studio/assets"], capture_output=True, text=True).stdout)
 print("done")
