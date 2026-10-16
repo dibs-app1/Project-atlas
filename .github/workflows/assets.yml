@@ -1,0 +1,37 @@
+# Asset librarian: runs assets-requests/job.py on a GitHub runner (which can reach the free CC0 model
+# libraries) and commits what it finds/downloads back to the branch (with [skip ci], so no render starts).
+name: Asset librarian
+
+on:
+  push:
+    branches: ["claude/**"]
+    paths: ["assets-requests/job.py"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: assets-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install requests gdown
+      - name: Run the librarian's job
+        run: |
+          mkdir -p assets-requests/out
+          python assets-requests/job.py 2>&1 | tee assets-requests/out/log.txt
+      - name: Commit results
+        run: |
+          git config user.name "studio-librarian"
+          git config user.email "studio-librarian@users.noreply.github.com"
+          git add -A assets-requests/out studio/assets || true
+          git commit -m "Asset librarian results [skip ci]" || exit 0
+          for i in 1 2 3; do git pull --rebase origin "${GITHUB_REF_NAME}" && git push origin HEAD:"${GITHUB_REF_NAME}" && break; sleep 5; done
