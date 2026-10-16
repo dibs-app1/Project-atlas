@@ -349,3 +349,9 @@ def word(name):
 
 def colour(name):
     return NOISES[name][2]
+
+
+# the animal sounds (batch 5) share the same noise moments in the songs
+from engine3.animal_sounds import ANIMAL_NOISES  # noqa: E402
+
+NOISES.update(ANIMAL_NOISES)
