@@ -1,0 +1,3147 @@
+{
+ "packs": [
+  "/packs/3dcardkitfantasy.html",
+  "/packs/animatedalien.html",
+  "/packs/animateddinosaurs.html",
+  "/packs/animatedfish.html",
+  "/packs/animatedguns.html",
+  "/packs/animatedman.html",
+  "/packs/animatedmech.html",
+  "/packs/animatedmen.html",
+  "/packs/animatedmonster.html",
+  "/packs/animatedrobot.html",
+  "/packs/animatedtanks.html",
+  "/packs/animatedwoman.html",
+  "/packs/animatedwomen.html",
+  "/packs/animatedzombie.html",
+  "/packs/backgroundposedhumans.html",
+  "/packs/bestiarydungeonmonsterskit.html",
+  "/packs/buildings.html",
+  "/packs/cars.html",
+  "/packs/cubeworldkit.html",
+  "/packs/cutefish.html",
+  "/packs/cutemonsters.html",
+  "/packs/cyberpunkgamekit.html",
+  "/packs/downtowncitymegakit.html",
+  "/packs/easyenemy.html",
+  "/packs/fantasypropsmegakit.html",
+  "/packs/farmanimal.html",
+  "/packs/farmbuildings.html",
+  "/packs/furniture.html",
+  "/packs/junkfood.html",
+  "/packs/knightcharacter.html",
+  "/packs/medievaldungeon.html",
+  "/packs/medievalvillage.html",
+  "/packs/medievalvillagemegakit.html",
+  "/packs/medievalweapons.html",
+  "/packs/modularcharacteroutfitsfantasy.html",
+  "/packs/modulardungeon.html",
+  "/packs/modularmedievalbuildings.html",
+  "/packs/modularplatformer.html",
+  "/packs/modularscifimegakit.html",
+  "/packs/modularstreets.html",
+  "/packs/modulartrain.html",
+  "/packs/piratekit.html",
+  "/packs/publictransport.html",
+  "/packs/rpg.html",
+  "/packs/rpgcharacters.html",
+  "/packs/scifiessentialskit.html",
+  "/packs/scifigun.html",
+  "/packs/scifimodularguns.html",
+  "/packs/ships.html",
+  "/packs/simplebuildings.html",
+  "/packs/simplenature.html",
+  "/packs/spaceships.html",
+  "/packs/stylizednaturemegakit.html",
+  "/packs/stylizedtree.html",
+  "/packs/survival.html",
+  "/packs/sushirestaurantkit.html",
+  "/packs/texturedfantasynature.html",
+  "/packs/toonshootergamekit.html",
+  "/packs/turretpack.html",
+  "/packs/ultimateanimatedanimals.html",
+  "/packs/ultimatecrops.html",
+  "/packs/ultimatedanimatedcharacter.html",
+  "/packs/ultimatefantasyrts.html",
+  "/packs/ultimatefood.html",
+  "/packs/ultimatefurniture.html",
+  "/packs/ultimategun.html",
+  "/packs/ultimatehomeinterior.html",
+  "/packs/ultimatemodularcharacters.html",
+  "/packs/ultimatemodularruins.html",
+  "/packs/ultimatemodularscifi.html",
+  "/packs/ultimatemodularwomen.html",
+  "/packs/ultimatemonsters.html",
+  "/packs/ultimatenature.html",
+  "/packs/ultimateplatformer.html",
+  "/packs/ultimaterpg.html",
+  "/packs/ultimatespacekit.html",
+  "/packs/ultimatespaceships.html",
+  "/packs/ultimatestylizednature.html",
+  "/packs/ultimatetexturedbuildings.html",
+  "/packs/universalanimationlibrary.html",
+  "/packs/universalanimationlibrary2.html",
+  "/packs/universalbasecharacters.html",
+  "/packs/zombieapocalypsekit.html"
+ ],
+ "pages": {
+  "https://quaternius.com/packs/animatedfish.html": {
+   "links": [
+    "#inline",
+    "/assets/css/lightbox.min.css",
+    "/assets/css/lity.min.css",
+    "/assets/css/normalize.css",
+    "/assets/css/style_new.css",
+    "/assets/css/thumbnails.css",
+    "/assets/images/fullres/animatedfish.jpg",
+    "/assets/images/fullres/animatedfish2.jpg",
+    "/assets/images/site/favicon.ico",
+    "/index.html",
+    "https://creativecommons.org/publicdomain/zero/1.0/",
+    "https://www.patreon.com/quaternius",
+    "https://www.twitter.com/quaternius"
+   ],
+   "license": [
+    "CC0"
+   ],
+   "title": [
+    "Quaternius \u2022 Animated Fish Pack"
+   ]
+  },
+  "https://quaternius.com/packs/cutefish.html": {
+   "links": [
+    "#inline",
+    "/assets/css/lightbox.min.css",
+    "/assets/css/lity.min.css",
+    "/assets/css/normalize.css",
+    "/assets/css/style_new.css",
+    "/assets/css/thumbnails.css",
+    "/assets/images/fullres/cutefish.jpg",
+    "/assets/images/fullres/cutefish2.jpg",
+    "/assets/images/site/favicon.ico",
+    "/index.html",
+    "https://creativecommons.org/publicdomain/zero/1.0/",
+    "https://www.patreon.com/quaternius",
+    "https://www.twitter.com/quaternius"
+   ],
+   "license": [
+    "CC0"
+   ],
+   "title": [
+    "Quaternius \u2022 Animated Cute Fish Pack"
+   ]
+  },
+  "https://quaternius.com/packs/farmanimal.html": {
+   "links": [
+    "#inline",
+    "/assets/css/lightbox.min.css",
+    "/assets/css/lity.min.css",
+    "/assets/css/normalize.css",
+    "/assets/css/style_new.css",
+    "/assets/css/thumbnails.css",
+    "/assets/images/fullres/farmanimal.jpg",
+    "/assets/images/fullres/farmanimal2.jpg",
+    "/assets/images/site/favicon.ico",
+    "/index.html",
+    "https://creativecommons.org/publicdomain/zero/1.0/",
+    "https://www.patreon.com/quaternius",
+    "https://www.twitter.com/quaternius"
+   ],
+   "license": [
+    "CC0"
+   ],
+   "title": [
+    "Quaternius \u2022 Farm Animal Pack"
+   ]
+  },
+  "https://quaternius.com/packs/farmbuildings.html": {
+   "links": [
+    "#inline",
+    "/assets/css/lightbox.min.css",
+    "/assets/css/lity.min.css",
+    "/assets/css/normalize.css",
+    "/assets/css/style_new.css",
+    "/assets/css/thumbnails.css",
+    "/assets/images/fullres/farmbuildings.jpg",
+    "/assets/images/fullres/farmbuildings2.jpg",
+    "/assets/images/site/favicon.ico",
+    "/index.html",
+    "https://creativecommons.org/publicdomain/zero/1.0/",
+    "https://www.patreon.com/quaternius",
+    "https://www.twitter.com/quaternius"
+   ],
+   "license": [
+    "CC0"
+   ],
+   "title": [
+    "Quaternius \u2022 Farm Buildings Pack"
+   ]
+  },
+  "https://quaternius.com/packs/simplenature.html": {
+   "links": [
+    "#inline",
+    "/assets/css/lightbox.min.css",
+    "/assets/css/lity.min.css",
+    "/assets/css/normalize.css",
+    "/assets/css/style_new.css",
+    "/assets/css/thumbnails.css",
+    "/assets/images/fullres/simplenature.jpg",
+    "/assets/images/fullres/simplenature2.jpg",
+    "/assets/images/site/favicon.ico",
+    "/index.html",
+    "https://creativecommons.org/publicdomain/zero/1.0/",
+    "https://www.patreon.com/quaternius",
+    "https://www.twitter.com/quaternius"
+   ],
+   "license": [
+    "CC0"
+   ],
+   "title": [
+    "Quaternius \u2022 Simple Nature Pack"
+   ]
+  },
+  "https://quaternius.com/packs/stylizednaturemegakit.html": {
+   "links": [
+    "#inline",
+    "#patron-discount",
+    "/assets/css/lightbox.min.css",
+    "/assets/css/lity.min.css",
+    "/assets/css/normalize.css",
+    "/assets/css/style_new.css",
+    "/assets/css/thumbnails.css",
+    "/assets/images/fullres/stylizednaturemegakit.jpg",
+    "/assets/images/fullres/stylizednaturemegakit/pro.jpg",
+    "/assets/images/fullres/stylizednaturemegakit/source.jpg",
+    "/assets/images/fullres/stylizednaturemegakit/standard.jpg",
+    "/assets/images/site/favicon.ico",
+    "/index.html",
+    "https://creativecommons.org/publicdomain/zero/1.0/",
+    "https://www.patreon.com/quaternius",
+    "https://www.twitter.com/quaternius"
+   ],
+   "license": [
+    "CC0",
+    "CC0 License)"
+   ],
+   "title": [
+    "Quaternius \u2022 Stylized Nature MegaKit"
+   ]
+  },
+  "https://quaternius.com/packs/texturedfantasynature.html": {
+   "links": [
+    "#inline",
+    "/assets/css/lightbox.min.css",
+    "/assets/css/lity.min.css",
+    "/assets/css/normalize.css",
+    "/assets/css/style_new.css",
+    "/assets/css/thumbnails.css",
+    "/assets/images/fullres/texturedfantasynature.jpg",
+    "/assets/images/fullres/texturedfantasynature2.jpg",
+    "/assets/images/site/favicon.ico",
+    "/index.html",
+    "https://creativecommons.org/publicdomain/zero/1.0/",
+    "https://www.patreon.com/quaternius",
+    "https://www.twitter.com/quaternius"
+   ],
+   "license": [
+    "CC0"
+   ],
+   "title": [
+    "Quaternius \u2022 Texture Fantasy Nature Pack"
+   ]
+  },
+  "https://quaternius.com/packs/ultimateanimatedanimals.html": {
+   "links": [
+    "#inline",
+    "/assets/css/lightbox.min.css",
+    "/assets/css/lity.min.css",
+    "/assets/css/normalize.css",
+    "/assets/css/style_new.css",
+    "/assets/css/thumbnails.css",
+    "/assets/images/fullres/ultimateanimatedanimal.jpg",
+    "/assets/images/fullres/ultimateanimatedanimal2.jpg",
+    "/assets/images/site/favicon.ico",
+    "/index.html",
+    "https://creativecommons.org/publicdomain/zero/1.0/",
+    "https://www.patreon.com/quaternius",
+    "https://www.twitter.com/quaternius"
+   ],
+   "license": [
+    "CC0"
+   ],
+   "title": [
+    "Quaternius \u2022 Ultimate Animated Animal Pack"
+   ]
+  },
+  "https://quaternius.com/packs/ultimatenature.html": {
+   "links": [
+    "#inline",
+    "/assets/css/lightbox.min.css",
+    "/assets/css/lity.min.css",
+    "/assets/css/normalize.css",
+    "/assets/css/style_new.css",
+    "/assets/css/thumbnails.css",
+    "/assets/images/fullres/ultimatenature.jpg",
+    "/assets/images/fullres/ultimatenature2.jpg",
+    "/assets/images/site/favicon.ico",
+    "/index.html",
+    "https://creativecommons.org/publicdomain/zero/1.0/",
+    "https://www.patreon.com/quaternius",
+    "https://www.twitter.com/quaternius"
+   ],
+   "license": [
+    "CC0"
+   ],
+   "title": [
+    "Quaternius \u2022 Ultimate Nature Pack"
+   ]
+  },
+  "https://quaternius.com/packs/ultimatestylizednature.html": {
+   "links": [
+    "#inline",
+    "/assets/css/lightbox.min.css",
+    "/assets/css/lity.min.css",
+    "/assets/css/normalize.css",
+    "/assets/css/style_new.css",
+    "/assets/css/thumbnails.css",
+    "/assets/images/fullres/ultimatestylizednature.jpg",
+    "/assets/images/fullres/ultimatestylizednature2.jpg",
+    "/assets/images/site/favicon.ico",
+    "/index.html",
+    "https://creativecommons.org/publicdomain/zero/1.0/",
+    "https://www.patreon.com/quaternius",
+    "https://www.twitter.com/quaternius"
+   ],
+   "license": [
+    "CC0"
+   ],
+   "title": [
+    "Quaternius \u2022 Ultimate Stylized Nature Pack"
+   ]
+  }
+ },
+ "polyhaven_models": {
+  "ArmChair_01": [
+   "furniture",
+   "seating"
+  ],
+  "BarberShopChair_01": [
+   "furniture",
+   "seating"
+  ],
+  "Barrel_01": [
+   "industrial",
+   "containers"
+  ],
+  "Barrel_02": [
+   "industrial",
+   "containers",
+   "collection: the_shed"
+  ],
+  "Camera_01": [
+   "props",
+   "electronics"
+  ],
+  "CashRegister_01": [
+   "appliances",
+   "props"
+  ],
+  "Chandelier_01": [
+   "lighting",
+   "decorative"
+  ],
+  "Chandelier_02": [
+   "lighting"
+  ],
+  "Chandelier_03": [
+   "lighting",
+   "decorative"
+  ],
+  "CheeseBox_01": [
+   "props",
+   "containers",
+   "collection: the_shed"
+  ],
+  "ClassicConsole_01": [
+   "furniture",
+   "table"
+  ],
+  "ClassicNightstand_01": [
+   "furniture",
+   "table"
+  ],
+  "CoffeeCart_01": [
+   "appliances",
+   "props",
+   "furniture",
+   "office"
+  ],
+  "CoffeeTable_01": [
+   "furniture",
+   "table"
+  ],
+  "Drill_01": [
+   "props",
+   "tools",
+   "electronics",
+   "collection: the_shed"
+  ],
+  "GothicBed_01": [
+   "furniture",
+   "bed"
+  ],
+  "GothicCabinet_01": [
+   "furniture",
+   "shelves"
+  ],
+  "GothicCommode_01": [
+   "furniture",
+   "shelves"
+  ],
+  "GreenChair_01": [
+   "furniture",
+   "seating"
+  ],
+  "Lantern_01": [
+   "props",
+   "lighting"
+  ],
+  "Megaphone_01": [
+   "props",
+   "electronics",
+   "tools"
+  ],
+  "Ottoman_01": [
+   "furniture",
+   "seating"
+  ],
+  "Rockingchair_01": [
+   "furniture",
+   "seating"
+  ],
+  "SchoolChair_01": [
+   "furniture",
+   "seating"
+  ],
+  "SchoolDesk_01": [
+   "furniture"
+  ],
+  "Shelf_01": [
+   "furniture",
+   "shelves"
+  ],
+  "Sofa_01": [
+   "furniture",
+   "seating"
+  ],
+  "Television_01": [
+   "props",
+   "electronics",
+   "collection: the_shed"
+  ],
+  "Ukulele_01": [
+   "props",
+   "instrument"
+  ],
+  "WetFloorSign_01": [
+   "props",
+   "industrial",
+   "office"
+  ],
+  "WoodenChair_01": [
+   "furniture",
+   "seating"
+  ],
+  "WoodenTable_01": [
+   "furniture"
+  ],
+  "WoodenTable_02": [
+   "furniture",
+   "table"
+  ],
+  "WoodenTable_03": [
+   "furniture",
+   "collection: the_shed"
+  ],
+  "adjustable_wrench": [
+   "collection: project_lighthouse",
+   "props",
+   "industrial",
+   "tools"
+  ],
+  "alarm_clock_01": [
+   "props",
+   "decorative",
+   "rigged"
+  ],
+  "all_purpose_cleaner": [
+   "props",
+   "containers",
+   "collection: the_shed"
+  ],
+  "american_football": [
+   "props"
+  ],
+  "ammo_box": [
+   "industrial",
+   "tools",
+   "collection: project_lighthouse"
+  ],
+  "anthurium_botany_01": [
+   "plants",
+   "nature",
+   "collection: the_shed",
+   "collection: smugglers_cove"
+  ],
+  "antique_ceramic_vase_01": [
+   "decorative",
+   "containers",
+   "vases"
+  ],
+  "antique_estoc": [
+   "props"
+  ],
+  "antique_katana_01": [
+   "props"
+  ],
+  "bananas": [
+   "food",
+   "collection: project_lighthouse",
+   "nature"
+  ],
+  "bar_chair_round_01": [
+   "seating",
+   "furniture"
+  ],
+  "bark_debris_01": [
+   "nature",
+   "ground cover",
+   "plants",
+   "collection: namaqualand"
+  ],
+  "barrel_03": [
+   "industrial",
+   "containers"
+  ],
+  "barrel_stove": [
+   "industrial",
+   "containers",
+   "collection: hidden_alley"
+  ],
+  "baseball_01": [
+   "props"
+  ],
+  "baseball_bat": [
+   "props",
+   "collection: hidden_alley"
+  ],
+  "bench_vice_01": [
+   "tools",
+   "industrial",
+   "rigged",
+   "collection: the_shed"
+  ],
+  "binder_notebook": [
+   "collection: project_lighthouse",
+   "books",
+   "props"
+  ],
+  "binoculars": [
+   "collection: project_lighthouse",
+   "props",
+   "tools"
+  ],
+  "bleach_bottle": [
+   "props",
+   "containers",
+   "collection: the_shed"
+  ],
+  "bolt_action_rifle_7_62": [
+   "collection: project_lighthouse",
+   "weapons",
+   "firearms"
+  ],
+  "bolt_cutters_01": [
+   "tools",
+   "industrial",
+   "props",
+   "rigged",
+   "collection: the_shed"
+  ],
+  "book_encyclopedia_set_01": [
+   "props",
+   "decorative",
+   "books"
+  ],
+  "boombox": [
+   "appliances",
+   "electronics",
+   "collection: hidden_alley"
+  ],
+  "boulder_01": [
+   "rocks",
+   "nature",
+   "collection: verdant_trail"
+  ],
+  "brass_blowtorch": [
+   "props",
+   "tools"
+  ],
+  "brass_candleholders": [
+   "decorative",
+   "lighting"
+  ],
+  "brass_diya_lantern": [
+   "decorative",
+   "lighting"
+  ],
+  "brass_goblets": [
+   "props",
+   "dishes",
+   "decorative",
+   "containers"
+  ],
+  "brass_pan_01": [
+   "props",
+   "containers",
+   "decorative",
+   "dishes"
+  ],
+  "brass_pot_01": [
+   "props",
+   "containers",
+   "decorative"
+  ],
+  "brass_pot_02": [
+   "props",
+   "dishes",
+   "containers",
+   "decorative"
+  ],
+  "brass_vase_01": [
+   "decorative",
+   "vases"
+  ],
+  "brass_vase_02": [
+   "decorative",
+   "vases"
+  ],
+  "brass_vase_03": [
+   "containers",
+   "props",
+   "decorative",
+   "vases"
+  ],
+  "brass_vase_04": [
+   "containers",
+   "props",
+   "vases",
+   "dishes"
+  ],
+  "bronze_ray_statue": [
+   "decorative",
+   "collection: project_lighthouse"
+  ],
+  "bronze_shark_statue": [
+   "decorative",
+   "collection: project_lighthouse"
+  ],
+  "bronze_whale_statue": [
+   "decorative",
+   "collection: project_lighthouse"
+  ],
+  "bull_head": [
+   "decorative"
+  ],
+  "bunsen_burner": [
+   "collection: project_lighthouse",
+   "props",
+   "industrial",
+   "tools"
+  ],
+  "caged_hanging_light": [
+   "collection: project_lighthouse",
+   "lighting",
+   "industrial"
+  ],
+  "calathea_orbifolia_01": [
+   "plants",
+   "nature",
+   "ground cover",
+   "collection: smugglers_cove"
+  ],
+  "can_rusted": [
+   "containers",
+   "collection: the_shed"
+  ],
+  "cannon_01": [
+   "props",
+   "rigged",
+   "collection: smugglers_cove"
+  ],
+  "cardboard_box_01": [
+   "industrial",
+   "containers",
+   "collection: the_shed"
+  ],
+  "carrot_cake": [
+   "food",
+   "props"
+  ],
+  "carved_wooden_elephant": [
+   "props",
+   "decorative"
+  ],
+  "carved_wooden_plate": [
+   "props",
+   "decorative",
+   "dishes"
+  ],
+  "cassette_player": [
+   "props",
+   "electronics"
+  ],
+  "ceiling_fan": [
+   "appliances",
+   "electronics"
+  ],
+  "celandine_01": [
+   "nature",
+   "plants",
+   "ground cover",
+   "flowers"
+  ],
+  "cement_bag": [
+   "props",
+   "collection: project_lighthouse"
+  ],
+  "ceramic_pot": [
+   "containers",
+   "props",
+   "decorative",
+   "dishes",
+   "collection: project_lighthouse"
+  ],
+  "ceramic_vase_01": [
+   "vases",
+   "containers",
+   "decorative"
+  ],
+  "ceramic_vase_02": [
+   "decorative",
+   "containers",
+   "vases"
+  ],
+  "ceramic_vase_03": [
+   "containers",
+   "decorative",
+   "vases"
+  ],
+  "ceramic_vase_04": [
+   "containers",
+   "decorative",
+   "vases"
+  ],
+  "cheiridopsis_succulent": [
+   "collection: namaqualand",
+   "nature",
+   "plants",
+   "ground cover"
+  ],
+  "chemistry_set": [
+   "collection: project_lighthouse",
+   "industrial",
+   "props",
+   "tools"
+  ],
+  "chess_set": [
+   "decorative",
+   "props"
+  ],
+  "chinese_armchair": [
+   "furniture",
+   "seating"
+  ],
+  "chinese_cabinet": [
+   "shelves",
+   "furniture"
+  ],
+  "chinese_chandelier": [
+   "lighting",
+   "decorative"
+  ],
+  "chinese_commode": [
+   "furniture",
+   "shelves"
+  ],
+  "chinese_console_table": [
+   "table",
+   "furniture"
+  ],
+  "chinese_screen_panels": [
+   "furniture"
+  ],
+  "chinese_sofa": [
+   "furniture",
+   "seating"
+  ],
+  "chinese_stool": [
+   "seating",
+   "furniture"
+  ],
+  "chinese_tea_table": [
+   "table",
+   "furniture"
+  ],
+  "cigarette_case": [
+   "collection: project_lighthouse",
+   "props"
+  ],
+  "cigarette_pack": [
+   "containers",
+   "props",
+   "collection: project_lighthouse"
+  ],
+  "circuit_board": [
+   "collection: project_lighthouse",
+   "electronics"
+  ],
+  "classic_laptop": [
+   "collection: project_lighthouse",
+   "office",
+   "electronics"
+  ],
+  "cleaner_tin_01": [
+   "containers",
+   "tools",
+   "industrial",
+   "collection: the_shed"
+  ],
+  "clipboard": [
+   "collection: project_lighthouse",
+   "office",
+   "props"
+  ],
+  "coast_land_rocks_02": [
+   "nature",
+   "rocks",
+   "collection: smugglers_cove"
+  ],
+  "coast_land_rocks_03": [
+   "nature",
+   "rocks",
+   "collection: smugglers_cove"
+  ],
+  "coast_land_rocks_04": [
+   "nature",
+   "rocks",
+   "collection: smugglers_cove"
+  ],
+  "coast_line_01": [
+   "nature",
+   "rocks",
+   "collection: smugglers_cove"
+  ],
+  "coast_line_02": [
+   "nature",
+   "rocks",
+   "collection: smugglers_cove"
+  ],
+  "coast_rocks_01": [
+   "nature",
+   "rocks",
+   "collection: smugglers_cove"
+  ],
+  "coast_rocks_02": [
+   "nature",
+   "rocks",
+   "collection: smugglers_cove"
+  ],
+  "coast_rocks_03": [
+   "nature",
+   "rocks",
+   "collection: smugglers_cove"
+  ],
+  "coast_rocks_05": [
+   "nature",
+   "rocks",
+   "collection: smugglers_cove",
+   "collection: verdant_trail"
+  ],
+  "coastal_cliff_01": [
+   "nature",
+   "collection: smugglers_cove"
+  ],
+  "coastal_cliff_02": [
+   "nature",
+   "collection: smugglers_cove",
+   "collection: verdant_trail"
+  ],
+  "coastal_cliff_04": [
+   "nature",
+   "rocks",
+   "collection: smugglers_cove",
+   "collection: verdant_trail"
+  ],
+  "coffee_table_round_01": [
+   "furniture",
+   "table"
+  ],
+  "combination_wrench": [
+   "collection: project_lighthouse",
+   "tools",
+   "industrial"
+  ],
+  "compost_bag_02": [
+   "containers",
+   "industrial",
+   "collection: the_shed"
+  ],
+  "compost_bags": [
+   "props",
+   "collection: the_shed"
+  ],
+  "concrete_cat_statue": [
+   "decorative"
+  ],
+  "concrete_road_barrier": [
+   "industrial",
+   "structures",
+   "collection: hidden_alley"
+  ],
+  "concrete_road_barrier_02": [
+   "industrial",
+   "structures",
+   "collection: hidden_alley"
+  ],
+  "covered_car": [
+   "props",
+   "industrial",
+   "collection: hidden_alley"
+  ],
+  "croissant": [
+   "props",
+   "food"
+  ],
+  "cross_pein_hammer": [
+   "collection: project_lighthouse",
+   "props",
+   "tools"
+  ],
+  "crowbar_01": [
+   "tools",
+   "industrial",
+   "props",
+   "collection: the_shed"
+  ],
+  "crystalline_iceplant": [
+   "nature",
+   "plants",
+   "ground cover",
+   "collection: namaqualand"
+  ],
+  "dandelion_01": [
+   "plants",
+   "flowers",
+   "nature",
+   "ground cover"
+  ],
+  "dartboard": [
+   "props",
+   "decorative",
+   "wall decoration",
+   "collection: the_shed"
+  ],
+  "dead_quiver_branch_01": [
+   "nature",
+   "plants",
+   "ground cover",
+   "collection: namaqualand"
+  ],
+  "dead_quiver_branch_02": [
+   "nature",
+   "collection: namaqualand",
+   "plants",
+   "ground cover"
+  ],
+  "dead_quiver_trunk": [
+   "collection: namaqualand",
+   "nature",
+   "trees"
+  ],
+  "dead_tree_trunk": [
+   "nature",
+   "plants",
+   "ground cover",
+   "collection: pine_forest",
+   "collection: verdant_trail"
+  ],
+  "dead_tree_trunk_02": [
+   "nature",
+   "plants",
+   "trees",
+   "collection: verdant_trail"
+  ],
+  "decorative_book_set_01": [
+   "props",
+   "decorative",
+   "books"
+  ],
+  "desk_lamp_arm_01": [
+   "lighting",
+   "rigged",
+   "collection: the_shed"
+  ],
+  "didelta_spinosa": [
+   "plants",
+   "collection: namaqualand"
+  ],
+  "digital_wrist_watch": [
+   "collection: project_lighthouse",
+   "props",
+   "electronics"
+  ],
+  "dining_chair_02": [
+   "furniture",
+   "seating"
+  ],
+  "dining_table": [
+   "collection: project_lighthouse",
+   "furniture",
+   "table"
+  ],
+  "dirty_football": [
+   "props"
+  ],
+  "drain_cleaner": [
+   "industrial",
+   "props",
+   "tools"
+  ],
+  "drawer_cabinet": [
+   "furniture"
+  ],
+  "drill_press_01": [
+   "collection: project_lighthouse",
+   "appliances",
+   "electronics",
+   "industrial",
+   "tools"
+  ],
+  "dry_branches_medium_01": [
+   "props",
+   "nature",
+   "plants",
+   "ground cover",
+   "collection: pine_forest",
+   "collection: verdant_trail"
+  ],
+  "dry_quiver_leaf": [
+   "nature",
+   "plants",
+   "ground cover",
+   "collection: namaqualand"
+  ],
+  "dustpan": [
+   "collection: project_lighthouse",
+   "props",
+   "tools"
+  ],
+  "dutch_ship_large_01": [
+   "ships",
+   "collection: smugglers_cove"
+  ],
+  "dutch_ship_large_02": [
+   "ships",
+   "collection: smugglers_cove"
+  ],
+  "dutch_ship_medium": [
+   "ships",
+   "collection: smugglers_cove"
+  ],
+  "electric_stove": [
+   "electronics",
+   "appliances",
+   "rigged",
+   "props"
+  ],
+  "exterior_aircon_unit": [
+   "appliances",
+   "industrial",
+   "electronics",
+   "collection: hidden_alley"
+  ],
+  "fancy_picture_frame_01": [
+   "decorative",
+   "wall decoration"
+  ],
+  "fancy_picture_frame_02": [
+   "decorative",
+   "wall decoration"
+  ],
+  "fern_02": [
+   "plants",
+   "nature",
+   "collection: smugglers_cove",
+   "collection: pine_forest"
+  ],
+  "filmstrip_projector_8mm": [
+   "electronics",
+   "appliances",
+   "collection: project_lighthouse"
+  ],
+  "fir_sapling": [
+   "nature",
+   "plants",
+   "trees",
+   "collection: pine_forest"
+  ],
+  "fir_sapling_medium": [
+   "plants",
+   "nature",
+   "trees",
+   "collection: pine_forest"
+  ],
+  "fir_tree_01": [
+   "nature",
+   "plants",
+   "trees",
+   "collection: pine_forest"
+  ],
+  "fire_alarm": [
+   "collection: project_lighthouse",
+   "industrial",
+   "office",
+   "wall decoration"
+  ],
+  "fire_hydrant": [
+   "industrial",
+   "structures",
+   "collection: hidden_alley"
+  ],
+  "fish_knife": [
+   "collection: project_lighthouse",
+   "props"
+  ],
+  "fishermans_hat": [
+   "collection: project_lighthouse",
+   "props"
+  ],
+  "flathead_screwdriver": [
+   "tools",
+   "props",
+   "industrial",
+   "collection: the_shed"
+  ],
+  "flower_empodium": [
+   "nature",
+   "plants",
+   "flowers",
+   "ground cover",
+   "collection: namaqualand"
+  ],
+  "flower_gazania": [
+   "nature",
+   "plants",
+   "flowers",
+   "ground cover",
+   "collection: namaqualand"
+  ],
+  "flower_heliophila": [
+   "nature",
+   "plants",
+   "ground cover",
+   "grass",
+   "collection: namaqualand"
+  ],
+  "flower_stinkkruid": [
+   "nature",
+   "plants",
+   "flowers",
+   "collection: namaqualand"
+  ],
+  "flower_ursinia": [
+   "nature",
+   "plants",
+   "flowers",
+   "collection: namaqualand",
+   "ground cover"
+  ],
+  "folding_wooden_stool": [
+   "seating",
+   "furniture"
+  ],
+  "food_apple_01": [
+   "food",
+   "nature"
+  ],
+  "food_avocado_01": [
+   "food",
+   "nature"
+  ],
+  "food_ginger_01": [
+   "food",
+   "nature"
+  ],
+  "food_kiwi_01": [
+   "food",
+   "nature"
+  ],
+  "food_lime_01": [
+   "food",
+   "nature"
+  ],
+  "food_lychee_01": [
+   "food",
+   "nature"
+  ],
+  "food_pears_asian_01": [
+   "food",
+   "nature"
+  ],
+  "food_pomegranate_01": [
+   "food",
+   "nature"
+  ],
+  "football": [
+   "props",
+   "collection: the_shed"
+  ],
+  "gallinera_chair": [
+   "furniture",
+   "seating"
+  ],
+  "gallinera_table": [
+   "furniture",
+   "table"
+  ],
+  "gamepad": [
+   "props"
+  ],
+  "gaming_console": [
+   "appliances",
+   "electronics"
+  ],
+  "garden_gloves_01": [
+   "props",
+   "collection: the_shed"
+  ],
+  "garden_gnome": [
+   "decorative",
+   "collection: the_shed"
+  ],
+  "garden_hose_wall_mounted_01": [
+   "wall decoration",
+   "plants",
+   "collection: the_shed"
+  ],
+  "garden_sprinkler_01": [
+   "tools",
+   "appliances",
+   "collection: the_shed"
+  ],
+  "gate_latch_01": [
+   "industrial",
+   "buildings",
+   "structures",
+   "collection: the_shed"
+  ],
+  "gothic_coffee_table": [
+   "furniture",
+   "table"
+  ],
+  "gothic_statue": [
+   "collection: project_lighthouse",
+   "decorative"
+  ],
+  "grass_bermuda_01": [
+   "grass",
+   "nature",
+   "ground cover",
+   "collection: smugglers_cove"
+  ],
+  "grass_medium_01": [
+   "grass",
+   "nature",
+   "ground cover",
+   "collection: pine_forest"
+  ],
+  "grass_medium_02": [
+   "nature",
+   "ground cover",
+   "grass",
+   "plants",
+   "collection: verdant_trail"
+  ],
+  "hamburger_buns": [
+   "props",
+   "food",
+   "collection: project_lighthouse"
+  ],
+  "hand_plane_no4": [
+   "tools",
+   "collection: the_shed"
+  ],
+  "hand_truck": [
+   "collection: project_lighthouse",
+   "industrial",
+   "props"
+  ],
+  "handsaw_wood": [
+   "props",
+   "tools",
+   "industrial",
+   "collection: the_shed"
+  ],
+  "hanging_industrial_lamp": [
+   "lighting"
+  ],
+  "hanging_picture_frame_01": [
+   "decorative",
+   "wall decoration"
+  ],
+  "hanging_picture_frame_02": [
+   "decorative",
+   "wall decoration"
+  ],
+  "hanging_picture_frame_03": [
+   "wall decoration",
+   "decorative"
+  ],
+  "hatchet": [
+   "tools"
+  ],
+  "horse_head": [
+   "decorative"
+  ],
+  "horse_statue_01": [
+   "props",
+   "decorative"
+  ],
+  "industrial_caged_sconce": [
+   "collection: project_lighthouse",
+   "lighting",
+   "industrial"
+  ],
+  "industrial_coffee_table": [
+   "furniture",
+   "table"
+  ],
+  "industrial_microscope": [
+   "collection: project_lighthouse",
+   "industrial",
+   "tools",
+   "appliances"
+  ],
+  "industrial_pastic_container": [
+   "collection: project_lighthouse",
+   "containers",
+   "office",
+   "industrial"
+  ],
+  "industrial_pipe_lamp": [
+   "collection: project_lighthouse",
+   "industrial",
+   "lighting"
+  ],
+  "industrial_storage_cart": [
+   "collection: project_lighthouse",
+   "table",
+   "furniture",
+   "industrial"
+  ],
+  "industrial_wall_lamp": [
+   "lighting"
+  ],
+  "industrial_wall_sconce": [
+   "lighting",
+   "decorative"
+  ],
+  "island_tree_01": [
+   "nature",
+   "plants",
+   "trees",
+   "collection: verdant_trail"
+  ],
+  "island_tree_02": [
+   "nature",
+   "plants",
+   "trees"
+  ],
+  "island_tree_03": [
+   "nature",
+   "plants",
+   "trees"
+  ],
+  "jacaranda_tree": [
+   "nature",
+   "plants",
+   "trees",
+   "collection: verdant_trail"
+  ],
+  "jug_01": [
+   "props",
+   "decorative",
+   "dishes",
+   "containers"
+  ],
+  "katana_stand_01": [
+   "props",
+   "decorative"
+  ],
+  "kite_shield": [
+   "props",
+   "collection: the_shed"
+  ],
+  "korean_fire_extinguisher_01": [
+   "industrial",
+   "props"
+  ],
+  "korean_public_payphone_01": [
+   "props"
+  ],
+  "ladder_sectioned_01": [
+   "industrial",
+   "tools",
+   "collection: the_shed"
+  ],
+  "lambis_shell": [
+   "decorative",
+   "nature"
+  ],
+  "lantern_chandelier_01": [
+   "lighting"
+  ],
+  "large_castle_door": [
+   "structures",
+   "buildings",
+   "collection: hidden_alley"
+  ],
+  "large_iron_gate": [
+   "structures",
+   "buildings",
+   "collection: hidden_alley"
+  ],
+  "lateral_sea_marker": [
+   "props"
+  ],
+  "leather_cleaner_can": [
+   "props",
+   "containers",
+   "collection: the_shed"
+  ],
+  "leipoldtia_schultzei": [
+   "plants",
+   "collection: namaqualand"
+  ],
+  "lemon": [
+   "props",
+   "food"
+  ],
+  "life_jacket": [
+   "collection: project_lighthouse",
+   "props"
+  ],
+  "lifebuoy": [
+   "collection: project_lighthouse",
+   "wall decoration",
+   "industrial"
+  ],
+  "lightbulb_01": [
+   "lighting",
+   "collection: the_shed"
+  ],
+  "lightbulb_led": [
+   "electronics",
+   "lighting",
+   "collection: the_shed"
+  ],
+  "lion_head": [
+   "decorative"
+  ],
+  "long_life_food": [
+   "collection: project_lighthouse",
+   "food",
+   "containers",
+   "props"
+  ],
+  "lubricant_spray": [
+   "props",
+   "containers",
+   "tools",
+   "decorative",
+   "collection: the_shed"
+  ],
+  "machete": [
+   "props",
+   "collection: the_shed"
+  ],
+  "magnifying_glass_01": [
+   "props",
+   "tools"
+  ],
+  "mantel_clock_01": [
+   "decorative",
+   "appliances",
+   "rigged"
+  ],
+  "marble_bust_01": [
+   "decorative"
+  ],
+  "measuring_tape_01": [
+   "industrial",
+   "tools",
+   "props",
+   "collection: the_shed"
+  ],
+  "medical_box": [
+   "collection: project_lighthouse",
+   "props",
+   "containers"
+  ],
+  "medical_tape": [
+   "collection: project_lighthouse",
+   "props",
+   "industrial",
+   "tools"
+  ],
+  "metal_detector": [
+   "props",
+   "electronics"
+  ],
+  "metal_jerrycan": [
+   "collection: project_lighthouse",
+   "props",
+   "containers"
+  ],
+  "metal_jerrycan_green": [
+   "collection: project_lighthouse",
+   "props",
+   "containers"
+  ],
+  "metal_jug": [
+   "containers",
+   "decorative",
+   "vases"
+  ],
+  "metal_office_desk": [
+   "collection: project_lighthouse",
+   "furniture",
+   "table",
+   "office"
+  ],
+  "metal_stool_01": [
+   "collection: project_lighthouse",
+   "furniture",
+   "seating"
+  ],
+  "metal_stool_02": [
+   "collection: project_lighthouse",
+   "furniture",
+   "seating"
+  ],
+  "metal_stool_03": [
+   "collection: project_lighthouse",
+   "furniture",
+   "seating"
+  ],
+  "metal_tool_chest": [
+   "props",
+   "tools",
+   "industrial",
+   "containers",
+   "rigged",
+   "collection: the_shed"
+  ],
+  "metal_toolbox": [
+   "collection: project_lighthouse",
+   "containers",
+   "tools",
+   "industrial"
+  ],
+  "metal_trash_can": [
+   "industrial",
+   "containers",
+   "collection: hidden_alley"
+  ],
+  "mid_century_lounge_chair": [
+   "furniture",
+   "seating"
+  ],
+  "modern_arm_chair_01": [
+   "furniture",
+   "seating",
+   "office"
+  ],
+  "modern_ceiling_lamp_01": [
+   "lighting"
+  ],
+  "modern_coffee_table_01": [
+   "furniture",
+   "table"
+  ],
+  "modern_coffee_table_02": [
+   "furniture",
+   "table"
+  ],
+  "modern_wooden_cabinet": [
+   "furniture",
+   "table"
+  ],
+  "modified_thermos": [
+   "collection: project_lighthouse",
+   "props",
+   "containers"
+  ],
+  "modular_airduct_circular_01": [
+   "industrial",
+   "structures",
+   "collection: hidden_alley"
+  ],
+  "modular_airduct_rectangular_01": [
+   "industrial"
+  ],
+  "modular_chainlink_fence": [
+   "structures",
+   "industrial",
+   "buildings",
+   "collection: hidden_alley"
+  ],
+  "modular_electric_cables": [
+   "industrial"
+  ],
+  "modular_electricity_poles": [
+   "industrial",
+   "structures",
+   "collection: hidden_alley"
+  ],
+  "modular_factory_facade": [
+   "collection: hidden_alley",
+   "structures",
+   "buildings"
+  ],
+  "modular_fire_escape": [
+   "industrial",
+   "structures",
+   "collection: hidden_alley"
+  ],
+  "modular_fort_01": [
+   "structures",
+   "buildings",
+   "collection: smugglers_cove"
+  ],
+  "modular_industrial_pipes_01": [
+   "industrial",
+   "structures"
+  ],
+  "modular_metal_gutter": [
+   "industrial",
+   "structures",
+   "buildings",
+   "collection: hidden_alley"
+  ],
+  "modular_pipes": [
+   "industrial",
+   "structures"
+  ],
+  "modular_pipes_plastic_01": [
+   "industrial",
+   "structures",
+   "collection: the_shed"
+  ],
+  "modular_street_seating": [
+   "furniture",
+   "seating",
+   "collection: hidden_alley"
+  ],
+  "modular_urban_apartments_facade": [
+   "collection: hidden_alley",
+   "structures",
+   "buildings"
+  ],
+  "modular_wooden_pier": [
+   "structures",
+   "collection: smugglers_cove"
+  ],
+  "moon_rock_01": [
+   "rocks",
+   "collection: moon",
+   "nature"
+  ],
+  "moon_rock_02": [
+   "rocks",
+   "collection: moon",
+   "nature"
+  ],
+  "moon_rock_03": [
+   "rocks",
+   "collection: moon",
+   "nature"
+  ],
+  "moon_rock_04": [
+   "rocks",
+   "collection: moon",
+   "nature"
+  ],
+  "moon_rock_05": [
+   "rocks",
+   "collection: moon",
+   "nature"
+  ],
+  "moon_rock_06": [
+   "rocks",
+   "collection: moon",
+   "nature"
+  ],
+  "moon_rock_07": [
+   "rocks",
+   "collection: moon",
+   "nature"
+  ],
+  "moss_01": [
+   "nature",
+   "plants",
+   "ground cover",
+   "collection: pine_forest"
+  ],
+  "mountainside": [
+   "nature",
+   "rocks",
+   "collection: verdant_trail"
+  ],
+  "mounted_fluorescent_lights": [
+   "collection: project_lighthouse",
+   "lighting",
+   "industrial"
+  ],
+  "mousetrap": [
+   "props"
+  ],
+  "multi_cleaner_5_litre": [
+   "props",
+   "containers",
+   "industrial",
+   "collection: the_shed"
+  ],
+  "multi_cleaner_bottle": [
+   "containers",
+   "props",
+   "collection: the_shed"
+  ],
+  "namaqualand_boulder_02": [
+   "nature",
+   "rocks",
+   "collection: namaqualand"
+  ],
+  "namaqualand_boulder_03": [
+   "nature",
+   "rocks",
+   "collection: namaqualand"
+  ],
+  "namaqualand_boulder_04": [
+   "nature",
+   "rocks",
+   "collection: namaqualand"
+  ],
+  "namaqualand_boulder_05": [
+   "collection: namaqualand",
+   "nature",
+   "rocks"
+  ],
+  "namaqualand_boulder_06": [
+   "nature",
+   "rocks",
+   "collection: namaqualand"
+  ],
+  "namaqualand_boulders_01": [
+   "nature",
+   "rocks",
+   "collection: namaqualand"
+  ],
+  "namaqualand_cliff_01": [
+   "nature",
+   "rocks",
+   "collection: namaqualand"
+  ],
+  "namaqualand_cliff_02": [
+   "nature",
+   "rocks",
+   "collection: namaqualand"
+  ],
+  "namaqualand_rocks_01": [
+   "nature",
+   "rocks",
+   "collection: namaqualand"
+  ],
+  "namaqualand_stones_01": [
+   "nature",
+   "rocks",
+   "collection: namaqualand"
+  ],
+  "nettle_plant": [
+   "nature",
+   "plants",
+   "ground cover",
+   "collection: the_shed"
+  ],
+  "ocean_buoy": [
+   "collection: project_lighthouse",
+   "props"
+  ],
+  "office_notepads": [
+   "collection: project_lighthouse",
+   "props",
+   "office"
+  ],
+  "oil_tin": [
+   "containers",
+   "props",
+   "industrial",
+   "collection: project_lighthouse"
+  ],
+  "old_bed_frame": [
+   "collection: project_lighthouse",
+   "bed",
+   "furniture"
+  ],
+  "old_drill_press": [
+   "collection: project_lighthouse",
+   "tools",
+   "industrial"
+  ],
+  "old_gas_mask": [
+   "collection: project_lighthouse",
+   "props",
+   "industrial",
+   "tools"
+  ],
+  "old_military_compressor": [
+   "collection: project_lighthouse",
+   "industrial",
+   "tools"
+  ],
+  "old_military_crate": [
+   "collection: project_lighthouse",
+   "containers",
+   "props"
+  ],
+  "old_tyre": [
+   "industrial",
+   "props",
+   "collection: hidden_alley"
+  ],
+  "ornate_medieval_dagger": [
+   "props"
+  ],
+  "ornate_medieval_mace": [
+   "props"
+  ],
+  "ornate_mirror_01": [
+   "decorative",
+   "wall decoration",
+   "furniture"
+  ],
+  "ornate_war_hammer": [
+   "props"
+  ],
+  "othonna_cerarioides": [
+   "nature",
+   "plants",
+   "trees",
+   "collection: namaqualand"
+  ],
+  "outdoor_table_chair_set_01": [
+   "furniture",
+   "seating"
+  ],
+  "overhead_crane": [
+   "collection: project_lighthouse",
+   "industrial",
+   "tools"
+  ],
+  "pachira_aquatica_01": [
+   "plants",
+   "nature",
+   "collection: smugglers_cove"
+  ],
+  "painted_wooden_bench": [
+   "furniture",
+   "seating"
+  ],
+  "painted_wooden_cabinet": [
+   "furniture",
+   "shelves"
+  ],
+  "painted_wooden_cabinet_02": [
+   "furniture",
+   "shelves"
+  ],
+  "painted_wooden_chair_01": [
+   "furniture",
+   "seating"
+  ],
+  "painted_wooden_chair_02": [
+   "furniture",
+   "seating"
+  ],
+  "painted_wooden_nightstand": [
+   "furniture",
+   "table"
+  ],
+  "painted_wooden_shelves": [
+   "furniture",
+   "shelves"
+  ],
+  "painted_wooden_sofa": [
+   "furniture",
+   "seating"
+  ],
+  "painted_wooden_stool": [
+   "seating",
+   "furniture"
+  ],
+  "painted_wooden_table": [
+   "furniture",
+   "table"
+  ],
+  "pastic_torch_6v": [
+   "collection: project_lighthouse",
+   "lighting",
+   "tools",
+   "electronics",
+   "props"
+  ],
+  "periwinkle_plant": [
+   "nature",
+   "ground cover",
+   "plants",
+   "flowers"
+  ],
+  "picke_dirty_01": [
+   "props",
+   "tools",
+   "collection: the_shed"
+  ],
+  "pine_roots": [
+   "plants",
+   "nature",
+   "ground cover",
+   "collection: pine_forest"
+  ],
+  "pine_sapling_medium": [
+   "nature",
+   "plants",
+   "trees",
+   "collection: pine_forest"
+  ],
+  "pine_sapling_small": [
+   "nature",
+   "plants",
+   "trees",
+   "collection: pine_forest"
+  ],
+  "pine_tree_01": [
+   "nature",
+   "plants",
+   "trees",
+   "collection: pine_forest"
+  ],
+  "pipe_wrench": [
+   "industrial",
+   "tools",
+   "collection: hidden_alley"
+  ],
+  "planter_box_01": [
+   "decorative",
+   "containers",
+   "potted plants",
+   "collection: the_shed"
+  ],
+  "planter_box_02": [
+   "containers",
+   "decorative",
+   "potted plants",
+   "collection: the_shed"
+  ],
+  "planter_box_03": [
+   "containers",
+   "decorative",
+   "potted plants",
+   "collection: the_shed"
+  ],
+  "planter_pot_clay": [
+   "containers",
+   "vases",
+   "collection: the_shed"
+  ],
+  "plastic_bottle_gallon": [
+   "containers",
+   "collection: the_shed"
+  ],
+  "plastic_broom": [
+   "collection: project_lighthouse",
+   "props",
+   "tools"
+  ],
+  "plastic_container": [
+   "collection: project_lighthouse",
+   "props",
+   "containers"
+  ],
+  "plastic_crate_01": [
+   "collection: project_lighthouse",
+   "props",
+   "containers"
+  ],
+  "plastic_crate_02": [
+   "collection: project_lighthouse",
+   "props",
+   "containers"
+  ],
+  "plastic_crate_03": [
+   "collection: project_lighthouse",
+   "containers",
+   "industrial"
+  ],
+  "plastic_jerrycan": [
+   "collection: project_lighthouse",
+   "props",
+   "containers"
+  ],
+  "plastic_monobloc_chair_01": [
+   "furniture",
+   "seating",
+   "collection: the_shed"
+  ],
+  "plastic_thermos": [
+   "collection: project_lighthouse",
+   "props",
+   "containers"
+  ],
+  "pliers": [
+   "collection: project_lighthouse",
+   "tools",
+   "props",
+   "industrial"
+  ],
+  "plunger": [
+   "tools"
+  ],
+  "pocket_watch": [
+   "collection: project_lighthouse",
+   "props"
+  ],
+  "portable_cassette_player": [
+   "collection: project_lighthouse",
+   "props",
+   "electronics"
+  ],
+  "portable_generator": [
+   "industrial",
+   "appliances",
+   "collection: project_lighthouse"
+  ],
+  "portable_searchlight": [
+   "collection: project_lighthouse",
+   "lighting",
+   "electronics",
+   "tools",
+   "props"
+  ],
+  "portable_welding_cart": [
+   "collection: project_lighthouse",
+   "industrial",
+   "containers"
+  ],
+  "postcard_set_01": [
+   "props"
+  ],
+  "pot_enamel_01": [
+   "props",
+   "decorative",
+   "dishes"
+  ],
+  "potted_plant_01": [
+   "decorative",
+   "plants",
+   "potted plants",
+   "nature"
+  ],
+  "potted_plant_02": [
+   "decorative",
+   "plants",
+   "potted plants",
+   "nature"
+  ],
+  "potted_plant_04": [
+   "decorative",
+   "plants",
+   "potted plants",
+   "succulent",
+   "nature"
+  ],
+  "power_box_01": [
+   "industrial",
+   "props",
+   "electronics",
+   "tools",
+   "rigged",
+   "collection: the_shed"
+  ],
+  "projector_screen": [
+   "collection: project_lighthouse",
+   "office"
+  ],
+  "propane_tank": [
+   "collection: project_lighthouse",
+   "props",
+   "industrial"
+  ],
+  "propane_torch": [
+   "collection: project_lighthouse",
+   "props",
+   "tools"
+  ],
+  "propane_torch_02": [
+   "collection: project_lighthouse",
+   "industrial",
+   "tools",
+   "props"
+  ],
+  "pull_chain_light_socket": [
+   "lighting",
+   "collection: hidden_alley"
+  ],
+  "quiver_tree_01": [
+   "nature",
+   "plants",
+   "trees",
+   "collection: namaqualand"
+  ],
+  "quiver_tree_02": [
+   "nature",
+   "trees",
+   "plants",
+   "collection: namaqualand"
+  ],
+  "ratchet_wrench": [
+   "props",
+   "tools",
+   "industrial",
+   "collection: the_shed",
+   "rigged"
+  ],
+  "retro_multimeter": [
+   "collection: project_lighthouse",
+   "electronics",
+   "industrial",
+   "tools",
+   "instrument",
+   "props"
+  ],
+  "rock_07": [
+   "rocks",
+   "nature",
+   "collection: verdant_trail"
+  ],
+  "rock_09": [
+   "nature",
+   "rocks",
+   "collection: verdant_trail"
+  ],
+  "rock_face_01": [
+   "rocks",
+   "nature",
+   "collection: verdant_trail"
+  ],
+  "rock_face_02": [
+   "rocks",
+   "nature",
+   "collection: verdant_trail"
+  ],
+  "rock_moss_set_01": [
+   "rocks",
+   "nature",
+   "collection: pine_forest"
+  ],
+  "rock_moss_set_02": [
+   "rocks",
+   "nature",
+   "collection: pine_forest"
+  ],
+  "rollershutter_door": [
+   "structures",
+   "industrial",
+   "buildings",
+   "collection: hidden_alley"
+  ],
+  "rollershutter_window_01": [
+   "structures",
+   "industrial",
+   "buildings",
+   "collection: hidden_alley"
+  ],
+  "rollershutter_window_02": [
+   "industrial",
+   "structures",
+   "buildings",
+   "collection: hidden_alley"
+  ],
+  "rollershutter_window_03": [
+   "industrial",
+   "buildings",
+   "structures",
+   "collection: hidden_alley"
+  ],
+  "root_cluster_01": [
+   "nature",
+   "collection: verdant_trail",
+   "plants",
+   "ground cover"
+  ],
+  "root_cluster_02": [
+   "collection: verdant_trail",
+   "nature",
+   "ground cover"
+  ],
+  "round_spectacles": [
+   "collection: project_lighthouse",
+   "props"
+  ],
+  "round_wooden_table_01": [
+   "furniture",
+   "table"
+  ],
+  "round_wooden_table_02": [
+   "furniture",
+   "table"
+  ],
+  "rubber_boots": [
+   "collection: project_lighthouse",
+   "props"
+  ],
+  "rubber_duck_toy": [
+   "props",
+   "decorative",
+   "collection: the_shed"
+  ],
+  "russian_food_cans_01": [
+   "containers",
+   "props",
+   "food"
+  ],
+  "rusted_hacksaw": [
+   "collection: project_lighthouse",
+   "tools",
+   "props"
+  ],
+  "rusted_spade_01": [
+   "tools",
+   "props",
+   "collection: the_shed"
+  ],
+  "rusted_wheel_rim_01": [
+   "industrial",
+   "props",
+   "collection: hidden_alley"
+  ],
+  "rusted_wheel_rim_02": [
+   "industrial",
+   "props",
+   "collection: hidden_alley"
+  ],
+  "sand_rocks_small_01": [
+   "nature",
+   "rocks",
+   "collection: smugglers_cove",
+   "collection: verdant_trail"
+  ],
+  "scandinavian_masonry_heater": [
+   "appliances"
+  ],
+  "screwdriver": [
+   "collection: project_lighthouse",
+   "tools",
+   "props"
+  ],
+  "screwdrivers_02": [
+   "collection: project_lighthouse",
+   "tools",
+   "props"
+  ],
+  "seadogs_compass": [
+   "props",
+   "tools",
+   "decorative",
+   "collection: project_lighthouse"
+  ],
+  "searsia_burchellii": [
+   "nature",
+   "trees",
+   "collection: namaqualand"
+  ],
+  "searsia_lucida": [
+   "nature",
+   "plants",
+   "trees",
+   "collection: namaqualand"
+  ],
+  "security_camera_01": [
+   "electronics",
+   "appliances",
+   "industrial",
+   "rigged",
+   "collection: hidden_alley"
+  ],
+  "security_camera_02": [
+   "industrial",
+   "electronics",
+   "appliances",
+   "rigged",
+   "collection: hidden_alley"
+  ],
+  "security_light": [
+   "lighting",
+   "industrial",
+   "collection: hidden_alley"
+  ],
+  "seeding_tray_01": [
+   "containers",
+   "collection: the_shed"
+  ],
+  "service_pistol": [
+   "collection: project_lighthouse",
+   "props",
+   "weapons",
+   "firearms"
+  ],
+  "ship_pinnace": [
+   "ships",
+   "rigged",
+   "collection: smugglers_cove"
+  ],
+  "shrub_01": [
+   "nature",
+   "plants",
+   "ground cover",
+   "flowers",
+   "collection: verdant_trail"
+  ],
+  "shrub_02": [
+   "nature",
+   "plants",
+   "ground cover",
+   "collection: verdant_trail"
+  ],
+  "shrub_03": [
+   "nature",
+   "plants",
+   "ground cover",
+   "collection: verdant_trail"
+  ],
+  "shrub_04": [
+   "nature",
+   "plants",
+   "ground cover",
+   "collection: verdant_trail"
+  ],
+  "shrub_sorrel_01": [
+   "plants",
+   "flowers",
+   "nature",
+   "collection: smugglers_cove"
+  ],
+  "side_table_01": [
+   "furniture",
+   "table"
+  ],
+  "side_table_tall_01": [
+   "furniture",
+   "table"
+  ],
+  "signal_flashlight": [
+   "collection: project_lighthouse",
+   "props",
+   "electronics"
+  ],
+  "single_root": [
+   "nature",
+   "plants",
+   "ground cover",
+   "collection: verdant_trail"
+  ],
+  "sledgehammer_01": [
+   "props",
+   "tools",
+   "industrial",
+   "collection: the_shed"
+  ],
+  "small_lpg_tank": [
+   "collection: project_lighthouse",
+   "props",
+   "industrial"
+  ],
+  "small_oil_can_01": [
+   "industrial",
+   "tools",
+   "props",
+   "collection: the_shed"
+  ],
+  "small_plastic_torch": [
+   "collection: project_lighthouse",
+   "tools",
+   "props"
+  ],
+  "small_wooden_table_01": [
+   "furniture",
+   "table"
+  ],
+  "sofa_02": [
+   "furniture",
+   "seating"
+  ],
+  "sofa_03": [
+   "furniture",
+   "seating"
+  ],
+  "spinning_wheel_01": [
+   "props",
+   "tools"
+  ],
+  "spray_paint_bottles": [
+   "props",
+   "containers",
+   "industrial",
+   "collection: the_shed"
+  ],
+  "spray_paint_bottles_02": [
+   "industrial",
+   "props",
+   "tools",
+   "collection: hidden_alley"
+  ],
+  "standing_chalkboard_01": [
+   "decorative"
+  ],
+  "standing_picture_frame_01": [
+   "decorative"
+  ],
+  "standing_picture_frame_02": [
+   "decorative"
+  ],
+  "stationery_supplies": [
+   "collection: project_lighthouse",
+   "props",
+   "office"
+  ],
+  "steel_frame_shelves_01": [
+   "furniture",
+   "shelves",
+   "industrial",
+   "collection: the_shed"
+  ],
+  "steel_frame_shelves_02": [
+   "furniture",
+   "industrial",
+   "shelves",
+   "collection: the_shed"
+  ],
+  "steel_frame_shelves_03": [
+   "shelves",
+   "furniture"
+  ],
+  "stick_grenade": [
+   "collection: project_lighthouse",
+   "weapons"
+  ],
+  "stone_01": [
+   "rocks",
+   "nature",
+   "collection: verdant_trail"
+  ],
+  "stone_fire_pit": [
+   "structures",
+   "buildings",
+   "furniture",
+   "collection: the_shed"
+  ],
+  "strawberry_chocolate_cake": [
+   "props",
+   "food"
+  ],
+  "street_lamp_01": [
+   "lighting",
+   "industrial",
+   "collection: hidden_alley"
+  ],
+  "street_lamp_02": [
+   "lighting",
+   "industrial",
+   "collection: hidden_alley"
+  ],
+  "street_rat": [
+   "nature",
+   "creature",
+   "collection: hidden_alley"
+  ],
+  "sungka_board": [
+   "decorative",
+   "props",
+   "collection: the_shed"
+  ],
+  "sungka_board_02": [
+   "decorative",
+   "props"
+  ],
+  "sweet_potato": [
+   "food",
+   "nature"
+  ],
+  "tea_set_01": [
+   "props",
+   "dishes"
+  ],
+  "television_02": [
+   "collection: project_lighthouse",
+   "electronics"
+  ],
+  "throw_pillows_01": [
+   "decorative"
+  ],
+  "tire_pump": [
+   "tools",
+   "props",
+   "collection: the_shed"
+  ],
+  "tongue_groove_pliers": [
+   "collection: project_lighthouse",
+   "tools"
+  ],
+  "tool_cart": [
+   "collection: project_lighthouse",
+   "industrial",
+   "furniture",
+   "table"
+  ],
+  "trashbag": [
+   "collection: project_lighthouse",
+   "props"
+  ],
+  "treasure_chest": [
+   "props",
+   "containers",
+   "decorative",
+   "collection: smugglers_cove"
+  ],
+  "tree_small_02": [
+   "nature",
+   "plants",
+   "trees",
+   "collection: verdant_trail"
+  ],
+  "tree_stump_01": [
+   "nature",
+   "plants",
+   "ground cover",
+   "trees",
+   "collection: pine_forest"
+  ],
+  "tree_stump_02": [
+   "nature",
+   "plants",
+   "ground cover",
+   "trees",
+   "collection: pine_forest"
+  ],
+  "trowel_01": [
+   "props",
+   "tools",
+   "collection: the_shed"
+  ],
+  "utility_box_01": [
+   "industrial",
+   "structures",
+   "collection: hidden_alley"
+  ],
+  "utility_box_02": [
+   "structures",
+   "industrial",
+   "collection: hidden_alley"
+  ],
+  "vintage_binocular": [
+   "collection: project_lighthouse",
+   "instrument",
+   "props"
+  ],
+  "vintage_cabinet_01": [
+   "furniture",
+   "shelves"
+  ],
+  "vintage_crutches_01": [
+   "props",
+   "collection: the_shed"
+  ],
+  "vintage_day_bed": [
+   "collection: project_lighthouse",
+   "furniture",
+   "bed",
+   "seating"
+  ],
+  "vintage_electric_kettle": [
+   "collection: project_lighthouse",
+   "decorative",
+   "appliances"
+  ],
+  "vintage_flashlight": [
+   "collection: project_lighthouse",
+   "lighting",
+   "electronics",
+   "props",
+   "tools"
+  ],
+  "vintage_grandfather_clock_01": [
+   "decorative",
+   "appliances",
+   "rigged"
+  ],
+  "vintage_hand_drill": [
+   "tools",
+   "props",
+   "rigged",
+   "collection: the_shed"
+  ],
+  "vintage_lighter": [
+   "collection: project_lighthouse",
+   "props",
+   "tools"
+  ],
+  "vintage_microscope": [
+   "collection: project_lighthouse",
+   "instrument",
+   "industrial",
+   "tools"
+  ],
+  "vintage_microwave": [
+   "collection: project_lighthouse",
+   "appliances",
+   "electronics"
+  ],
+  "vintage_oil_lamp": [
+   "lighting",
+   "decorative"
+  ],
+  "vintage_pocket_watch": [
+   "props"
+  ],
+  "vintage_radio_transceiver": [
+   "appliances",
+   "electronics",
+   "collection: project_lighthouse"
+  ],
+  "vintage_spacecraft_instrument": [
+   "collection: project_lighthouse",
+   "instrument",
+   "electronics",
+   "industrial"
+  ],
+  "vintage_stapler": [
+   "collection: project_lighthouse",
+   "props",
+   "tools",
+   "office"
+  ],
+  "vintage_suitcase": [
+   "decorative",
+   "props"
+  ],
+  "vintage_telephone_wall_clock": [
+   "props",
+   "decorative",
+   "wall decoration",
+   "collection: project_lighthouse"
+  ],
+  "vintage_video_camera": [
+   "electronics",
+   "appliances"
+  ],
+  "vintage_wooden_drawer_01": [
+   "furniture",
+   "shelves",
+   "table"
+  ],
+  "wall_clock": [
+   "collection: project_lighthouse",
+   "decorative",
+   "appliances"
+  ],
+  "water_manhole_cover": [
+   "industrial",
+   "structures",
+   "collection: hidden_alley"
+  ],
+  "watering_can_metal_01": [
+   "containers",
+   "tools",
+   "props",
+   "collection: the_shed"
+  ],
+  "weed_plant_02": [
+   "nature",
+   "plants",
+   "ground cover",
+   "collection: the_shed"
+  ],
+  "wheelchair_01": [
+   "props"
+  ],
+  "wicker_basket_01": [
+   "containers",
+   "decorative",
+   "collection: the_shed"
+  ],
+  "wicker_basket_02": [
+   "containers",
+   "decorative"
+  ],
+  "wild_rooibos_bush": [
+   "nature",
+   "plants",
+   "collection: namaqualand"
+  ],
+  "wine_barrel_01": [
+   "containers"
+  ],
+  "wine_bottles_01": [
+   "props",
+   "containers",
+   "dishes"
+  ],
+  "wooden_axe": [
+   "props"
+  ],
+  "wooden_axe_02": [
+   "props"
+  ],
+  "wooden_axe_03": [
+   "props",
+   "tools"
+  ],
+  "wooden_barrels_01": [
+   "containers",
+   "props",
+   "collection: smugglers_cove"
+  ],
+  "wooden_bookshelf_worn": [
+   "furniture",
+   "shelves",
+   "collection: the_shed"
+  ],
+  "wooden_bowl_01": [
+   "props",
+   "decorative",
+   "dishes"
+  ],
+  "wooden_bowl_02": [
+   "props",
+   "decorative",
+   "dishes"
+  ],
+  "wooden_broom": [
+   "collection: project_lighthouse",
+   "props",
+   "tools"
+  ],
+  "wooden_bucket_01": [
+   "props",
+   "containers",
+   "collection: smugglers_cove"
+  ],
+  "wooden_bucket_02": [
+   "props",
+   "containers",
+   "collection: smugglers_cove"
+  ],
+  "wooden_candlestick": [
+   "decorative",
+   "lighting"
+  ],
+  "wooden_crate_01": [
+   "containers",
+   "collection: smugglers_cove"
+  ],
+  "wooden_crate_02": [
+   "containers",
+   "props",
+   "collection: smugglers_cove"
+  ],
+  "wooden_cutting_board": [
+   "props",
+   "food"
+  ],
+  "wooden_display_shelves_01": [
+   "furniture",
+   "shelves"
+  ],
+  "wooden_hammer_01": [
+   "industrial",
+   "tools",
+   "props",
+   "collection: the_shed"
+  ],
+  "wooden_handle_saber": [
+   "props",
+   "collection: hidden_alley"
+  ],
+  "wooden_ladder": [
+   "collection: project_lighthouse",
+   "tools",
+   "industrial"
+  ],
+  "wooden_ladder_02": [
+   "collection: project_lighthouse",
+   "tools"
+  ],
+  "wooden_lantern_01": [
+   "props",
+   "lighting",
+   "collection: smugglers_cove"
+  ],
+  "wooden_military_crate": [
+   "collection: project_lighthouse",
+   "containers"
+  ],
+  "wooden_picnic_table": [
+   "furniture",
+   "seating",
+   "table"
+  ],
+  "wooden_spoon": [
+   "props",
+   "dishes"
+  ],
+  "wooden_stool_01": [
+   "seating",
+   "furniture",
+   "collection: the_shed"
+  ],
+  "wooden_stool_02": [
+   "seating",
+   "furniture"
+  ],
+  "wooden_table_02": [
+   "furniture",
+   "table"
+  ],
+  "worn_metal_rack": [
+   "collection: project_lighthouse",
+   "furniture",
+   "shelves",
+   "industrial"
+  ],
+  "yellow_onion": [
+   "props",
+   "food"
+  ]
+ },
+ "polyhaven_skies": [
+  "aarfontein_dusk",
+  "abandoned_parking",
+  "abandoned_pathway",
+  "abandoned_tank_farm_03",
+  "abandoned_tank_farm_04",
+  "abandoned_tank_farm_05",
+  "approaching_storm",
+  "aristea_wreck",
+  "aristea_wreck_puresky",
+  "autumn_field",
+  "autumn_field_puresky",
+  "autumn_hill_view",
+  "autumn_hilly_field",
+  "autumn_park",
+  "aviation_museum_hill",
+  "bambanani_sunset",
+  "beach_parking",
+  "belfast_sunset",
+  "belfast_sunset_puresky",
+  "bell_park_dawn",
+  "bell_park_pier",
+  "bloem_field_sunrise",
+  "bloem_hill_01",
+  "bloem_hill_02",
+  "bloem_hill_03",
+  "blouberg_sunrise_1",
+  "blouberg_sunrise_2",
+  "blue_lagoon",
+  "cannon",
+  "cape_hill",
+  "cayley_lookout",
+  "cedar_bridge",
+  "cedar_bridge_2",
+  "cedar_bridge_sunset_1",
+  "cedar_bridge_sunset_2",
+  "champagne_castle_1",
+  "circus_maximus_1",
+  "circus_maximus_2",
+  "citrus_orchard",
+  "citrus_orchard_puresky",
+  "citrus_orchard_road",
+  "citrus_orchard_road_puresky",
+  "clarens_midday",
+  "clarens_night_01",
+  "clarens_night_02",
+  "cloud_layers",
+  "delta_2",
+  "derelict_overpass",
+  "dirt_bike_track_01",
+  "drackenstein_quarry",
+  "drackenstein_quarry_puresky",
+  "drakensberg_solitary_mountain",
+  "drakensberg_solitary_mountain_puresky",
+  "dreifaltigkeitsberg",
+  "driving_school",
+  "dry_cracked_lake",
+  "dry_field",
+  "ehingen_hillside",
+  "ehingen_hillside_02",
+  "etzwihl",
+  "evening_field",
+  "evening_road_01",
+  "evening_road_01_puresky",
+  "farm_field",
+  "farm_field_puresky",
+  "farm_road",
+  "farm_sunset",
+  "farmland_overcast",
+  "fish_hoek_beach",
+  "flamingo_pan",
+  "flower_road",
+  "fouriesburg_mountain_cloudy",
+  "fouriesburg_mountain_lookout",
+  "fouriesburg_mountain_lookout_2",
+  "fouriesburg_mountain_midday",
+  "freight_station",
+  "furry_clouds",
+  "goegap_road",
+  "golden_gate_hills",
+  "grasslands_sunset",
+  "green_point_park",
+  "harties",
+  "harvest",
+  "hausdorf_clear_sky",
+  "hay_bales",
+  "hilltop_construction",
+  "hilly_terrain_01",
+  "hilly_terrain_01_puresky",
+  "hochsal_field",
+  "horn-koppe_snow",
+  "horn-koppe_spring",
+  "industrial_sunset",
+  "industrial_sunset_02",
+  "industrial_sunset_02_puresky",
+  "industrial_sunset_puresky",
+  "je_gray_park",
+  "kiara_1_dawn",
+  "kiara_2_sunrise",
+  "kiara_3_morning",
+  "kiara_4_mid-morning",
+  "kiara_5_noon",
+  "kiara_6_afternoon",
+  "kiara_7_late-afternoon",
+  "kiara_8_sunset",
+  "kiara_9_dusk",
+  "klippad_dawn_1",
+  "klippad_dawn_2",
+  "klippad_sunrise_1",
+  "klippad_sunrise_2",
+  "kloetzle_blei",
+  "kloofendal_28d_misty",
+  "kloofendal_28d_misty_puresky",
+  "kloofendal_38d_partly_cloudy",
+  "kloofendal_38d_partly_cloudy_puresky",
+  "kloofendal_43d_clear",
+  "kloofendal_43d_clear_puresky",
+  "kloofendal_48d_partly_cloudy",
+  "kloofendal_48d_partly_cloudy_puresky",
+  "kloofendal_misty_morning",
+  "kloofendal_misty_morning_puresky",
+  "kloofendal_overcast",
+  "kloofendal_overcast_puresky",
+  "kloppenheim_01",
+  "kloppenheim_01_puresky",
+  "kloppenheim_02",
+  "kloppenheim_02_puresky",
+  "kloppenheim_03",
+  "kloppenheim_03_puresky",
+  "kloppenheim_04",
+  "kloppenheim_05",
+  "kloppenheim_05_puresky",
+  "kloppenheim_06",
+  "kloppenheim_06_puresky",
+  "kloppenheim_07",
+  "kloppenheim_07_puresky",
+  "lake_pier",
+  "lakes",
+  "learner_park",
+  "lenong_1",
+  "lenong_2",
+  "lenong_3",
+  "lilienstein",
+  "limpopo_golf_course",
+  "lonely_road_afternoon",
+  "lonely_road_afternoon_puresky",
+  "lot_01",
+  "ludwikowice_farmland",
+  "magalies_field_sunset",
+  "malagas_ferry_road",
+  "mealie_road",
+  "minedump_flats",
+  "misty_farm_road",
+  "moonless_golf",
+  "moonlit_golf",
+  "mpumalanga_veld",
+  "mpumalanga_veld_puresky",
+  "mud_road",
+  "mud_road_puresky",
+  "museumplein",
+  "noga",
+  "noon_grass",
+  "oberer_kuhberg",
+  "old_outdoor_theater",
+  "ostrich_road",
+  "ouchy_pier",
+  "overcast_soil",
+  "overcast_soil_2",
+  "overcast_soil_puresky",
+  "passendorf_snow",
+  "pisztyk",
+  "pizzo_pernice",
+  "pizzo_pernice_puresky",
+  "plains_sunset",
+  "poolbeg",
+  "quarry_01",
+  "quarry_01_puresky",
+  "quarry_02",
+  "quarry_03",
+  "quarry_04",
+  "quarry_04_puresky",
+  "quarry_cloudy",
+  "qwantani",
+  "qwantani_afternoon",
+  "qwantani_afternoon_puresky",
+  "qwantani_dawn",
+  "qwantani_dawn_puresky",
+  "qwantani_dusk_1",
+  "qwantani_dusk_1_puresky",
+  "qwantani_dusk_2",
+  "qwantani_dusk_2_puresky",
+  "qwantani_late_afternoon",
+  "qwantani_late_afternoon_puresky",
+  "qwantani_mid_morning",
+  "qwantani_mid_morning_puresky",
+  "qwantani_moon_noon",
+  "qwantani_moon_noon_puresky",
+  "qwantani_moonrise",
+  "qwantani_moonrise_puresky",
+  "qwantani_morning",
+  "qwantani_morning_puresky",
+  "qwantani_night",
+  "qwantani_night_puresky",
+  "qwantani_noon",
+  "qwantani_noon_puresky",
+  "qwantani_puresky",
+  "qwantani_sunrise",
+  "qwantani_sunrise_puresky",
+  "qwantani_sunset",
+  "qwantani_sunset_puresky",
+  "railway_bridges",
+  "reichstag_1",
+  "resting_place",
+  "rocky_ridge",
+  "rocky_ridge_puresky",
+  "rogland_clear_night",
+  "rogland_moonlit_night",
+  "rogland_overcast",
+  "rogland_sunset",
+  "rolling_hills",
+  "rooftop_night",
+  "rooitou_park",
+  "rosendal_mountain_midmorning",
+  "rosendal_park_sunset",
+  "rosendal_park_sunset_puresky",
+  "rosendal_plains_1",
+  "rosendal_plains_2",
+  "round_platform",
+  "ruckenkreuz",
+  "rural_asphalt_road",
+  "rural_evening_road",
+  "rural_landscape",
+  "rural_winter_roadside",
+  "rustig_koppie",
+  "rustig_koppie_puresky",
+  "safari_sunset",
+  "sandsloot",
+  "satara_night",
+  "satara_night_no_lamps",
+  "scythian_tombs",
+  "scythian_tombs_2",
+  "scythian_tombs_puresky",
+  "shanghai_riverside",
+  "signal_hill_dawn",
+  "simons_town_rocks",
+  "skidpan",
+  "small_harbor_01",
+  "small_harbor_02",
+  "small_harbour_sunset",
+  "small_rural_road",
+  "snow_field",
+  "snow_field_2",
+  "snow_field_2_puresky",
+  "snow_field_puresky",
+  "snowy_field",
+  "spiaggia_di_mondello",
+  "spruit_dawn",
+  "spruit_sunrise",
+  "straw_rolls_field_01",
+  "sunflowers",
+  "sunflowers_puresky",
+  "sunny_rose_garden",
+  "sunset_fairway",
+  "sunset_in_the_chalk_quarry",
+  "sunset_meadow_path",
+  "syferfontein_0d_clear",
+  "syferfontein_0d_clear_puresky",
+  "syferfontein_18d_clear",
+  "syferfontein_18d_clear_puresky",
+  "syferfontein_1d_clear",
+  "syferfontein_1d_clear_puresky",
+  "syferfontein_6d_clear",
+  "syferfontein_6d_clear_puresky",
+  "symmetrical_garden",
+  "table_mountain_1",
+  "table_mountain_1_puresky",
+  "table_mountain_2",
+  "table_mountain_2_puresky",
+  "the_sky_is_on_fire",
+  "tiber_island",
+  "toposcope_sunset",
+  "umhlanga_sunrise",
+  "valley_of_desolation",
+  "veld_fire",
+  "venice_dawn_1",
+  "venice_sunset",
+  "versveldpas",
+  "wasteland_clouds",
+  "wasteland_clouds_puresky",
+  "waterbuck_trail",
+  "waterkloof_farm",
+  "white_cliff_top",
+  "wildflower_field",
+  "winter_lake_01",
+  "winter_river",
+  "winter_sky",
+  "yellow_field",
+  "zwartkops_straight_afternoon",
+  "zwartkops_straight_morning",
+  "zwartkops_straight_sunset"
+ ]
+}
