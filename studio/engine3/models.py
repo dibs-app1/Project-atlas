@@ -84,12 +84,15 @@ def fin(m, root_x, root_len, tip_x, tip_len, height, z0, thick, color, y=0.0):
 
 
 class Part:
-    """A moving part: mesh at a local position, spinning about a local axis."""
+    """A moving part: mesh at a local position, turning about a local axis.
+    kind: wheel (turns with distance), prop (spins with time), fixed, or fn (angle = fn(t, dist, speed))."""
 
-    def __init__(self, mesh, at, axis="y", kind="wheel", radius=0.35, speed=0.0):
+    def __init__(self, mesh, at, axis="y", kind="wheel", radius=0.35, speed=0.0, fn=None, parent=None):
         self.mesh = mesh.finalize()
         self.at = np.asarray(at, float)
         self.axis, self.kind, self.radius, self.speed = axis, kind, radius, speed
+        self.fn = fn
+        self.parent = parent      # index of another part this one is attached to (e.g. a lower leg)
 
 
 class Model:
@@ -106,12 +109,16 @@ class Model:
     def objs(self, pos, yaw=0.0, pitch=0.0, roll=0.0, dist=0.0, t=0.0, shadow=True, state=None):
         Rm = R.ypr(yaw, pitch, roll)
         pos = np.asarray(pos, float)
+        v = (state or {}).get("v", 0.0)
         out = [R.Obj(self.body, pos, Rm, shadow=shadow, name=self.name)]
+        frames = []
         for p in self.parts:
             if p.kind == "wheel":
                 ang = dist / max(0.05, p.radius)
             elif p.kind == "fixed":
                 ang = 0.0
+            elif p.kind == "fn":
+                ang = p.fn(t, dist, v)
             else:
                 ang = t * p.speed
             if p.axis == "y":
@@ -120,8 +127,16 @@ class Model:
                 Rl = R.rot_x(ang)
             else:
                 Rl = R.rot_z(ang)
-            out.append(R.Obj(p.mesh, pos + Rm @ p.at, Rm @ Rl, shadow=False))
+            if p.parent is not None:          # attached to another moving part
+                ppos, pR = frames[p.parent]
+                wpos, wR = ppos + pR @ p.at, pR @ Rl
+            else:
+                wpos, wR = pos + Rm @ p.at, Rm @ Rl
+            frames.append((wpos, wR))
+            out.append(R.Obj(p.mesh, wpos, wR, shadow=p.kind == "fn" and self.body_shadow_parts))
         return out
+
+    body_shadow_parts = False
 
 
 def wheel_mesh(r, w, spokes=5, rim=RIM, tyre=TYRE):

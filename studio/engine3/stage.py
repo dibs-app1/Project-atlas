@@ -77,7 +77,7 @@ class Actor:
 
     def objs(self, t):
         pos, h, p, r, d, v = self.state(t)
-        return self.model.objs(pos, h, p, r, dist=d, t=t)
+        return self.model.objs(pos, h, p, r, dist=d, t=t, state={"v": v})
 
     def point(self, t, local):
         pos, h, p, r, d, v = self.state(t)
@@ -287,9 +287,9 @@ def _puff(r, col, a):
         arr[..., :3] = col
         arr[..., 3] = al.astype(np.uint8)
         im = Image.fromarray(arr, "RGBA")
-        _PUFF[key] = im
         if len(_PUFF) > 400:
             _PUFF.clear()
+        _PUFF[key] = im
     return _PUFF[key]
 
 

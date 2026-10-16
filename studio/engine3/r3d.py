@@ -105,11 +105,11 @@ class Mesh:
 
 # ------------------------------------------------------------------ primitives (all add to a Mesh)
 
-def box(m, c, size, color, R=None, top=None, flags=0, outward=False):
+def box(m, c, size, color, R=None, top=None, flags=0, outward=False, decal=True):
     """Axis box centred at c with size (sx, sy, sz); optional rotation R about its centre.
     Thin boxes are decals (windows, stripes, lights). With outward=True (vehicle models, built around their own
     origin) a decal keeps only its outside face, so it never blocks the view from inside a cab."""
-    if min(size) <= 0.05:
+    if decal and min(size) <= 0.05:
         flags |= 4
     sx, sy, sz = (s / 2 for s in size)
     P = np.array([[-sx, -sy, -sz], [sx, -sy, -sz], [sx, sy, -sz], [-sx, sy, -sz],
