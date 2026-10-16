@@ -1,10 +1,12 @@
-"""Download the Quaternius CC0 packs (Google Drive folders) and keep their glTF models in studio/assets."""
-import glob
+"""Quaternius CC0 packs: list Drive files, fetch the glTF ones via the direct endpoint; also look at OpenGameArt mirrors."""
 import os
-import shutil
-import subprocess
-import zipfile
+import re
 
+import gdown
+import requests
+
+S = requests.Session()
+S.headers["User-Agent"] = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124 Safari/537.36"
 PACKS = {
     "farmanimal": "1is1ax2V0mIEDS7BbbzBV_x2Pabya1dVJ",
     "ultimateanimatedanimals": "1uJ3N5HfB7jKTseJUNQr3N4YaN0UuEtHk",
@@ -13,39 +15,46 @@ PACKS = {
     "ultimatestylizednature": "1IV3bXHzkNvuNWFHPi4KPx-G4ghuxIuT-",
     "farmbuildings": "1gdZ39vcLML_ULU5sHirkKQ-gEkk458Ak",
 }
-for name, fid in PACKS.items():
-    dest = f"/tmp/dl/{name}"
-    os.makedirs(dest, exist_ok=True)
-    print("=====", name, flush=True)
-    subprocess.run(["gdown", "--folder", f"https://drive.google.com/drive/folders/{fid}", "-O", dest],
-                   check=False, timeout=1500)
-    for z in glob.glob(dest + "/**/*.zip", recursive=True):
+
+
+def direct(fid, to):
+    for url in (f"https://drive.usercontent.google.com/download?id={fid}&export=download&confirm=t",
+                f"https://drive.google.com/uc?export=download&id={fid}&confirm=t"):
         try:
-            with zipfile.ZipFile(z) as zf:
-                zf.extractall(z[:-4])
-            print("unzipped", z)
+            r = S.get(url, timeout=120)
+            ct = r.headers.get("content-type", "")
+            if r.ok and "text/html" not in ct and len(r.content) > 100:
+                os.makedirs(os.path.dirname(to), exist_ok=True)
+                open(to, "wb").write(r.content)
+                return len(r.content)
+            print("   miss", url[:60], r.status_code, ct, len(r.content))
         except Exception as e:
-            print("ZIP ERR", z, e)
-    files = sorted(f for f in glob.glob(dest + "/**/*", recursive=True) if os.path.isfile(f))
-    print("FILES", len(files))
-    for f in files[:600]:
-        print("   ", os.path.relpath(f, dest), os.path.getsize(f))
-    kept = 0
+            print("   err", e)
+    return 0
+
+
+for name, fid in PACKS.items():
+    print("=====", name, flush=True)
+    try:
+        files = gdown.download_folder(id=fid, skip_download=True, quiet=True)
+    except Exception as e:
+        print("LIST ERR", e)
+        continue
+    print("LISTED", len(files))
     for f in files:
-        low = f.lower()
-        if ("gltf" in low or low.endswith(".glb")) and not low.endswith(".zip") and os.path.getsize(f) < 40e6:
-            rel = os.path.relpath(f, dest)
-            to = os.path.join("studio/assets/quaternius", name, rel)
-            os.makedirs(os.path.dirname(to), exist_ok=True)
-            shutil.copy(f, to)
-            kept += 1
-    print("KEPT", name, kept, flush=True)
-import requests
-os.makedirs("studio/assets/sky", exist_ok=True)
-for sky in ["qwantani_noon_puresky", "qwantani_morning_puresky", "qwantani_late_afternoon_puresky", "qwantani_dusk_2_puresky",
-            "kloofendal_48d_partly_cloudy_puresky", "kloofendal_overcast_puresky", "qwantani_sunrise_puresky"]:
-    r = requests.get(f"https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/2k/{sky}_2k.hdr", timeout=120)
-    print("SKY", sky, r.status_code, len(r.content))
-    if r.ok:
-        open(f"studio/assets/sky/{sky}.hdr", "wb").write(r.content)
-print(subprocess.run(["du", "-sh", "studio/assets"], capture_output=True, text=True).stdout)
+        print("   ", f.path, f.id)
+    for f in files:
+        low = f.path.lower()
+        if "gltf" in low or low.endswith(".glb") or low.endswith(".bin") and "gltf" in low:
+            n = direct(f.id, os.path.join("studio/assets/quaternius", name, f.path))
+            print("GOT" if n else "FAIL", f.path, n, flush=True)
+
+# OpenGameArt mirrors of Quaternius packs
+for q in ["quaternius animal", "quaternius fish", "quaternius farm", "quaternius nature"]:
+    try:
+        r = S.get("https://opengameart.org/art-search-advanced?keys=" + q.replace(" ", "+") + "&field_art_type_tid%5B%5D=10", timeout=60)
+        print("OGA", q, r.status_code)
+        for m in sorted(set(re.findall(r'href="(/content/[^"]+)"', r.text)))[:40]:
+            print("   ", m)
+    except Exception as e:
+        print("OGA ERR", e)
