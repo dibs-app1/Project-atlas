@@ -20,3 +20,4 @@ for js in ["https://quaternius.com/assets/js/main.js", "https://quaternius.com/a
             open("assets-requests/out/pages/" + os.path.basename(js), "w").write(r.text)
     except Exception as e:
         print(js, e)
+# run 3
