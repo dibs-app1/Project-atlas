@@ -17,7 +17,7 @@ for name, fid in PACKS.items():
     dest = f"/tmp/dl/{name}"
     os.makedirs(dest, exist_ok=True)
     print("=====", name, flush=True)
-    subprocess.run(["gdown", "--folder", "--remaining-ok", f"https://drive.google.com/drive/folders/{fid}", "-O", dest],
+    subprocess.run(["gdown", "--folder", f"https://drive.google.com/drive/folders/{fid}", "-O", dest],
                    check=False, timeout=1500)
     for z in glob.glob(dest + "/**/*.zip", recursive=True):
         try:
@@ -40,4 +40,12 @@ for name, fid in PACKS.items():
             shutil.copy(f, to)
             kept += 1
     print("KEPT", name, kept, flush=True)
+import requests
+os.makedirs("studio/assets/sky", exist_ok=True)
+for sky in ["qwantani_noon_puresky", "qwantani_morning_puresky", "qwantani_late_afternoon_puresky", "qwantani_dusk_2_puresky",
+            "kloofendal_48d_partly_cloudy_puresky", "kloofendal_overcast_puresky", "qwantani_sunrise_puresky"]:
+    r = requests.get(f"https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/2k/{sky}_2k.hdr", timeout=120)
+    print("SKY", sky, r.status_code, len(r.content))
+    if r.ok:
+        open(f"studio/assets/sky/{sky}.hdr", "wb").write(r.content)
 print(subprocess.run(["du", "-sh", "studio/assets"], capture_output=True, text=True).stdout)
