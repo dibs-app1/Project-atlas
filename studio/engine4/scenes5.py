@@ -511,7 +511,7 @@ def ducks_pond(st):
     for k in range(4):
         animal(st, "duckling", p, sp, s0=mid_s(p, st.D, sp) - 0.7 - 0.45 * k, z=-0.05, offset=0.25 * (-1) ** k, level=0.3)
     animal(st, "duck", p, schedule(st.r, st.D, v=0.4), s0=mid_s(p, st.D, sp) + 5, offset=3.0, z=-0.12, level=0.4)
-    hero(st, a, ["side", "front", "orbit"])
+    hero(st, a, ["side", ("orbit", {"h": 1.2}), ("side", {"side": 1})])
 
 
 @scene("ducklings_parade")
@@ -634,7 +634,7 @@ def puppy_butterfly(st):
     sp = schedule(st.r, st.D, walk=(5, 8), stop=(2, 4), v=0.8)
     s0 = mid_s(lawn, st.D, sp)
     a = animal(st, "puppy", lawn, sp, s0=s0, hero=True)
-    animal(st, "butterfly", lawn, sp, s0=s0 + 1.0, z=0.6, sound=False, alt_fn=lambda t: 0.25 * math.sin(t * 2.3))
+    animal(st, "butterfly", lawn, sp, s0=s0 + 1.0, z=0.6, sound=False, scale=3.0, alt_fn=lambda t: 0.25 * math.sin(t * 2.3))
     hero(st, a, ["low", "side", "orbit"])
 
 
@@ -643,7 +643,7 @@ def ginger_cat_garden(st):
     ln = garden(st)
     p = ln["lawn"]
     sp = schedule(st.r, st.D, walk=(6, 9), stop=(3, 5), v=0.6)
-    a = animal(st, "ginger_cat", p, sp, s0=mid_s(p, st.D, sp), offset=-6.0, hero=True)
+    a = animal(st, "ginger_cat", p, sp, s0=mid_s(p, st.D, sp), offset=4.0, hero=True)
     hero(st, a, ["side", "front", "orbit"])
 
 
@@ -664,7 +664,7 @@ def black_dog_beach(st):
     p = ln["shore"]
     sp = schedule(st.r, st.D, walk=(9, 14), stop=(2, 4), v=1.6)
     a = animal(st, "black_dog", p, sp, s0=mid_s(p, st.D, sp), hero=True)
-    hero(st, a, ["side", "front", "drone"])
+    hero(st, a, ["side", "front", "orbit"])
 
 
 @scene("pug_and_puppy")
@@ -703,7 +703,7 @@ def cat_meadow_butterfly(st):
     sp = schedule(st.r, st.D, walk=(6, 9), stop=(4, 6), v=0.55)
     s0 = mid_s(p, st.D, sp)
     a = animal(st, "cat", p, sp, s0=s0, hero=True)
-    animal(st, "butterfly", p, lambda t: 0.6, s0=s0 + 0.5, z=0.7, sound=False, offset=0.6,
+    animal(st, "butterfly", p, lambda t: 0.6, s0=s0 + 0.5, z=0.7, sound=False, offset=0.6, scale=3.0,
            alt_fn=lambda t: 0.3 * math.sin(t * 2.1))
     hero(st, a, ["side", "low", "orbit"])
 
@@ -749,7 +749,7 @@ def reef_tangs(st):
     a = animal(st, "bluetang", p, 0.8, s0=p.length / 2 - 0.8 * st.D / 2, z=1.6, scale=1.5, hero=True,
                alt_fn=lambda t: 0.3 * math.sin(t * 0.7))
     _school(st, "bluetang", p, 0.8, p.length / 2 - 0.8 * st.D / 2 - 1, 4, 1.2, 1.8, random.Random(st.seed), 1.3)
-    hero(st, a, [("side", {"dist": 2.4}), ("chase", {"back": 2.2, "h": 0.4}), ("orbit", {"radius": 2.6, "h": 0.5})])
+    hero(st, a, [("side", {"dist": 2.4}), ("front", {"off": 2.0}), ("orbit", {"radius": 2.6, "h": 0.5})])
 
 
 @scene("fish_school")
@@ -759,7 +759,7 @@ def fish_school(st):
     s0 = p.length / 2 - 1.4 * st.D / 2
     fish = _school(st, "tuna", p, 1.4, s0, 30, 2.5, 5.0, random.Random(st.seed))
     st.sounds.append(dict(kind="swim", src=fish[0], level=0.8, call="blub", hero=True, size=0.5))
-    hero(st, fish[0], [("side", {"dist": 6}), ("chase", {"back": 5, "h": 1.0}), ("orbit", {"radius": 7, "h": 1.5})])
+    hero(st, fish[0], [("side", {"dist": 6}), ("front", {"off": 5, "h": 0.5}), ("orbit", {"radius": 7, "h": 1.5})])
 
 
 @scene("dolphins_play")
@@ -792,10 +792,12 @@ def manta_glide(st):
 
 @scene("turtle_swim")
 def turtle_swim(st):
-    ln = reef(st)
-    p = ln["swim"]
-    a = animal(st, "turtle", p, 0.7, s0=p.length / 2 - 0.7 * st.D / 2, z=2.0, hero=True, alt_fn=lambda t: 0.4 * math.sin(t * 0.35))
-    hero(st, a, [("side", {"dist": 3.2}), ("front", {"off": 3}), ("orbit", {"radius": 3.6, "h": 0.8})])
+    """A turtle walks across the sand to the sea (the model walks, so we show it on the beach)."""
+    ln = beach(st)
+    p = ln["sand"]
+    sp = schedule(st.r, st.D, walk=(8, 12), stop=(2, 4), v=0.3)
+    a = animal(st, "turtle", p, sp, s0=mid_s(p, st.D, sp), scale=0.7, hero=True)
+    hero(st, a, [("side", {"dist": 2.2}), ("low", {"off": 1.6}), ("orbit", {"radius": 2.4, "h": 0.6})])
 
 
 @scene("crab_sand")
@@ -815,7 +817,7 @@ def goldfish_pond(st):
     a = animal(st, "goldfish", p, 0.6, s0=p.length / 2 - 0.6 * st.D / 2, z=1.2, scale=1.6, hero=True,
                alt_fn=lambda t: 0.2 * math.sin(t * 0.9))
     _school(st, "goldfish", p, 0.6, p.length / 2 - 0.6 * st.D / 2 - 0.8, 4, 0.8, 1.3, random.Random(st.seed), 1.3)
-    hero(st, a, [("side", {"dist": 1.8}), ("orbit", {"radius": 2.0, "h": 0.4}), ("chase", {"back": 1.8, "h": 0.3})])
+    hero(st, a, [("side", {"dist": 1.8}), ("orbit", {"radius": 2.0, "h": 0.4}), ("front", {"off": 1.6})])
 
 
 @scene("reef_parade")
@@ -827,7 +829,7 @@ def reef_parade(st):
     a = animal(st, "bluetang", p, 0.8, s0=s0, z=1.6, scale=1.5, hero=True)
     _school(st, "clownfish", p, 0.8, s0 - 1, 4, 1.0, 1.4, r, 1.4)
     _school(st, "goldfish", p, 0.8, s0 + 2, 3, 1.0, 2.0, r, 1.2)
-    hero(st, a, [("side", {"dist": 2.6}), ("orbit", {"radius": 3, "h": 0.6}), ("chase", {"back": 2.6, "h": 0.5})])
+    hero(st, a, [("side", {"dist": 2.6}), ("orbit", {"radius": 3, "h": 0.6}), ("side", {"side": 1, "dist": 2.4})])
 
 
 # ------------------------------------------------------------------ FARM ANIMALS
@@ -854,7 +856,7 @@ def horse_pony(st):
     s0 = mid_s(p, st.D, sp)
     a = animal(st, "horse", p, sp, s0=s0, hero=True)
     animal(st, "pony", p, sp, s0=s0 - 1.8, offset=1.4, level=0.5)
-    hero(st, a, ["side", "front", "drone"])
+    hero(st, a, ["side", "front", "orbit"])
 
 
 @scene("pigs_mud")
@@ -877,7 +879,7 @@ def sheep_lambs(st):
     a = animal(st, "sheep", p, sp, s0=s0, mood=_graze, hero=True)
     for k in range(4):
         animal(st, "lamb" if k % 2 else "sheep", p, sp, s0=s0 - 1.5 - 1.3 * k, offset=1.2 * ((k % 3) - 1), mood=_graze, level=0.4)
-    hero(st, a, ["side", "orbit", "front"])
+    hero(st, a, ["side", "front", ("side", {"side": 1})])
 
 
 @scene("goats_hill")
@@ -948,4 +950,4 @@ def barn_sunset(st):
     animal(st, "sheep", p, sp, s0=s0 - 3.0, offset=0.6, level=0.4)
     animal(st, "pig", p, sp, s0=s0 - 5.0, offset=-0.5, level=0.4)
     animal(st, "goat", p, sp, s0=s0 - 7.0, offset=0.4, level=0.4)
-    hero(st, a, ["side", "drone", "chase"])
+    hero(st, a, ["orbit", "drone", "chase"])

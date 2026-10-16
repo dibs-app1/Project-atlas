@@ -270,9 +270,9 @@
     {
      "script": "turtle_swim",
      "time": "day",
-     "caption": "A sea turtle",
+     "caption": "A turtle walks to the sea",
      "noise": "splash_small",
-     "theme": "reef"
+     "theme": "beach"
     },
     {
      "script": "crab_sand",

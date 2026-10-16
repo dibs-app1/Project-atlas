@@ -77,7 +77,8 @@ class Renderer4:
         key = pose.model.uid
         if key not in self.animals:
             info = pose.model.info
-            inst = rigs.Instance(cast.find(info["file"]), length=pose.model.length, palette=info.get("palette"))
+            inst = rigs.Instance(cast.find(info["file"]), length=pose.model.length, palette=info.get("palette"),
+                                 texture=cast.find(info["texture"]) if info.get("texture") else None)
             gait = rigs.Gait(inst, walk_speed=info.get("walk", 1.0) * pose.model.length / info["length"],
                              run_speed=info.get("run", info.get("walk", 1.0) * 3.5), eat=info.get("eat", True))
             self.animals[key] = (inst, gait)

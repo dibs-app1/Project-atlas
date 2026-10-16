@@ -45,7 +45,7 @@ ANIMALS = {
     "duck": dict(file="duck6.blend", length=0.55, height=0.45, walk=0.4, call="quack"),
     "duckling": dict(file="duckling1.blend", length=0.22, height=0.18, walk=0.3, call="peep"),
     "rabbit": dict(file="rabbit.blend", length=0.45, height=0.35, walk=1.0, call="none"),
-    "penguin": dict(file="Pingouin-NEW.blend", length=0.45, height=0.7, walk=0.45, call="penguin"),
+    "penguin": dict(file="Pingouin-NEW.blend", length=0.45, height=0.7, walk=0.45, call="penguin", texture="Pingouin_Plane.010.png"),
     # pets
     "cat": dict(file="Cat.fbx", length=0.6, height=0.4, walk=0.6, call="meow"),
     "ginger_cat": dict(file="Cat.fbx", length=0.6, height=0.4, walk=0.6, call="meow",

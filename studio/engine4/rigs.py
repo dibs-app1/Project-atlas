@@ -225,7 +225,7 @@ def find_clip(clips, *names):
 class Instance:
     """One animal on screen: its own import of the model file (correct hierarchy, materials and clips)."""
 
-    def __init__(self, path, length, yaw_fix=None, collection=None, palette=None):
+    def __init__(self, path, length, yaw_fix=None, collection=None, palette=None, texture=None):
         sc = bpy.context.scene
         col = collection or sc.collection
         before = set(bpy.data.objects)
@@ -272,6 +272,22 @@ class Instance:
         self.meshes = [o for o in new if o.type == "MESH"]
         stem = re.sub(r"\.(fbx|glb|gltf)$", "", str(path).split("/")[-1], flags=re.I)
         clean_materials(self.meshes, palette or PALETTES.get(stem), force=palette is not None)
+        if texture:        # old files whose texture is not wired into the material: paint it on through the UVs
+            img = bpy.data.images.load(str(texture), check_existing=True)
+            nm = bpy.data.materials.new("tex_" + stem)
+            nt = nm.node_tree if nm.node_tree else None
+            if nt is None:
+                nm.use_nodes = True
+                nt = nm.node_tree
+            tex = nt.nodes.new("ShaderNodeTexImage")
+            tex.image = img
+            b = nt.nodes.get("Principled BSDF")
+            b.inputs["Roughness"].default_value = 0.75
+            nt.links.new(tex.outputs["Color"], b.inputs["Base Color"])
+            for o in self.meshes:
+                if o.data.uv_layers:
+                    for sl in o.material_slots:
+                        sl.material = nm
         self.clips = {a.name.split("|")[-1]: Clip(a) for a in bpy.data.actions
                       if a not in acts_before and not BAD_CLIPS.search(a.name)}
         for o in new:

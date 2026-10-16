@@ -122,6 +122,30 @@ flute), and the band pauses for a vehicle noise in each song round.
 python studio/produce3.py 19-seaside-town --manifest studio/plan/batch4.json --out output
 ```
 
+## Batch 5: animals in Blender (engine 4)
+
+Four ten-minute videos: **Birds**, **Dogs and Cats**, **Fish** (under the sea) and **Farm Animals**, ten scenes
+each (`plan/batch5.json`). Engine 4 renders with **Blender** (EEVEE, the `bpy` package, CPU-only through Mesa),
+so the look is far closer to a real animated film than the earlier software renderers:
+
+- **Real animals made by artists**, with their own animations: Quaternius' CC0 farm animals, cat, dog, eagle,
+  dolphin, fish and whale, plus CC0 models from other OpenGameArt artists (chicken, rooster, duck and ducklings,
+  goat, turtle, crab, rabbit, butterfly, pigeon, penguin). Each walk/run clip is played at a rate matched to
+  the ground speed so feet don't slide, and clips blend into idle, eating or pecking when the animal stops.
+  Clips for dying, attacking or screaming are never used. Credits are in `assets/CREDITS.md`.
+- **Real photographed skies** (Poly Haven HDRIs) light each scene and cast soft shadows. Trees, bushes,
+  flowers, grass, rocks and lily pads come from Quaternius' nature packs, and gentle haze adds depth.
+  The underwater worlds have coral, sea grass, light rays and bubbles.
+- **Sound**: soft footsteps, hoof clip-clops, wing beats and water, each animal's own call now and then
+  (moo, baa, oink, neigh, cluck, quack, tweet, woof, meow...; synthesized and gentle, `engine3/animal_sounds.py`),
+  ambience for each world, and the animal's sound in every song round.
+- **Cameras** are framed to the animal's own size: alongside, in front, close to the ground, circling round.
+
+How it renders: `engine4/render4.py` renders one scene (about 1.5 hours on a 4-core runner at 1280x720,
+upscaled to 1080p). The workflow runs the 40 scenes as separate jobs (`scenes`), then each video is assembled
+with its song by `produce3.py --reuse`, checked by QA and published as a Release. `.github/workflows/assets.yml`
+(the asset librarian) is how the CC0 models were fetched and licence-checked.
+
 ## The richer look (engine 2)
 
 `engine2/look.py` gives every engine-2 frame a richer, more 3D, more colourful finish:
