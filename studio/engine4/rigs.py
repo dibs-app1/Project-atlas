@@ -325,6 +325,7 @@ def give_eyes(inst, spec=None):
     from mathutils.bvhtree import BVHTree
     spec = spec or {}
     inst.eye_pts = []
+    inst.eye_clear = spec.get("clear", 3.2)        # feather/fur-free ring round each eye, in eye radii
     black = _eye_mat("eye_black", (0.008, 0.008, 0.01), 0.06, coat=1.0)
     if spec.get("own"):
         return
@@ -647,7 +648,7 @@ def add_coat(inst, layers):
                     lt = N.new("ShaderNodeMath")
                     lt.operation = "LESS_THAN"
                     L.new(_sock(vd, "Value", "VALUE", out=True), lt.inputs[0])
-                    lt.inputs[1].default_value = 3.2 * r / osc      # a clear ring round the eye: no feather hangs over it
+                    lt.inputs[1].default_value = getattr(inst, "eye_clear", 3.2) * r / osc   # no feather hangs over the eye
                     if kill is None:
                         kill = lt.outputs[0]
                     else:

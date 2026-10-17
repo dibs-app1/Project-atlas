@@ -27,3 +27,10 @@ checked each page's licence (CC0 only) before keeping a file.
 - **U.S. Fish and Wildlife Service** (via Wikimedia Commons): domestic geese honking. Public domain.
 
 `studio/assets/sounds/<animal>/` holds single calls cut from those recordings with `python studio/soundtrack.py cut`.
+- **erdie** (freesound.org, via Wikimedia Commons): pig grunt, recorded on a farm. CC BY 3.0, credited in the video
+  description. (`pig_low`, `pig_high`, `pig_double` are pitch variations of it.)
+
+## Music
+
+- **Kevin MacLeod** (incompetech.com): "Carefree", "Wholesome", "Life of Riley", "Wallpaper". CC BY 4.0, credited in
+  the video description.

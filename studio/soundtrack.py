@@ -73,7 +73,11 @@ def calls_for(kind):
     files = sorted(glob.glob(str(SOUNDS / kind / "*.wav")))
     if not files:
         raise SystemExit(f"no recorded sounds for '{kind}' in {SOUNDS / kind}")
-    return [load(f) for f in files]
+    out = []
+    for f in files:
+        y = load(f)
+        out.append(y / (np.sqrt(np.mean(y ** 2)) + 1e-9))       # same loudness for every call (RMS 1)
+    return out
 
 
 def music_bed(names, N, fade=4.0):
@@ -124,8 +128,9 @@ def mix(video, scene_t0, scene_len, shots_per_scene, total, seed=0):
             duck[max(0, i0 - int(0.25 * SR)):min(N, i1 + int(0.3 * SR))] = 1.0
     k = int(0.3 * SR)
     duck = np.convolve(duck, np.ones(k) / k, mode="same")
-    music = bed * st.get("music_level", 0.5) * (1.0 - 0.45 * duck)
-    m = music + 0.32 * calls
+    # the music sits under each call (dips to half) and the call is clearly louder than it (about +7 dB)
+    music = bed * st.get("music_level", 0.5) * (1.0 - 0.5 * duck)
+    m = music + st.get("call_mix", 0.55) * calls
     return m / (np.max(np.abs(m)) + 1e-9) * 0.9
 
 

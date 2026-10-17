@@ -1,124 +1,148 @@
 {
- "channel": "TheCalmLittleWorld",
- "batch": "farm3d",
- "batch_index": 6,
- "engine": 4,
- "subject": "animals",
- "count": 1,
- "require": [
-  "animals"
- ],
- "target_seconds": 600,
- "style": "soft",
- "parts": 4,
- "videos": [
-  {
-   "id": "27-farm-animals-3d",
-   "theme": "farmyard",
-   "vehicle": "animals",
-   "word": "Farm Animals",
-   "title": "Farm Animals for Kids | Cows, Horses, Pigs, Sheep, Goats & Chickens | Animal Sounds for Toddlers",
-   "hook": "A day on the farm! Cows in the meadow, a horse and a pony, pigs and piglets in the mud, sheep and lambs, goats, hens in the yard, a rooster in the morning, chicks following their mother, ducks on the farm pond, and geese waddling home at sunset.",
-   "learn": "Watch how farm animals walk, graze, peck and play, read each animal's name, and copy their sounds: moo, neigh, oink, baa, maa, cluck, quack and honk.",
-   "song": {
-    "lead": "whistle",
-    "root": 67,
-    "instrument": "marimba",
-    "upbeat": true
-   },
-   "tags": [
-    "farm animals for kids",
-    "animal sounds for toddlers",
-    "farm animals song",
-    "cows for kids",
-    "animal sounds",
-    "learning video for toddlers",
-    "calm video for kids",
-    "3D animation for kids"
-   ],
-   "scenes": [
+  "channel": "TheCalmLittleWorld",
+  "batch": "farm3d",
+  "batch_index": 6,
+  "engine": 4,
+  "subject": "animals",
+  "count": 1,
+  "require": [
+    "animals"
+  ],
+  "target_seconds": 600,
+  "style": "soft",
+  "parts": 4,
+  "videos": [
     {
-     "script": "cows_meadow",
-     "time": "morning",
-     "caption": "Cows in the meadow",
-     "noise": "moo",
-     "theme": "farmyard",
-     "label": "Cows"
-    },
-    {
-     "script": "horse_pony",
-     "time": "day",
-     "caption": "A horse and a pony",
-     "noise": "neigh",
-     "theme": "farmyard",
-     "label": "Horse and Pony"
-    },
-    {
-     "script": "pigs_mud",
-     "time": "day",
-     "caption": "Pigs and piglets",
-     "noise": "oink",
-     "theme": "farmyard",
-     "label": "Pigs"
-    },
-    {
-     "script": "sheep_lambs",
-     "time": "day",
-     "caption": "Sheep and little lambs",
-     "noise": "baa",
-     "theme": "farmyard",
-     "label": "Sheep"
-    },
-    {
-     "script": "goats_hill",
-     "time": "day",
-     "caption": "Goats on the hill",
-     "noise": "maa",
-     "theme": "farmyard",
-     "label": "Goats"
-    },
-    {
-     "script": "hens_yard",
-     "time": "day",
-     "caption": "Hens in the farmyard",
-     "noise": "cluck",
-     "theme": "farmyard",
-     "label": "Chickens"
-    },
-    {
-     "script": "rooster_morning",
-     "time": "morning",
-     "caption": "The rooster says good morning",
-     "noise": "rooster",
-     "theme": "farmyard",
-     "label": "Rooster"
-    },
-    {
-     "script": "chicks_follow",
-     "time": "day",
-     "caption": "Little chicks follow the hen",
-     "noise": "peep",
-     "theme": "farmyard",
-     "label": "Chicks"
-    },
-    {
-     "script": "ducks_farm_pond",
-     "time": "golden",
-     "caption": "Ducks on the farm pond",
-     "noise": "quack",
-     "theme": "farmyard",
-     "label": "Ducks"
-    },
-    {
-     "script": "geese_home",
-     "time": "golden",
-     "caption": "Geese waddle home",
-     "noise": "honk",
-     "theme": "farmyard",
-     "label": "Geese"
+      "id": "27-farm-animals-3d",
+      "theme": "farmyard",
+      "vehicle": "animals",
+      "word": "Farm Animals",
+      "title": "Farm Animals for Kids | Cows, Horses, Pigs, Sheep, Goats & Chickens | Animal Sounds for Toddlers",
+      "hook": "A day on the farm! Cows in the meadow, a horse and a pony, pigs and piglets in the mud, sheep and lambs, goats, hens in the yard, a rooster in the morning, chicks following their mother, ducks on the farm pond, and geese waddling home at sunset.",
+      "learn": "Watch how farm animals walk, graze, peck and play, read each animal's name, and copy their sounds: moo, neigh, oink, baa, maa, cluck, quack and honk.",
+      "song": {
+        "lead": "whistle",
+        "root": 67,
+        "instrument": "marimba",
+        "upbeat": true
+      },
+      "tags": [
+        "farm animals for kids",
+        "animal sounds for toddlers",
+        "farm animal names",
+        "cows for kids",
+        "animal sounds",
+        "learning video for toddlers",
+        "calm video for kids",
+        "3D animation for kids"
+      ],
+      "scenes": [
+        {
+          "script": "cows_meadow",
+          "time": "morning",
+          "caption": "Cows in the meadow",
+          "noise": "moo",
+          "theme": "farmyard",
+          "label": "Cows",
+          "sound": "cow"
+        },
+        {
+          "script": "horse_pony",
+          "time": "day",
+          "caption": "A horse and a pony",
+          "noise": "neigh",
+          "theme": "farmyard",
+          "label": "Horse and Pony",
+          "sound": "horse"
+        },
+        {
+          "script": "pigs_mud",
+          "time": "day",
+          "caption": "Pigs and piglets",
+          "noise": "oink",
+          "theme": "farmyard",
+          "label": "Pigs",
+          "sound": "pig"
+        },
+        {
+          "script": "sheep_lambs",
+          "time": "day",
+          "caption": "Sheep and little lambs",
+          "noise": "baa",
+          "theme": "farmyard",
+          "label": "Sheep",
+          "sound": "sheep"
+        },
+        {
+          "script": "goats_hill",
+          "time": "day",
+          "caption": "Goats on the hill",
+          "noise": "maa",
+          "theme": "farmyard",
+          "label": "Goats",
+          "sound": "goat"
+        },
+        {
+          "script": "hens_yard",
+          "time": "day",
+          "caption": "Hens in the farmyard",
+          "noise": "cluck",
+          "theme": "farmyard",
+          "label": "Chickens",
+          "sound": "chicken"
+        },
+        {
+          "script": "rooster_morning",
+          "time": "morning",
+          "caption": "The rooster says good morning",
+          "noise": "rooster",
+          "theme": "farmyard",
+          "label": "Rooster",
+          "sound": "rooster"
+        },
+        {
+          "script": "chicks_follow",
+          "time": "day",
+          "caption": "Little chicks follow the hen",
+          "noise": "peep",
+          "theme": "farmyard",
+          "label": "Chicks",
+          "sound": "chick"
+        },
+        {
+          "script": "ducks_farm_pond",
+          "time": "golden",
+          "caption": "Ducks on the farm pond",
+          "noise": "quack",
+          "theme": "farmyard",
+          "label": "Ducks",
+          "sound": "duck"
+        },
+        {
+          "script": "geese_home",
+          "time": "golden",
+          "caption": "Geese waddle home",
+          "noise": "honk",
+          "theme": "farmyard",
+          "label": "Geese",
+          "sound": "goose"
+        }
+      ],
+      "style": "soft",
+      "soundtrack": {
+        "music": [
+          "km__Carefree.mp3",
+          "km__Wholesome.mp3",
+          "km__Life_of_Riley.mp3"
+        ],
+        "credits": [
+          "\"Carefree\", \"Wholesome\" and \"Life of Riley\" by Kevin MacLeod (incompetech.com), licensed under Creative Commons: By Attribution 4.0 License, http://creativecommons.org/licenses/by/4.0/"
+        ],
+        "music_level": 0.5,
+        "sound_credits": [
+          "Pig grunt by erdie (freesound.org/people/Erdie/sounds/44274), licensed under Creative Commons: By Attribution 3.0, http://creativecommons.org/licenses/by/3.0/"
+        ]
+      }
     }
-   ],
-   "style": "soft"
-  }
- ]
+  ]
 }

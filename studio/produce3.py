@@ -160,6 +160,7 @@ def render(vid, manifest, out_dir, total=600, workers=None, log=print, reuse=Fal
 
 
     # ---- assemble with soft dissolves
+    xf = XF / FPS
     inputs = ["intro.mp4"] + [f"scene_{k:02d}.mp4" for k in range(n)] + ["outro.mp4"]
     cmd = ["ffmpeg", "-y", "-loglevel", "error"]
     for f in inputs:
@@ -241,6 +242,7 @@ def description(video, chapter_starts, total, subject="vehicles"):
         *lines,
         "",
         *([f"Music: {c}" for c in video.get("soundtrack", {}).get("credits", [])] + [""] if video.get("soundtrack", {}).get("credits") else []),
+        *([f"Sound: {c}" for c in video.get("soundtrack", {}).get("sound_credits", [])] + [""] if video.get("soundtrack", {}).get("sound_credits") else []),
         tags,
     ])
 
