@@ -836,17 +836,25 @@ class Instance:
         if self.arm is None or not mix:
             return
         tot = sum(w for _, _, w in mix) or 1.0
-        acc = {}
+        acc, wsum = {}, {}
         for clip, frame, w in mix:
             w /= tot
             for key, v in clip.sample(frame).items():
                 a = acc.get(key)
+                wsum[key] = wsum.get(key, 0.0) + w
                 if a is None:
                     acc[key] = [w * x for x in v]
                 else:
                     if key[1] == "rotation_quaternion" and sum(x * y for x, y in zip(a, v)) < 0:
                         v = [-x for x in v]
                     acc[key] = [x + w * y for x, y in zip(a, v)]
+        # a channel that only some of the clips animate: the others hold the bone at rest (not at zero, which
+        # would shrink the bone away while one clip fades into another)
+        rest = {"rotation_quaternion": [1.0, 0.0, 0.0, 0.0], "scale": [1.0, 1.0, 1.0], "location": [0.0, 0.0, 0.0],
+                "rotation_euler": [0.0, 0.0, 0.0]}
+        for key, ws in wsum.items():
+            if ws < 0.999 and key[1] in rest:
+                acc[key] = [x + (1.0 - ws) * r for x, r in zip(acc[key], rest[key[1]])]
         pbs = self.arm.pose.bones
         for (bone, prop), v in acc.items():
             pb = pbs.get(bone)
