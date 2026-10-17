@@ -1,0 +1,26 @@
+# Deletes the releases (and their tags) listed in studio/plan/DELETE_RELEASES.txt, one tag per line ('#' starts a comment).
+# Used to remove a superseded video release, e.g. one with a rendering bug that was re-made under a new tag.
+name: Release cleanup
+
+on:
+  push:
+    branches: ["claude/**"]
+    paths: ["studio/plan/DELETE_RELEASES.txt"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  delete:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Delete the listed releases
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          grep -v '^\s*#' studio/plan/DELETE_RELEASES.txt | grep -v '^\s*$' | while read -r tag; do
+            echo "deleting $tag"
+            gh release delete "$tag" --cleanup-tag --yes --repo "$GITHUB_REPOSITORY" || echo "could not delete $tag"
+          done
