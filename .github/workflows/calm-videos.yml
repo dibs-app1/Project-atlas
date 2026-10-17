@@ -167,5 +167,11 @@ jobs:
             echo "For each video, download the .mp4, its .jpg thumbnail and its .txt (title, description with chapters, tags)."
             echo "In YouTube Studio set Audience to: Yes, it's made for kids."
           } > notes.md
-          gh release create "$tag" --target "${{ github.sha }}" --title "TheCalmLittleWorld - ${{ needs.plan.outputs.batch }} (#${{ github.run_number }})" \
-            --notes-file notes.md output/*.mp4 output/*.jpg output/*.txt output/qa_report.json
+          title="TheCalmLittleWorld - ${{ needs.plan.outputs.batch }} (#${{ github.run_number }})"
+          if ! gh release create "$tag" --target "${{ github.sha }}" --title "$title" \
+               --notes-file notes.md output/*.mp4 output/*.jpg output/*.txt output/qa_report.json; then
+            echo "publishing was refused; keeping the videos as a draft release (visible to the repo owner)"
+            gh release view "$tag" >/dev/null 2>&1 || gh api -X POST "repos/$GITHUB_REPOSITORY/releases" -f tag_name="$tag" \
+              -F draft=true -f name="$title" -F body=@notes.md --jq .id
+            gh release upload "$tag" --clobber output/*.mp4 output/*.jpg output/*.txt output/qa_report.json
+          fi
