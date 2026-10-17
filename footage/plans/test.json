@@ -1,0 +1,5 @@
+{"id": "test-puppies-kittens", "title": "Test: real puppies and kittens", "seed": 24, "instrument": "marimba",
+ "segments": [
+  {"query": "puppy", "clips": 3, "seconds": 7},
+  {"query": "kitten", "clips": 2, "seconds": 7}
+ ]}
