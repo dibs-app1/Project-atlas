@@ -31,18 +31,6 @@ jobs:
           merge-multiple: true
           run-id: ${{ steps.req.outputs.run_id }}
           github-token: ${{ github.token }}
-      - name: Check what the token may do
-        continue-on-error: true
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          curl -s -o /dev/null -D - -H "Authorization: Bearer $GH_TOKEN" "https://api.github.com/repos/$GITHUB_REPOSITORY" | grep -i -E "^HTTP|x-oauth|x-accepted|github-authentication" || true
-          gh api "repos/$GITHUB_REPOSITORY" --jq '{private, visibility, archived, disabled, permissions}' || true
-          echo "--- push a test tag"
-          git tag diag-tag-test && git push origin diag-tag-test && git push origin :refs/tags/diag-tag-test || true
-          echo "--- create a draft release (no tag needed)"
-          id=$(gh api -X POST "repos/$GITHUB_REPOSITORY/releases" -f tag_name=diag-draft-test -F draft=true --jq .id 2>&1) ; echo "$id"
-          case "$id" in *[!0-9]*|"") ;; *) gh api -X DELETE "repos/$GITHUB_REPOSITORY/releases/$id" && echo "draft created and removed" ;; esac
       - name: Publish release
         env:
           GH_TOKEN: ${{ github.token }}
@@ -58,5 +46,14 @@ jobs:
             echo "For each video, download the .mp4, its .jpg thumbnail and its .txt (title, description with chapters, tags)."
             echo "In YouTube Studio set Audience to: Yes, it's made for kids."
           } > notes.md
-          gh release create "$TAG" --target "$SHA" --title "TheCalmLittleWorld - $BATCH (#${TAG##*-})" \
-            --notes-file notes.md output/*.mp4 output/*.jpg output/*.txt
+          # one step at a time, so a refusal names the step: tag (pushed with git), draft, uploads, publish
+          git fetch -q --depth 1 origin "$SHA"
+          git tag "$TAG" "$SHA"
+          git push origin "refs/tags/$TAG"
+          echo "--- tag pushed; creating the draft"
+          gh api -X POST "repos/$GITHUB_REPOSITORY/releases" -f tag_name="$TAG" -F draft=true \
+            -f name="TheCalmLittleWorld - $BATCH (#${TAG##*-})" -F body=@notes.md --jq .id
+          echo "--- draft created; uploading"
+          gh release upload "$TAG" output/*.mp4 output/*.jpg output/*.txt
+          echo "--- uploaded; publishing"
+          gh release edit "$TAG" --draft=false
