@@ -74,6 +74,38 @@ def song_for(video, seed):
     return songmod.Song(v, seed), songmod
 
 
+def _song_audio(video, specs, starts, g0, L, n, N, total, bi, vi, work, log):
+    """The original song without words, with the scenes' own sound effects."""
+    sng, songmod = song_for(video, scene_seed(bi, vi, 77))
+    bar = (L - XF) / FPS / songmod.BARS
+    rr = random.Random(scene_seed(bi, vi, 78))
+    plans = []
+    for s in specs:
+        sc = dict(s, verse=[la(rr.randint(5, 8)) for _ in range(4)], ask=la(6), ask2=la(7), echo="la la")
+        plans.append(sng.scene_plan(sc, bar))
+    log("composing the song ...")
+    backing = sng.backing(g0, bar, total, plans)
+    lead = sng.lead(plans, g0, total, inst=video["song"].get("lead", "whistle"))
+    nz = sng.noise_track(plans, g0, total)
+    fx = np.zeros(N)
+    xf = XF / FPS
+    for k in range(n):
+        a = np.load(work / f"sfx_{k:02d}.npy").astype(np.float64)
+        st = int(starts[k + 1] / FPS * SR)
+        ln = len(a)
+        tt = np.arange(ln) / SR
+        g = np.minimum(1, tt / xf) * np.minimum(1, (ln / SR - tt) / xf)
+        end = min(N, st + ln)
+        fx[st:end] += (a * g)[: end - st]
+    fx /= max(1e-9, np.percentile(np.abs(fx), 99.5)) * 1.6
+    fx = np.clip(fx, -0.9, 0.9)
+    mix = 0.36 * backing + 0.42 * lead + 0.55 * nz + 0.42 * fx
+    mix /= np.max(np.abs(mix)) + 1e-9
+    music.write_wav(work / "audio.wav", mix * 0.7)
+    return {"style": "song without words", "lead": video["song"].get("lead", "whistle"), "root": sng.root,
+            "bpm": round(60 / (bar / 4), 2)}
+
+
 def render(vid, manifest, out_dir, total=600, workers=None, log=print, reuse=False):
     m, vi, video = load(manifest, vid)
     bi = m.get("batch_index", 4)
@@ -115,33 +147,17 @@ def render(vid, manifest, out_dir, total=600, workers=None, log=print, reuse=Fal
     for ln in lens[:-1]:
         starts.append(starts[-1] + ln - XF)
     N = int(total * SR)
-    sng, songmod = song_for(video, scene_seed(bi, vi, 77))
-    bar = (L - XF) / FPS / songmod.BARS
-    rr = random.Random(scene_seed(bi, vi, 78))
-    plans = []
-    for s in specs:
-        sc = dict(s, verse=[la(rr.randint(5, 8)) for _ in range(4)], ask=la(6), ask2=la(7), echo="la la")
-        plans.append(sng.scene_plan(sc, bar))
     g0 = [starts[k + 1] / FPS for k in range(n)]
-    log(f"[{vid}] composing the song ...")
-    backing = sng.backing(g0, bar, total, plans)
-    lead = sng.lead(plans, g0, total, inst=video["song"].get("lead", "whistle"))
-    nz = sng.noise_track(plans, g0, total)
-    fx = np.zeros(N)
-    xf = XF / FPS
-    for k in range(n):
-        a = np.load(work / f"sfx_{k:02d}.npy").astype(np.float64)
-        st = int(starts[k + 1] / FPS * SR)
-        ln = len(a)
-        tt = np.arange(ln) / SR
-        g = np.minimum(1, tt / xf) * np.minimum(1, (ln / SR - tt) / xf)
-        end = min(N, st + ln)
-        fx[st:end] += (a * g)[: end - st]
-    fx /= max(1e-9, np.percentile(np.abs(fx), 99.5)) * 1.6
-    fx = np.clip(fx, -0.9, 0.9)
-    mix = 0.36 * backing + 0.42 * lead + 0.55 * nz + 0.42 * fx
-    mix /= np.max(np.abs(mix)) + 1e-9
-    music.write_wav(work / "audio.wav", mix * 0.7)
+    if video.get("soundtrack"):           # recorded music and recorded animal calls
+        import soundtrack
+        log(f"[{vid}] mixing the recorded soundtrack ...")
+        mix = soundtrack.mix(video, g0, L / FPS, video.get("shots_per_scene", 3), total, seed=scene_seed(bi, vi, 78))
+        music.write_wav(work / "audio.wav", mix[:N] * 0.8)
+        music_meta = {"style": "recorded music", "tracks": video["soundtrack"]["music"],
+                      "credits": video["soundtrack"].get("credits", [])}
+    else:
+        music_meta = _song_audio(video, specs, starts, g0, L, n, N, total, bi, vi, work, log)
+
 
     # ---- assemble with soft dissolves
     inputs = ["intro.mp4"] + [f"scene_{k:02d}.mp4" for k in range(n)] + ["outro.mp4"]
@@ -179,8 +195,7 @@ def render(vid, manifest, out_dir, total=600, workers=None, log=print, reuse=Fal
         "id": vid, "engine": m.get("engine", 3), "file": mp4.name, "thumbnail": thumb.name, "title": video["title"],
         "description": description(video, chapter_starts, int(total), m.get("subject", "vehicles")),
         "tags": video["tags"], "categoryId": "27", "madeForKids": True, "privacyStatus": "private",
-        "scenes": specs, "music": {"style": "song without words", "lead": video["song"].get("lead", "whistle"),
-                                   "root": sng.root, "bpm": round(60 / (bar / 4), 2)},
+        "scenes": specs, "music": music_meta,
     }
     (out_dir / f"{vid}.json").write_text(json.dumps(meta, indent=2))
     (out_dir / f"{vid}.txt").write_text(
@@ -201,6 +216,11 @@ def description(video, chapter_starts, total, subject="vehicles"):
     about = None
     if subject == "animals":
         about = (f"About {total // 60} minutes of gentle 3D animation with real animated animals. Every animal is shown from "
+                 "different angles with its name on screen, and you hear its real voice (recorded on real farms). Cheerful, "
+                 "gentle music. Calm, friendly animals only. No flashing and nothing scary. Animal and nature models by "
+                 "Quaternius and other OpenGameArt artists (CC0), skies by Poly Haven (CC0), animal recordings by Joseph "
+                 "Sardin, BigSoundBank.com (CC0).") if video.get("soundtrack") else \
+                (f"About {total // 60} minutes of gentle 3D animation with real animated animals. Every animal is shown from "
                  "three different angles (from the side, from the front, from close to the ground and from above), so "
                  "children can see what it really looks like and how it moves. Real animal sounds, a happy song without "
                  "words, and an animal sound to copy in every song. Calm, friendly animals only. No flashing and nothing "
@@ -220,6 +240,7 @@ def description(video, chapter_starts, total, subject="vehicles"):
         "Chapters:",
         *lines,
         "",
+        *([f"Music: {c}" for c in video.get("soundtrack", {}).get("credits", [])] + [""] if video.get("soundtrack", {}).get("credits") else []),
         tags,
     ])
 

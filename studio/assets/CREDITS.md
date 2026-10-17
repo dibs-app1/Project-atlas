@@ -19,3 +19,11 @@ checked each page's licence (CC0 only) before keeping a file.
 
 - **Fredoka** font by Milena Brandão and Hafontia (Google Fonts), used for the animal names on screen. SIL Open Font
   License 1.1 (`fonts/Fredoka-OFL.txt`): free to use in videos.
+
+## Sounds
+
+- **Joseph Sardin, BigSoundBank.com**: the farm animal recordings (cows, horses, sheep, goats, hens, roosters, chicks,
+  ducks). CC0. Imitations and toy sounds were left out.
+- **U.S. Fish and Wildlife Service** (via Wikimedia Commons): domestic geese honking. Public domain.
+
+`studio/assets/sounds/<animal>/` holds single calls cut from those recordings with `python studio/soundtrack.py cut`.

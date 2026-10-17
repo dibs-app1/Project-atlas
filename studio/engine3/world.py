@@ -52,9 +52,17 @@ class Path:
         i = max(0, min(i, len(self.P) - 2))
         u = (s - self.S[i]) / max(1e-9, self.S[i + 1] - self.S[i])
         p = self.P[i] + (self.P[i + 1] - self.P[i]) * u
+        # heading: blended smoothly between neighbouring samples (a heading that steps at every sample makes
+        # animals snap-turn and swings any camera that keeps beside them)
+        h0, h1 = self._heading(i), self._heading(i + 1)
+        dh = (h1 - h0 + math.pi) % (2 * math.pi) - math.pi
+        return float(p[0]), float(p[1]), float(p[2]), h0 + dh * u
+
+    def _heading(self, i):
+        i = max(0, min(i, len(self.P) - 2))
         j0, j1 = max(0, i - 2), min(len(self.P) - 1, i + 3)
         d = self.P[j1] - self.P[j0]
-        return float(p[0]), float(p[1]), float(p[2]), math.atan2(d[1], d[0])
+        return math.atan2(d[1], d[0])
 
     def side(self, s, off, dz=0.0):
         x, y, z, h = self.pose(s)

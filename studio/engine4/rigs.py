@@ -106,7 +106,7 @@ def load(path):
 WORDS = {"grey": (150, 150, 156), "gray": (150, 150, 156), "white": (246, 244, 238), "pink": (240, 160, 170),
          "black": (40, 38, 42), "brown": (130, 86, 56), "lightyellow": (246, 228, 160), "yellow": (250, 210, 60),
          "orange": (240, 140, 50), "red": (210, 60, 50), "blue": (70, 120, 210), "green": (90, 160, 80), "beak": (250, 190, 60),
-         "claws": (230, 180, 60), "head": (246, 244, 238), "wings": (110, 76, 50)}
+         "claws": (230, 180, 60), "head": (246, 244, 238), "wings": (110, 76, 50), "comb": (205, 40, 40), "wattle": (205, 40, 40)}
 
 # models whose files carry no colours: the colours per material, in order of how much of the body uses it
 PALETTES = {
@@ -352,15 +352,20 @@ def give_eyes(inst, spec=None):
         arm.data.pose_position = "REST"
     bpy.context.view_layer.update()
     dg = bpy.context.evaluated_depsgraph_get()
-    V, F = [], []
+    V, F, own = [], [], []           # own: where the model's own eyes are (eye meshes, or faces with an eye material)
     for o in inst.meshes:
-        if o.hide_render:
-            continue
         ev = o.evaluated_get(dg)
         me = ev.to_mesh()
-        base = len(V)
-        V += [tuple(o.matrix_world @ v.co) for v in me.vertices]
-        F += [tuple(base + i for i in p.vertices) for p in me.polygons]
+        W = [tuple(o.matrix_world @ v.co) for v in me.vertices]
+        if o.hide_render:
+            own += W
+        else:
+            base = len(V)
+            V += W
+            F += [tuple(base + i for i in p.vertices) for p in me.polygons]
+            eyem = {i for i, sl in enumerate(o.material_slots) if sl.material and re.search(r"eye", sl.material.name, re.I)}
+            if eyem:
+                own += [W[i] for p in me.polygons if p.material_index in eyem for i in p.vertices]
         ev.to_mesh_clear()
     if arm is not None:
         arm.data.pose_position = "POSE"
@@ -384,9 +389,18 @@ def give_eyes(inst, spec=None):
     r = spec.get("size", 1.0) * 0.095 * min(hl, hh)
     tree = BVHTree.FromPolygons(V, F)
     bones = list(arm.data.bones) if arm is not None else []
+    O = np.array(own) if own else np.zeros((0, 3))
+    if len(O):                                     # some files keep their eye meshes off the body: ignore those
+        lo, hi = P.min(0) - 0.05 * L, P.max(0) + 0.05 * L
+        O = O[np.all((O >= lo) & (O <= hi), axis=1)]
     for sgn in (1, -1):
         start = f * ea + side * mid + np.array([0, 0, ez])
         hit = tree.ray_cast(Vector(start + side * sgn * 10 * L), Vector(-side * sgn))
+        mine = O[(O @ side - mid) * sgn > 0] if len(O) else O
+        if len(mine) >= 3 and spec.get("anchor", True):    # sit exactly where the model's own eye is (and cover it)
+            near = tree.find_nearest(Vector(mine.mean(0)))
+            if near[0] is not None:
+                hit = (near[0], near[1] if np.dot(np.array(near[1]), side * sgn) > 0 else -near[1])
         if hit[0] is None:
             continue
         n = np.array(hit[1])                       # the head's surface normal there: the eye looks out along it
@@ -633,7 +647,7 @@ def add_coat(inst, layers):
                     lt = N.new("ShaderNodeMath")
                     lt.operation = "LESS_THAN"
                     L.new(_sock(vd, "Value", "VALUE", out=True), lt.inputs[0])
-                    lt.inputs[1].default_value = 2.0 * r / osc
+                    lt.inputs[1].default_value = 3.2 * r / osc      # a clear ring round the eye: no feather hangs over it
                     if kill is None:
                         kill = lt.outputs[0]
                     else:
