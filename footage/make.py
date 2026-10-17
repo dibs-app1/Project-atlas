@@ -147,7 +147,7 @@ def stamp(s):
     return f"{s // 60}:{s % 60:02d}"
 
 
-def thumbnail(video_path, at, title, dst):
+def thumbnail(video_path, at, title, dst, top=False):
     from PIL import Image, ImageDraw, ImageFont, ImageFilter
     frame = dst.with_suffix(".frame.png")
     run(["ffmpeg", "-y", "-loglevel", "error", "-ss", f"{at:.2f}", "-i", str(video_path), "-frames:v", "1", str(frame)])
@@ -161,9 +161,9 @@ def thumbnail(video_path, at, title, dst):
             lines.append(w)
         else:
             lines[-1] = (lines[-1] + " " + w).strip()
-    y = 720 - 70 - 104 * len(lines)
+    y = 44 if top else 720 - 70 - 104 * len(lines)
     pad = Image.new("RGBA", img.size, (0, 0, 0, 0))
-    ImageDraw.Draw(pad).rounded_rectangle((40, y - 24, 1240, 700), 36, fill=(255, 255, 255, 215))
+    ImageDraw.Draw(pad).rounded_rectangle((40, y - 24, 1240, y + 104 * len(lines) + 6), 36, fill=(255, 255, 255, 215))
     img = Image.alpha_composite(img.convert("RGBA"), pad.filter(ImageFilter.GaussianBlur(1))).convert("RGB")
     d = ImageDraw.Draw(img)
     for i, line in enumerate(lines):
