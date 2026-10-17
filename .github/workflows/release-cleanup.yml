@@ -1,11 +1,11 @@
-# Deletes the releases (and their tags) listed in studio/plan/DELETE_RELEASES.txt, one tag per line ('#' starts a comment).
+# Deletes the releases (and their tags) listed in releases/DELETE.txt, one tag per line ('#' starts a comment).
 # Used to remove a superseded video release, e.g. one with a rendering bug that was re-made under a new tag.
 name: Release cleanup
 
 on:
   push:
     branches: ["claude/**"]
-    paths: ["studio/plan/DELETE_RELEASES.txt"]
+    paths: ["releases/DELETE.txt"]
   workflow_dispatch:
 
 permissions:
@@ -20,7 +20,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          grep -v '^\s*#' studio/plan/DELETE_RELEASES.txt | grep -v '^\s*$' | while read -r tag; do
+          grep -v '^\s*#' releases/DELETE.txt | grep -v '^\s*$' | while read -r tag; do
             echo "deleting $tag"
             gh release delete "$tag" --cleanup-tag --yes --repo "$GITHUB_REPOSITORY" || echo "could not delete $tag"
           done
