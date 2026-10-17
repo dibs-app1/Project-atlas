@@ -1,5 +1,3 @@
-{"id": "test-puppies-kittens", "title": "Test: real puppies and kittens", "seed": 24, "instrument": "marimba",
- "segments": [
-  {"query": "puppy", "clips": 3, "seconds": 7},
-  {"query": "kitten", "clips": 2, "seconds": 7}
- ]}
+{"videos": [{"id": "test-puppies-kittens", "title": "Test", "thumb_text": "Puppies & Kittens!", "hook": "Test.", "about": "Test.",
+  "tags": ["test"], "instrument": "marimba", "seed": 24, "clip_seconds": 7, "minutes": 0.5,
+  "chapters": [{"title": "Puppies", "queries": [["puppy", 3]]}, {"title": "Kittens", "queries": [["kitten", 2]]}]}]}

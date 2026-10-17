@@ -1,54 +1,90 @@
-# Real-footage videos: free HD clips from Pixabay with the studio's calm music. A test clip is committed to
-# previews/ on this branch so it can be watched straight away.
+# Real-footage videos: free HD clips from Pixabay with the studio's calm music. Makes the plan named in
+# footage/plans/ACTIVE (or chosen by hand) and publishes the videos, thumbnails and YouTube text as a release.
 name: Real footage
 
 on:
   push:
     branches: ["claude/**"]
-    paths: ["footage/**", ".github/workflows/footage.yml"]
+    paths: ["footage/plans/ACTIVE", ".github/workflows/footage.yml"]
   workflow_dispatch:
     inputs:
       plan:
-        description: "Plan to make"
+        description: "Plan to make (empty: footage/plans/ACTIVE)"
         required: false
-        default: "footage/plans/test.json"
+        default: ""
 
 permissions:
   contents: write
 
+concurrency:
+  group: real-footage-${{ github.ref }}
+  cancel-in-progress: false
+
 jobs:
   make:
     runs-on: ubuntu-latest
-    timeout-minutes: 120
+    timeout-minutes: 300
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: { python-version: "3.12" }
-      - run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
-      - run: pip install numpy==2.1.3
-      - name: Make the video
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg fonts-dejavu-core
+      - run: pip install numpy==2.1.3 pillow==11.0.0
+      - name: Make the videos
+        id: make
         env:
           PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
         run: |
           test -n "$PIXABAY_API_KEY" || { echo "PIXABAY_API_KEY secret is missing"; exit 1; }
-          python footage/make.py "${{ inputs.plan || 'footage/plans/test.json' }}" out
+          plan="${{ inputs.plan }}"; [ -n "$plan" ] || plan=$(cat footage/plans/ACTIVE)
+          echo "plan=$plan" >> "$GITHUB_OUTPUT"
+          python footage/make.py "$plan" out
+          rm -rf out/work
           ls -la out
-      - uses: actions/upload-artifact@v4
-        with:
-          name: footage-${{ github.run_number }}
-          path: |
-            out/*.mp4
-            out/*_credits.txt
-      - name: Put the preview on the branch
+      - name: Check every video
         run: |
-          mkdir -p previews
           for f in out/*.mp4; do
-            [ "$(stat -c %s "$f")" -lt 90000000 ] && cp "$f" previews/
+            d=$(ffprobe -v error -show_entries format=duration -of csv=p=0 "$f")
+            echo "$f: $d s"
+            python -c "import sys; sys.exit(0 if float('$d') >= 600 or '$f'.startswith('out/test') else 1)" \
+              || { echo "$f is shorter than 10 minutes"; exit 1; }
           done
-          cp out/*_credits.txt previews/
+      - name: Remember the clips used (never reused)
+        run: |
           git config user.name "TheCalmLittleWorld studio"
           git config user.email "studio@users.noreply.github.com"
-          git add previews
-          git commit -m "Preview: $(ls out/*.mp4 | xargs -n1 basename | tr '\n' ' ')"
+          git add footage/used_ids.json
+          git commit -m "Real footage: clips used by run ${{ github.run_number }}" || exit 0
           git pull --rebase -q origin "${GITHUB_REF_NAME}"
           git push origin "HEAD:${GITHUB_REF_NAME}"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: real-footage-${{ github.run_number }}
+          path: |
+            out/*.mp4
+            out/*.jpg
+            out/*.txt
+          retention-days: 30
+      - name: Publish
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          tag="real-animals-${{ github.run_number }}"
+          name=$(python -c "import json; print(json.load(open('${{ steps.make.outputs.plan }}')).get('name', 'Real footage'))")
+          {
+            echo "$(ls out/*.mp4 | wc -l) calm real-footage videos for TheCalmLittleWorld."
+            echo
+            echo "For each video, download the .mp4, its .jpg thumbnail and its .txt (title, description with chapters and credits, tags)."
+            echo "In YouTube Studio set Audience to: Yes, it's made for kids."
+          } > notes.md
+          git fetch -q origin "${GITHUB_REF_NAME}" && sha=$(git rev-parse FETCH_HEAD)
+          if gh release create "$tag" --target "$sha" --title "TheCalmLittleWorld - $name (#${{ github.run_number }})" \
+               --notes-file notes.md out/*.mp4 out/*.jpg out/*.txt; then
+            echo "published $tag"
+          else
+            echo "publishing was refused; keeping the videos as a draft release (visible to the repo owner)"
+            gh release list --json tagName,isDraft -q '.[] | select(.isDraft and .tagName=="'"$tag"'") | .tagName' | grep -q . \
+              || gh api -X POST "repos/$GITHUB_REPOSITORY/releases" -f tag_name="$tag" -F draft=true \
+                   -f name="TheCalmLittleWorld - $name (#${{ github.run_number }})" -F body=@notes.md --jq .id
+            gh release upload "$tag" --clobber out/*.mp4 out/*.jpg out/*.txt
+          fi

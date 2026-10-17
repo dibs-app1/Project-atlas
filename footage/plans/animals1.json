@@ -1,0 +1,506 @@
+{
+ "name": "Real animals 1",
+ "videos": [
+  {
+   "id": "23-real-birds",
+   "title": "Real Birds for Toddlers | 10 Minutes of Calm Birds with Gentle Music",
+   "thumb_text": "Real Birds!",
+   "hook": "Look at all the beautiful birds! Little ones can watch real birds sing, splash, fly and swim.",
+   "about": "Robins, ducks, swans, parrots, owls, penguins, flamingos and more, filmed in gardens, ponds, the seaside and the forest. A calm way to learn about birds.",
+   "tags": [
+    "birds for toddlers",
+    "real birds",
+    "calm video for kids",
+    "birds for babies",
+    "nature for kids",
+    "duck",
+    "swan",
+    "parrot"
+   ],
+   "instrument": "flute",
+   "seed": 2301,
+   "clip_seconds": 10,
+   "chapters": [
+    {
+     "title": "Garden birds",
+     "queries": [
+      [
+       "robin bird",
+       4
+      ],
+      [
+       "songbird branch",
+       4
+      ],
+      [
+       "bird feeder",
+       4
+      ],
+      [
+       "sparrow",
+       3
+      ],
+      [
+       "blue tit bird",
+       3
+      ]
+     ]
+    },
+    {
+     "title": "Ducks and swans",
+     "queries": [
+      [
+       "duck pond",
+       4
+      ],
+      [
+       "ducklings",
+       4
+      ],
+      [
+       "swan lake",
+       4
+      ],
+      [
+       "goose",
+       3
+      ]
+     ]
+    },
+    {
+     "title": "Colourful birds",
+     "queries": [
+      [
+       "parrot",
+       4
+      ],
+      [
+       "hummingbird",
+       4
+      ],
+      [
+       "peacock",
+       3
+      ],
+      [
+       "kingfisher",
+       3
+      ]
+     ]
+    },
+    {
+     "title": "By the sea",
+     "queries": [
+      [
+       "seagull",
+       4
+      ],
+      [
+       "penguin",
+       4
+      ],
+      [
+       "pelican",
+       3
+      ]
+     ]
+    },
+    {
+     "title": "Big and tall birds",
+     "queries": [
+      [
+       "flamingo",
+       4
+      ],
+      [
+       "owl",
+       4
+      ],
+      [
+       "heron",
+       3
+      ],
+      [
+       "stork",
+       3
+      ]
+     ]
+    }
+   ],
+   "extra": [
+    "bird",
+    "birds flying",
+    "duck",
+    "swan",
+    "pigeon",
+    "bird nest"
+   ]
+  },
+  {
+   "id": "24-real-dogs-and-cats",
+   "title": "Real Puppies and Kittens for Toddlers | 10 Minutes of Calm Dogs and Cats with Gentle Music",
+   "thumb_text": "Puppies & Kittens!",
+   "hook": "Say hello to real puppies, dogs, kittens and cats! Gentle, happy pets for little ones to watch.",
+   "about": "Puppies playing in the grass, dogs at the beach and in the snow, sleepy kittens and curious cats at home and in the garden. A calm way to meet friendly pets.",
+   "tags": [
+    "puppies for toddlers",
+    "kittens for kids",
+    "dogs and cats",
+    "calm video for kids",
+    "pets for babies",
+    "real animals for toddlers"
+   ],
+   "instrument": "marimba",
+   "seed": 2401,
+   "clip_seconds": 10,
+   "chapters": [
+    {
+     "title": "Playful puppies",
+     "queries": [
+      [
+       "puppy",
+       5
+      ],
+      [
+       "puppies playing",
+       4
+      ],
+      [
+       "puppy grass",
+       4
+      ]
+     ]
+    },
+    {
+     "title": "Dogs outside",
+     "queries": [
+      [
+       "dog park",
+       4
+      ],
+      [
+       "dog beach",
+       4
+      ],
+      [
+       "golden retriever",
+       4
+      ],
+      [
+       "dog snow",
+       3
+      ]
+     ]
+    },
+    {
+     "title": "Little kittens",
+     "queries": [
+      [
+       "kitten",
+       5
+      ],
+      [
+       "kittens playing",
+       4
+      ],
+      [
+       "kitten sleeping",
+       4
+      ]
+     ]
+    },
+    {
+     "title": "Cats at home",
+     "queries": [
+      [
+       "cat window",
+       4
+      ],
+      [
+       "cat sleeping",
+       4
+      ],
+      [
+       "cat garden",
+       4
+      ],
+      [
+       "cat grass",
+       3
+      ]
+     ]
+    },
+    {
+     "title": "Best friends",
+     "queries": [
+      [
+       "dog sleeping",
+       4
+      ],
+      [
+       "dog cute",
+       4
+      ],
+      [
+       "cat cute",
+       4
+      ],
+      [
+       "dog walking",
+       3
+      ]
+     ]
+    }
+   ],
+   "extra": [
+    "dog",
+    "cat",
+    "puppy cute",
+    "kitten cute",
+    "dog play",
+    "cat play"
+   ]
+  },
+  {
+   "id": "25-real-fish",
+   "title": "Real Fish for Toddlers | 10 Minutes of Calm Underwater Fish with Gentle Music",
+   "thumb_text": "Under the Sea!",
+   "hook": "Dive under the sea! Little ones can watch real fish, turtles and dolphins glide through the water.",
+   "about": "Clownfish, goldfish, koi, tropical reef fish, sea turtles, seahorses, rays and dolphins, filmed in clear blue water. A calm, soothing look at life under the sea.",
+   "tags": [
+    "fish for toddlers",
+    "under the sea for kids",
+    "aquarium",
+    "calm video for kids",
+    "sea turtle",
+    "clownfish",
+    "relaxing fish video"
+   ],
+   "instrument": "bells",
+   "seed": 2501,
+   "clip_seconds": 10,
+   "chapters": [
+    {
+     "title": "Coral reef",
+     "queries": [
+      [
+       "coral reef fish",
+       5
+      ],
+      [
+       "clownfish",
+       4
+      ],
+      [
+       "tropical fish",
+       5
+      ]
+     ]
+    },
+    {
+     "title": "Fish ponds",
+     "queries": [
+      [
+       "koi pond",
+       4
+      ],
+      [
+       "goldfish",
+       4
+      ],
+      [
+       "aquarium fish",
+       5
+      ]
+     ]
+    },
+    {
+     "title": "Sea turtles",
+     "queries": [
+      [
+       "sea turtle",
+       5
+      ],
+      [
+       "turtle underwater",
+       3
+      ]
+     ]
+    },
+    {
+     "title": "Gentle sea friends",
+     "queries": [
+      [
+       "seahorse",
+       3
+      ],
+      [
+       "stingray",
+       3
+      ],
+      [
+       "jellyfish",
+       3
+      ],
+      [
+       "starfish",
+       3
+      ]
+     ]
+    },
+    {
+     "title": "Dolphins and whales",
+     "queries": [
+      [
+       "dolphin",
+       5
+      ],
+      [
+       "whale",
+       4
+      ],
+      [
+       "school of fish",
+       5
+      ],
+      [
+       "underwater fish",
+       5
+      ]
+     ]
+    }
+   ],
+   "extra": [
+    "fish",
+    "aquarium",
+    "reef",
+    "sea life",
+    "ocean underwater",
+    "turtle"
+   ]
+  },
+  {
+   "id": "26-real-farm-animals",
+   "title": "Real Farm Animals for Toddlers | 10 Minutes of Calm Cows, Sheep, Horses and More with Gentle Music",
+   "thumb_text": "Farm Animals!",
+   "hook": "Let's visit the farm! Little ones can watch real cows, sheep, horses, pigs, goats and chickens.",
+   "about": "Calves and cows in the meadow, lambs and sheep on the hills, horses and foals, piglets, goats, chicks and ducklings. A calm visit to the farm.",
+   "tags": [
+    "farm animals for toddlers",
+    "real farm animals",
+    "cow",
+    "sheep",
+    "horse",
+    "calm video for kids",
+    "animals for babies"
+   ],
+   "instrument": "harp",
+   "seed": 2601,
+   "clip_seconds": 10,
+   "chapters": [
+    {
+     "title": "Cows and calves",
+     "queries": [
+      [
+       "cow meadow",
+       5
+      ],
+      [
+       "calf",
+       4
+      ],
+      [
+       "cows grazing",
+       4
+      ]
+     ]
+    },
+    {
+     "title": "Sheep and lambs",
+     "queries": [
+      [
+       "sheep",
+       5
+      ],
+      [
+       "lamb",
+       4
+      ]
+     ]
+    },
+    {
+     "title": "Horses and ponies",
+     "queries": [
+      [
+       "horse",
+       5
+      ],
+      [
+       "foal",
+       4
+      ],
+      [
+       "pony",
+       3
+      ],
+      [
+       "donkey",
+       3
+      ]
+     ]
+    },
+    {
+     "title": "Pigs and goats",
+     "queries": [
+      [
+       "piglet",
+       4
+      ],
+      [
+       "pig farm",
+       3
+      ],
+      [
+       "goat",
+       4
+      ],
+      [
+       "alpaca",
+       3
+      ]
+     ]
+    },
+    {
+     "title": "Chickens and chicks",
+     "queries": [
+      [
+       "chicken",
+       4
+      ],
+      [
+       "chick",
+       4
+      ],
+      [
+       "rooster",
+       3
+      ],
+      [
+       "duckling farm",
+       3
+      ]
+     ]
+    }
+   ],
+   "extra": [
+    "farm animals",
+    "cattle",
+    "horses",
+    "sheep flock",
+    "goats",
+    "ducks",
+    "farm"
+   ]
+  }
+ ]
+}
