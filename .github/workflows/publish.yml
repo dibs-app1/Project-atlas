@@ -1,0 +1,50 @@
+# Publishes the videos a finished studio run already rendered and QA-checked, without rendering them again
+# (for a run whose own publish step was refused). Edit assets-requests/publish.json and push to run it.
+name: Publish rendered batch
+
+on:
+  push:
+    branches: ["claude/**"]
+    paths: ["assets-requests/publish.json"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Read the request
+        id: req
+        run: |
+          echo "run_id=$(jq -r .run_id assets-requests/publish.json)" >> "$GITHUB_OUTPUT"
+          echo "tag=$(jq -r .tag assets-requests/publish.json)" >> "$GITHUB_OUTPUT"
+          echo "batch=$(jq -r .batch assets-requests/publish.json)" >> "$GITHUB_OUTPUT"
+          echo "sha=$(jq -r .sha assets-requests/publish.json)" >> "$GITHUB_OUTPUT"
+      - uses: actions/download-artifact@v4
+        with:
+          path: output
+          pattern: "video-*"
+          merge-multiple: true
+          run-id: ${{ steps.req.outputs.run_id }}
+          github-token: ${{ github.token }}
+      - name: Publish release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ steps.req.outputs.tag }}
+          BATCH: ${{ steps.req.outputs.batch }}
+          SHA: ${{ steps.req.outputs.sha }}
+        run: |
+          if gh release view "$TAG" >/dev/null 2>&1; then echo "$TAG is already published"; exit 0; fi
+          n=$(ls output/*.mp4 | wc -l)
+          {
+            echo "$n original videos for TheCalmLittleWorld. Every one passed QA (length, loudness, flash check, safety review, no repeated scenes)."
+            echo
+            echo "For each video, download the .mp4, its .jpg thumbnail and its .txt (title, description with chapters, tags)."
+            echo "In YouTube Studio set Audience to: Yes, it's made for kids."
+          } > notes.md
+          gh release create "$TAG" --target "$SHA" --title "TheCalmLittleWorld - $BATCH (#${TAG##*-})" \
+            --notes-file notes.md output/*.mp4 output/*.jpg output/*.txt
