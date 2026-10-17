@@ -276,29 +276,77 @@ def _eye_mat(name, rgb, rough, coat=0.0):
     return m
 
 
+def _iris_mat(rgb):
+    """A real-looking animal eye: black pupil, coloured iris darkening to its rim, under a glossy clear coat. The
+    eyeball mesh has radius 1 and its outward axis along local +Y, so the pupil is drawn by distance from that axis."""
+    name = "eye_iris_%02x%02x%02x" % tuple(int(c * 255) for c in rgb)
+    m = bpy.data.materials.get(name)
+    if m is not None:
+        return m
+    m = bpy.data.materials.new(name)
+    if m.node_tree is None:
+        m.use_nodes = True
+    nt = m.node_tree
+    b = nt.nodes.get("Principled BSDF")
+    tc = nt.nodes.new("ShaderNodeTexCoord")
+    sep = nt.nodes.new("ShaderNodeSeparateXYZ")
+    nt.links.new(tc.outputs["Object"], sep.inputs[0])
+    vx = nt.nodes.new("ShaderNodeCombineXYZ")
+    nt.links.new(sep.outputs["X"], vx.inputs["X"])
+    nt.links.new(sep.outputs["Z"], vx.inputs["Z"])
+    ln = nt.nodes.new("ShaderNodeVectorMath")
+    ln.operation = "LENGTH"
+    nt.links.new(vx.outputs[0], ln.inputs[0])
+    ramp = nt.nodes.new("ShaderNodeValToRGB")
+    el = ramp.color_ramp.elements
+    el[0].position, el[0].color = 0.36, (0.004, 0.004, 0.005, 1)
+    el[1].position, el[1].color = 0.95, (rgb[0] * 0.35, rgb[1] * 0.35, rgb[2] * 0.35, 1)
+    e = el.new(0.42)
+    e.color = (*rgb, 1)
+    e = el.new(0.7)
+    e.color = (rgb[0] * 0.8, rgb[1] * 0.8, rgb[2] * 0.8, 1)
+    nt.links.new(ln.outputs["Value"], ramp.inputs["Fac"])
+    nt.links.new(ramp.outputs["Color"], b.inputs["Base Color"])
+    b.inputs["Roughness"].default_value = 0.35
+    b.inputs["Coat Weight"].default_value = 1.0
+    b.inputs["Coat Roughness"].default_value = 0.03
+    m["eye"] = True
+    return m
+
+
 def give_eyes(inst, spec=None):
-    """Big, friendly, glossy eyes on both sides of the head, riding on the head bone.
+    """Natural eyes on both sides of the head, riding on the head bone: a dark glossy eyeball set into the head (only
+    a dome shows, no white ring), with a coloured iris, a black pupil and a small catch-light.
 
     spec: None (find the head and add eyes), {"own": True} (the model's eyes are fine), {"recolor": "Eyes"}
     (the model has eye meshes that came out grey: make them glossy black), or tuning such as
-    {"size": 1.2, "back": 0.4, "down": 0.35, "out": 0.0}."""
+    {"size": 1.2, "back": 0.6, "down": 0.3, "iris": (r, g, b)}."""
     import bmesh
     from mathutils.bvhtree import BVHTree
     spec = spec or {}
     inst.eye_pts = []
     black = _eye_mat("eye_black", (0.008, 0.008, 0.01), 0.06, coat=1.0)
-    white = _eye_mat("eye_white", (0.92, 0.91, 0.88), 0.25)
     if spec.get("own"):
         return
     if spec.get("recolor"):
         for o in inst.meshes:
             if o.name.lower().startswith(spec["recolor"].lower()):
-                for sl in o.material_slots:
-                    sl.material = black
+                if spec.get("add"):
+                    o.hide_render = True          # replaced by the new eyes below
+                    o.hide_viewport = True
+                else:
+                    for sl in o.material_slots:
+                        sl.material = black
         if not spec.get("add"):
             return
     if not inst.meshes:
         return
+    iris = _iris_mat(spec.get("iris", (0.16, 0.085, 0.035)))
+    shine = _eye_mat("eye_shine", (1.0, 1.0, 1.0), 0.2)
+    if shine.node_tree:
+        bb = shine.node_tree.nodes.get("Principled BSDF")
+        bb.inputs["Emission Color"].default_value = (1, 1, 1, 1)
+        bb.inputs["Emission Strength"].default_value = 1.5
     arm = inst.arm
     if arm is not None:
         arm.data.pose_position = "REST"
@@ -306,6 +354,8 @@ def give_eyes(inst, spec=None):
     dg = bpy.context.evaluated_depsgraph_get()
     V, F = [], []
     for o in inst.meshes:
+        if o.hide_render:
+            continue
         ev = o.evaluated_get(dg)
         me = ev.to_mesh()
         base = len(V)
@@ -328,10 +378,10 @@ def give_eyes(inst, spec=None):
         head = a > a.max() - 0.3 * L
     ha, hz, hs = a[head], z[head], s[head]
     hl, hh = ha.max() - ha.min(), hz.max() - hz.min()
-    ea = ha.max() - spec.get("back", 0.42) * hl
-    ez = hz.max() - spec.get("down", 0.36) * hh
+    ea = ha.max() - spec.get("back", 0.6) * hl
+    ez = hz.max() - spec.get("down", 0.3) * hh
     mid = (hs.max() + hs.min()) / 2
-    r = spec.get("size", 1.0) * 0.15 * min(hl, hh)
+    r = spec.get("size", 1.0) * 0.095 * min(hl, hh)
     tree = BVHTree.FromPolygons(V, F)
     bones = list(arm.data.bones) if arm is not None else []
     for sgn in (1, -1):
@@ -339,11 +389,23 @@ def give_eyes(inst, spec=None):
         hit = tree.ray_cast(Vector(start + side * sgn * 10 * L), Vector(-side * sgn))
         if hit[0] is None:
             continue
-        p = np.array(hit[0]) - side * sgn * r * (0.35 - spec.get("out", 0.0))
+        n = np.array(hit[1])                       # the head's surface normal there: the eye looks out along it
+        n = n - f * max(0.0, n @ f) * 0.5           # but never straight ahead (that reads as bulging)
+        n = n / max(1e-9, np.linalg.norm(n))
+        if n @ (side * sgn) < 0.3:
+            n = side * sgn
+        out = n
+        up = np.array([0.0, 0.0, 1.0]) - n * n[2]
+        up = up / max(1e-9, np.linalg.norm(up))
+        fw = np.cross(out, up) * sgn
+        if fw @ f < 0:
+            fw = -fw
+        p = np.array(hit[0]) - out * r * 0.42       # set into the head: about half the eyeball shows
         inst.eye_pts.append((p.copy(), r))
-        for nm, mat, rad, push, fw in (("eye_w", white, r, 0.0, 0.0), ("eye_p", black, r * 0.66, r * 0.42, r * 0.12)):
+        for nm, mat, rad, place in (("eye_ball", iris, r, p),
+                                    ("eye_shine", shine, r * 0.15, p + out * r * 0.78 + up * r * 0.32 + fw * r * 0.22)):
             bm = bmesh.new()
-            bmesh.ops.create_uvsphere(bm, u_segments=20, v_segments=12, radius=rad)
+            bmesh.ops.create_uvsphere(bm, u_segments=24, v_segments=16, radius=1.0)
             me = bpy.data.meshes.new(nm)
             bm.to_mesh(me)
             bm.free()
@@ -354,9 +416,10 @@ def give_eyes(inst, spec=None):
             for c in inst.meshes[0].users_collection:
                 c.objects.link(e)
             M = np.eye(4)
-            M[:3, 0], M[:3, 1], M[:3, 2] = f, side * sgn, (0, 0, 1)
-            M[:3, :3] = M[:3, :3] @ np.diag([1.0, 0.62, 1.0])           # a little flattened against the head
-            M[:3, 3] = p + side * sgn * push + f * fw
+            M[:3, 0], M[:3, 1], M[:3, 2] = fw, out, up
+            sc = (rad, rad * (0.85 if nm == "eye_ball" else 0.5), rad * (0.92 if nm == "eye_ball" else 1.0))
+            M[:3, :3] = M[:3, :3] @ np.diag(sc)
+            M[:3, 3] = place
             want = Matrix(M.tolist())
             if bones:
                 def seg_d(b):
