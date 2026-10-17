@@ -1,0 +1,1264 @@
+{
+ "bsb": {
+  "0001": {
+   "slug": "telephone-a-cadran-s0001.html",
+   "title": "",
+   "desc": ""
+  },
+  "0100": {
+   "slug": "foret-s0100.html",
+   "title": "",
+   "desc": ""
+  },
+  "0104": {
+   "slug": "rooster-s0104.html",
+   "title": "Rooster",
+   "desc": ""
+  },
+  "0267": {
+   "slug": "mer-vagues-moyennes-et-mouettes-s0267.html",
+   "title": "",
+   "desc": ""
+  },
+  "0276": {
+   "slug": "ducks-s0276.html",
+   "title": "Ducks",
+   "desc": ""
+  },
+  "0279": {
+   "slug": "bleating-goat-1-s0279.html",
+   "title": "Bleating Goat #1",
+   "desc": ""
+  },
+  "0282": {
+   "slug": "henhouse-s0282.html",
+   "title": "Henhouse",
+   "desc": ""
+  },
+  "0283": {
+   "slug": "song-of-rooster-s0283.html",
+   "title": "Rooster Song",
+   "desc": ""
+  },
+  "0284": {
+   "slug": "neighing-of-a-horse-1-s0284.html",
+   "title": "Neighing of a Horse #1",
+   "desc": ""
+  },
+  "0286": {
+   "slug": "breath-of-a-horse-2-s0286.html",
+   "title": "Breath of a horse #2",
+   "desc": ""
+  },
+  "0289": {
+   "slug": "horses-s0289.html",
+   "title": "Horses",
+   "desc": ""
+  },
+  "0431": {
+   "slug": "chick-2-stuffings-s0431.html",
+   "title": "Chick 2 (Stuffings)",
+   "desc": ""
+  },
+  "0437": {
+   "slug": "coup-de-feu-de-beretta-m12-9-mm-s0437.html",
+   "title": "",
+   "desc": ""
+  },
+  "0440": {
+   "slug": "cock-song-1-s0440.html",
+   "title": "Cock Song #1",
+   "desc": ""
+  },
+  "0451": {
+   "slug": "iphone-sonnerie-alarme-s0451.html",
+   "title": "",
+   "desc": ""
+  },
+  "0453": {
+   "slug": "annoyed-hen-s0453.html",
+   "title": "Annoyed Hen",
+   "desc": ""
+  },
+  "0459": {
+   "slug": "mouse-screams-s0459.html",
+   "title": "Mouse screams",
+   "desc": ""
+  },
+  "0460": {
+   "slug": "neighing-of-a-horse-s0460.html",
+   "title": "Neighing of a horse",
+   "desc": ""
+  },
+  "0496": {
+   "slug": "horse-steps-on-concrete-s0496.html",
+   "title": "Horse steps on concrete",
+   "desc": ""
+  },
+  "0546": {
+   "slug": "cow-moos-s0546.html",
+   "title": "Cow Moos #1",
+   "desc": ""
+  },
+  "0595": {
+   "slug": "vent-s0595.html",
+   "title": "",
+   "desc": ""
+  },
+  "0610": {
+   "slug": "horse-trotting-s0610.html",
+   "title": "Horse Trotting",
+   "desc": ""
+  },
+  "0611": {
+   "slug": "horse-gallop-s0611.html",
+   "title": "Horse Gallop",
+   "desc": ""
+  },
+  "0704": {
+   "slug": "crowing-4-s0704.html",
+   "title": "Crowing #4",
+   "desc": ""
+  },
+  "0740": {
+   "slug": "pluie-et-orage-2-s0740.html",
+   "title": "",
+   "desc": ""
+  },
+  "0859": {
+   "slug": "neighing-horse-2-s0859.html",
+   "title": "Neighing Horse #2",
+   "desc": ""
+  },
+  "0863": {
+   "slug": "horse-neighing-3-s0863.html",
+   "title": "Horse Neighing #3",
+   "desc": ""
+  },
+  "0880": {
+   "slug": "dwarf-goat-bleating-s0880.html",
+   "title": "Dwarf goat bleating",
+   "desc": ""
+  },
+  "0924": {
+   "slug": "moo-box-s0924.html",
+   "title": "Moo Box",
+   "desc": ""
+  },
+  "0934": {
+   "slug": "100-meters-from-the-stall-s0934.html",
+   "title": "100 Meters from the Stall",
+   "desc": ""
+  },
+  "0976": {
+   "slug": "hen-lays-2-s0976.html",
+   "title": "Hen lays #2",
+   "desc": ""
+  },
+  "0978": {
+   "slug": "hens-lays-s0978.html",
+   "title": "Hens Lays",
+   "desc": ""
+  },
+  "0999": {
+   "slug": "reveil-des-oiseaux-3-s0999.html",
+   "title": "",
+   "desc": ""
+  },
+  "1040": {
+   "slug": "hen-scared-s1040.html",
+   "title": "Hen scared",
+   "desc": ""
+  },
+  "1060": {
+   "slug": "small-dogs-bark-growl-s1060.html",
+   "title": "2 small dogs bark and growl",
+   "desc": ""
+  },
+  "1061": {
+   "slug": "small-dogs-bark-growl-2-s1061.html",
+   "title": "2 small dogs bark and growl #2",
+   "desc": ""
+  },
+  "1111": {
+   "slug": "message-1-s1111.html",
+   "title": "",
+   "desc": ""
+  },
+  "1541": {
+   "slug": "horse-neighing-4-s1541.html",
+   "title": "Horse neighing #4",
+   "desc": ""
+  },
+  "1542": {
+   "slug": "horse-neighing-5-s1542.html",
+   "title": "Horse neighing #5",
+   "desc": ""
+  },
+  "1543": {
+   "slug": "breath-horse-4-s1543.html",
+   "title": "Breath Horse #4",
+   "desc": ""
+  },
+  "1551": {
+   "slug": "donkey-braying-3-s1551.html",
+   "title": "Donkey, Braying #3",
+   "desc": ""
+  },
+  "1658": {
+   "slug": "grumpy-pig-1-s1658.html",
+   "title": "Grumpy pig, with the mouth #1",
+   "desc": ""
+  },
+  "1659": {
+   "slug": "grumpy-pig-2-s1659.html",
+   "title": "Grumpy Pig, with the Mouth #2",
+   "desc": ""
+  },
+  "1691": {
+   "slug": "prout-cochons-1-s1691.html",
+   "title": "Prout'cochons #1",
+   "desc": ""
+  },
+  "1692": {
+   "slug": "prout-cochons-2-s1692.html",
+   "title": "Prout'cochons #2",
+   "desc": ""
+  },
+  "1693": {
+   "slug": "prout-cochons-3-s1693.html",
+   "title": "Prout'cochons #3",
+   "desc": ""
+  },
+  "2343": {
+   "slug": "sheep-1-s2343.html",
+   "title": "Sheep #1",
+   "desc": ""
+  },
+  "2345": {
+   "slug": "sheep-3-s2345.html",
+   "title": "Sheep #3",
+   "desc": ""
+  },
+  "2348": {
+   "slug": "sheep-6-s2348.html",
+   "title": "Sheep #6",
+   "desc": ""
+  },
+  "2383": {
+   "slug": "cow-moos-3-s2383.html",
+   "title": "Cow moos #3",
+   "desc": ""
+  },
+  "2385": {
+   "slug": "cow-moos-5-s2385.html",
+   "title": "Cow moos #5",
+   "desc": ""
+  },
+  "2386": {
+   "slug": "cow-moos-6-s2386.html",
+   "title": "Cow Moos #6",
+   "desc": ""
+  },
+  "2972": {
+   "slug": "herd-of-300-sheep-2-s2972.html",
+   "title": "Herd of 300 Sheep #2",
+   "desc": ""
+  },
+  "3220": {
+   "slug": "flock-sheep-and-cows-s3220.html",
+   "title": "Flock of Sheep and Cows",
+   "desc": ""
+  },
+  "3586": {
+   "slug": "3-larsen-entre-2-3-et-7-khz-s3586.html",
+   "title": "",
+   "desc": ""
+  },
+  "3587": {
+   "slug": "larsen-2-4-et-2-9-khz-s3587.html",
+   "title": "",
+   "desc": ""
+  },
+  "3591": {
+   "slug": "cri-fah-s3591.html",
+   "title": "",
+   "desc": ""
+  },
+  "3592": {
+   "slug": "gare-montparnasse-paris-s3592.html",
+   "title": "",
+   "desc": ""
+  },
+  "3593": {
+   "slug": "klaxons-de-bus-s3593.html",
+   "title": "",
+   "desc": ""
+  },
+  "3594": {
+   "slug": "klaxon-de-bus-s3594.html",
+   "title": "",
+   "desc": ""
+  },
+  "3595": {
+   "slug": "passage-metro-1-s3595.html",
+   "title": "",
+   "desc": ""
+  },
+  "3596": {
+   "slug": "passage-metro-2-s3596.html",
+   "title": "",
+   "desc": ""
+  },
+  "3597": {
+   "slug": "groupe-froid-s3597.html",
+   "title": "",
+   "desc": ""
+  },
+  "3598": {
+   "slug": "ventilation-5-s3598.html",
+   "title": "",
+   "desc": ""
+  }
+ },
+ "commons": [
+  {
+   "title": "File:Chro, chro.ogg",
+   "lic": "CC BY-SA 3.0",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/6/69/Chro%2C_chro.ogg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 26879,
+   "desc": "an exclamation of a pig in Czech language"
+  },
+  {
+   "title": "File:Cy-mochyn.ogg",
+   "lic": "CC BY-SA 3.0",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/f/f8/Cy-mochyn.ogg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 31505,
+   "desc": "Pronunciation of the Welsh word for \"pig\" - mochyn"
+  },
+  {
+   "title": "File:Fr-cochon.ogg",
+   "lic": "CC BY 2.0 fr",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Fr-cochon.ogg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 18738,
+   "desc": "Pronunciation of \"cochon\" (un cochon) in French. Male voice. Speaker from Paris region, France."
+  },
+  {
+   "title": "File:Kcg-za (bush pig).ogg",
+   "lic": "CC0",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/6/6f/Kcg-za_%28bush_pig%29.ogg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 14916,
+   "desc": "Kcg-za (bush pig)"
+  },
+  {
+   "title": "File:LL-Q150 (fra)-Joe Pig-champ\u00eatre.wav",
+   "lic": "CC BY-SA 4.0",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/c/cc/LL-Q150_%28fra%29-Joe_Pig-champ%C3%AAtre.wav?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 142700,
+   "desc": "Audio pronunciation file from the Lingua Libre project."
+  },
+  {
+   "title": "File:LL-Q150 (fra)-Joe Pig-c\u00f4ne.wav",
+   "lic": "CC BY-SA 4.0",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/a/a9/LL-Q150_%28fra%29-Joe_Pig-c%C3%B4ne.wav?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 109356,
+   "desc": "Audio pronunciation file from the Lingua Libre project."
+  },
+  {
+   "title": "File:LL-Q150 (fra)-Joe Pig-hygi\u00e8ne.wav",
+   "lic": "CC BY-SA 4.0",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/0/05/LL-Q150_%28fra%29-Joe_Pig-hygi%C3%A8ne.wav?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 126316,
+   "desc": "Audio pronunciation file from the Lingua Libre project."
+  },
+  {
+   "title": "File:LL-Q150 (fra)-Joe Pig-kung-fu.wav",
+   "lic": "CC BY-SA 4.0",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/6/6a/LL-Q150_%28fra%29-Joe_Pig-kung-fu.wav?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 142700,
+   "desc": "Audio pronunciation file from the Lingua Libre project."
+  },
+  {
+   "title": "File:LL-Q150 (fra)-Joe Pig-psychiatre.wav",
+   "lic": "CC BY-SA 4.0",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/4/4b/LL-Q150_%28fra%29-Joe_Pig-psychiatre.wav?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 142700,
+   "desc": "Audio pronunciation file from the Lingua Libre project."
+  },
+  {
+   "title": "File:LL-Q150 (fra)-Joe Pig-renne.wav",
+   "lic": "CC BY-SA 4.0",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/a/aa/LL-Q150_%28fra%29-Joe_Pig-renne.wav?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 109932,
+   "desc": "Audio pronunciation file from the Lingua Libre project."
+  },
+  {
+   "title": "File:LL-Q150 (fra)-Joe Pig-tiroir-caisse.wav",
+   "lic": "CC BY-SA 4.0",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/8/84/LL-Q150_%28fra%29-Joe_Pig-tiroir-caisse.wav?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 158508,
+   "desc": "Audio pronunciation file from the Lingua Libre project."
+  },
+  {
+   "title": "File:LL-Q150 (fra)-Joe Pig-\u00eatre.wav",
+   "lic": "CC BY-SA 4.0",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/5/5b/LL-Q150_%28fra%29-Joe_Pig-%C3%AAtre.wav?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 109356,
+   "desc": "Audio pronunciation file from the Lingua Libre project."
+  },
+  {
+   "title": "File:LL-Q150 (fra)-LoquaxFR-pig latin.wav",
+   "lic": "CC BY-SA 4.0",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/b/bd/LL-Q150_%28fra%29-LoquaxFR-pig_latin.wav?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 99604,
+   "desc": "Audio pronunciation file from the Lingua Libre project."
+  },
+  {
+   "title": "File:Mudchute pig 1.ogg",
+   "lic": "CC BY-SA 3.0",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/7/73/Mudchute_pig_1.ogg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 8974,
+   "desc": "Recording of a pig \"oink\" at Mudchute City Farm, London. These were recorded using a cheap microphone and a mini disk recorder and processed for tux paint. Breed: Tamworth."
+  },
+  {
+   "title": "File:Mudchute pig 2.ogg",
+   "lic": "CC BY-SA 3.0",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Mudchute_pig_2.ogg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 8881,
+   "desc": "Recording of a pig \"oink\" in Mudchute City Farm, London."
+  },
+  {
+   "title": "File:Mudchute pig 3.ogg",
+   "lic": "CC BY-SA 3.0",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/6/65/Mudchute_pig_3.ogg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 7142,
+   "desc": "Recording of a pig \"oink\" at Mudchute City Farm, London. These were recorded using a cheap microphone and a mini disk recorder and processed for tux paint. Breed: Tamworth."
+  },
+  {
+   "title": "File:Pigs Is Pigs.ogg",
+   "lic": "Public Domain",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/1/10/Pigs_Is_Pigs.ogg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 12639098,
+   "desc": "\" Pigs Is Pigs \" by Ellis Parker Butler . This file is from LibriVox.org . This story is a 23:13 long Ogg Vorbis file. MP3 versions of the file are available at librivox.org."
+  },
+  {
+   "title": "File:Pronunciation example of the word Pig in British English.ogg",
+   "lic": "CC BY-SA 4.0",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Pronunciation_example_of_the_word_Pig_in_British_English.ogg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 10767,
+   "desc": "How to pronounce the word Pig in British English."
+  },
+  {
+   "title": "File:Wa Wanlin aclevaedje pourceas (I).ogg",
+   "lic": "CC BY-SA 4.0",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Wa_Wanlin_aclevaedje_pourceas_%28I%29.ogg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 13801541,
+   "desc": "spitch so l' aclevaedje des pourceas \u00e5s scoles di Bive (scole pa les scol\u00ees) (pa Alfred Wanlin, avou eterc\u00e5zaedje da Julie Leboutte, Francis Caramin et Lucyin Mahin). Li tecse rarindj\u00ee et riscr\u00eet e rf"
+  },
+  {
+   "title": "File:Wikipedia - Pig intelligence (spoken by AI voice).mp3",
+   "lic": "Public domain",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/5/56/Wikipedia_-_Pig_intelligence_%28spoken_by_AI_voice%29.mp3?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 3947459,
+   "desc": "Pig intelligence narrated by AI-generated voice using SoniTranslate as described here"
+  },
+  {
+   "title": "File:618483 foleyhaven piglet-squeal-01.flac",
+   "lic": "CC0",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/6/6f/618483_foleyhaven_piglet-squeal-01.flac?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 291016,
+   "desc": "Sonido de un cerdo"
+  },
+  {
+   "title": "File:De-Sau.ogg",
+   "lic": "CC BY-SA 4.0",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/6/6f/De-Sau.ogg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 14076,
+   "desc": "Pronunciation recording of German noun \"Sau\", IPA: /za\u028a\u032f/. Male voice, recorded by native German speaker from Berlin, Germany."
+  },
+  {
+   "title": "File:En-au-hog-wallowing.ogg",
+   "lic": "CC BY-SA 4.0",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/0/0b/En-au-hog-wallowing.ogg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 16568,
+   "desc": "Pronunciation in English of \"hog-wallowing\". Male, Australian accent."
+  },
+  {
+   "title": "File:En-au-hog island.ogg",
+   "lic": "CC BY-SA 4.0",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/f/fb/En-au-hog_island.ogg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 15161,
+   "desc": "Pronunciation in English of \"hog island\". Male, Australian accent."
+  },
+  {
+   "title": "File:En-au-hog town.ogg",
+   "lic": "CC BY-SA 4.0",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/4/41/En-au-hog_town.ogg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 20990,
+   "desc": "Pronunciation in English of \"hog town\". Male, Australian accent."
+  },
+  {
+   "title": "File:En-au-if pigs had wings.ogg",
+   "lic": "CC BY-SA 4.0",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/b/bf/En-au-if_pigs_had_wings.ogg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 34897,
+   "desc": "Pronunciation in English of \"if pigs had wings\". Male, Australian accent."
+  },
+  {
+   "title": "File:En-au-pigs can fly.ogg",
+   "lic": "CC BY-SA 4.0",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/8/8c/En-au-pigs_can_fly.ogg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 18598,
+   "desc": "Pronunciation in English of \"pigs can fly\". Male, Australian accent."
+  },
+  {
+   "title": "File:En-au-pigs might fly.ogg",
+   "lic": "CC BY-SA 4.0",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/0/0a/En-au-pigs_might_fly.ogg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 18848,
+   "desc": "Pronunciation in English of \"pigs might fly\". Male, Australian accent."
+  },
+  {
+   "title": "File:En-au-when pigs fly.ogg",
+   "lic": "CC BY-SA 4.0",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/f/f8/En-au-when_pigs_fly.ogg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 18517,
+   "desc": "Pronunciation in English of \"when pigs fly\". Male, Australian accent."
+  },
+  {
+   "title": "File:En-us-Tardigrades.oga",
+   "lic": "CC0",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/d/d3/En-us-Tardigrades.oga?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 34150,
+   "desc": "Audio pronunciation of the word \"Tardigrades\" in U.S. English (Midwestern accent)."
+  },
+  {
+   "title": "File:En-us-piglet.ogg",
+   "lic": "CC BY-SA 3.0",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/6/6f/En-us-piglet.ogg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 10337,
+   "desc": "Pronunciation of the term in US English"
+  },
+  {
+   "title": "File:En-us-pigsty.ogg",
+   "lic": "CC BY-SA 3.0",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/3/34/En-us-pigsty.ogg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 15054,
+   "desc": "Audio pronunciation of the term 'pigsty' in United States English."
+  },
+  {
+   "title": "File:LL-Q1860 (eng)-Flame, not lame-Blind Swine Mate.wav",
+   "lic": "CC0",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/e/e0/LL-Q1860_%28eng%29-Flame%2C_not_lame-Blind_Swine_Mate.wav?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 145452,
+   "desc": "Audio pronunciation file from the Lingua Libre project."
+  },
+  {
+   "title": "File:LL-Q1860 (eng)-Flame, not lame-swine flu.wav",
+   "lic": "CC0",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/5/5a/LL-Q1860_%28eng%29-Flame%2C_not_lame-swine_flu.wav?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 139564,
+   "desc": "Audio pronunciation file from the Lingua Libre project."
+  },
+  {
+   "title": "File:LL-Q188 (deu)-Nortix08-Fritz-H\u00f6ger-Weg.wav",
+   "lic": "CC BY-SA 4.0",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/5/5c/LL-Q188_%28deu%29-Nortix08-Fritz-H%C3%B6ger-Weg.wav?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 165676,
+   "desc": "Audio pronunciation file from the Lingua Libre project."
+  },
+  {
+   "title": "File:Mnw-\u1000\u1060\u102d\u1000\u103a.oga",
+   "lic": "CC BY-SA 4.0",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/8/80/Mnw-%E1%80%80%E1%81%A0%E1%80%AD%E1%80%80%E1%80%BA.oga?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 14296,
+   "desc": "This file is a voice of it's my own, no copyright infringement"
+  },
+  {
+   "title": "File:Sau Tot - Jagdsignal.wav",
+   "lic": "CC BY-SA 4.0",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/3/38/Sau_Tot_-_Jagdsignal.wav?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 4108990,
+   "desc": "Das Jagdsignal ist nach altem Brauchtum die letzte Ehre f\u00fcr das erschossene Tier. F\u00fcr die tote Sau klingt das so. Ein Duett gespielt mit 4 Trompeten"
+  },
+  {
+   "title": "File:SwineFlu CDC Media Conference 4-25.ogg",
+   "lic": "Public domain",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/4/49/SwineFlu_CDC_Media_Conference_4-25.ogg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 8286434,
+   "desc": "CDC media availability in response to the swine flu outbreak ."
+  },
+  {
+   "title": "File:Swine Flu.ogg",
+   "lic": "CC BY-SA 3.0",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/d/db/Swine_Flu.ogg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 5133725,
+   "desc": "Recorded at Wikipedia Summit Pune with Rohit Murmure"
+  },
+  {
+   "title": "File:Voix-001.wav",
+   "lic": "CC BY-SA 4.0",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Voix-001.wav?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 405582,
+   "desc": "Sound file that says \u00ab On n\u2019a pas gard\u00e9 les cochons ensemble \u00bb, a french idiom."
+  },
+  {
+   "title": "File:En-us-Tardigrada.oga",
+   "lic": "CC0",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/c/c9/En-us-Tardigrada.oga?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 37351,
+   "desc": "Audio pronunciation of the word \"Tardigrada\" in U.S. English (Midwestern accent)."
+  },
+  {
+   "title": "File:LL-Q1860 (eng)-Flame, not lame-moss piglet.wav",
+   "lic": "CC0",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/a/aa/LL-Q1860_%28eng%29-Flame%2C_not_lame-moss_piglet.wav?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 135724,
+   "desc": "Audio pronunciation file from the Lingua Libre project."
+  },
+  {
+   "title": "File:LL-Q1860 (eng)-Vealhurl-piglet.wav",
+   "lic": "CC BY-SA 4.0",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/d/da/LL-Q1860_%28eng%29-Vealhurl-piglet.wav?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 87596,
+   "desc": "Audio pronunciation file from the Lingua Libre project."
+  },
+  {
+   "title": "File:LibriVox - Winnie-the-Pooh (1926) 00.mp3",
+   "lic": "Public domain",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/f/f0/LibriVox_-_Winnie-the-Pooh_%281926%29_00.mp3?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 2245279,
+   "desc": "This is a full-cast dramatic reading of the beloved children's classic. - Summary by Shelly Cast List : Narrator: Lynette Caulkins Christopher Robin: Marissa Siobhan Winnie-the-Pooh: J. Schumacher Rab"
+  },
+  {
+   "title": "File:LibriVox - Winnie-the-Pooh (1926) 03.mp3",
+   "lic": "Public domain",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/0/07/LibriVox_-_Winnie-the-Pooh_%281926%29_03.mp3?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 9757634,
+   "desc": "This is a full-cast dramatic reading of the beloved children's classic. - Summary by Shelly Cast List : Narrator: Lynette Caulkins Christopher Robin: Marissa Siobhan Winnie-the-Pooh: J. Schumacher Rab"
+  },
+  {
+   "title": "File:LibriVox - Winnie-the-Pooh (1926) 04.mp3",
+   "lic": "Public domain",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/3/35/LibriVox_-_Winnie-the-Pooh_%281926%29_04.mp3?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 9319398,
+   "desc": "This is a full-cast dramatic reading of the beloved children's classic. - Summary by Shelly Cast List : Narrator: Lynette Caulkins Christopher Robin: Marissa Siobhan Winnie-the-Pooh: J. Schumacher Rab"
+  },
+  {
+   "title": "File:LibriVox - Winnie-the-Pooh (1926) 05.mp3",
+   "lic": "Public domain",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/c/ca/LibriVox_-_Winnie-the-Pooh_%281926%29_05.mp3?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 5835996,
+   "desc": "This is a full-cast dramatic reading of the beloved children's classic. - Summary by Shelly Cast List : Narrator: Lynette Caulkins Christopher Robin: Marissa Siobhan Winnie-the-Pooh: J. Schumacher Rab"
+  },
+  {
+   "title": "File:LibriVox - Winnie-the-Pooh (1926) 06.mp3",
+   "lic": "Public domain",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/7/7e/LibriVox_-_Winnie-the-Pooh_%281926%29_06.mp3?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 4750523,
+   "desc": "This is a full-cast dramatic reading of the beloved children's classic. - Summary by Shelly Cast List : Narrator: Lynette Caulkins Christopher Robin: Marissa Siobhan Winnie-the-Pooh: J. Schumacher Rab"
+  },
+  {
+   "title": "File:LibriVox - Winnie-the-Pooh (1926) 07.mp3",
+   "lic": "Public domain",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/e/e0/LibriVox_-_Winnie-the-Pooh_%281926%29_07.mp3?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 10497553,
+   "desc": "This is a full-cast dramatic reading of the beloved children's classic. - Summary by Shelly Cast List : Narrator: Lynette Caulkins Christopher Robin: Marissa Siobhan Winnie-the-Pooh: J. Schumacher Rab"
+  },
+  {
+   "title": "File:LibriVox - Winnie-the-Pooh (1926) 08.mp3",
+   "lic": "Public domain",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/d/d1/LibriVox_-_Winnie-the-Pooh_%281926%29_08.mp3?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 10493595,
+   "desc": "This is a full-cast dramatic reading of the beloved children's classic. - Summary by Shelly Cast List : Narrator: Lynette Caulkins Christopher Robin: Marissa Siobhan Winnie-the-Pooh: J. Schumacher Rab"
+  },
+  {
+   "title": "File:LibriVox - Winnie-the-Pooh (1926) 09.mp3",
+   "lic": "Public domain",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/d/d5/LibriVox_-_Winnie-the-Pooh_%281926%29_09.mp3?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 11007358,
+   "desc": "This is a full-cast dramatic reading of the beloved children's classic. - Summary by Shelly Cast List : Narrator: Lynette Caulkins Christopher Robin: Marissa Siobhan Winnie-the-Pooh: J. Schumacher Rab"
+  },
+  {
+   "title": "File:LibriVox - Winnie-the-Pooh (1926) 10.mp3",
+   "lic": "Public domain",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/8/8c/LibriVox_-_Winnie-the-Pooh_%281926%29_10.mp3?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 6983826,
+   "desc": "This is a full-cast dramatic reading of the beloved children's classic. - Summary by Shelly Cast List : Narrator: Lynette Caulkins Christopher Robin: Marissa Siobhan Winnie-the-Pooh: J. Schumacher Rab"
+  },
+  {
+   "title": "File:Poohcornerdr 03 milne 64kb.mp3",
+   "lic": "Public domain",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/5/52/Poohcornerdr_03_milne_64kb.mp3?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 9918962,
+   "desc": "The sequel to Winnie-the-Pooh, Milne's timeless classic wherein we meet Tigger. - Summary by Lynette Caulkins Cast List : Narrator: Lynette Caulkins Christopher Robin: Marissa Siobhan Winnie-the-Pooh:"
+  },
+  {
+   "title": "File:Poohcornerdr 08 milne 64kb.mp3",
+   "lic": "Public domain",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/6/60/Poohcornerdr_08_milne_64kb.mp3?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 9869349,
+   "desc": "The sequel to Winnie-the-Pooh, Milne's timeless classic wherein we meet Tigger. - Summary by Lynette Caulkins Cast List : Narrator: Lynette Caulkins Christopher Robin: Marissa Siobhan Winnie-the-Pooh:"
+  },
+  {
+   "title": "File:Rallus aquaticus - Water Rail XC432925.mp3",
+   "lic": "CC BY-SA 4.0",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/0/09/Rallus_aquaticus_-_Water_Rail_XC432925.mp3?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 784244,
+   "desc": ":piglet-call in flight! bird-seen:no playback-used:no Common name: Water Rail Type: flight call, nocturnal flight call, piglet-call Genus: Rallus Species: aquaticus Location: Arnhem, Arnhem, Gelderlan"
+  },
+  {
+   "title": "File:Wa-fel moyin\u00ea wa moyinea.ogg",
+   "lic": "CC BY-SA 4.0",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Wa-fel_moyin%C3%AA_wa_moyinea.ogg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 21477,
+   "desc": "pronon\u00e7aedje coinrece do mot \" moyinea \" ki sereut riscr\u00eet e sistinme Feller \" moyin\u00ea \"."
+  },
+  {
+   "title": "File:Wa goret.ogg",
+   "lic": "CC BY-SA 4.0",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Wa_goret.ogg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 23480,
+   "desc": "Pronon\u00e7aedje zero-cnoxheu do mot \" goret2018 \" pa Edith Godart, can\u00eaye di Libin"
+  },
+  {
+   "title": "File:Wa nourin.ogg",
+   "lic": "CC BY-SA 4.0",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/6/65/Wa_nourin.ogg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 25860,
+   "desc": "Pronon\u00e7aedje zero-cnoxheu do mot \" nourin \" pa"
+  },
+  {
+   "title": "File:Wa pouchlon.ogg",
+   "lic": "CC BY-SA 4.0",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/6/6c/Wa_pouchlon.ogg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 24205,
+   "desc": "Pronon\u00e7aedje zero-cnoxheu do mot \" pouchlon \" pa"
+  },
+  {
+   "title": "File:Wa rawton.ogg",
+   "lic": "CC BY-SA 4.0",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Wa_rawton.ogg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 106035,
+   "desc": "Pronon\u00e7aedje zero-cnoxheu do mot \" rawton \" pa Huguette Lucy, can\u00eaye di Bive e 1930."
+  },
+  {
+   "title": "File:Bear growl.ogg",
+   "lic": "CC BY 3.0",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Bear_growl.ogg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 64092,
+   "desc": "Bear cub growl (\u718a\u7684\u543c\u53eb)"
+  },
+  {
+   "title": "File:De-Growl.ogg",
+   "lic": "CC BY-SA 4.0",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/d/dc/De-Growl.ogg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 15669,
+   "desc": "Pronunciation recording of German noun \"Growl\". Male voice, recorded by native German speaker from Berlin, Germany."
+  },
+  {
+   "title": "File:En-au-oinker.ogg",
+   "lic": "CC BY-SA 4.0",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/1/10/En-au-oinker.ogg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 12928,
+   "desc": "Pronunciation in English of \"oinker\". Male, Australian accent."
+  },
+  {
+   "title": "File:En-au-squeal like a stuck pig.ogg",
+   "lic": "CC BY-SA 4.0",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/8/85/En-au-squeal_like_a_stuck_pig.ogg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 21521,
+   "desc": "Pronunciation in English of \"squeal like a stuck pig\". Male, Australian accent."
+  },
+  {
+   "title": "File:Growl (wokal).ogg",
+   "lic": "CC BY-SA 4.0",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Growl_%28wokal%29.ogg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 77684,
+   "desc": "Sample of growl (vocals)."
+  },
+  {
+   "title": "File:LL-Q1860 (eng)-Arlo Barnes-bree.wav",
+   "lic": "CC0",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/7/77/LL-Q1860_%28eng%29-Arlo_Barnes-bree.wav?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 75028,
+   "desc": "Audio pronunciation file from the Lingua Libre project."
+  },
+  {
+   "title": "File:LL-Q1860 (eng)-Flame, not lame-oink.wav",
+   "lic": "CC0",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/c/cf/LL-Q1860_%28eng%29-Flame%2C_not_lame-oink.wav?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 86572,
+   "desc": "Audio pronunciation file from the Lingua Libre project."
+  },
+  {
+   "title": "File:LL-Q1860 (eng)-Vealhurl-oink.wav",
+   "lic": "CC BY-SA 4.0",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/5/5a/LL-Q1860_%28eng%29-Vealhurl-oink.wav?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 78892,
+   "desc": "Audio pronunciation file from the Lingua Libre project."
+  },
+  {
+   "title": "File:LibriVox - Winnie-the-Pooh (1926) 02.mp3",
+   "lic": "Public domain",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/9/92/LibriVox_-_Winnie-the-Pooh_%281926%29_02.mp3?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 5921756,
+   "desc": "This is a full-cast dramatic reading of the beloved children's classic. - Summary by Shelly Cast List : Narrator: Lynette Caulkins Christopher Robin: Marissa Siobhan Winnie-the-Pooh: J. Schumacher Rab"
+  },
+  {
+   "title": "File:Man grunts like pig.ogg",
+   "lic": "Public domain",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/c/c0/Man_grunts_like_pig.ogg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 415395,
+   "desc": "Title Man grunts like Pig Artist stilgar Original mp3 data Length:0:24 minutes (822.09 KB) Format:FLAC Mono 44kHz 284Kbps (VBR) User tags Grunt, grunting, Oink, oinking Type Single Subject, Human PDSo"
+  },
+  {
+   "title": "File:Nl-Bree.ogg",
+   "lic": "CC BY-SA 3.0",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/0/01/Nl-Bree.ogg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 11804,
+   "desc": "Dutch pronunciation for \"Bree\" \u2014 male voice."
+  },
+  {
+   "title": "File:Nl-De Bree-article.ogg",
+   "lic": "CC BY-SA 3.0",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/c/c0/Nl-De_Bree-article.ogg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 325011,
+   "desc": "This is a spoken word version of the Wikipedia article: De Bree Listen to this article ( audio help ) .mw-parser-output .see-also{background:var(--background-color-interactive-subtle,#f8f9fa);margin:1"
+  },
+  {
+   "title": "File:Nl-bree.ogg",
+   "lic": "CC BY-SA 3.0",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/9/9d/Nl-bree.ogg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 12291,
+   "desc": "Wikiwoordenboek audio"
+  },
+  {
+   "title": "File:Phalacrocorax brasilianus - Neotropic Cormorant XC463751.mp3",
+   "lic": "CC BY-SA 4.0",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/4/46/Phalacrocorax_brasilianus_-_Neotropic_Cormorant_XC463751.mp3?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 385359,
+   "desc": ":Multiple contact calls from several birds at a nighttime roost, with many Cattle Egrets calling as well. The cormorants sound like pigs grunting (locals call them in Spanish, \"pato chancho\" which mea"
+  },
+  {
+   "title": "File:Pig grunt - Erdie.ogg",
+   "lic": "CC BY 3.0",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/a/ac/Pig_grunt_-_Erdie.ogg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 12702,
+   "desc": "This pig was recorded on a farm and used for an MMORPG computer game."
+  },
+  {
+   "title": "File:Poohcornerdr 07 milne 64kb.mp3",
+   "lic": "Public domain",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Poohcornerdr_07_milne_64kb.mp3?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 11446201,
+   "desc": "The sequel to Winnie-the-Pooh, Milne's timeless classic wherein we meet Tigger. - Summary by Lynette Caulkins Cast List : Narrator: Lynette Caulkins Christopher Robin: Marissa Siobhan Winnie-the-Pooh:"
+  },
+  {
+   "title": "File:Potasch-en-Perlemoer-1937.ogg",
+   "lic": "CC0",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/c/c9/Potasch-en-Perlemoer-1937.ogg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 758000,
+   "desc": "Dutch actors Cor Ruys and Louis de Bree as 'Potash and Perlmutter' in a radio broadcast of the eponymous play by Montague Glass and Charles Klein."
+  },
+  {
+   "title": "File:Rabbit oinks and squeaks.wav",
+   "lic": "CC0",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/4/49/Rabbit_oinks_and_squeaks.wav?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 6885030,
+   "desc": "From Freesound: Oinking of one of my Rabbits. He's very audible and sounds a bit like a guinea pig, but he is definitely a rabbit ;)"
+  },
+  {
+   "title": "File:Sax growl.ogg",
+   "lic": "CC BY 3.0",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Sax_growl.ogg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 125498,
+   "desc": "From the source: \"A recording of a sax growl on a baritone saxophone, played by my brother, Matthias, in the occasion of a soundtrack-battle 2007. We won the second prize!\""
+  },
+  {
+   "title": "File:Varecia growl-snort1.ogg",
+   "lic": "CC BY-SA 3.0",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Varecia_growl-snort1.ogg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 44549,
+   "desc": "Varecia growl-snort"
+  },
+  {
+   "title": "File:Creepy footsteps and screaming and growl.wav",
+   "lic": "CC BY-SA 4.0",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/a/aa/Creepy_footsteps_and_screaming_and_growl.wav?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 1646616,
+   "desc": "I made this by making random sounds and slowing it down."
+  },
+  {
+   "title": "File:De-Growls.ogg",
+   "lic": "CC BY-SA 4.0",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/f/fd/De-Growls.ogg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 17285,
+   "desc": "Pronunciation recording of German noun inflection \"Growls\", IPA: /\u0261\u0279a\u028a\u032fls/. Male voice, recorded by native German speaker from Berlin, Germany."
+  },
+  {
+   "title": "File:Dogs'-Expectation-about-Signalers'-Body-Size-by-Virtue-of-Their-Growls-pone.0015175.s005.ogg",
+   "lic": "CC BY 2.5",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/c/ce/Dogs%27-Expectation-about-Signalers%27-Body-Size-by-Virtue-of-Their-Growls-pone.0015175.s005.ogg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 24462,
+   "desc": "Sound sample of the used Brownian noise."
+  },
+  {
+   "title": "File:Dogs'-Expectation-about-Signalers'-Body-Size-by-Virtue-of-Their-Growls-pone.0015175.s006.ogg",
+   "lic": "CC BY 2.5",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/5/5d/Dogs%27-Expectation-about-Signalers%27-Body-Size-by-Virtue-of-Their-Growls-pone.0015175.s006.ogg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 28188,
+   "desc": "Sound sample of the used growls. Small dog."
+  },
+  {
+   "title": "File:Dogs'-Expectation-about-Signalers'-Body-Size-by-Virtue-of-Their-Growls-pone.0015175.s007.ogg",
+   "lic": "CC BY 2.5",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/4/44/Dogs%27-Expectation-about-Signalers%27-Body-Size-by-Virtue-of-Their-Growls-pone.0015175.s007.ogg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 21119,
+   "desc": "Sound sample of the used growls. Large dog."
+  },
+  {
+   "title": "File:EN-AU ck1 growler.ogg",
+   "lic": "CC BY-SA 4.0",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/8/86/EN-AU_ck1_growler.ogg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 14918,
+   "desc": "Pronunciation in English of \"growler\". Male, Australian accent."
+  },
+  {
+   "title": "File:En-au-growl.ogg",
+   "lic": "CC BY-SA 4.0",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/c/c0/En-au-growl.ogg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 19162,
+   "desc": "Pronunciation in English of \"growl\". Male, Australian accent."
+  },
+  {
+   "title": "File:En-us-growl.ogg",
+   "lic": "CC BY-SA 3.0",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/0/09/En-us-growl.ogg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 10879,
+   "desc": "Pronunciation of the term in US English"
+  },
+  {
+   "title": "File:En-us-growled.ogg",
+   "lic": "CC BY-SA 3.0",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/7/79/En-us-growled.ogg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 13933,
+   "desc": "Audio pronunciation of the term 'growled' in United States English."
+  },
+  {
+   "title": "File:Giraffe grunt.oga",
+   "lic": "CC BY-SA 4.0",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Giraffe_grunt.oga?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 28846,
+   "desc": "Giraffe grunting"
+  },
+  {
+   "title": "File:Jer-Ch'est comme la fr\u00e9gate \u00e0 Pi\u00e8rre Br\u00e9e tchi va contre vent et math\u00e9e.ogg",
+   "lic": "Public domain",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/1/12/Jer-Ch%27est_comme_la_fr%C3%A9gate_%C3%A0_Pi%C3%A8rre_Br%C3%A9e_tchi_va_contre_vent_et_math%C3%A9e.ogg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 45786,
+   "desc": "J\u00e8rriais proverb, saying, idiom"
+  },
+  {
+   "title": "File:LL-Q1860 (eng)-Grendelkhan-growls.wav",
+   "lic": "CC0",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/4/46/LL-Q1860_%28eng%29-Grendelkhan-growls.wav?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 97068,
+   "desc": "Audio pronunciation file from the Lingua Libre project."
+  },
+  {
+   "title": "File:Male roe deer growl.ogg",
+   "lic": "CC BY-SA 4.0",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Male_roe_deer_growl.ogg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 224610,
+   "desc": "Male european roe deer growl"
+  },
+  {
+   "title": "File:Monster growls.ogg",
+   "lic": "Public domain",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/7/71/Monster_growls.ogg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 771883,
+   "desc": "Title Monster Growls Artist stilgar Original mp3 data Length:0:54 minutes (1.94 MB) Format:FLAC Mono 44kHz 302Kbps (VBR) User tags Growl, growling, Monster Type Single Subject, Human PDSounds record n"
+  },
+  {
+   "title": "File:Monster growls 2.ogg",
+   "lic": "Public domain",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/3/36/Monster_growls_2.ogg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 460289,
+   "desc": "Title Monster Growls 2 Artist stilgar Original mp3 data Length:0:28 minutes (1.02 MB) Format:FLAC Mono 44kHz 300Kbps (VBR) User tags Growl, growling, guttural, Monster Type Single Subject, Human PDSou"
+  },
+  {
+   "title": "File:Pig-ezi.oga",
+   "lic": "CC BY-SA 4.0",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/0/04/Pig-ezi.oga?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 47635,
+   "desc": "Igbo Words"
+  },
+  {
+   "title": "File:Remarks by President Ronald Reagan during visit to OIC-IBM training center classroom. OIC-IBM High Technology Training Center in Boston, Massachusetts - DPLA - 0e062f9961176e32ea76cda7f05b14f3.mp3",
+   "lic": "Public domain",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Remarks_by_President_Ronald_Reagan_during_visit_to_OIC-IBM_training_center_classroom._OIC-IBM_High_Technology_Training_Center_in_Boston%2C_Massachusetts_-_DPLA_-_0e062f9961176e32ea76cda7f05b14f3.mp3?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 1004860,
+   "desc": ""
+  },
+  {
+   "title": "File:Spotted Hyena Grunting (Crocuta crocuta).ogg",
+   "lic": "CC BY-SA 3.0",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Spotted_Hyena_Grunting_%28Crocuta_crocuta%29.ogg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 189070,
+   "desc": "This is the grunting vocalization in a female hyena found at the Florida International Teaching Zoo (recorded at night on 3/12/12) thezooschool.com"
+  },
+  {
+   "title": "File:Worm-Grunting-Fiddling-and-Charming\u2014Humans-Unknowingly-Mimic-a-Predator-to-Harvest-Bait-pone.0003472.s001.ogg",
+   "lic": "CC BY 2.5",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/6/64/Worm-Grunting-Fiddling-and-Charming%E2%80%94Humans-Unknowingly-Mimic-a-Predator-to-Harvest-Bait-pone.0003472.s001.ogg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 22178,
+   "desc": "Geophone recordings of worm grunting, as illustrated in figure 1C ."
+  },
+  {
+   "title": "File:Worm-Grunting-Fiddling-and-Charming\u2014Humans-Unknowingly-Mimic-a-Predator-to-Harvest-Bait-pone.0003472.s002.ogg",
+   "lic": "CC BY 2.5",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/1/19/Worm-Grunting-Fiddling-and-Charming%E2%80%94Humans-Unknowingly-Mimic-a-Predator-to-Harvest-Bait-pone.0003472.s002.ogg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 230428,
+   "desc": "This sound file plays amplified geophone recordings of a foraging mole as illustrated (without amplification) in figure 7A. It demonstrates some of the vibrations generated by moles as they forage."
+  },
+  {
+   "title": "File:2025-02-04 Judy Rhatigan from Dunnamaggin.opus",
+   "lic": "CC0",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/1/11/2025-02-04_Judy_Rhatigan_from_Dunnamaggin.opus?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 55162410,
+   "desc": "Judy Rhatigan nee Kehoe who grew up in the Lodge of Chapelizod House in parish of Dunnamaggin talks about her childhood in the 1950s, St Leonard's Well, St Leonard's School, the now demolished St Leon"
+  },
+  {
+   "title": "File:De-gr\u00fcnt.ogg",
+   "lic": "CC BY-SA 4.0",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/e/eb/De-gr%C3%BCnt.ogg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 15533,
+   "desc": "pronunciation recording"
+  },
+  {
+   "title": "File:De-gr\u00fcnt auf.ogg",
+   "lic": "CC BY-SA 4.0",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/a/a2/De-gr%C3%BCnt_auf.ogg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 18253,
+   "desc": "pronunciation recording"
+  },
+  {
+   "title": "File:En-au-grunter.ogg",
+   "lic": "CC BY-SA 4.0",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/6/68/En-au-grunter.ogg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 13505,
+   "desc": "Pronunciation in English of \"grunter\". Male, Australian accent."
+  },
+  {
+   "title": "File:En-us-grunt.ogg",
+   "lic": "CC BY-SA 3.0",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/0/0d/En-us-grunt.ogg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 11380,
+   "desc": "Pronunciation of the term in US English"
+  },
+  {
+   "title": "File:Grunt of pain.ogg",
+   "lic": "Public domain",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Grunt_of_pain.ogg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 6948,
+   "desc": "Title Grunt of Pain Artist gregoryweir Original mp3 data Length:0:00 minutes (9.02 KB) Format:MP3 Mono 22kHz 128Kbps (CBR) User tags *uh*, *umf*, *ungh*, Cartoon, cartoonish, der 8 ersitzen unabkoemml"
+  },
+  {
+   "title": "File:Male pain grunts.ogg",
+   "lic": "Public domain",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Male_pain_grunts.ogg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 444722,
+   "desc": "Title Male Pain Grunts Artist stilgar Original mp3 data Length:0:28 minutes (1.01 MB) Format:FLAC Mono 44kHz 301Kbps (VBR) User tags Game, Grunt, grunting, Male, Pain, strained Type Single Subject, Hu"
+  },
+  {
+   "title": "File:Nl-grunt.ogg",
+   "lic": "CC0",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/2/20/Nl-grunt.ogg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 18008,
+   "desc": "Wikiwoordenboek audio"
+  },
+  {
+   "title": "File:Nl-grunts.ogg",
+   "lic": "CC0",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/6/6c/Nl-grunts.ogg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 17356,
+   "desc": "Wikiwoordenboek audio"
+  },
+  {
+   "title": "File:Pl-grunt.ogg",
+   "lic": "CC BY-SA 3.0",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/7/72/Pl-grunt.ogg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 14794,
+   "desc": "Polish native pronunciation of \u00ab GRUNT \u00bb . Male voice."
+  },
+  {
+   "title": "File:ROZKOL - 17 - Grunt.ogg",
+   "lic": "CC BY 4.0",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/7/71/ROZKOL_-_17_-_Grunt.ogg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 3821619,
+   "desc": "Grunt by ROZKOL"
+  },
+  {
+   "title": "File:Remarks by President Ronald Reagan during visit to OIC-IBM training center classroom in Boston, Massachusetts - DPLA - 827eebe6f3b09e028a5c5a011b66ca1d.mp3",
+   "lic": "Public domain",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Remarks_by_President_Ronald_Reagan_during_visit_to_OIC-IBM_training_center_classroom_in_Boston%2C_Massachusetts_-_DPLA_-_827eebe6f3b09e028a5c5a011b66ca1d.mp3?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 12753693,
+   "desc": ""
+  },
+  {
+   "title": "File:Springbok grunt (asthma).ogg",
+   "lic": "CC BY-SA 4.0",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Springbok_grunt_%28asthma%29.ogg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 1250261,
+   "desc": "A springbok asthmatic growl: 0:00 Hoarse calls 0:21 Piemationtic grunts 1:00 Piemationtic grunts 2 1:44 Dying squealing"
+  },
+  {
+   "title": "File:WWS Cattleshed.ogg",
+   "lic": "CC BY 4.0",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/c/ca/WWS_Cattleshed.ogg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "size": 1920129,
+   "desc": "The sounds of animals in the shed. The recording was realized in the National Museum of Agriculture and Agricultural-Food Industry in Szreniawa (Poland). Apart from historical exhibits, the museum con"
+  }
+ ],
+ "oga": [
+  {
+   "page": "/content/october-2026-art-challenge-phobias",
+   "lic": [],
+   "files": []
+  },
+  {
+   "page": "/content/pig-sfx-pack",
+   "lic": [
+    "CC-BY 3.0"
+   ],
+   "files": [
+    "https://opengameart.org/sites/default/files/pig_idle.mp3",
+    "https://opengameart.org/sites/default/files/pig_idle2.mp3",
+    "https://opengameart.org/sites/default/files/pig_idle3.mp3",
+    "https://opengameart.org/sites/default/files/pig_idle4.mp3",
+    "https://opengameart.org/sites/default/files/pig_hit1.mp3"
+   ]
+  },
+  {
+   "page": "/content/farm-animals",
+   "lic": [
+    "CC-BY-SA 3.0"
+   ],
+   "files": []
+  },
+  {
+   "page": "/content/snowsong-sound-and-music-pack",
+   "lic": [
+    "CC-BY-SA 4.0"
+   ],
+   "files": []
+  },
+  {
+   "page": "/content/guttural-vocals",
+   "lic": [
+    "CC-BY 3.0",
+    "CC-BY-SA 3.0",
+    "GPL 2.0",
+    "GPL 3.0"
+   ],
+   "files": []
+  },
+  {
+   "page": "/content/lichs-horror-voicepack",
+   "lic": [
+    "CC-BY 3.0"
+   ],
+   "files": [
+    "https://opengameart.org/sites/default/files/creaker_-_combat.wav",
+    "https://opengameart.org/sites/default/files/creaker_-_dying.wav",
+    "https://opengameart.org/sites/default/files/creaker_-_idle.wav",
+    "https://opengameart.org/sites/default/files/cultist_-_breathing_edit.wav",
+    "https://opengameart.org/sites/default/files/cultist_-_chant_edit.wav"
+   ]
+  },
+  {
+   "page": "/content/october-2026-art-challenge-phobias",
+   "lic": [],
+   "files": []
+  },
+  {
+   "page": "/content/october-2026-art-challenge-phobias",
+   "lic": [],
+   "files": []
+  },
+  {
+   "page": "/content/october-2026-art-challenge-phobias",
+   "lic": [],
+   "files": []
+  },
+  {
+   "page": "/content/15-monster-gruntpaindeath-sounds",
+   "lic": [
+    "CC-BY 3.0"
+   ],
+   "files": []
+  },
+  {
+   "page": "/content/grunt",
+   "lic": [
+    "CC-BY 3.0"
+   ],
+   "files": [
+    "https://opengameart.org/sites/default/files/gruntsound.wav"
+   ]
+  },
+  {
+   "page": "/content/male-gruntyelling-sounds",
+   "lic": [
+    "CC0",
+    "OGA-BY 3.0"
+   ],
+   "files": []
+  },
+  {
+   "page": "/content/dog-grunt",
+   "lic": [
+    "CC0"
+   ],
+   "files": [
+    "https://opengameart.org/sites/default/files/dog-frieda-grunt-96khz-01.flac"
+   ]
+  },
+  {
+   "page": "/content/grunt-2",
+   "lic": [
+    "CC-BY 3.0"
+   ],
+   "files": [
+    "https://opengameart.org/sites/default/files/cut_grunt2.wav"
+   ]
+  },
+  {
+   "page": "/content/dog-snarl-grunt-grumble",
+   "lic": [
+    "CC0"
+   ],
+   "files": []
+  },
+  {
+   "page": "/content/october-2026-art-challenge-phobias",
+   "lic": [],
+   "files": []
+  },
+  {
+   "page": "/content/farm-animals",
+   "lic": [
+    "CC-BY-SA 3.0"
+   ],
+   "files": []
+  },
+  {
+   "page": "/content/snowsong-sound-and-music-pack",
+   "lic": [
+    "CC-BY-SA 4.0"
+   ],
+   "files": []
+  }
+ ]
+}
