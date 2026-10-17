@@ -1,0 +1,1088 @@
+{
+ "bigsoundbank": {
+  "cow": [
+   {
+    "page": "https://bigsoundbank.com/search?q=cow",
+    "title": "0546.mp3",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/mp3/0546.mp3"
+    ],
+    "file": "assets-requests/out/sound/animals/bsb_cow_00.mp3"
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=cow",
+    "title": "0546.ogg",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/ogg/0546.ogg"
+    ],
+    "file": "assets-requests/out/sound/animals/bsb_cow_01.ogg"
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=cow",
+    "title": "3220.mp3",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/mp3/3220.mp3"
+    ],
+    "file": "assets-requests/out/sound/animals/bsb_cow_02.mp3"
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=cow",
+    "title": "3220.ogg",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/ogg/3220.ogg"
+    ],
+    "file": "assets-requests/out/sound/animals/bsb_cow_03.ogg"
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=cow",
+    "title": "2386.mp3",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/mp3/2386.mp3"
+    ],
+    "file": "assets-requests/out/sound/animals/bsb_cow_04.mp3"
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=cow",
+    "title": "2386.ogg",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/ogg/2386.ogg"
+    ],
+    "file": "assets-requests/out/sound/animals/bsb_cow_05.ogg"
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=cow",
+    "title": "2383.mp3",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/mp3/2383.mp3"
+    ]
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=cow",
+    "title": "2383.ogg",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/ogg/2383.ogg"
+    ]
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=cow",
+    "title": "0924.mp3",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/mp3/0924.mp3"
+    ]
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=cow",
+    "title": "0924.ogg",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/ogg/0924.ogg"
+    ]
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=cow",
+    "title": "0934.mp3",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/mp3/0934.mp3"
+    ]
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=cow",
+    "title": "0934.ogg",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/ogg/0934.ogg"
+    ]
+   }
+  ],
+  "horse": [
+   {
+    "page": "https://bigsoundbank.com/search?q=horse",
+    "title": "0863.mp3",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/mp3/0863.mp3"
+    ],
+    "file": "assets-requests/out/sound/animals/bsb_horse_00.mp3"
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=horse",
+    "title": "0863.ogg",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/ogg/0863.ogg"
+    ],
+    "file": "assets-requests/out/sound/animals/bsb_horse_01.ogg"
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=horse",
+    "title": "0611.mp3",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/mp3/0611.mp3"
+    ],
+    "file": "assets-requests/out/sound/animals/bsb_horse_02.mp3"
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=horse",
+    "title": "0611.ogg",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/ogg/0611.ogg"
+    ],
+    "file": "assets-requests/out/sound/animals/bsb_horse_03.ogg"
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=horse",
+    "title": "0284.mp3",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/mp3/0284.mp3"
+    ],
+    "file": "assets-requests/out/sound/animals/bsb_horse_04.mp3"
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=horse",
+    "title": "0284.ogg",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/ogg/0284.ogg"
+    ],
+    "file": "assets-requests/out/sound/animals/bsb_horse_05.ogg"
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=horse",
+    "title": "1543.mp3",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/mp3/1543.mp3"
+    ]
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=horse",
+    "title": "1543.ogg",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/ogg/1543.ogg"
+    ]
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=horse",
+    "title": "0289.mp3",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/mp3/0289.mp3"
+    ]
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=horse",
+    "title": "0289.ogg",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/ogg/0289.ogg"
+    ]
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=horse",
+    "title": "0859.mp3",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/mp3/0859.mp3"
+    ]
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=horse",
+    "title": "0859.ogg",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/ogg/0859.ogg"
+    ]
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=neigh",
+    "title": "0863.mp3",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/mp3/0863.mp3"
+    ]
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=neigh",
+    "title": "0863.ogg",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/ogg/0863.ogg"
+    ]
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=neigh",
+    "title": "0284.mp3",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/mp3/0284.mp3"
+    ]
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=neigh",
+    "title": "0284.ogg",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/ogg/0284.ogg"
+    ]
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=neigh",
+    "title": "0859.mp3",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/mp3/0859.mp3"
+    ]
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=neigh",
+    "title": "0859.ogg",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/ogg/0859.ogg"
+    ]
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=neigh",
+    "title": "1542.mp3",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/mp3/1542.mp3"
+    ]
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=neigh",
+    "title": "1542.ogg",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/ogg/1542.ogg"
+    ]
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=neigh",
+    "title": "0460.mp3",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/mp3/0460.mp3"
+    ]
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=neigh",
+    "title": "0460.ogg",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/ogg/0460.ogg"
+    ]
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=neigh",
+    "title": "1541.mp3",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/mp3/1541.mp3"
+    ]
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=neigh",
+    "title": "1541.ogg",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/ogg/1541.ogg"
+    ]
+   }
+  ],
+  "pig": [
+   {
+    "page": "https://bigsoundbank.com/search?q=pig",
+    "title": "1659.mp3",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/mp3/1659.mp3"
+    ],
+    "file": "assets-requests/out/sound/animals/bsb_pig_00.mp3"
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=pig",
+    "title": "1659.ogg",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/ogg/1659.ogg"
+    ],
+    "file": "assets-requests/out/sound/animals/bsb_pig_01.ogg"
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=pig",
+    "title": "1658.mp3",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/mp3/1658.mp3"
+    ],
+    "file": "assets-requests/out/sound/animals/bsb_pig_02.mp3"
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=pig",
+    "title": "1658.ogg",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/ogg/1658.ogg"
+    ],
+    "file": "assets-requests/out/sound/animals/bsb_pig_03.ogg"
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=pig",
+    "title": "1692.mp3",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/mp3/1692.mp3"
+    ],
+    "file": "assets-requests/out/sound/animals/bsb_pig_04.mp3"
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=pig",
+    "title": "1692.ogg",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/ogg/1692.ogg"
+    ],
+    "file": "assets-requests/out/sound/animals/bsb_pig_05.ogg"
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=pig",
+    "title": "1693.mp3",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/mp3/1693.mp3"
+    ]
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=pig",
+    "title": "1693.ogg",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/ogg/1693.ogg"
+    ]
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=pig",
+    "title": "1691.mp3",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/mp3/1691.mp3"
+    ]
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=pig",
+    "title": "1691.ogg",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/ogg/1691.ogg"
+    ]
+   }
+  ],
+  "sheep": [
+   {
+    "page": "https://bigsoundbank.com/search?q=sheep",
+    "title": "3220.mp3",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/mp3/3220.mp3"
+    ],
+    "file": "assets-requests/out/sound/animals/bsb_sheep_00.mp3"
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=sheep",
+    "title": "3220.ogg",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/ogg/3220.ogg"
+    ],
+    "file": "assets-requests/out/sound/animals/bsb_sheep_01.ogg"
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=sheep",
+    "title": "2343.mp3",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/mp3/2343.mp3"
+    ],
+    "file": "assets-requests/out/sound/animals/bsb_sheep_02.mp3"
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=sheep",
+    "title": "2343.ogg",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/ogg/2343.ogg"
+    ],
+    "file": "assets-requests/out/sound/animals/bsb_sheep_03.ogg"
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=sheep",
+    "title": "0924.mp3",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/mp3/0924.mp3"
+    ],
+    "file": "assets-requests/out/sound/animals/bsb_sheep_04.mp3"
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=sheep",
+    "title": "0924.ogg",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/ogg/0924.ogg"
+    ],
+    "file": "assets-requests/out/sound/animals/bsb_sheep_05.ogg"
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=sheep",
+    "title": "2348.mp3",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/mp3/2348.mp3"
+    ]
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=sheep",
+    "title": "2348.ogg",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/ogg/2348.ogg"
+    ]
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=sheep",
+    "title": "2345.mp3",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/mp3/2345.mp3"
+    ]
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=sheep",
+    "title": "2345.ogg",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/ogg/2345.ogg"
+    ]
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=sheep",
+    "title": "2972.mp3",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/mp3/2972.mp3"
+    ]
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=sheep",
+    "title": "2972.ogg",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/ogg/2972.ogg"
+    ]
+   }
+  ],
+  "goat": [
+   {
+    "page": "https://bigsoundbank.com/search?q=goat",
+    "title": "0279.mp3",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/mp3/0279.mp3"
+    ],
+    "file": "assets-requests/out/sound/animals/bsb_goat_00.mp3"
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=goat",
+    "title": "0279.ogg",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/ogg/0279.ogg"
+    ],
+    "file": "assets-requests/out/sound/animals/bsb_goat_01.ogg"
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=goat",
+    "title": "1377.mp3",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/mp3/1377.mp3"
+    ],
+    "file": "assets-requests/out/sound/animals/bsb_goat_02.mp3"
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=goat",
+    "title": "1377.ogg",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/ogg/1377.ogg"
+    ],
+    "file": "assets-requests/out/sound/animals/bsb_goat_03.ogg"
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=goat",
+    "title": "0924.mp3",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/mp3/0924.mp3"
+    ],
+    "file": "assets-requests/out/sound/animals/bsb_goat_04.mp3"
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=goat",
+    "title": "0924.ogg",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/ogg/0924.ogg"
+    ],
+    "file": "assets-requests/out/sound/animals/bsb_goat_05.ogg"
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=goat",
+    "title": "0880.mp3",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/mp3/0880.mp3"
+    ]
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=goat",
+    "title": "0880.ogg",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/ogg/0880.ogg"
+    ]
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=goat",
+    "title": "2972.mp3",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/mp3/2972.mp3"
+    ]
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=goat",
+    "title": "2972.ogg",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/ogg/2972.ogg"
+    ]
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=goat",
+    "title": "1379.mp3",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/mp3/1379.mp3"
+    ]
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=goat",
+    "title": "1379.ogg",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/ogg/1379.ogg"
+    ]
+   }
+  ],
+  "chicken": [
+   {
+    "page": "https://bigsoundbank.com/search?q=hen",
+    "title": "0978.mp3",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/mp3/0978.mp3"
+    ],
+    "file": "assets-requests/out/sound/animals/bsb_chicken_00.mp3"
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=hen",
+    "title": "0978.ogg",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/ogg/0978.ogg"
+    ],
+    "file": "assets-requests/out/sound/animals/bsb_chicken_01.ogg"
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=hen",
+    "title": "0282.mp3",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/mp3/0282.mp3"
+    ],
+    "file": "assets-requests/out/sound/animals/bsb_chicken_02.mp3"
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=hen",
+    "title": "0282.ogg",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/ogg/0282.ogg"
+    ],
+    "file": "assets-requests/out/sound/animals/bsb_chicken_03.ogg"
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=hen",
+    "title": "0453.mp3",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/mp3/0453.mp3"
+    ],
+    "file": "assets-requests/out/sound/animals/bsb_chicken_04.mp3"
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=hen",
+    "title": "0453.ogg",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/ogg/0453.ogg"
+    ],
+    "file": "assets-requests/out/sound/animals/bsb_chicken_05.ogg"
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=hen",
+    "title": "1040.mp3",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/mp3/1040.mp3"
+    ]
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=hen",
+    "title": "1040.ogg",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/ogg/1040.ogg"
+    ]
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=hen",
+    "title": "0975.mp3",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/mp3/0975.mp3"
+    ]
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=hen",
+    "title": "0975.ogg",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/ogg/0975.ogg"
+    ]
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=hen",
+    "title": "1039.mp3",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/mp3/1039.mp3"
+    ]
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=hen",
+    "title": "1039.ogg",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/ogg/1039.ogg"
+    ]
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=chicken",
+    "title": "0440.mp3",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/mp3/0440.mp3"
+    ]
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=chicken",
+    "title": "0440.ogg",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/ogg/0440.ogg"
+    ]
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=chicken",
+    "title": "0978.mp3",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/mp3/0978.mp3"
+    ]
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=chicken",
+    "title": "0978.ogg",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/ogg/0978.ogg"
+    ]
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=chicken",
+    "title": "0222.mp3",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/mp3/0222.mp3"
+    ]
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=chicken",
+    "title": "0222.ogg",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/ogg/0222.ogg"
+    ]
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=chicken",
+    "title": "0282.mp3",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/mp3/0282.mp3"
+    ]
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=chicken",
+    "title": "0282.ogg",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/ogg/0282.ogg"
+    ]
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=chicken",
+    "title": "0453.mp3",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/mp3/0453.mp3"
+    ]
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=chicken",
+    "title": "0453.ogg",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/ogg/0453.ogg"
+    ]
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=chicken",
+    "title": "0431.mp3",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/mp3/0431.mp3"
+    ]
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=chicken",
+    "title": "0431.ogg",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/ogg/0431.ogg"
+    ]
+   }
+  ],
+  "rooster": [
+   {
+    "page": "https://bigsoundbank.com/search?q=rooster",
+    "title": "0283.mp3",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/mp3/0283.mp3"
+    ],
+    "file": "assets-requests/out/sound/animals/bsb_rooster_00.mp3"
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=rooster",
+    "title": "0283.ogg",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/ogg/0283.ogg"
+    ],
+    "file": "assets-requests/out/sound/animals/bsb_rooster_01.ogg"
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=rooster",
+    "title": "0440.mp3",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/mp3/0440.mp3"
+    ],
+    "file": "assets-requests/out/sound/animals/bsb_rooster_02.mp3"
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=rooster",
+    "title": "0440.ogg",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/ogg/0440.ogg"
+    ],
+    "file": "assets-requests/out/sound/animals/bsb_rooster_03.ogg"
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=rooster",
+    "title": "0704.mp3",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/mp3/0704.mp3"
+    ],
+    "file": "assets-requests/out/sound/animals/bsb_rooster_04.mp3"
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=rooster",
+    "title": "0704.ogg",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/ogg/0704.ogg"
+    ],
+    "file": "assets-requests/out/sound/animals/bsb_rooster_05.ogg"
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=rooster",
+    "title": "0282.mp3",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/mp3/0282.mp3"
+    ]
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=rooster",
+    "title": "0282.ogg",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/ogg/0282.ogg"
+    ]
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=rooster",
+    "title": "0453.mp3",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/mp3/0453.mp3"
+    ]
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=rooster",
+    "title": "0453.ogg",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/ogg/0453.ogg"
+    ]
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=rooster",
+    "title": "0104.mp3",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/mp3/0104.mp3"
+    ]
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=rooster",
+    "title": "0104.ogg",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/ogg/0104.ogg"
+    ]
+   }
+  ],
+  "chick": [
+   {
+    "page": "https://bigsoundbank.com/search?q=chick",
+    "title": "0282.mp3",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/mp3/0282.mp3"
+    ],
+    "file": "assets-requests/out/sound/animals/bsb_chick_00.mp3"
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=chick",
+    "title": "0282.ogg",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/ogg/0282.ogg"
+    ],
+    "file": "assets-requests/out/sound/animals/bsb_chick_01.ogg"
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=chick",
+    "title": "0431.mp3",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/mp3/0431.mp3"
+    ],
+    "file": "assets-requests/out/sound/animals/bsb_chick_02.mp3"
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=chick",
+    "title": "0431.ogg",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/ogg/0431.ogg"
+    ],
+    "file": "assets-requests/out/sound/animals/bsb_chick_03.ogg"
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=chick",
+    "title": "0430.mp3",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/mp3/0430.mp3"
+    ],
+    "file": "assets-requests/out/sound/animals/bsb_chick_04.mp3"
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=chick",
+    "title": "0430.ogg",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/ogg/0430.ogg"
+    ],
+    "file": "assets-requests/out/sound/animals/bsb_chick_05.ogg"
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=chick",
+    "title": "0672.mp3",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/mp3/0672.mp3"
+    ]
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=chick",
+    "title": "0672.ogg",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/ogg/0672.ogg"
+    ]
+   }
+  ],
+  "duck": [
+   {
+    "page": "https://bigsoundbank.com/search?q=duck",
+    "title": "0276.mp3",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/mp3/0276.mp3"
+    ],
+    "file": "assets-requests/out/sound/animals/bsb_duck_00.mp3"
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=duck",
+    "title": "0276.ogg",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/ogg/0276.ogg"
+    ],
+    "file": "assets-requests/out/sound/animals/bsb_duck_01.ogg"
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=duck",
+    "title": "0417.mp3",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/mp3/0417.mp3"
+    ],
+    "file": "assets-requests/out/sound/animals/bsb_duck_02.mp3"
+   },
+   {
+    "page": "https://bigsoundbank.com/search?q=duck",
+    "title": "0417.ogg",
+    "audio": [
+     "https://bigsoundbank.com/UPLOAD/ogg/0417.ogg"
+    ],
+    "file": "assets-requests/out/sound/animals/bsb_duck_03.ogg"
+   }
+  ],
+  "goose": []
+ },
+ "oga": {
+  "cow": [
+   {
+    "page": "/content/october-2026-art-challenge-phobias",
+    "licence": [],
+    "files": [],
+    "saved": []
+   },
+   {
+    "page": "/content/yak-imitation",
+    "licence": [
+     "CC0"
+    ],
+    "files": [
+     "https://opengameart.org/sites/default/files/yak_0.ogg",
+     "https://opengameart.org/sites/default/files/yak.flac"
+    ],
+    "saved": [
+     "assets-requests/out/sound/animals/oga_cow_01_yak_0.ogg",
+     "assets-requests/out/sound/animals/oga_cow_01_yak.flac"
+    ]
+   },
+   {
+    "page": "/content/sci-fi-aliens-and-cows-pack",
+    "licence": [
+     "CC0"
+    ],
+    "files": [],
+    "saved": []
+   }
+  ],
+  "horse": [
+   {
+    "page": "/content/october-2026-art-challenge-phobias",
+    "licence": [],
+    "files": [],
+    "saved": []
+   },
+   {
+    "page": "/content/horse-trotting",
+    "licence": [
+     "CC0"
+    ],
+    "files": [
+     "https://opengameart.org/sites/default/files/Trot.ogg"
+    ],
+    "saved": [
+     "assets-requests/out/sound/animals/oga_horse_01_Trot.ogg"
+    ]
+   },
+   {
+    "page": "/content/wolf-monster-sound",
+    "licence": [
+     "CC0"
+    ],
+    "files": [
+     "https://opengameart.org/sites/default/files/wolf_monster_6.mp3"
+    ],
+    "saved": [
+     "assets-requests/out/sound/animals/oga_horse_02_wolf_monster_6.mp3"
+    ]
+   },
+   {
+    "page": "/content/small-dino-raspy-calls",
+    "licence": [
+     "CC0"
+    ],
+    "files": [
+     "https://opengameart.org/sites/default/files/small_dino_raspy_calls.mp3"
+    ],
+    "saved": [
+     "assets-requests/out/sound/animals/oga_horse_03_small_dino_raspy_calls.mp3"
+    ]
+   }
+  ],
+  "pig": [
+   {
+    "page": "/content/october-2026-art-challenge-phobias",
+    "licence": [],
+    "files": [],
+    "saved": []
+   }
+  ],
+  "sheep": [
+   {
+    "page": "/content/october-2026-art-challenge-phobias",
+    "licence": [],
+    "files": [],
+    "saved": []
+   },
+   {
+    "page": "/content/sheep-baa",
+    "licence": [
+     "CC0"
+    ],
+    "files": [
+     "https://opengameart.org/sites/default/files/sheep_baa_0.ogg",
+     "https://opengameart.org/sites/default/files/sheep_baa.flac"
+    ],
+    "saved": [
+     "assets-requests/out/sound/animals/oga_sheep_01_sheep_baa_0.ogg",
+     "assets-requests/out/sound/animals/oga_sheep_01_sheep_baa.flac"
+    ]
+   },
+   {
+    "page": "/content/fantasy-desert-ride-able-camel",
+    "licence": [
+     "CC0"
+    ],
+    "files": [
+     "https://opengameart.org/sites/default/files/fantasy_desert_camel.mp3"
+    ],
+    "saved": [
+     "assets-requests/out/sound/animals/oga_sheep_02_fantasy_desert_camel.mp3"
+    ]
+   }
+  ],
+  "goat": [
+   {
+    "page": "/content/october-2026-art-challenge-phobias",
+    "licence": [],
+    "files": [],
+    "saved": []
+   }
+  ],
+  "chicken": [
+   {
+    "page": "/content/october-2026-art-challenge-phobias",
+    "licence": [],
+    "files": [],
+    "saved": []
+   }
+  ],
+  "rooster": [
+   {
+    "page": "/content/october-2026-art-challenge-phobias",
+    "licence": [],
+    "files": [],
+    "saved": []
+   }
+  ],
+  "chick": [
+   {
+    "page": "/content/october-2026-art-challenge-phobias",
+    "licence": [],
+    "files": [],
+    "saved": []
+   },
+   {
+    "page": "/content/modern-ringtone-chirptone",
+    "licence": [
+     "CC0"
+    ],
+    "files": [
+     "https://opengameart.org/sites/default/files/chirptone.wav"
+    ],
+    "saved": [
+     "assets-requests/out/sound/animals/oga_chick_01_chirptone.wav"
+    ]
+   },
+   {
+    "page": "/content/baby-animals-sounds-pack",
+    "licence": [
+     "CC0"
+    ],
+    "files": [],
+    "saved": []
+   }
+  ],
+  "duck": [
+   {
+    "page": "/content/october-2026-art-challenge-phobias",
+    "licence": [],
+    "files": [],
+    "saved": []
+   }
+  ],
+  "goose": [
+   {
+    "page": "/content/october-2026-art-challenge-phobias",
+    "licence": [],
+    "files": [],
+    "saved": []
+   }
+  ]
+ },
+ "freepd": {}
+}
