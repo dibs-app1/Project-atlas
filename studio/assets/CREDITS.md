@@ -16,3 +16,6 @@ monetised YouTube videos, with no attribution required. We credit the artists an
 
 The asset librarian workflow (`.github/workflows/assets.yml`, `assets-requests/job.py`) downloaded them and
 checked each page's licence (CC0 only) before keeping a file.
+
+- **Fredoka** font by Milena Brandão and Hafontia (Google Fonts), used for the animal names on screen. SIL Open Font
+  License 1.1 (`fonts/Fredoka-OFL.txt`): free to use in videos.

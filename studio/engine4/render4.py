@@ -39,6 +39,8 @@ def load_spec(manifest, vid, k):
     s["seed"] = scene_seed(m.get("batch_index", 5), vi, k)
     s["index"] = k
     s.setdefault("theme", video.get("theme", "park"))
+    if video.get("style") or m.get("style"):
+        s.setdefault("style", video.get("style") or m.get("style"))
     return s
 
 
@@ -48,9 +50,14 @@ class Renderer4:
         from engine4 import scenes5  # noqa: F401  (registers the scenes)
         from engine4.bridge import Bridge
         from engine3 import world as Wd
+        from engine4 import rigs
         self.spec, self.D = spec, D
+        self.soft = spec.get("style") == "soft"
+        rigs.SOFT = self.soft
         self.st = st = Stage(spec, D)
         look = getattr(st, "look", {}) or {}
+        if self.soft and look.get("fog"):           # the soft look keeps the distance clear: thinner haze
+            look["fog"] = (look["fog"][0], look["fog"][1] * 3.0)
         tod = spec.get("time", "day")
         sky = look.get("hdri")
         self.res = (res, res * 9 // 16)
@@ -61,8 +68,25 @@ class Renderer4:
         self.br.static_ids = {id(o.mesh) for o in st.static}
         self.work = Path(work or "/tmp")
         self.animals = {}
+        if self.soft:
+            self.br.soft()
+            self._grass()
         self._props()
         self.br.fog_all()
+
+    def _grass(self):
+        """Real grass where the scene's ground is meadow, around where the hero animal goes."""
+        g = getattr(self.st, "grass", None)
+        hero = getattr(self.st, "hero", None)
+        if not g or hero is None:
+            return
+        P = np.array([hero.state(t)[0] for t in np.linspace(0, self.D, 25)])
+        m = g.get("margin", 40.0)
+        x0, x1 = P[:, 0].min() - m, P[:, 0].max() + m
+        y0, y1 = P[:, 1].min() - m, P[:, 1].max() + m
+        bx0, bx1, by0, by1 = g.get("bounds", (-1e9, 1e9, -1e9, 1e9))
+        self.br.grass(max(x0, bx0), min(x1, bx1), max(y0, by0), min(y1, by1), avoid=g.get("avoid"),
+                      density=g.get("density", 34.0))
 
     def _props(self):
         from engine4 import cast
@@ -78,7 +102,8 @@ class Renderer4:
         if key not in self.animals:
             info = pose.model.info
             inst = rigs.Instance(cast.find(info["file"]), length=pose.model.length, palette=info.get("palette"),
-                                 texture=cast.find(info["texture"]) if info.get("texture") else None)
+                                 texture=cast.find(info["texture"]) if info.get("texture") else None,
+                                 eyes=info.get("eyes"), coat=cast.COATS.get(pose.model.kind))
             gait = rigs.Gait(inst, walk_speed=info.get("walk", 1.0) * pose.model.length / info["length"],
                              run_speed=info.get("run", info.get("walk", 1.0) * 3.5), eat=info.get("eat", True))
             self.animals[key] = (inst, gait)
@@ -111,6 +136,9 @@ class Renderer4:
         cam = rg(t)
         self.pose_world(t, cam)
         self.br.camera(cam)
+        if self.soft and getattr(self.st, "hero", None) is not None:
+            hp = np.asarray(self.st.hero.state(t)[0], float) + (0, 0, self.st.hero.model.height * 0.6)
+            self.br.focus(np.linalg.norm(hp - np.asarray(cam.pos, float)))
         img = self.br.render(path)
         fns = list(self.st.overlays)
         if k in self.st.cam_overlays:
@@ -121,6 +149,43 @@ class Renderer4:
         return img.resize((OUT_W, OUT_H), Image.LANCZOS) if img.size != (OUT_W, OUT_H) else img
 
     def frame(self, t, path):
+        img = self._frame(t, path)
+        return self._label(img, t) if self.spec.get("label") else img
+
+    LABEL_COLS = [(255, 138, 60), (70, 160, 240), (240, 90, 140), (90, 180, 80), (160, 110, 230), (240, 170, 30)]
+
+    def _label(self, img, t):
+        """The animal's name at the top, in big friendly letters: it fades in a moment after each camera angle
+        starts, stays for a while, then fades away (no pops, no flashing)."""
+        a = 0.0
+        for t0, t1, _ in self.st.shots:
+            on, off = t0 + 1.0, min(t1 - 0.5, t0 + 9.0)
+            a = max(a, min(1.0, max(0.0, (t - on) / 0.8), max(0.0, (off - t) / 0.8)))
+        if a <= 0.01:
+            return img
+        from PIL import ImageDraw, ImageFont, ImageFilter
+        font = ImageFont.truetype(str(ROOT / "assets" / "fonts" / "Fredoka.ttf"), 128)
+        try:
+            font.set_variation_by_name("Bold")
+        except Exception:  # noqa: BLE001
+            pass
+        text = self.spec["label"]
+        col = self.LABEL_COLS[self.spec.get("index", 0) % len(self.LABEL_COLS)]
+        layer = Image.new("RGBA", img.size, (0, 0, 0, 0))
+        d = ImageDraw.Draw(layer)
+        w = d.textlength(text, font=font)
+        x, y = (img.size[0] - w) / 2, 52
+        shadow = Image.new("RGBA", img.size, (0, 0, 0, 0))
+        ImageDraw.Draw(shadow).text((x + 4, y + 8), text, font=font, fill=(0, 0, 0, 90), stroke_width=12, stroke_fill=(0, 0, 0, 90))
+        layer = Image.alpha_composite(layer, shadow.filter(ImageFilter.GaussianBlur(8)))
+        d = ImageDraw.Draw(layer)
+        d.text((x, y), text, font=font, fill=(255, 255, 255, 255), stroke_width=12, stroke_fill=(*col, 255))
+        if a < 1.0:
+            al = layer.getchannel("A").point(lambda v: int(v * a))
+            layer.putalpha(al)
+        return Image.alpha_composite(img.convert("RGBA"), layer).convert("RGB")
+
+    def _frame(self, t, path):
         XF = 1.2
         shots = self.st.shots
         for k, (t0, t1, rg) in enumerate(shots):
@@ -140,24 +205,26 @@ def _smooth(u):
     return u * u * (3 - 2 * u)
 
 
-def render_scene(spec, frames, out_dir, res=1280, samples=4, log=print):
+def render_scene(spec, frames, out_dir, res=1280, samples=4, log=print, part=0, parts=1):
+    """Render one scene, or one part of it (frames are split evenly; parts are joined with join_parts)."""
     from engine3 import sfx3
     out_dir = Path(out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
     k = spec["index"]
     D = frames / FPS
+    f0, f1 = frames * part // parts, frames * (part + 1) // parts
     t0 = time.time()
     R = Renderer4(spec, D, res=res, samples=samples, work=out_dir)
-    log(f"scene {k} ({spec['script']}): set up in {time.time() - t0:.0f}s, {len(R.st.static)} scenery objects, "
-        f"{len(getattr(R.st, 'props', []))} props")
-    mp4 = out_dir / f"scene_{k:02d}.mp4"
+    log(f"scene {k} ({spec['script']}) part {part + 1}/{parts}: set up in {time.time() - t0:.0f}s, "
+        f"{len(R.st.static)} scenery objects, {len(getattr(R.st, 'props', []))} props")
+    mp4 = out_dir / (f"scene_{k:02d}.mp4" if parts == 1 else f"scene_{k:02d}_p{part}.mp4")
     ff = subprocess.Popen(["ffmpeg", "-y", "-loglevel", "error", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{OUT_W}x{OUT_H}",
                            "-r", str(FPS), "-i", "-", "-c:v", "libx264", "-preset", "medium", "-crf", "18", "-pix_fmt", "yuv420p",
                            str(mp4)], stdin=subprocess.PIPE)
     tmp = out_dir / f"_frame_{k:02d}.png"
     from flashguard import FlashGuard
     guard = FlashGuard()
-    for i in range(frames):
+    for i in range(f0, f1):
         t = i / FPS
         img = guard(R.frame(t, tmp))
         ff.stdin.write(np.asarray(img.convert("RGB"), np.uint8).tobytes())
@@ -165,15 +232,37 @@ def render_scene(spec, frames, out_dir, res=1280, samples=4, log=print):
             img.resize((160, 90)).save(out_dir / f"key_{k:02d}.png")
         if i == int(min(frames - 1, 8 * FPS)):
             img.save(out_dir / f"thumb_{k:02d}.png")
-        if i % 48 == 0:
+        if (i - f0) % 48 == 0:
             el = time.time() - t0
-            log(f"scene {k}: frame {i}/{frames} ({el / max(1, i):.1f}s per frame, {el / 60:.0f} min so far)")
+            log(f"scene {k}: frame {i}/{frames} ({el / max(1, i - f0):.1f}s per frame, {el / 60:.0f} min so far)")
     ff.stdin.close()
     ff.wait()
-    np.save(out_dir / f"sfx_{k:02d}.npy", sfx3.render_scene(R.st, D, spec["theme"]).astype(np.float32))
+    if part == 0:
+        np.save(out_dir / f"sfx_{k:02d}.npy", sfx3.render_scene(R.st, D, spec["theme"]).astype(np.float32))
     log(f"scene {k}: done in {(time.time() - t0) / 60:.1f} min")
     tmp.unlink(missing_ok=True)
     return mp4
+
+
+def join_parts(work):
+    """Join scene_KK_p0.mp4, scene_KK_p1.mp4, ... into scene_KK.mp4 (same encoding: no re-encode)."""
+    work = Path(work)
+    groups = {}
+    for p in sorted(work.glob("scene_*_p*.mp4")):
+        kk, part = p.stem.split("_")[1], int(p.stem.split("_p")[-1])
+        groups.setdefault(kk, []).append((part, p))
+    for kk, lst in groups.items():
+        lst.sort()
+        if [i for i, _ in lst] != list(range(len(lst))):
+            raise SystemExit(f"scene {kk}: missing parts {[i for i, _ in lst]}")
+        listing = work / f"_parts_{kk}.txt"
+        listing.write_text("".join(f"file '{p.resolve()}'\n" for _, p in lst))
+        subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-f", "concat", "-safe", "0", "-i", str(listing), "-c", "copy",
+                        str(work / f"scene_{kk}.mp4")], check=True)
+        listing.unlink()
+        for _, p in lst:
+            p.unlink()
+        print(f"scene {kk}: joined {len(lst)} parts", flush=True)
 
 
 if __name__ == "__main__":
@@ -186,6 +275,8 @@ if __name__ == "__main__":
     ap.add_argument("--seconds", type=float, default=None)
     ap.add_argument("--res", type=int, default=1280)
     ap.add_argument("--samples", type=int, default=4)
+    ap.add_argument("--part", type=int, default=0)
+    ap.add_argument("--parts", type=int, default=1)
     a = ap.parse_args()
     spec = load_spec(a.manifest, a.video, a.scene)
     if a.frames:
@@ -197,4 +288,4 @@ if __name__ == "__main__":
         m = json.load(open(a.manifest))
         video = next(v for v in m["videos"] if v["id"] == a.video)
         n, _ = frames_plan(len(video["scenes"]), int(600 * FPS))
-    render_scene(spec, n, a.out, res=a.res, samples=a.samples)
+    render_scene(spec, n, a.out, res=a.res, samples=a.samples, part=a.part, parts=a.parts)

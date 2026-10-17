@@ -240,6 +240,8 @@ class Song:
             li = (b - base) // 2
             return PROG[sec][li][(b - base) % 2]
 
+        upbeat = bool(self.sp.get("upbeat"))
+
         def play_bar(t, b, quiet=False, last=False):
             c = bar_chord(b)
             ct = chord_tones(c)
@@ -250,12 +252,19 @@ class Song:
                     if j in (0, 2):
                         add(kick, bt, 0.38)
                     if j in (1, 3):
-                        add(clap, bt, 0.07 if full else 0.05)
+                        add(clap, bt, (0.08 if full else 0.06) if upbeat else (0.07 if full else 0.05))
                     add(shaker, bt + beat / 2, 0.05)
-                    if full:
+                    if full or upbeat:
                         add(shaker, bt, 0.035)
+                    if upbeat:        # a gentle skip: soft marimba chords on every off-beat
+                        for m in ct:
+                            add(note(midi_hz(m + 12), beat * 0.3, "marimba", 0.035, nr), bt + beat / 2)
+                        if full and j == 0:          # a little glockenspiel sparkle at the start of chorus bars
+                            add(note(midi_hz(ct[2] + 24), beat, "bells", 0.04, nr), bt)
                 bass = [ct[0] - 24, ct[2] - 24, ct[0] - 12, ct[1] - 24][j]
-                add(note(midi_hz(bass), beat * 0.85, "harp", 0.2 if not quiet else 0.12, nr), bt)
+                add(note(midi_hz(bass), beat * (0.45 if upbeat else 0.85), "harp", 0.2 if not quiet else 0.12, nr), bt)
+                if upbeat and not quiet:         # the bass hops up an octave on the "and" of each beat
+                    add(note(midi_hz(bass + 12), beat * 0.35, "harp", 0.12, nr), bt + beat / 2)
                 if j in (1, 3) and not quiet:
                     for m in ct:
                         add(note(midi_hz(m), beat * 0.45, "piano", 0.045 if not full else 0.06, nr), bt + beat / 2)

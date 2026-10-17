@@ -300,16 +300,25 @@ def farmyard(st, mud=False):
     box(m, (-8, 8, 0.35), (2.4, 0.8, 0.7), (110, 90, 70))       # water trough
     box(m, (-8, 8, 0.66), (2.2, 0.6, 0.04), (90, 140, 170))
     st.add([Obj(m, layer=1)])
+    ym = Mesh()          # the farmyard: packed earth where the hens and chicks peck
+    ym.poly([(10 + 60 * math.cos(a), 6 + 5.5 * math.sin(a), 0) for a in np.linspace(0, 2 * math.pi, 48, endpoint=False)],
+            (150, 124, 92))
+    st.add([Obj(ym, layer=0, order=1, shadow=False)])
     if mud:
         mm = Mesh()
         mm.poly([(18 + 9 * math.cos(a), -8 + 5 * math.sin(a), 0) for a in np.linspace(0, 2 * math.pi, 30, endpoint=False)], (120, 92, 66))
         st.add([Obj(mm, layer=0, order=2, shadow=False)])
     st.add(pond(-60, -10, 16, 9))
+
+    def no_grass(x, y):          # the pond, the mud, the farm track and the yard by the trough stay bare
+        return (((x + 60) / 18) ** 2 + ((y + 10) / 11) ** 2 < 1 or (mud and ((x - 18) / 10) ** 2 + ((y + 8) / 6) ** 2 < 1)
+                or abs(y - (18 + 4 * math.sin(x / 60))) < 2.6 or ((x - 10) / 61) ** 2 + ((y - 6) / 6.3) ** 2 < 1)
+    st.grass = dict(avoid=no_grass, bounds=(-300, 300, -60, 15.5))
     scatter(st, "tree", (-300, 300, -200, -40), 40, (1.0, 1.4), seed=1)
     scatter(st, "tree", (-300, 300, 50, 70), 14, (1.0, 1.4), seed=2)
     scatter(st, "bush", (-200, 200, -23, -20), 30, (0.7, 1.1), seed=3)
-    scatter(st, "grass", (-120, 120, -22, 12), 220, (0.25, 0.45), lambda x, y: math.hypot(x + 60, (y + 10) * 1.7) < 19, 4)
-    scatter(st, "flowers", (-120, 120, -22, 12), 60, (0.8, 1.2), lambda x, y: math.hypot(x + 60, (y + 10) * 1.7) < 19, 5)
+    scatter(st, "grass", (-120, 120, -22, 12), 220, (0.25, 0.45), no_grass, 4)
+    scatter(st, "flowers", (-120, 120, -22, 12), 60, (0.8, 1.2), no_grass, 5)
     scatter(st, "lilypad", (-72, -48, -15, -5), 8, (0.8, 1.2), lambda x, y: ((x + 60) / 15) ** 2 + ((y + 10) / 8) ** 2 > 1, 6)
     scatter(st, "corn", (-200, -80, 72, 100), 60, (1.0, 1.3), seed=7)
     st.add(Wd.hills(s + 3, (100, 150, 84), 260, 900, height=90))
@@ -938,6 +947,19 @@ def ducks_farm_pond(st):
     a = animal(st, "duck", p, sp, s0=s0, z=-0.12, mood=lambda t: "Peck", hero=True)
     animal(st, "duck", p, sp, s0=s0 - 1.2, z=-0.12, offset=0.8, level=0.4)
     hero(st, a, ["side", "front", "orbit"])
+
+
+@scene("geese_home")
+def geese_home(st):
+    """A family of white farm geese waddling home along the farm track in the evening light."""
+    ln = farmyard(st)
+    p = ln["track"]
+    sp = schedule(st.r, st.D, walk=(8, 12), stop=(3, 5), v=0.45)
+    s0 = mid_s(p, st.D, sp)
+    a = animal(st, "goose", p, sp, s0=s0, mood=lambda t: "Peck", hero=True)
+    for k in range(3):
+        animal(st, "goose", p, sp, s0=s0 - 1.1 * (k + 1), offset=0.45 * (-1) ** k, mood=lambda t: "Peck", level=0.35)
+    hero(st, a, ["side", "front", "low"])
 
 
 @scene("barn_sunset")

@@ -188,6 +188,7 @@ class Bridge:
         self.static_ids = set()
         self.used = {}
         self.static_done = False
+        self.smooth_ground = False
 
     @staticmethod
     def _dir_to_euler(direction):
@@ -227,7 +228,7 @@ class Bridge:
             else:
                 e.smooth = False
         for f in bm.faces:
-            f.smooth = layer != 0
+            f.smooth = layer != 0 or self.smooth_ground
         bm.to_mesh(me)
         bm.free()
         nf = len(me.polygons)
@@ -375,6 +376,143 @@ class Bridge:
         self.sc.render.filepath = str(path)
         bpy.ops.render.render(write_still=True)
         return Image.open(path).convert("RGB")
+
+    # -------------------------------------------------------------- the soft look
+    def soft(self):
+        """Natural, rich colour (AgX), light bouncing between surfaces, softer shadows, a calmer meadow green,
+        thinner haze, and a camera with depth of field (focused on the hero animal by `focus`)."""
+        sc = self.sc
+        sc.view_settings.view_transform = "AgX"
+        sc.view_settings.look = "AgX - Punchy"
+        sc.view_settings.exposure += 0.25
+        sc.eevee.use_raytracing = True
+        sc.eevee.ray_tracing_method = "SCREEN"
+        sc.eevee.use_fast_gi = True
+        sc.eevee.fast_gi_method = "GLOBAL_ILLUMINATION"
+        sc.eevee.shadow_ray_count = 2
+        sc.eevee.shadow_step_count = 6
+        g = self.mats["ground"]
+        b = g.node_tree.nodes.get("Principled BSDF")
+        if b.inputs["Base Color"].links:
+            src = b.inputs["Base Color"].links[0].from_socket
+            hs = g.node_tree.nodes.new("ShaderNodeHueSaturation")
+            hs.inputs["Saturation"].default_value = 0.85
+            hs.inputs["Value"].default_value = 0.8
+            g.node_tree.links.new(src, hs.inputs["Color"])
+            g.node_tree.links.new(hs.outputs["Color"], b.inputs["Base Color"])
+        self.cam.data.dof.use_dof = True
+        self.cam.data.dof.aperture_fstop = 0.6        # a soft background, as with a real camera close to an animal
+        self.smooth_ground = True
+
+    def focus(self, dist):
+        self.cam.data.dof.focus_distance = float(max(0.3, dist))
+
+    def grass(self, x0, x1, y0, y1, avoid=None, density=34.0, cell=1.0):
+        """A meadow of real grass blades: clumps scattered over the ground (instanced with geometry nodes, so it
+        stays light), leaving out the cells where `avoid(x, y)` is true (paths, ponds, mud, yards)."""
+        blade = _grass_clump()
+        self.sc.collection.objects.link(blade)
+        blade.hide_render = True
+        nx, ny = int((x1 - x0) / cell), int((y1 - y0) / cell)
+        verts, faces = [], []
+        for j in range(ny):
+            for i in range(nx):
+                cx, cy = x0 + (i + 0.5) * cell, y0 + (j + 0.5) * cell
+                if avoid and avoid(cx, cy):
+                    continue
+                k = len(verts)
+                xa, ya = x0 + i * cell, y0 + j * cell
+                verts += [(xa, ya, 0.03), (xa + cell, ya, 0.03), (xa + cell, ya + cell, 0.03), (xa, ya + cell, 0.03)]
+                faces.append((k, k + 1, k + 2, k + 3))
+        me = bpy.data.meshes.new("meadow")
+        me.from_pydata(verts, [], faces)
+        ob = bpy.data.objects.new("meadow", me)
+        self.sc.collection.objects.link(ob)
+        ng = bpy.data.node_groups.new("grass", "GeometryNodeTree")
+        ng.interface.new_socket("Geometry", in_out="INPUT", socket_type="NodeSocketGeometry")
+        ng.interface.new_socket("Geometry", in_out="OUTPUT", socket_type="NodeSocketGeometry")
+        N, L = ng.nodes, ng.links
+        gi, go = N.new("NodeGroupInput"), N.new("NodeGroupOutput")
+        dist = N.new("GeometryNodeDistributePointsOnFaces")
+        dist.inputs["Density"].default_value = density
+        info = N.new("GeometryNodeObjectInfo")
+        info.inputs["Object"].default_value = blade
+        inst = N.new("GeometryNodeInstanceOnPoints")
+        rr = N.new("FunctionNodeRandomValue")
+        rr.data_type = "FLOAT_VECTOR"
+        for sk in rr.inputs:
+            if sk.type == "VECTOR" and sk.name in ("Min", "Max"):
+                sk.default_value = (0.1, 0.1, 6.283) if sk.name == "Max" else (-0.1, -0.1, 0.0)
+        rs = N.new("FunctionNodeRandomValue")
+        rs.data_type = "FLOAT"
+        for sk in rs.inputs:
+            if sk.type == "VALUE" and sk.name in ("Min", "Max"):
+                sk.default_value = 0.75 if sk.name == "Min" else 1.3
+        L.new(gi.outputs[0], dist.inputs["Mesh"])
+        L.new(dist.outputs["Points"], inst.inputs["Points"])
+        L.new(info.outputs["Geometry"], inst.inputs["Instance"])
+        L.new(next(o for o in rr.outputs if o.type == "VECTOR" and o.enabled), inst.inputs["Rotation"])
+        L.new(next(o for o in rs.outputs if o.type == "VALUE" and o.enabled), inst.inputs["Scale"])
+        L.new(inst.outputs[0], go.inputs[0])
+        mod = ob.modifiers.new("grass", "NODES")
+        mod.node_group = ng
+        ob.visible_shadow = False
+        if self.fog:
+            add_fog(blade.data.materials[0], *self.fog)
+        return ob
+
+
+def _grass_clump():
+    """A clump of thin, tapered, gently bent blades, dark green at the root and light at the tip."""
+    rng = np.random.default_rng(3)
+    bm = bmesh.new()
+    col = bm.loops.layers.color.new("Col")
+    for _ in range(9):
+        ang = rng.uniform(0, 2 * math.pi)
+        r0 = rng.uniform(0, 0.05)
+        h = rng.uniform(0.08, 0.2)
+        lean = rng.uniform(0.15, 0.45) * h
+        d = np.array([math.cos(ang), math.sin(ang)])
+        perp = np.array([-d[1], d[0]])
+        w = rng.uniform(0.008, 0.014)
+        tint = rng.uniform(0.85, 1.12)
+        rows = []
+        for s in range(4):
+            u = s / 3
+            c = np.array([r0 * math.cos(ang), r0 * math.sin(ang)]) + d * lean * u * u
+            ww = w * (1 - u) + 0.0008
+            rows.append([bm.verts.new((*(c + perp * ww), h * u)), bm.verts.new((*(c - perp * ww), h * u))])
+        for s in range(3):
+            f = bm.faces.new([rows[s][0], rows[s][1], rows[s + 1][1], rows[s + 1][0]])
+            for lp in f.loops:
+                u = lp.vert.co.z / h
+                c = np.array([0.16, 0.30, 0.08]) * (1 - u) + np.array([0.46, 0.66, 0.24]) * u
+                lp[col] = (*np.clip(c * tint, 0, 1), 1.0)
+    me = bpy.data.meshes.new("blade")
+    bm.to_mesh(me)
+    bm.free()
+    for p in me.polygons:
+        p.use_smooth = True
+    m = bpy.data.materials.new("grass")
+    if m.node_tree is None:
+        m.use_nodes = True
+    nt = m.node_tree
+    b = nt.nodes.get("Principled BSDF")
+    vc = nt.nodes.new("ShaderNodeVertexColor")
+    vc.layer_name = "Col"
+    oi = nt.nodes.new("ShaderNodeObjectInfo")
+    hue = nt.nodes.new("ShaderNodeHueSaturation")
+    mr = nt.nodes.new("ShaderNodeMapRange")
+    mr.inputs["To Min"].default_value = 0.8
+    mr.inputs["To Max"].default_value = 1.15
+    nt.links.new(oi.outputs["Random"], mr.inputs["Value"])
+    nt.links.new(mr.outputs["Result"], hue.inputs["Value"])
+    nt.links.new(vc.outputs["Color"], hue.inputs["Color"])
+    nt.links.new(hue.outputs["Color"], b.inputs["Base Color"])
+    b.inputs["Roughness"].default_value = 0.6
+    m.use_backface_culling = False
+    me.materials.append(m)
+    return bpy.data.objects.new("blade", me)
 
 
 PROPS = {}

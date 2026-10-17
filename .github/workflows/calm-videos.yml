@@ -48,14 +48,15 @@ jobs:
           print("ids=" + json.dumps([v["id"] for v in m["videos"]]))
           print("engine=" + str(m.get("engine", 1)))
           print("batch=" + m.get("batch", "batch1"))
-          sc = [{"id": v["id"], "k": k} for v in m["videos"] for k in range(len(v["scenes"]))]
-          print("scenes=" + json.dumps(sc if m.get("engine", 1) == 4 else [{"id": "none", "k": 0}]))
+          n = m.get("parts", 1)        # a slow (soft-look) scene is split over several runners and joined after
+          sc = [{"id": v["id"], "k": k, "p": p, "n": n} for v in m["videos"] for k in range(len(v["scenes"])) for p in range(n)]
+          print("scenes=" + json.dumps(sc if m.get("engine", 1) == 4 else [{"id": "none", "k": 0, "p": 0, "n": 1}]))
           PY
       - run: python studio/manager.py --plan-only --manifest "${{ steps.ids.outputs.manifest }}"
 
   scenes:
     # engine 4: every scene is rendered by Blender (EEVEE, CPU) on its own runner, about 1.5 hours each
-    name: Scene ${{ matrix.s.k }} - ${{ matrix.s.id }}
+    name: Scene ${{ matrix.s.k }}.${{ matrix.s.p }} - ${{ matrix.s.id }}
     needs: plan
     if: needs.plan.outputs.engine == '4'
     runs-on: ubuntu-latest
@@ -74,10 +75,12 @@ jobs:
       - name: Render the scene in Blender
         run: |
           python studio/engine4/render4.py --manifest "${{ needs.plan.outputs.manifest }}" --video "${{ matrix.s.id }}" \
-            --scene ${{ matrix.s.k }} --out "output/work/${{ matrix.s.id }}" --res 1280 --samples 2
+            --scene ${{ matrix.s.k }} --out "output/work/${{ matrix.s.id }}" --res 1280 \
+            --samples "$(python -c "import json; m=json.load(open('${{ needs.plan.outputs.manifest }}')); print(4 if m.get('style') == 'soft' else 2)")" \
+            --part ${{ matrix.s.p }} --parts ${{ matrix.s.n }}
       - uses: actions/upload-artifact@v4
         with:
-          name: scene-${{ matrix.s.id }}-${{ matrix.s.k }}
+          name: scene-${{ matrix.s.id }}-${{ matrix.s.k }}-${{ matrix.s.p }}
           path: |
             output/work/${{ matrix.s.id }}/scene_*.mp4
             output/work/${{ matrix.s.id }}/sfx_*.npy
@@ -115,6 +118,8 @@ jobs:
       - name: Render
         run: |
           if [ "${{ needs.plan.outputs.engine }}" = "4" ]; then
+            python -c "import sys; sys.path.insert(0, 'studio'); from engine4.render4 import join_parts; join_parts(sys.argv[1])" \
+              "output/work/${{ matrix.id }}"
             ls output/work/${{ matrix.id }}
             python studio/produce3.py "${{ matrix.id }}" --manifest "${{ needs.plan.outputs.manifest }}" --out output --reuse
           elif [ "${{ needs.plan.outputs.engine }}" = "3" ]; then

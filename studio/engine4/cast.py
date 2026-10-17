@@ -38,12 +38,16 @@ ANIMALS = {
     "lamb": dict(file="Sheep.fbx", length=0.75, height=0.6, walk=0.6, call="baa"),
     "llama": dict(file="Llama.fbx", length=1.8, height=1.8, walk=1.0, call="none"),
     "goat": dict(file="goat_0.blend", length=1.2, height=0.9, walk=0.9, call="maa"),
-    "chicken": dict(file="chickenV2.blend", length=0.45, height=0.45, walk=0.45, call="cluck"),
-    "rooster": dict(file="rooster.blend", length=0.55, height=0.6, walk=0.5, call="rooster",
+    "chicken": dict(file="chickenV2.blend", length=0.45, height=0.45, walk=0.45, call="cluck",
+                    eyes={"recolor": "Eyes", "add": True, "top": 0.24, "back": 0.45, "down": 0.42}),
+    "rooster": dict(file="rooster.blend", length=0.55, height=0.6, walk=0.5, call="rooster", eyes={"recolor": "Eyes", "add": True},
                     palette=[(196, 84, 40), (40, 70, 60), (220, 40, 40), (250, 190, 60), (30, 30, 30)]),
     "chick": dict(file="Chick.fbx", length=0.16, height=0.16, walk=0.25, call="peep"),
-    "duck": dict(file="duck6.blend", length=0.55, height=0.45, walk=0.4, call="quack"),
-    "duckling": dict(file="duckling1.blend", length=0.22, height=0.18, walk=0.3, call="peep"),
+    "duck": dict(file="duck6.blend", length=0.55, height=0.45, walk=0.4, call="quack", eyes={"top": 0.3, "back": 0.5, "down": 0.4}),
+    "goose": dict(file="duck6.blend", length=0.85, height=0.75, walk=0.5, call="honk",
+                  palette=[(246, 244, 238), (250, 150, 40), (20, 20, 20), (20, 20, 20), (250, 150, 40)],
+                  eyes={"top": 0.3, "back": 0.5, "down": 0.4}),
+    "duckling": dict(file="duckling1.blend", length=0.22, height=0.18, walk=0.3, call="peep", eyes={"top": 0.35, "back": 0.5, "down": 0.4}),
     "rabbit": dict(file="rabbit.blend", length=0.45, height=0.35, walk=1.0, call="none"),
     "penguin": dict(file="Pingouin-NEW.blend", length=0.45, height=0.7, walk=0.45, call="penguin", texture="Pingouin_Plane.010.png"),
     # pets
@@ -86,6 +90,26 @@ ANIMALS = {
                    palette=[(120, 150, 80), (150, 116, 70), (60, 50, 40)]),
     "crab": dict(file="crab.blend", length=0.35, height=0.15, walk=0.25, call="click_clack"),
 }
+
+
+# the coat each animal wears in the soft look: short fur, a mane and tail, curly wool or overlapping feathers
+# (len in metres, density per square metre, tilt from the skin's normal in degrees, droop 0 = backwards, 1 = down)
+FUR = dict(shape="fur", len=0.035, density=2600, tilt=70, droop=0.45)
+COATS = {
+    "cow": [dict(FUR, slots=[0, 1], len=0.02, density=4200, tilt=80, droop=0.4)],
+    "horse": [dict(FUR, slots=[0], len=0.022, density=3000, tilt=78),
+              dict(shape="hair", slots=[1], len=0.16, density=1600, tilt=82, droop=0.85, zmin=0.45, front_cut=0.16)],
+    "goat": [dict(FUR, slots=[0], len=0.026, density=3600, tilt=80, droop=0.45)],
+    "sheep": [dict(shape="wool", slots=[1], len=0.065, density=950, tilt=0, droop=0)],
+    "lamb": [dict(shape="wool", slots=[1], len=0.036, density=2400, tilt=0, droop=0)],
+    "chicken": [dict(shape="feather", slots=[0], len=0.055, density=2200, tilt=86, droop=0.2)],
+    "rooster": [dict(shape="feather", slots=[0], len=0.06, density=2000, tilt=86, droop=0.2)],
+    "chick": [dict(shape="wool", slots=[0], len=0.007, density=60000, tilt=0, droop=0)],
+    "duck": [dict(shape="feather", slots=[0], len=0.04, density=2800, tilt=87, droop=0.1)],
+    "duckling": [dict(shape="wool", slots=[0], len=0.007, density=60000, tilt=0, droop=0)],
+}
+COATS["pony"] = COATS["horse"]
+COATS["goose"] = [dict(shape="feather", slots=[0], len=0.05, density=2400, tilt=87, droop=0.1)]
 
 
 class Pose:
