@@ -34,6 +34,7 @@ jobs:
       batch: ${{ steps.ids.outputs.batch }}
       scenes: ${{ steps.ids.outputs.scenes }}
       reuse_run: ${{ steps.ids.outputs.reuse_run }}
+      reuse_run2: ${{ steps.ids.outputs.reuse_run2 }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -55,11 +56,15 @@ jobs:
           # studio/plan/RERUN.json: re-render only some scenes and reuse the rest from an earlier run's Blender jobs
           import os
           rr = json.load(open("studio/plan/RERUN.json")) if os.path.exists("studio/plan/RERUN.json") else {}
+          # "reuse_run" may be one run id or a list (older first: later runs' scenes replace earlier ones)
           if rr.get("manifest") == sys.argv[1]:
               sc = [x for x in sc if x["k"] in rr["scenes"]]
-              print("reuse_run=" + str(rr["reuse_run"]))
+              runs = rr["reuse_run"] if isinstance(rr["reuse_run"], list) else [rr["reuse_run"]]
+              print("reuse_run=" + str(runs[0]))
+              print("reuse_run2=" + (str(runs[1]) if len(runs) > 1 else ""))
           else:
               print("reuse_run=")
+              print("reuse_run2=")
           print("scenes=" + json.dumps(sc if m.get("engine", 1) == 4 else [{"id": "none", "k": 0, "p": 0, "n": 1}]))
           PY
       - run: python studio/manager.py --plan-only --manifest "${{ steps.ids.outputs.manifest }}"
@@ -68,7 +73,7 @@ jobs:
     # engine 4: every scene is rendered by Blender (EEVEE, CPU) on its own runner, about 1.5 hours each
     name: Scene ${{ matrix.s.k }}.${{ matrix.s.p }} - ${{ matrix.s.id }}
     needs: plan
-    if: needs.plan.outputs.engine == '4'
+    if: needs.plan.outputs.engine == '4' && needs.plan.outputs.scenes != '[]'
     runs-on: ubuntu-latest
     timeout-minutes: 340
     strategy:
@@ -129,6 +134,15 @@ jobs:
           pattern: "scene-${{ matrix.id }}-*"
           merge-multiple: true
           run-id: ${{ needs.plan.outputs.reuse_run }}
+          github-token: ${{ github.token }}
+      - name: Reuse the scenes re-rendered in a later run
+        if: needs.plan.outputs.engine == '4' && needs.plan.outputs.reuse_run2 != ''
+        uses: actions/download-artifact@v4
+        with:
+          path: "output/work/${{ matrix.id }}"
+          pattern: "scene-${{ matrix.id }}-*"
+          merge-multiple: true
+          run-id: ${{ needs.plan.outputs.reuse_run2 }}
           github-token: ${{ github.token }}
       - name: Collect the Blender scenes (engine 4)
         if: needs.plan.outputs.engine == '4'
