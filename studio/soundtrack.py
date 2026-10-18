@@ -128,8 +128,8 @@ def mix(video, scene_t0, scene_len, shots_per_scene, total, seed=0):
             duck[max(0, i0 - int(0.25 * SR)):min(N, i1 + int(0.3 * SR))] = 1.0
     k = int(0.3 * SR)
     duck = np.convolve(duck, np.ones(k) / k, mode="same")
-    # the music sits under each call (dips to half) and the call is clearly louder than it (about +7 dB)
-    music = bed * st.get("music_level", 0.5) * (1.0 - 0.5 * duck)
+    # the music dips under each call (by `duck`) and the call stands clearly above it (`call_mix`)
+    music = bed * st.get("music_level", 0.5) * (1.0 - st.get("duck", 0.5) * duck)
     m = music + st.get("call_mix", 0.55) * calls
     return m / (np.max(np.abs(m)) + 1e-9) * 0.9
 

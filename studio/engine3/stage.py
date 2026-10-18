@@ -356,6 +356,7 @@ class Stage:
         self.overlays = []        # fn(img, draw, cam, t) drawn over the 3D picture
         self.cam_overlays = {}    # shot index -> overlay (dashboards)
         self.shots = []           # (t0, t1, rig)
+        self.shot_specs = []      # (name, kwargs, actor) per shot, or None for a hand-made rig (lets a renderer re-aim it)
         self.sounds = []          # dict(kind, pos=fn(t) or None, level=fn(t), ...)
         self.hero = None          # actor whose noise the song features
         self.captions = []
@@ -389,6 +390,9 @@ class Stage:
                     if ov:
                         overlays[k] = ov
                 rg = RIGS[name](actor, **kw)
+                self.shot_specs.append((name, kw, actor))
+            else:
+                self.shot_specs.append(None)
             self.shots.append((t0, t1, rg))
         for k, ov in (overlays or {}).items():
             self.cam_overlays[k] = ov

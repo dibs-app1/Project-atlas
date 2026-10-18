@@ -141,7 +141,9 @@
         "music_level": 0.5,
         "sound_credits": [
           "Pig grunt by erdie (freesound.org/people/Erdie/sounds/44274), licensed under Creative Commons: By Attribution 3.0, http://creativecommons.org/licenses/by/3.0/"
-        ]
+        ],
+        "call_mix": 0.8,
+        "duck": 0.6
       }
     }
   ]

@@ -73,6 +73,111 @@ class Renderer4:
             self._grass()
         self._props()
         self.br.fog_all()
+        if self.soft:
+            self._aim_shots()
+
+    def _aim_shots(self):
+        """Keep every camera angle clear: if a fence, wall or tree comes between the camera and the hero animal,
+        or another animal walks right up to the lens, try the same angle from the other side, closer or further
+        away, and keep the first one that stays clear for the whole shot (or the least blocked one)."""
+        import bpy
+        from mathutils import Vector
+        from engine3.stage import RIGS
+        st = self.st
+        hero = getattr(st, "hero", None)
+        specs = getattr(st, "shot_specs", [])
+        if hero is None or len(specs) != len(st.shots):
+            return
+        self.pose_world(0.0, st.shots[0][2](0.0))          # build every object once
+        bpy.context.view_layer.update()
+        dg = bpy.context.evaluated_depsgraph_get()
+        skip = {"meadow", "blade", "cam", "sun"}
+        for inst, _ in self.animals.values():
+            skip |= {o.name for o in inst.meshes}
+            if inst.arm is not None:
+                skip.add(inst.arm.name)
+        others = [a for a in st.actors if a is not hero and hasattr(a, "state") and hasattr(a, "model")
+                  and getattr(a.model, "info", None) is not None]
+
+        def blocked(c, h):
+            d = h - c
+            dist = float(np.linalg.norm(d))
+            d = d / max(1e-9, dist)
+            o, left = c.copy(), dist
+            for _ in range(8):
+                hit, loc, _n, _i, ob, _m = bpy.context.scene.ray_cast(dg, Vector(o), Vector(d), distance=left)
+                if not hit:
+                    return False
+                loc = np.array(loc)
+                name = ob.name if ob is not None else ""
+                if name in skip or name.startswith(("eye_", "coat")) or loc[2] < 0.25:
+                    step = float(np.linalg.norm(loc - o)) + 0.02
+                    o, left = loc + d * 0.02, left - step
+                    if left <= 0:
+                        return False
+                    continue
+                return True
+            return False
+
+        def score(rg, t0, t1):
+            bad = 0
+            for t in np.linspace(t0 + 0.4, t1 - 0.4, 28):
+                cam = rg(t)
+                c = np.asarray(cam.pos, float)
+                h = np.asarray(hero.state(t)[0], float) + (0, 0, hero.model.height * 0.55)
+                if blocked(c, h):
+                    bad += 1
+                    continue
+                fwd = np.asarray(cam.B[2], float)
+                for a in others:
+                    q = np.asarray(a.state(t)[0], float) + (0, 0, a.model.height * 0.5)
+                    v = q - c
+                    dd = float(np.linalg.norm(v))
+                    if dd < max(1.0, 2.6 * a.model.length) and v @ fwd > 0.3 * dd:     # right in front of the lens
+                        bad += 1
+                        break
+            return bad
+
+        for k, ((t0, t1, rg), sp) in enumerate(zip(st.shots, specs)):
+            if sp is None:
+                continue
+            name, kw, actor = sp
+            if actor is not hero:
+                continue
+            base = score(rg, t0, t1)
+            if base == 0:
+                continue
+            tries = []
+            if name == "side":
+                sd, dist = kw.get("side", -1), kw.get("dist")
+                for s_, f in ((-sd, 1.0), (sd, 0.7), (-sd, 0.7), (sd, 1.35), (-sd, 1.35)):
+                    k2 = dict(kw, side=s_)
+                    if dist is not None:
+                        k2["dist"] = dist * f
+                    elif f != 1.0:
+                        k2["dist"] = max(11.0, hero.model.length * 1.6 + 3.0) * f
+                    tries.append(k2)
+            elif name in ("front", "low"):
+                off = kw.get("off", 7.0 if name == "front" else 5.0)
+                for f in (-1.0, 0.7, -0.7, 1.5, -1.5):
+                    tries.append(dict(kw, off=off * f))
+            elif name == "orbit":
+                for ph, f in ((math.pi, 1.0), (0.0, 0.7), (math.pi, 0.7), (math.pi / 2, 1.0), (-math.pi / 2, 1.0)):
+                    tries.append(dict(kw, phase=kw.get("phase", 0.0) + ph, radius=(kw.get("radius") or max(12.0, hero.model.length * 1.5)) * f))
+            elif name == "chase":
+                tries = [dict(kw, back=(kw.get("back") or max(10.0, hero.model.length * 1.4)) * f) for f in (0.7, 1.3)]
+            best, best_s, best_kw = rg, base, kw
+            for k2 in tries:
+                r2 = RIGS[name](actor, **k2)
+                s2 = score(r2, t0, t1)
+                if s2 < best_s:
+                    best, best_s, best_kw = r2, s2, k2
+                if s2 == 0:
+                    break
+            if best is not rg:
+                st.shots[k] = (t0, t1, best)
+                specs[k] = (name, best_kw, actor)
+            print(f"camera {k} ({name}): {base} blocked samples -> {best_s} with {({a: round(b, 2) if isinstance(b, float) else b for a, b in best_kw.items() if a != 't_pass'})}", flush=True)
 
     def _grass(self):
         """Real grass where the scene's ground is meadow, around where the hero animal goes."""
